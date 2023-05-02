@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
@@ -14,19 +15,19 @@ export default function Home() {
 			</Head>
 
 			<main className={styles.main}>
-				<h1 className={styles.title}>
-					Welcome to My Software Engineer Portfolio
-				</h1>
+				<h1 className={styles.title}>Welcome, thanks for checking me out!</h1>
 
 				<p className={styles.description}>
 					Hi, I&apos;m <code className={styles.code}>Jonathan Kerth</code>
 				</p>
 
 				<div className={styles.grid}>
-					<a href="/projects" className={styles.card}>
-						<h2>Projects &rarr;</h2>
-						<p>Check out my amazing projects!</p>
-					</a>
+					<Link href="/projects" className={styles.card}>
+						<a>
+							<h2>Projects &rarr;</h2>
+							<p>Check out my amazing projects!</p>
+						</a>
+					</Link>
 
 					<a href="/skills" className={styles.card}>
 						<h2>Skills &rarr;</h2>
