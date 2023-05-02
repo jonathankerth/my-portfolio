@@ -23,10 +23,8 @@ export default function Home() {
 
 				<div className={styles.grid}>
 					<Link href="/projects" className={styles.card}>
-						<a>
-							<h2>Projects &rarr;</h2>
-							<p>Check out my amazing projects!</p>
-						</a>
+						<h2>Projects &rarr;</h2>
+						<p>Check out my amazing projects!</p>
 					</Link>
 
 					<a href="/skills" className={styles.card}>
@@ -39,10 +37,10 @@ export default function Home() {
 						<p>Learn more about my background and experience.</p>
 					</a>
 
-					<a href="/contact" className={styles.card}>
+					<Link href="/contact" className={styles.card}>
 						<h2>Contact &rarr;</h2>
 						<p>Get in touch with me for collaborations or opportunities.</p>
-					</a>
+					</Link>
 				</div>
 			</main>
 
