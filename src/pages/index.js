@@ -5,6 +5,7 @@ import styles from "../styles/Home.module.css";
 export default function Home() {
 	return (
 		<div className={styles.container}>
+			<div className={styles.backgroundImage}></div>
 			<Head>
 				<title>Software Engineer Portfolio</title>
 				<meta
