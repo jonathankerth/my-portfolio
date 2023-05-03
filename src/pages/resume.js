@@ -134,9 +134,8 @@ export default function Resume() {
 					</div>
 				</div>
 
-				{/* Download Resume */}
 				<div className={styles.download}>
-					<a href="/path-to-your-resume.pdf" download>
+					<a href="../../public/jkerth-resume.pdf" download>
 						Download My Resume
 					</a>
 				</div>
