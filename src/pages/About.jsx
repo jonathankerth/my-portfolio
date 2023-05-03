@@ -60,7 +60,7 @@ const Navbar = () => {
 	);
 };
 
-export default function AboutMe() {
+export default function about() {
 	const techStack = [
 		{ name: "React", icon: "🚀" },
 		{ name: "Next.js", icon: "⚡" },
