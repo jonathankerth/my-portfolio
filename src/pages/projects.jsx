@@ -94,7 +94,7 @@ const projects = [
 	// Add more projects as needed
 ];
 
-export default function Projects() {
+export default function projects() {
 	return (
 		<div className={styles.container}>
 			<div className={styles.backgroundImage}></div>
