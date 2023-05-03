@@ -86,6 +86,7 @@
 
 .card {
 	margin: 1rem;
+	font-size: bold, 1.5rem;
 	flex-basis: 45%;
 	padding: 1.5rem;
 	text-align: left;

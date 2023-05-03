@@ -1,31 +1,17 @@
-import { useState } from "react";
+import {
+	FaTwitter,
+	FaLinkedin,
+	FaGithub,
+	FaStackOverflow,
+	FaEnvelope,
+} from "react-icons/fa";
 import Head from "next/head";
 import Link from "next/link";
 import styles from "../styles/Contact.module.css";
 
 export default function Contact() {
-	const [status, setStatus] = useState("");
-
-	const handleSubmit = async (event) => {
-		event.preventDefault();
-		const form = event.target;
-		const data = new FormData(form);
-
-		const response = await fetch("/api/contact", {
-			method: "POST",
-			body: data,
-		});
-
-		if (response.ok) {
-			setStatus("Message sent! I'll get back to you shortly.");
-			form.reset();
-		} else {
-			setStatus("Oops! Something went wrong. Please try again.");
-		}
-	};
-
 	return (
-		<div className={styles.container}>
+		<div className="flex flex-col items-center justify-center min-h-screen ">
 			<div className={styles.backgroundImage}></div>
 			<Head>
 				<title>Contact - Software Engineer Portfolio</title>
@@ -35,57 +21,59 @@ export default function Contact() {
 				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
+			<main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
+				<h1 className="text-6xl font-bold">Contact</h1>
 
-			<main className={styles.main}>
-				<h1 className={styles.title}>Contact</h1>
-
-				<div className={styles.contactForm}>
-					<h2>Send me a message</h2>
-					<form onSubmit={handleSubmit}>
-						<label htmlFor="name" className={styles.formLabel}>
-							Name:
-						</label>
-						<input
-							type="text"
-							id="name"
-							name="name"
-							className={styles.formInput}
-							required
-						/>
-
-						<label htmlFor="email" className={styles.formLabel}>
-							Email:
-						</label>
-						<input
-							type="email"
-							id="email"
-							name="email"
-							className={styles.formInput}
-							required
-						/>
-
-						<label htmlFor="message" className={styles.formLabel}>
-							Message:
-						</label>
-						<textarea
-							id="message"
-							name="message"
-							rows="4"
-							className={styles.formTextarea}
-							required
-						></textarea>
-
-						<button type="submit" className={styles.formButton}>
-							Send
-						</button>
-					</form>
-
-					{status && <p className={styles.formStatus}>{status}</p>}
+				<div className="flex items-center mt-8 space-x-4">
+					<a
+						href="mailto:jonathanpkerth@gmail.com"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="Email"
+						className="group"
+					>
+						<FaEnvelope className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
+					</a>
+					<a
+						href="https://www.linkedin.com/in/jonathankerth"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="LinkedIn"
+						className="group"
+					>
+						<FaLinkedin className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
+					</a>
+					<a
+						href="https://github.com/jonathankerth"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="GitHub"
+						className="group"
+					>
+						<FaGithub className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
+					</a>
+					<a
+						href="https://stackoverflow.com/users/21791075/jonathan-kerth"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="Stack Overflow"
+						className="group"
+					>
+						<FaStackOverflow className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
+					</a>
+					<a
+						href="https://twitter.com/jonathankerth"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="Twitter"
+						className="group"
+					>
+						<FaTwitter className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
+					</a>
 				</div>
 			</main>
-
-			<footer className={styles.footer}>
-				<Link href="/">← Back to home</Link>
+			<footer className="flex items-center justify-center w-full h-24 border-t">
+				<Link href="/">Back to home</Link>
 			</footer>
 		</div>
 	);
