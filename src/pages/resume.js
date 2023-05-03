@@ -5,6 +5,7 @@ import styles from "../styles/Resume.module.css";
 export default function Resume() {
 	return (
 		<div className={styles.container}>
+			<div className={styles.backgroundImage}></div>
 			<Head>
 				<title>Resume - Software Engineer Portfolio</title>
 				<meta

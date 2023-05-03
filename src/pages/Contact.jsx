@@ -26,6 +26,7 @@ export default function Contact() {
 
 	return (
 		<div className={styles.container}>
+			<div className={styles.backgroundImage}></div>
 			<Head>
 				<title>Contact - Software Engineer Portfolio</title>
 				<meta

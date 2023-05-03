@@ -21,6 +21,7 @@ const projects = [
 export default function Projects() {
 	return (
 		<div className={styles.container}>
+			<div className={styles.backgroundImage}></div>
 			<Head>
 				<title>Projects - Software Engineer Portfolio</title>
 				<meta
@@ -52,9 +53,7 @@ export default function Projects() {
 			</main>
 
 			<footer className={styles.footer}>
-				<Link href="/">
-					<a>← Back to home</a>
-				</Link>
+				<Link href="/">Back to home</Link>
 			</footer>
 		</div>
 	);
