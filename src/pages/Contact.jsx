@@ -7,12 +7,70 @@ import {
 } from "react-icons/fa";
 import Head from "next/head";
 import Link from "next/link";
-import styles from "../styles/Contact.module.css";
+import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+import Styles from "../styles/Contact.module.css";
+
+const navLinks = [
+	{ href: "/", label: "Home" },
+	{ href: "/projects", label: "Projects" },
+	{ href: "/about", label: "About" },
+	{ href: "/resume", label: "Resume" },
+];
+
+const Navbar = () => {
+	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+	const toggleMobileMenu = () => {
+		setIsMobileMenuOpen(!isMobileMenuOpen);
+	};
+
+	return (
+		<nav className="fixed top-0 left-0 z-50 w-full py-4">
+			<div className="max-w-screen-lg mx-auto px-4 md:px-8 flex justify-between items-center">
+				<div className="hidden md:block">
+					<ul className="flex space-x-8">
+						{navLinks.map(({ href, label }) => (
+							<li key={href}>
+								<Link href={href} className="text-gray-800 hover:text-gray-800">
+									{label}
+								</Link>
+							</li>
+						))}
+					</ul>
+				</div>
+				<div className="md:hidden flex items-center">
+					<button
+						onClick={toggleMobileMenu}
+						type="button"
+						className="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600"
+						aria-label="toggle menu"
+					>
+						{isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+					</button>
+				</div>
+			</div>
+			{isMobileMenuOpen && (
+				<div className="md:hidden absolute top-16 right-0  w-full">
+					<ul className="px-8 py-4">
+						{navLinks.map(({ href, label }) => (
+							<li key={href} className="py-2">
+								<Link href={href} className="text-gray-600 hover:text-gray-800">
+									{label}
+								</Link>
+							</li>
+						))}
+					</ul>
+				</div>
+			)}
+		</nav>
+	);
+};
 
 export default function Contact() {
 	return (
-		<div className="flex flex-col items-center justify-center min-h-screen ">
-			<div className={styles.backgroundImage}></div>
+		<div className="flex flex-col items-center justify-center min-h-screen">
+			<div className={Styles.backgroundImage}></div>
 			<Head>
 				<title>Contact - Software Engineer Portfolio</title>
 				<meta
@@ -21,9 +79,9 @@ export default function Contact() {
 				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
+			<Navbar />
 			<main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-				<h1 className="text-6xl font-bold">Contact</h1>
-
+				<h1 className="text-6xl font-bold">Contact me here!</h1>
 				<div className="flex items-center mt-8 space-x-4">
 					<a
 						href="mailto:jonathanpkerth@gmail.com"
