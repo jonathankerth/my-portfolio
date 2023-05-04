@@ -38,6 +38,7 @@ const Navbar = () => {
 						type="button"
 						className="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600"
 						aria-label="toggle menu"
+						s
 					>
 						{isMobileMenuOpen ? <FaTimes /> : <FaBars />}
 					</button>
@@ -93,7 +94,6 @@ const projects = [
 	},
 	// Add more projects as needed
 ];
-
 export default function Projects() {
 	return (
 		<div className={styles.container}>
@@ -107,9 +107,7 @@ export default function Projects() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Navbar />
-			<h2 className="text-center text-white font-semibold mt-40 mb-10 text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-6xl ">
-				Thank you for checking out my projects
-			</h2>
+			<h1></h1>
 			<ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 				{projects.map((project) => (
 					<li key={project.id} className="bg-white rounded-lg shadow-md">
