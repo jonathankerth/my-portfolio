@@ -38,7 +38,7 @@ export default function Home() {
 						<p>Learn more about my background and experience.</p>
 					</Link>
 
-					<Link href="/contact" className={styles.card}>
+					<Link href="/Contact" className={styles.card}>
 						<h2>Contact &rarr;</h2>
 						<p>Get in touch with me for collaborations or opportunities.</p>
 					</Link>

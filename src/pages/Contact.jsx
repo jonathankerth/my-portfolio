@@ -67,7 +67,7 @@ const Navbar = () => {
 	);
 };
 
-export default function contact() {
+export default function Contact() {
 	return (
 		<div className="flex flex-col items-center justify-center min-h-screen">
 			<div className={Styles.backgroundImage}></div>
