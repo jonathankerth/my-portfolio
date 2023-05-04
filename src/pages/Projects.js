@@ -65,7 +65,7 @@ const projects = [
 		id: 1,
 		title: "Nicolas Cage Fan Page - Front-end",
 		description:
-			"A fan page for Nicolas Cage movies built with React and Bootstrap. Hosted on Netflify. Built to display a backend API I built: NicCage API",
+			"A fan page for Nicolas Cage movies built with React and Bootstrap. Hosted on Netflify. Built to display a backend API I built: NicCage API.",
 		link: "https://github.com/jonathankerth/nicCage-client",
 	},
 	{
@@ -78,7 +78,8 @@ const projects = [
 	{
 		id: 3,
 		title: "Pokedex",
-		description: "A Pokedex built with React and Bootstrap.",
+		description:
+			"A Pokedex to display traits, pictures and size of Pokemon. Built with Javascript.",
 		link: "https://github.com/jonathankerth/pokemon-js",
 	},
 ];
