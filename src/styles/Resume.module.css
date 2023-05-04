@@ -17,7 +17,7 @@
 }
 
 .title {
-	margin: 0;
+	margin: 25px;
 	line-height: 1.15;
 	font-size: 4rem;
 	text-align: center;
@@ -76,7 +76,7 @@
 	background-image: url("../../public/bg-image.webp");
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: 100% 100%;
+	background-size: 200% 200%;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -84,4 +84,41 @@
 	height: 100%;
 	z-index: -1;
 	filter: blur(10px);
+}
+
+.resumeImage {
+	background-image: url("/resume-image.png");
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 300%;
+	height: 100vh;
+	z-index: 1;
+}
+
+/* Add media queries for responsive design */
+@media screen and (max-width: 1024px) {
+	.title {
+		font-size: 3rem;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.title {
+		font-size: 2rem;
+	}
+
+	.resumeImage {
+		width: 400%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.title {
+		font-size: 1.5rem;
+	}
+
+	.resumeImage {
+		width: 600%;
+	}
 }
