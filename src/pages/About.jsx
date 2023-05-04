@@ -67,6 +67,9 @@ export default function About() {
 		{ name: "Node.js", icon: "💚" },
 		{ name: "Express", icon: "🛤️" },
 		{ name: "MongoDB", icon: "🍃" },
+		{ name: "Bootstrap", icon: "🥾" },
+		{ name: "Tailwind", icon: "🌬️" },
+		{ name: "Redux", icon: "🔄" },
 	];
 
 	return (

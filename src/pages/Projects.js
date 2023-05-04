@@ -38,7 +38,6 @@ const Navbar = () => {
 						type="button"
 						className="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600"
 						aria-label="toggle menu"
-						s
 					>
 						{isMobileMenuOpen ? <FaTimes /> : <FaBars />}
 					</button>
@@ -64,35 +63,24 @@ const Navbar = () => {
 const projects = [
 	{
 		id: 1,
-		title: "Project 1",
-		description: "A brief description of Project 1",
-		link: "https://example.com/project1",
+		title: "Nicolas Cage Fan Page - Front-end",
+		description:
+			"A fan page for Nicolas Cage movies built with React and Bootstrap. Hosted on Netflify. Built to display a backend API I built: NicCage API",
+		link: "https://github.com/jonathankerth/nicCage-client",
 	},
 	{
 		id: 2,
-		title: "Project 2",
-		description: "A brief description of Project 2",
-		link: "https://example.com/project2",
+		title: "NicCage API",
+		description:
+			"A RESTful API built with Node.js, Express.js, MongoDB, and hosted on Heroku.",
+		link: "https://github.com/jonathankerth/Nicolas-Cage-API",
 	},
 	{
 		id: 3,
-		title: "Project 3",
-		description: "A brief description of Project 3",
-		link: "https://example.com/project2",
+		title: "Pokedex",
+		description: "A Pokedex built with React and Bootstrap.",
+		link: "https://github.com/jonathankerth/pokemon-js",
 	},
-	{
-		id: 4,
-		title: "Project 4",
-		description: "A brief description of Project 4",
-		link: "https://example.com/project2",
-	},
-	{
-		id: 5,
-		title: "Project 5",
-		description: "A brief description of Project 5",
-		link: "https://example.com/project2",
-	},
-	// Add more projects as needed
 ];
 export default function Projects() {
 	return (
@@ -110,7 +98,10 @@ export default function Projects() {
 			<h1></h1>
 			<ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 				{projects.map((project) => (
-					<li key={project.id} className="bg-white rounded-lg shadow-md">
+					<li
+						key={project.id}
+						className="project-container bg-white rounded-lg shadow-md"
+					>
 						<div className="p-6">
 							<h3 className="text-xl font-bold mb-2">
 								<a
