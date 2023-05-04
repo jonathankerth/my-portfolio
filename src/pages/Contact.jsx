@@ -14,8 +14,8 @@ import Styles from "../styles/Contact.module.css";
 const navLinks = [
 	{ href: "/", label: "Home" },
 	{ href: "/Projects", label: "Projects" },
-	{ href: "/about", label: "About" },
-	{ href: "/resume", label: "Resume" },
+	{ href: "/About", label: "About" },
+	{ href: "/Resume", label: "Resume" },
 ];
 
 const Navbar = () => {
