@@ -6,9 +6,9 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 const navLinks = [
 	{ href: "/", label: "Home" },
-	{ href: "/contact", label: "Contact" },
-	{ href: "/about", label: "About" },
-	{ href: "/projects", label: "Projects" },
+	{ href: "/ontact", label: "Contact" },
+	{ href: "/About", label: "About" },
+	{ href: "/Projects", label: "Projects" },
 ];
 
 const Navbar = () => {
@@ -135,7 +135,7 @@ export default function Resume() {
 				</div>
 
 				<div className={styles.download}>
-					<a href={require("../../public/jkerth-resume.pdf")} download>
+					<a href="" download>
 						Download My Resume
 					</a>
 				</div>
