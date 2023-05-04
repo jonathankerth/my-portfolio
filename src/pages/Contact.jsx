@@ -13,7 +13,7 @@ import Styles from "../styles/Contact.module.css";
 
 const navLinks = [
 	{ href: "/", label: "Home" },
-	{ href: "/projects", label: "Projects" },
+	{ href: "/Projects", label: "Projects" },
 	{ href: "/about", label: "About" },
 	{ href: "/resume", label: "Resume" },
 ];
