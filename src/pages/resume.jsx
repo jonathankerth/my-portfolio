@@ -60,7 +60,7 @@ const Navbar = () => {
 	);
 };
 
-export default function resume() {
+export default function Resume() {
 	return (
 		<div className={styles.container}>
 			<div className={styles.backgroundImage}></div>
