@@ -28,12 +28,12 @@ export default function Home() {
 						<p>Check out my amazing projects!</p>
 					</Link>
 
-					<Link href="/resume" className={styles.card}>
+					<Link href="/Resume" className={styles.card}>
 						<h2>Resume &rarr;</h2>
 						<p>View my resume</p>
 					</Link>
 
-					<Link href="/about" className={styles.card}>
+					<Link href="/About" className={styles.card}>
 						<h2>About Me &rarr;</h2>
 						<p>Learn more about my background and experience.</p>
 					</Link>
