@@ -36,7 +36,7 @@
 }
 
 .techStack {
-	display: grid;
+	display: flex;
 	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 	gap: 1rem;
 	max-width: 800px;
