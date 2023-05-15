@@ -103,3 +103,7 @@
 	z-index: -1;
 	filter: blur(10px);
 }
+
+.navBar {
+	text-color: lightgrey;
+}
