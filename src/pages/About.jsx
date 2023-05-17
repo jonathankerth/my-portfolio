@@ -25,7 +25,10 @@ const Navbar = () => {
 					<ul className="flex space-x-8">
 						{navLinks.map(({ href, label }) => (
 							<li key={href}>
-								<Link href={href} className="text-gray-800 hover:text-gray-800">
+								<Link
+									href={href}
+									className="text-gray-800 hover:text-gray-800 text-lg md:text-xl"
+								>
 									{label}
 								</Link>
 							</li>
@@ -44,11 +47,14 @@ const Navbar = () => {
 				</div>
 			</div>
 			{isMobileMenuOpen && (
-				<div className="md:hidden absolute top-16 right-0  w-full">
+				<div className="md:hidden absolute top-16 right-0 w-full">
 					<ul className="px-8 py-4">
 						{navLinks.map(({ href, label }) => (
 							<li key={href} className="py-2">
-								<Link href={href} className="text-gray-600 hover:text-gray-800">
+								<Link
+									href={href}
+									className="text-gray-600 hover:text-gray-800 text-lg"
+								>
 									{label}
 								</Link>
 							</li>
@@ -101,7 +107,7 @@ export default function About() {
 					languages, and exploring new libraries and frameworks.
 				</p>
 
-				<h3 className={styles.subtitle}>Tech Stack</h3>
+				<h3 className={styles.descriptionH3}>Tech Stack</h3>
 				<div className={styles.techStack}>
 					{techStack.map((tech, index) => (
 						<div key={index} className={styles.techStackItem}>
