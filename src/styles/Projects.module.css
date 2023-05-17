@@ -65,7 +65,7 @@
 }
 
 .backgroundImage {
-	background-image: url("../../public/bg-image.webp");
+	background-image: url("../../public/bg-image2.webp");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -75,10 +75,6 @@
 	width: 100%;
 	height: 100%;
 	z-index: -1;
-}
-
-.nav {
-	font-size: medium;
 }
 
 /* Add media queries for responsive design */
