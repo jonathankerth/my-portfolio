@@ -71,7 +71,7 @@ const projects = [
 		id: 1,
 		title: "Nicolas Cage Fan Page - Front-end",
 		description:
-			"A fan page for Nicolas Cage movies built with React and Bootstrap. Hosted on Netflify. Built to display a backend API I built: NicCage API.",
+			"A fan page for Nicolas Cage movies built with React and Bootstrap. Hosted on Netflify. Built to display a backend API I built: NicCage API. Deployed here: https://niccagecllient.netlify.app/login",
 		link: "https://github.com/jonathankerth/nicCage-client",
 	},
 	{
