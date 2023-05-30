@@ -92,7 +92,6 @@ const projects = [
 export default function Projects() {
 	return (
 		<div className={styles.container}>
-			<div className={styles.backgroundImage}></div>
 			<Head>
 				<title>Projects - Software Engineer Portfolio</title>
 				<meta

@@ -80,7 +80,6 @@ export default function About() {
 
 	return (
 		<div className={styles.container}>
-			<div className={styles.backgroundImage}></div>
 			<Head>
 				<title>About Me - Software Engineer Portfolio</title>
 				<meta

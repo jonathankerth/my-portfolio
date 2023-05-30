@@ -72,20 +72,6 @@
 	align-items: center;
 }
 
-.backgroundImage {
-	background-image: url("../../public/bg-image2.webp");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 200% 200%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: -1;
-	filter: blur(10px);
-}
-
 .resumeImage {
 	background-image: url("/resume-image.png");
 	background-position: bottom;
