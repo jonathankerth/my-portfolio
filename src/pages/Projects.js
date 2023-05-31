@@ -109,7 +109,7 @@ export default function Projects() {
 			</Head>
 			<Navbar />
 			<h1></h1>
-			<ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+			<ul className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6">
 				{projects.map((project) => (
 					<li
 						key={project.id}
@@ -121,7 +121,7 @@ export default function Projects() {
 									href={project.link}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="text-red-600 hover:text-red-800"
+									className="text-blue-600 hover:text-red-800"
 								>
 									{project.title}
 								</a>
