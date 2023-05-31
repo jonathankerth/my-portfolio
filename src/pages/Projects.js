@@ -108,29 +108,33 @@ export default function Projects() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Navbar />
-			<h1></h1>
-			<ul className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6">
-				{projects.map((project) => (
-					<li
-						key={project.id}
-						className="project-container bg-white rounded-lg shadow-md"
-					>
-						<div className="p-6">
-							<h3 className="text-xl font-bold mb-2">
-								<a
-									href={project.link}
-									target="_blank"
-									rel="noopener noreferrer"
-									className="text-blue-600 hover:text-red-800"
-								>
-									{project.title}
-								</a>
-							</h3>
-							<p className="text-gray-700">{project.description}</p>
-						</div>
-					</li>
-				))}
-			</ul>
+			<div className="flex flex-col items-center mt-8">
+				<header className="header text-3xl text-black font-bold my-8 flex justify-center">
+					Here are some of my projects
+				</header>
+				<ul className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6">
+					{projects.map((project) => (
+						<li
+							key={project.id}
+							className="project-container bg-white rounded-lg shadow-md"
+						>
+							<div className="p-6">
+								<h3 className="text-xl font-bold mb-2">
+									<a
+										href={project.link}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="text-blue-600 hover:text-red-800"
+									>
+										{project.title}
+									</a>
+								</h3>
+								<p className="text-gray-700">{project.description}</p>
+							</div>
+						</li>
+					))}
+				</ul>
+			</div>
 			<footer className={styles.footer}>
 				<Link href="/">Back to home</Link>
 			</footer>
