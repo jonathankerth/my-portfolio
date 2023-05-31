@@ -88,6 +88,13 @@ const projects = [
 			"A Pokedex to display traits, pictures and size of Pokemon. Built with Javascript.",
 		link: "https://github.com/jonathankerth/pokemon-js",
 	},
+	{
+		id: 4,
+		title: "KitchenGPT",
+		description:
+			"A GPT-3 powered kitchen assitant. Built with React, Node.js, Express.js, backend hosted on Heroku and Vercel for front-end. Deployed here: https://kitchen-gpt.vercel.app/",
+		link: "https://github.com/jonathankerth/KitchenGPT",
+	},
 ];
 export default function Projects() {
 	return (
