@@ -1,0 +1,8 @@
+.imageWrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	max-width: 500px; /* Adjust the width as per your desired size */
+	max-height: 300px; /* Adjust the height as per your desired size */
+	margin: 0 auto;
+}

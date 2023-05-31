@@ -4,6 +4,8 @@ import styles from "../styles/About.module.css";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
+import ImageCarousel from "./ImageCarousel";
+
 const navLinks = [
 	{ href: "/", label: "Home" },
 	{ href: "/Projects", label: "Projects" },
@@ -92,12 +94,12 @@ export default function About() {
 
 			<main className={styles.main}>
 				<h1 className={styles.title}>About Me</h1>
-				<h2 className={styles.subtitle}>Software Engineer & Web Developer</h2>
+				<h2 className={styles.subtitle}>Jonathan Kerth - Software Engineer</h2>
 				<p className={styles.description}>
-					I&apos;m a software engineer and web developer with a passion for
-					building scalable and efficient web applications. I have experience
-					working with modern web development technologies such as React,
-					Next.js, Node.js, Express, and MongoDB.
+					I&apos;m a software engineer with a passion for building scalable and
+					efficient web applications. I have experience working with modern web
+					development technologies such as React, Next.js, Node.js, Express,
+					chatGPT, and MongoDB.
 				</p>
 				<p className={styles.description}>
 					I believe that continuous learning and adapting to new technologies is
@@ -105,7 +107,6 @@ export default function About() {
 					enjoy reading about technology trends, learning new programming
 					languages, and exploring new libraries and frameworks.
 				</p>
-
 				<h3 className={styles.descriptionH3}>Tech Stack</h3>
 				<div className={styles.techStack}>
 					{techStack.map((tech, index) => (
@@ -115,6 +116,7 @@ export default function About() {
 						</div>
 					))}
 				</div>
+				<ImageCarousel />
 			</main>
 
 			<footer className={styles.footer}>
