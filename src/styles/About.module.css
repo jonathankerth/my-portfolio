@@ -33,7 +33,7 @@
 }
 
 .description {
-	text-align: left;
+	text-align: center;
 	line-height: 1.5;
 	font-size: 1.8rem; /* Adjusted font size for better scaling */
 	max-width: 100%; /* Changed max-width to 100% for full responsiveness */

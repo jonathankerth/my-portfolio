@@ -103,9 +103,11 @@ export default function About() {
 				</p>
 				<p className={styles.description}>
 					I believe that continuous learning and adapting to new technologies is
-					essential in this ever-evolving industry. When I&apos;m not coding, I
-					enjoy reading about technology trends, learning new programming
-					languages, and exploring new libraries and frameworks.
+					essential in this ever-evolving industry. <br></br>
+					<br></br>When I&apos;m not coding, I enjoy trying new restaurants,
+					playing chess, cooking, hanging out with my pets and planning which
+					country my wife and I will visit next! <br></br>Thanks for stopping
+					by! Please reach out for any questions or opportunities.
 				</p>
 				<h3 className={styles.descriptionH3}>Tech Stack</h3>
 				<div className={styles.techStack}>
