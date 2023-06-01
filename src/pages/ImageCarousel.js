@@ -36,7 +36,6 @@ const ImageCarousel = () => {
 					<Image
 						src="/../public/IMG_4902.jpeg"
 						alt="Image 3"
-						layout="responsive"
 						width={600}
 						height={400}
 					/>

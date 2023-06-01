@@ -116,7 +116,9 @@ export default function About() {
 						</div>
 					))}
 				</div>
-				<ImageCarousel />
+				<div className="slideshow">
+					<ImageCarousel />
+				</div>
 			</main>
 
 			<footer className={styles.footer}>
