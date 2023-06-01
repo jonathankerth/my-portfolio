@@ -21,7 +21,7 @@ const Navbar = () => {
 	};
 
 	return (
-		<nav className="fixed top-0 left-0 z-50 w-full py-4">
+		<nav className="fixed top-0 left-0 z-50 w-full py-4 bg-gray-500">
 			<div className="max-w-screen-lg mx-auto px-4 md:px-8 flex justify-between items-center">
 				<div className="hidden md:block">
 					<ul className="flex space-x-8">
@@ -29,7 +29,7 @@ const Navbar = () => {
 							<li key={href}>
 								<Link
 									href={href}
-									className="text-gray-800 hover:text-gray-800 text-lg md:text-xl"
+									className="text-white hover:text-gray-200 text-xl md:text-2xl font-bold"
 								>
 									{label}
 								</Link>
@@ -41,7 +41,7 @@ const Navbar = () => {
 					<button
 						onClick={toggleMobileMenu}
 						type="button"
-						className="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600"
+						className="text-white hover:text-gray-200 focus:outline-none focus:text-gray-200"
 						aria-label="toggle menu"
 					>
 						{isMobileMenuOpen ? <FaTimes /> : <FaBars />}
@@ -49,13 +49,13 @@ const Navbar = () => {
 				</div>
 			</div>
 			{isMobileMenuOpen && (
-				<div className="md:hidden absolute top-16 right-0 w-full">
+				<div className="md:hidden absolute top-16 right-0 w-full bg-gray-800">
 					<ul className="px-8 py-4">
 						{navLinks.map(({ href, label }) => (
 							<li key={href} className="py-2">
 								<Link
 									href={href}
-									className="text-gray-600 hover:text-gray-800 text-lg"
+									className="text-white hover:text-gray-200 text-xl font-bold"
 								>
 									{label}
 								</Link>

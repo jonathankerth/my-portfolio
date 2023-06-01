@@ -1,6 +1,6 @@
 .container {
 	min-height: 100vh;
-	padding: 0 0.5rem;
+	padding: 0 2rem; /* Increased padding for better spacing on smaller screens */
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -8,7 +8,7 @@
 }
 
 .main {
-	padding: 5rem 0;
+	padding: 3rem 0; /* Decreased padding for better content visibility on smaller screens */
 	flex: 1;
 	display: flex;
 	flex-direction: column;
@@ -19,37 +19,43 @@
 .title {
 	margin: 0;
 	line-height: 1.15;
-	font-size: 4rem;
+	font-size: 3.5rem; /* Adjusted font size for better scaling */
 	color: #333333;
+	text-align: center;
 }
 
 .subtitle {
 	margin: 0;
-	font-size: 2.5rem;
+	font-size: 2rem;
 	font-weight: bold;
 	color: #333333;
+	text-align: center;
 }
 
 .description {
 	text-align: left;
 	line-height: 1.5;
-	font-size: 2rem;
-	max-width: 800px;
+	font-size: 1.8rem; /* Adjusted font size for better scaling */
+	max-width: 100%; /* Changed max-width to 100% for full responsiveness */
 }
 
 .techStack {
-	display: flex;
-	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	display: grid;
+	grid-template-columns: repeat(
+		auto-fit,
+		minmax(120px, 1fr)
+	); /* Increased minmax value for better scaling */
 	gap: 1rem;
-	max-width: 800px;
+	max-width: 100%; /* Changed max-width to 100% for full responsiveness */
 	margin-top: 1rem;
 }
 
 .descriptionH3 {
 	margin: 0;
-	font-size: 2.5rem;
+	font-size: 2rem; /* Adjusted font size for better scaling */
 	font-weight: bold;
 	color: #fff;
+	text-align: center;
 }
 
 .techStackItem {
@@ -64,7 +70,7 @@
 }
 
 .icon {
-	font-size: 3rem;
+	font-size: 2.5rem; /* Adjusted font size for better scaling */
 }
 
 .footer {

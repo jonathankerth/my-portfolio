@@ -31,14 +31,18 @@
 	align-items: center;
 }
 
-.title a {
-	color: #0070f3;
-	text-decoration: none;
-}
-
 .title {
 	padding-bottom: 5%;
 	color: #000000;
+	margin: 0;
+	line-height: 1.15;
+	font-size: 3rem;
+	text-align: center;
+}
+
+.title a {
+	color: #0070f3;
+	text-decoration: none;
 }
 
 .title a:hover,
@@ -47,33 +51,26 @@
 	text-decoration: underline;
 }
 
-.title {
-	margin: 0;
-	line-height: 1.15;
-	font-size: 3rem;
-	text-align: center;
-}
-
 .description {
 	line-height: 1.5;
 	font-size: 1.5rem;
 	text-align: center;
+	color: #000000;
 }
 
 .code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
 		monospace;
 	font-size: 1.5rem;
-	border-color: white;
-	border-width: 0px;
+	border: none;
 	border-radius: 5px;
 	padding: 0.75rem;
+	transition: font-size 0.3s ease;
 }
 
 .code:hover,
 .code:focus {
 	font-size: 1.75rem;
-	transition: all 0.3s ease;
 }
 
 .grid {
@@ -87,7 +84,6 @@
 
 .card {
 	margin: 1rem;
-	font-size: bold, 6rem;
 	flex-basis: 45%;
 	padding: 1.5rem;
 	text-align: left;
@@ -95,7 +91,7 @@
 	text-decoration: none;
 	border: 3px solid #fff;
 	border-radius: 30px;
-	transition: color 0.15s ease, border-color 0.15s ease;
+	transition: border-color 0.15s ease;
 }
 
 .card:hover,
@@ -118,8 +114,4 @@
 
 .logo {
 	height: 1em;
-}
-
-.description {
-	color: #000000;
 }
