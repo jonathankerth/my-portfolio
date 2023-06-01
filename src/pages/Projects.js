@@ -109,9 +109,6 @@ export default function Projects() {
 			</Head>
 			<Navbar />
 			<div className="flex flex-col items-center mt-8">
-				<header className="header text-3xl text-black font-bold my-8 flex justify-center">
-					Here are some of my projects
-				</header>
 				<ul className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6">
 					{projects.map((project) => (
 						<li
