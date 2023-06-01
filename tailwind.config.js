@@ -7,13 +7,11 @@ module.exports = {
 	],
 	theme: {
 		extend: {
+			colors: {
+				"red-clay": "#b25042", // adding red clay color to the palette
+			},
 			transitionProperty: {
 				scale: "transform",
-			},
-			backgroundImage: {
-				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-				"gradient-conic":
-					"conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
 			},
 		},
 	},
