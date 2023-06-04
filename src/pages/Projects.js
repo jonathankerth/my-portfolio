@@ -95,6 +95,13 @@ const projects = [
 			"A GPT-3 powered kitchen assitant. Built with React, Node.js, Express.js, backend hosted on Heroku and Vercel for front-end. Deployed here: https://kitchen-gpt.vercel.app/",
 		link: "https://github.com/jonathankerth/KitchenGPT",
 	},
+	{
+		id: 5,
+		title: "Weather-App",
+		description:
+			"Built on Next.js using Tailwind.CSS to display real-time data from the OpenWeather API. Deployed here using Vercel: https://weather-app-woad-two.vercel.app/",
+		link: "https://github.com/jonathankerth/weather-app",
+	},
 ];
 export default function Projects() {
 	return (
