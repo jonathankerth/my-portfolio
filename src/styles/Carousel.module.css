@@ -1,13 +1,22 @@
 .imageWrapper {
 	position: relative;
-	width: 100%;
-	height: auto; /* Changed to auto for responsive height */
-	max-width: 625px;
-	max-height: 375px;
+	max-width: 100%;
+	max-height: 100%;
 	margin: 0 auto;
+
+	/* Media Query for Large Screens */
+	@media (min-width: 1024px) {
+		max-width: 80%;
+		max-height: 80%;
+	}
 }
 
 .slideImage {
-	width: 100%; /* Changed to width for responsive width */
-	height: auto; /* Changed to auto for responsive height */
+	width: 100%;
+	height: auto;
+
+	/* Media Query for Large Screens */
+	@media (min-width: 1024px) {
+		width: 80%;
+	}
 }

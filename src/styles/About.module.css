@@ -17,11 +17,13 @@
 }
 
 .title {
-	margin: 0;
+	margin-top: 30px;
 	line-height: 1.15;
 	font-size: 3.5rem; /* Adjusted font size for better scaling */
 	color: #333333;
 	text-align: center;
+	font-weight: bold;
+	margin-bottom: 1rem;
 }
 
 .subtitle {
@@ -37,24 +39,61 @@
 	line-height: 1.5;
 	font-size: 1.8rem; /* Adjusted font size for better scaling */
 	max-width: 100%; /* Changed max-width to 100% for full responsiveness */
+	color: #fff;
+	margin-bottom: 3rem;
 }
 
 .techStack {
-	display: grid;
-	grid-template-columns: repeat(
-		auto-fit,
-		minmax(120px, 1fr)
-	); /* Increased minmax value for better scaling */
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
 	gap: 1rem;
 	max-width: 100%; /* Changed max-width to 100% for full responsiveness */
-	margin-top: 1rem;
+	margin-top: 3rem;
+}
+
+.techStackItem {
+	color: #333333;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	text-align: center;
+	background-color: #f1f1f1;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
+	transform: perspective(1px) translateZ(0);
+}
+
+.techStackItem:hover {
+	background-color: #e1e1f1;
+	transform: scale(1.1);
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+	font-size: 2.5rem;
+	transition: all 0.3s ease;
+}
+
+.techStackItem:hover .icon {
+	transform: rotate(360deg);
+}
+
+.techStackItem p {
+	margin: 0;
+	font-size: 1.2rem;
 }
 
 .descriptionH3 {
 	margin: 0;
-	font-size: 2rem; /* Adjusted font size for better scaling */
+	font-size: 3rem; /* Adjusted font size for better scaling */
 	font-weight: bold;
-	color: #fff;
+	color: #333333;
 	text-align: center;
 }
 

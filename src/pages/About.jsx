@@ -2,8 +2,6 @@ import Head from "next/head";
 import Link from "next/link";
 import styles from "../styles/About.module.css";
 import { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
-
 import ImageCarousel from "./ImageCarousel";
 
 const navLinks = [
@@ -44,7 +42,7 @@ const Navbar = () => {
 						className="text-white hover:text-gray-200 focus:outline-none focus:text-gray-200"
 						aria-label="toggle menu"
 					>
-						{isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+						{isMobileMenuOpen ? "Close Menu" : "Open Menu"}
 					</button>
 				</div>
 			</div>
@@ -70,14 +68,17 @@ const Navbar = () => {
 
 export default function About() {
 	const techStack = [
-		{ name: "React", icon: "🚀" },
-		{ name: "Next.js", icon: "⚡" },
-		{ name: "Node.js", icon: "💚" },
-		{ name: "Express", icon: "🛤️" },
-		{ name: "MongoDB", icon: "🍃" },
-		{ name: "Bootstrap", icon: "🥾" },
-		{ name: "Tailwind", icon: "🌬️" },
-		{ name: "Redux", icon: "🔄" },
+		"React",
+		"Next.js",
+		"Node.js",
+		"Express",
+		"MongoDB",
+		"Bootstrap",
+		"Tailwind CSS",
+		"Redux",
+		"Atatus",
+		"Jest",
+		"Cucumber",
 	];
 
 	return (
@@ -94,7 +95,6 @@ export default function About() {
 
 			<main className={styles.main}>
 				<h1 className={styles.title}>About Me</h1>
-				<h2 className={styles.subtitle}>Jonathan Kerth - Software Engineer</h2>
 				<p className={styles.description}>
 					I&apos;m a software engineer with a passion for building scalable and
 					efficient web applications. I have experience working with modern web
@@ -113,12 +113,11 @@ export default function About() {
 				<div className={styles.techStack}>
 					{techStack.map((tech, index) => (
 						<div key={index} className={styles.techStackItem}>
-							<div className={styles.icon}>{tech.icon}</div>
-							<p>{tech.name}</p>
+							<p>{tech}</p>
 						</div>
 					))}
 				</div>
-				<div className="slideshow">
+				<div className="slideshow mt-20">
 					<ImageCarousel />
 				</div>
 			</main>
