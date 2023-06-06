@@ -15,7 +15,7 @@ export default function Home() {
 			</Head>
 
 			<main className={styles.main}>
-				<h1 className={styles.title}>Welcome, thanks for checking me out!</h1>
+				<h1 className={styles.title}>Welcome,</h1>
 
 				<p className={styles.description}>
 					I&apos;m<code className={styles.code}>Jonathan Kerth</code>

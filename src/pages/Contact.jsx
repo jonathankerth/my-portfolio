@@ -86,14 +86,14 @@ export default function Contact() {
 			</Head>
 			<Navbar className="navBar" />
 			<main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-				<h1 className="text-6xl font-bold">Contact me here!</h1>
+				<h1 className="text-6xl font-bold text-white">Contact me here!</h1>
 				<div className="flex items-center mt-8 space-x-4">
 					<a
 						href="mailto:jonathanpkerth@gmail.com"
 						target="_blank"
 						rel="noopener noreferrer"
 						aria-label="Email"
-						className="group"
+						className="group text-white"
 					>
 						<FaEnvelope className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
 					</a>
@@ -102,7 +102,7 @@ export default function Contact() {
 						target="_blank"
 						rel="noopener noreferrer"
 						aria-label="LinkedIn"
-						className="group"
+						className="group text-white"
 					>
 						<FaLinkedin className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
 					</a>
@@ -111,7 +111,7 @@ export default function Contact() {
 						target="_blank"
 						rel="noopener noreferrer"
 						aria-label="GitHub"
-						className="group"
+						className="group text-white"
 					>
 						<FaGithub className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
 					</a>
@@ -120,7 +120,7 @@ export default function Contact() {
 						target="_blank"
 						rel="noopener noreferrer"
 						aria-label="Stack Overflow"
-						className="group"
+						className="group text-white"
 					>
 						<FaStackOverflow className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
 					</a>
@@ -129,7 +129,7 @@ export default function Contact() {
 						target="_blank"
 						rel="noopener noreferrer"
 						aria-label="Twitter"
-						className="group"
+						className="group text-white"
 					>
 						<FaTwitter className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
 					</a>
