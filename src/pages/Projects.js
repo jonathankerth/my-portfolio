@@ -85,7 +85,7 @@ const projects = [
 		id: 3,
 		title: "Pokedex",
 		description:
-			"A Pokedex to display traits, pictures and size of Pokemon. Built with Javascript.",
+			"A Pokedex to display traits, pictures and size of Pokemon. Utilizing the pokeapi.co Built with Javascript.",
 		link: "https://github.com/jonathankerth/pokemon-js",
 	},
 	{
