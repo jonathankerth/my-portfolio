@@ -102,6 +102,13 @@ const projects = [
 			"Built on Next.js using Tailwind.CSS to display real-time data from the OpenWeather API. Deployed here using Vercel: https://weather-app-woad-two.vercel.app/",
 		link: "https://github.com/jonathankerth/weather-app",
 	},
+	{
+		id: 6,
+		title: "Meet App",
+		description:
+			"A serverless, PWA built with React/Node.js using TDD. It fetches upcoming tech events by utilizing the Google Calendar API and authentications using Oauth2. Hosted on gh-pages: https://jonathankerth.github.io/meet/",
+		link: "https://github.com/jonathankerth/meet",
+	},
 ];
 export default function Projects() {
 	return (
