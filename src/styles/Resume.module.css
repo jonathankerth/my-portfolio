@@ -1,61 +1,43 @@
 .container {
+	background: url("https://images.unsplash.com/photo-1533335121856-52d185e85ec1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80")
+		no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 	min-height: 100vh;
-	padding: 0 0.5rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	padding: 0;
 }
 
 .main {
-	padding: 5rem 0;
+	padding: 2rem;
 	flex: 1;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	width: 100%;
 }
 
 .title {
-	margin: 25px;
+	margin: 1rem;
 	line-height: 1.15;
-	font-size: 4rem;
+	font-size: 2.5rem;
 	text-align: center;
-	color: #000;
-}
-
-.resumeContent {
-	max-width: 800px;
-	text-align: left;
-	margin-bottom: 2rem;
-}
-
-.section {
-	margin-bottom: 2rem;
-}
-
-.sectionTitle {
-	margin-bottom: 1rem;
-}
-
-.sectionSubtitle {
-	margin-bottom: 0.5rem;
-}
-
-.download {
-	margin-bottom: 2rem;
-}
-
-.download a {
-	padding: 0.5rem 1rem;
-	background-color: #0070f3;
 	color: #fff;
-	text-decoration: none;
-	border-radius: 4px;
 }
 
-.download a:hover {
-	background-color: #0050c3;
+.resumeImage {
+	background-image: url("/resume-image.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 100%;
+	height: auto;
 }
 
 .footer {
@@ -67,45 +49,18 @@
 	align-items: center;
 }
 
-.footer a {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.resumeImage {
-	background-image: url("/resume-image.png");
-	background-position: bottom;
-	background-repeat: no-repeat;
-	background-size: contain;
-	width: 300%;
-	height: 100vh;
-	z-index: 1;
-}
-
-/* Add media queries for responsive design */
-@media screen and (max-width: 1024px) {
-	.title {
-		font-size: 3rem;
+/* Responsive styles */
+@media only screen and (min-width: 600px) {
+	.main {
+		padding: 5rem 0;
 	}
-}
 
-@media screen and (max-width: 768px) {
 	.title {
-		font-size: 2rem;
+		font-size: 4rem;
+		margin: 25px;
 	}
 
 	.resumeImage {
-		width: 400%;
-	}
-}
-
-@media screen and (max-width: 480px) {
-	.title {
-		font-size: 1.5rem;
-	}
-
-	.resumeImage {
-		width: 600%;
+		height: 100vh;
 	}
 }

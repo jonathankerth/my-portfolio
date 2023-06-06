@@ -1,4 +1,10 @@
 .container {
+	background: url("https://images.unsplash.com/photo-1533335121856-52d185e85ec1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80")
+		no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 	min-height: 100vh;
 	padding: 0 0.5rem;
 	display: flex;
@@ -33,10 +39,10 @@
 
 .title {
 	padding-bottom: 5%;
-	color: #000000;
+	color: #fff;
 	margin: 0;
 	line-height: 1.15;
-	font-size: 3rem;
+	font-size: 3.5rem;
 	text-align: center;
 }
 
@@ -53,9 +59,9 @@
 
 .description {
 	line-height: 1.5;
-	font-size: 1.5rem;
+	font-size: 3.5rem;
 	text-align: center;
-	color: #000000;
+	color: #fff;
 }
 
 .code {

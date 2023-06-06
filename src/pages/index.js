@@ -17,9 +17,7 @@ export default function Home() {
 			<main className={styles.main}>
 				<h1 className={styles.title}>Welcome,</h1>
 
-				<p className={styles.description}>
-					I&apos;m<code className={styles.code}>Jonathan Kerth</code>
-				</p>
+				<p className={styles.description}>I&apos;m Jonathan Kerth</p>
 
 				<div className={styles.grid}>
 					<Link href="/Projects" className={styles.card}>

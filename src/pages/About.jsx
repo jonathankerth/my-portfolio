@@ -19,7 +19,7 @@ const Navbar = () => {
 	};
 
 	return (
-		<nav className="fixed top-0 left-0 z-50 w-full py-4 bg-gray-500">
+		<nav className="fixed top-0 left-0 z-50 w-full py-4 bg-green-900">
 			<div className="max-w-screen-lg mx-auto px-4 md:px-8 flex justify-between items-center">
 				<div className="hidden md:block">
 					<ul className="flex space-x-8">
@@ -100,15 +100,14 @@ export default function About() {
 					I&apos;m a software engineer with a passion for building scalable and
 					efficient web applications. I have experience working with modern web
 					development technologies such as React, Next.js, Node.js, Express,
-					chatGPT, and MongoDB.
+					chatGPT, and MongoDB. I believe that continuous learning and adapting
+					to new technologies is essential in this ever-evolving industry.
 				</p>
 				<p className={styles.description}>
-					I believe that continuous learning and adapting to new technologies is
-					essential in this ever-evolving industry. <br></br>
-					<br></br>When I&apos;m not coding, I enjoy trying new restaurants,
-					playing chess, cooking, hanging out with my pets and planning which
-					country my wife and I will visit next! <br></br>Thanks for stopping
-					by! Please reach out for any questions or opportunities.
+					When I&apos;m not coding, I enjoy trying new restaurants, playing
+					chess, cooking, hanging out with my pets and planning which country my
+					wife and I will visit next! <br></br>Thanks for stopping by! Please
+					reach out for any questions or opportunities.
 				</p>
 				<h3 className={styles.descriptionH3}>Tech Stack</h3>
 				<div className={styles.techStack}>

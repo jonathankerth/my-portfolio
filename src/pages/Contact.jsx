@@ -26,7 +26,7 @@ const Navbar = () => {
 	};
 
 	return (
-		<nav className="fixed top-0 left-0 z-50 w-full py-4 bg-gray-500">
+		<nav className="fixed top-0 left-0 z-50 w-full py-4 bg-green-900">
 			<div className="max-w-screen-lg mx-auto px-4 md:px-8 flex justify-between items-center">
 				<div className="hidden md:block">
 					<ul className="flex space-x-8">
@@ -75,69 +75,71 @@ const Navbar = () => {
 
 export default function Contact() {
 	return (
-		<div className="flex flex-col items-center justify-center min-h-screen">
-			<Head>
-				<title>Contact - Software Engineer Portfolio</title>
-				<meta
-					name="description"
-					content="Get in touch with me for collaborations or opportunities"
-				/>
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
-			<Navbar className="navBar" />
-			<main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-				<h1 className="text-6xl font-bold text-white">Contact me here!</h1>
-				<div className="flex items-center mt-8 space-x-4">
-					<a
-						href="mailto:jonathanpkerth@gmail.com"
-						target="_blank"
-						rel="noopener noreferrer"
-						aria-label="Email"
-						className="group text-white"
-					>
-						<FaEnvelope className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
-					</a>
-					<a
-						href="https://www.linkedin.com/in/jonathankerth"
-						target="_blank"
-						rel="noopener noreferrer"
-						aria-label="LinkedIn"
-						className="group text-white"
-					>
-						<FaLinkedin className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
-					</a>
-					<a
-						href="https://github.com/jonathankerth"
-						target="_blank"
-						rel="noopener noreferrer"
-						aria-label="GitHub"
-						className="group text-white"
-					>
-						<FaGithub className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
-					</a>
-					<a
-						href="https://stackoverflow.com/users/21791075/jonathan-kerth"
-						target="_blank"
-						rel="noopener noreferrer"
-						aria-label="Stack Overflow"
-						className="group text-white"
-					>
-						<FaStackOverflow className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
-					</a>
-					<a
-						href="https://twitter.com/jonathankerth"
-						target="_blank"
-						rel="noopener noreferrer"
-						aria-label="Twitter"
-						className="group text-white"
-					>
-						<FaTwitter className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
-					</a>
-				</div>
-			</main>
-			<footer className="flex items-center justify-center w-full h-24 border-t">
-				<Link href="/">Back to home</Link>
-			</footer>
+		<div className={Styles.container}>
+			<div className="flex flex-col items-center justify-center min-h-screen">
+				<Head>
+					<title>Contact - Software Engineer Portfolio</title>
+					<meta
+						name="description"
+						content="Get in touch with me for collaborations or opportunities"
+					/>
+					<link rel="icon" href="/favicon.ico" />
+				</Head>
+				<Navbar className="navBar" />
+				<main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
+					<h1 className="text-6xl font-bold text-white">Contact me here!</h1>
+					<div className="flex items-center mt-8 space-x-4">
+						<a
+							href="mailto:jonathanpkerth@gmail.com"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="Email"
+							className="group text-white"
+						>
+							<FaEnvelope className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
+						</a>
+						<a
+							href="https://www.linkedin.com/in/jonathankerth"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="LinkedIn"
+							className="group text-white"
+						>
+							<FaLinkedin className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
+						</a>
+						<a
+							href="https://github.com/jonathankerth"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="GitHub"
+							className="group text-white"
+						>
+							<FaGithub className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
+						</a>
+						<a
+							href="https://stackoverflow.com/users/21791075/jonathan-kerth"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="Stack Overflow"
+							className="group text-white"
+						>
+							<FaStackOverflow className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
+						</a>
+						<a
+							href="https://twitter.com/jonathankerth"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="Twitter"
+							className="group text-white"
+						>
+							<FaTwitter className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
+						</a>
+					</div>
+				</main>
+				<footer className="flex items-center justify-center w-full h-24 border-t">
+					<Link href="/">Back to home</Link>
+				</footer>
+			</div>
 		</div>
 	);
 }
