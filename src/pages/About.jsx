@@ -79,6 +79,7 @@ export default function About() {
 		"Atatus",
 		"Jest",
 		"Cucumber",
+		"Progressive Web Apps (PWAs)",
 	];
 
 	return (
