@@ -136,7 +136,7 @@ export default function Contact() {
 						</a>
 					</div>
 				</main>
-				<footer className="flex items-center justify-center w-full h-24 border-t">
+				<footer className="flex items-center justify-center w-full h-24 border-t text-white">
 					<Link href="/">Back to home</Link>
 				</footer>
 			</div>
