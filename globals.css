@@ -4,13 +4,13 @@
 
 :root {
 	--foreground-rgb: 207, 164, 124; /* updated the RGB value to desert clay color */
-	--background-rgb: 178, 80, 66; /* updated to red clay color */
+	--background-rgb: 20, 83, 45; /* updated to green-900 color */
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
 		--foreground-rgb: 207, 164, 124; /* updated the RGB value to desert clay color */
-		--background-rgb: 178, 80, 66; /* updated to red clay color */
+		--background-rgb: 20, 83, 45; /* updated to green-900 color */
 	}
 }
 
