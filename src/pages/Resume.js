@@ -81,7 +81,9 @@ export default function Resume() {
 			<main className={styles.main}>
 				<h1 className={styles.title}>My Resume</h1>
 				<div className={styles.resumeImage}></div>
-				<div className={styles.download}>
+				<div
+					className={`${styles.download} bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full`}
+				>
 					<a href="/resume-image.png" download>
 						Download My Resume
 					</a>

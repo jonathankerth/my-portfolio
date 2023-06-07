@@ -69,6 +69,7 @@
 	justify-content: center;
 	align-items: center;
 	flex-grow: 1;
+	color: #fff;
 }
 
 /* Add media queries for responsive design */

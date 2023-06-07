@@ -49,6 +49,13 @@
 	align-items: center;
 }
 
+.footer a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+}
+
 /* Responsive styles */
 @media only screen and (min-width: 600px) {
 	.main {
