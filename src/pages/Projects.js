@@ -109,6 +109,13 @@ const projects = [
 			"A serverless, PWA built with React/Node.js using TDD. It fetches upcoming tech events by utilizing the Google Calendar API and authentications using Oauth2. Hosted on gh-pages: https://jonathankerth.github.io/meet/",
 		link: "https://github.com/jonathankerth/meet",
 	},
+	{
+		id: 7,
+		title: "React Native Chat App",
+		description:
+			"This project involves building a mobile chat application using React Native. The app provides users with a chat interface and options to share images and their location.",
+		link: "https://github.com/jonathankerth/chat-app",
+	},
 ];
 export default function Projects() {
 	return (
