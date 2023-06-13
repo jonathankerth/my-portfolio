@@ -69,6 +69,7 @@ const Navbar = () => {
 export default function About() {
 	const techStack = [
 		"React",
+		"React Native",
 		"Next.js",
 		"Node.js",
 		"Express",
