@@ -4,6 +4,7 @@
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
+
 	background-size: cover;
 	min-height: 100vh;
 	padding: 0 0.5rem;
@@ -81,22 +82,22 @@
 }
 
 .grid {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: repeat(
+		2,
+		1fr
+	); /* Adjust the number of columns as needed */
+	grid-gap: 1rem; /* Adjust the gap between the boxes as needed */
 	max-width: 800px;
 	margin-top: 3rem;
 }
 
 .card {
-	margin: 1rem;
-	flex-basis: 45%;
 	padding: 1.5rem;
 	text-align: left;
 	color: #ffffff;
 	text-decoration: none;
-	border: 3px solid #fff;
+	border: 5px solid #fff;
 	border-radius: 30px;
 	transition: border-color 0.15s ease;
 }
@@ -110,12 +111,12 @@
 
 .card h2 {
 	margin: 0 0 1rem 0;
-	font-size: 3rem;
+	font-size: 3.5rem;
 }
 
 .card p {
 	margin: 0;
-	font-size: 1.25rem;
+	font-size: 2rem;
 	line-height: 1.5;
 }
 
