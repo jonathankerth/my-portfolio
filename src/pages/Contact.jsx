@@ -4,6 +4,7 @@ import {
 	FaGithub,
 	FaStackOverflow,
 	FaEnvelope,
+	FaMedium,
 } from "react-icons/fa";
 import Head from "next/head";
 import Link from "next/link";
@@ -133,6 +134,15 @@ export default function Contact() {
 							className="group text-white"
 						>
 							<FaTwitter className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
+						</a>
+						<a
+							href="https://medium.com/@jonathanpkerth"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="Medium"
+							className="group text-white"
+						>
+							<FaMedium className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
 						</a>
 					</div>
 				</main>
