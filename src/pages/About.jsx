@@ -105,10 +105,10 @@ export default function About() {
 					and learn in the process.
 				</p>
 				<p className={styles.description}>
-					Outside the world of code, I&apos;m a food enthusiast, chess player,
-					home cook, pet lover, and an aspiring globetrotter along with my wife.
-					Feel free to connect for any opportunities or queries. Thanks for
-					dropping by!
+					Outside the world of code, I&apos;m a food enthusiast, self proclaimed
+					nerd, home cook, pet parent, and traveling the globe with my partner.
+					Feel free to connect for any opportunities or questions about my
+					projects. Thanks for dropping by!
 				</p>
 				<h3 className={styles.descriptionH3}>My Tech Stack</h3>
 				<div className={styles.techStack}>
