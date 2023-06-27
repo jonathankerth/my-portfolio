@@ -86,31 +86,31 @@ export default function About() {
 	return (
 		<div className={styles.container}>
 			<Head>
-				<title>About Me - Software Engineer Portfolio</title>
+				<title>About - Software Engineer | My Portfolio</title>
 				<meta
 					name="description"
-					content="Learn more about my experience and the technologies I use"
+					content="Discover more about my experience and the diverse technologies I utilize"
 				/>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Navbar />
 
 			<main className={styles.main}>
-				<h1 className={styles.title}>About Me</h1>
+				<h1 className={styles.title}>Who am I?</h1>
 				<p className={styles.description}>
-					I&apos;m a software engineer with a passion for building scalable and
-					efficient web applications. I have experience working with modern web
-					development technologies such as React, Next.js, Node.js, Express,
-					chatGPT, and MongoDB. I believe that continuous learning and adapting
-					to new technologies is essential in this ever-evolving industry.
+					I&apos;m a dedicated and passionate software engineer specializing in
+					building scalable, efficient web applications. With expertise in
+					cutting-edge technologies like React, Next.js, Node.js, Express,
+					ChatGPT, and MongoDB, I&apos;m always ready to tackle new challenges
+					and learn in the process.
 				</p>
 				<p className={styles.description}>
-					When I&apos;m not coding, I enjoy trying new restaurants, playing
-					chess, cooking, hanging out with my pets and planning which country my
-					wife and I will visit next! <br></br>Thanks for stopping by! Please
-					reach out for any questions or opportunities.
+					Outside the world of code, I&apos;m a food enthusiast, chess player,
+					home cook, pet lover, and an aspiring globetrotter along with my wife.
+					Feel free to connect for any opportunities or queries. Thanks for
+					dropping by!
 				</p>
-				<h3 className={styles.descriptionH3}>Tech Stack</h3>
+				<h3 className={styles.descriptionH3}>My Tech Stack</h3>
 				<div className={styles.techStack}>
 					{techStack.map((tech, index) => (
 						<div key={index} className={styles.techStackItem}>
@@ -124,7 +124,7 @@ export default function About() {
 			</main>
 
 			<footer className={styles.footer}>
-				<Link href="/">← Back to home</Link>
+				<Link href="/">← Return to Home</Link>
 			</footer>
 		</div>
 	);
