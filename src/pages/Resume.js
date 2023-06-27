@@ -79,7 +79,6 @@ export default function Resume() {
 			</Head>
 			<Navbar />
 			<main className={styles.main}>
-				<h1 className={styles.title}>My Resume</h1>
 				<div className={styles.resumeImage}></div>
 				<div
 					className={`${styles.download} bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full`}
