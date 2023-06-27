@@ -135,7 +135,7 @@ export default function Projects() {
 						{projects.map((project) => (
 							<li
 								key={project.id}
-								className="project-container bg-white rounded-lg shadow-md"
+								className="project-container bg-white rounded-lg shadow-md mt-9"
 							>
 								<div className="p-6">
 									<h3 className="text-xl font-bold mb-2">
@@ -143,7 +143,7 @@ export default function Projects() {
 											href={project.link}
 											target="_blank"
 											rel="noopener noreferrer"
-											className="text-blue-600 hover:text-red-800"
+											className="text-green-900 hover:text-green-400"
 										>
 											{project.title}
 										</a>
