@@ -130,7 +130,7 @@ export default function Projects() {
 			</Head>
 			<Navbar />
 			<div className="flex flex-col items-center mt-30">
-				<ul className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6 mt-8 ">
+				<ul className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6 mt-15 ">
 					{projects.map((project) => (
 						<li
 							key={project.id}
