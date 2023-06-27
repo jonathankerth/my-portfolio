@@ -131,11 +131,11 @@ export default function Projects() {
 			<Navbar />
 			<div className="projects mt-50">
 				<div className="flex flex-col items-center ">
-					<ul className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6  ">
+					<ul className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6  mt-9">
 						{projects.map((project) => (
 							<li
 								key={project.id}
-								className="project-container bg-white rounded-lg shadow-md mt-9"
+								className="project-container bg-white rounded-lg shadow-md mt-3"
 							>
 								<div className="p-6">
 									<h3 className="text-xl font-bold mb-2">
