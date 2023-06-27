@@ -129,7 +129,7 @@ export default function Projects() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Navbar />
-			<div className="projects pt-15">
+			<div className="projects mt-50">
 				<div className="flex flex-col items-center ">
 					<ul className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-6  ">
 						{projects.map((project) => (
