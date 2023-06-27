@@ -76,6 +76,10 @@
 	color: #fff;
 }
 
+nav.fixed {
+	z-index: 100; /* Increase the z-index value */
+}
+
 /* Add media queries for responsive design */
 @media screen and (max-width: 1024px) {
 	.title {
