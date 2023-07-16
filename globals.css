@@ -3,21 +3,21 @@
 @tailwind utilities;
 
 :root {
-	--foreground-rgb: 207, 164, 124; /* updated the RGB value to desert clay color */
-	--background-rgb: 20, 83, 45; /* updated to green-900 color */
+  --foreground-rgb: 207, 164, 124; /* updated the RGB value to desert clay color */
+  --background-rgb: 20, 83, 45; /* updated to green-900 color */
 }
 
 @media (prefers-color-scheme: dark) {
-	:root {
-		--foreground-rgb: 207, 164, 124; /* updated the RGB value to desert clay color */
-		--background-rgb: 20, 83, 45; /* updated to green-900 color */
-	}
+  :root {
+    --foreground-rgb: 207, 164, 124; /* updated the RGB value to desert clay color */
+    --background-rgb: 20, 83, 45; /* updated to green-900 color */
+  }
 }
 
 body {
-	color: rgb(var(--foreground-rgb));
-	background: rgb(var(--background-rgb));
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }

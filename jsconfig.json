@@ -1,14 +1,14 @@
 {
-	"compilerOptions": {
-		"allowJs": true,
-		"checkJs": false,
-		"noEmit": true,
-		"target": "esnext",
-		"module": "esnext",
-		"moduleResolution": "node",
-		"esModuleInterop": true,
-		"jsx": "preserve"
-	},
-	"include": ["src/**/*"],
-	"exclude": ["node_modules", "dist"]
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": false,
+    "noEmit": true,
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "jsx": "preserve"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
