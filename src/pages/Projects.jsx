@@ -70,7 +70,7 @@ const projects = [
     id: 1,
     title: 'Nicolas Cage Fan Page - Front-end',
     description:
-      'A fan page for Nicolas Cage movies built with React and Bootstrap. Hosted on Netlify. Built to display a backend API I built: NicCage API. Deployed here: https://niccagecllient.netlify.app/login',
+      'A fan page for Nicolas Cage movies built with React and Bootstrap. Hosted on Netlify. Built to display a backend API I built: NicCage API. ',
     link: 'https://github.com/jonathankerth/nicCage-client',
     link2: 'https://niccagecllient.netlify.app/',
     image: '/nicCageHome.png',
@@ -79,7 +79,7 @@ const projects = [
     id: 2,
     title: 'Meet App',
     description:
-      'A serverless, PWA built with React/Node.js using TDD. It fetches upcoming tech events by utilizing the Google Calendar API and authentications using OAuth2. Hosted on GitHub Pages: https://jonathankerth.github.io/meet/',
+      'A serverless, PWA built with React/Node.js using TDD. It fetches upcoming tech events by utilizing the Google Calendar API and authentications using OAuth2. ',
     link: 'https://github.com/jonathankerth/meet',
     link2: 'https://jonathankerth.github.io/meet/',
     image: '/meet-home.png',
@@ -97,7 +97,7 @@ const projects = [
     id: 4,
     title: 'KitchenGPT',
     description:
-      'A GPT-3 powered kitchen assistant. Built with React, Node.js, Express.js. Backend hosted on Heroku and front-end deployed on Vercel. Deployed here: https://kitchen-gpt.vercel.app/',
+      'A GPT-3 powered kitchen assistant. Built with React, Node.js, Express.js. Backend hosted on Heroku and front-end deployed on Vercel. ',
     link: 'https://github.com/jonathankerth/KitchenGPT',
     link2: 'https://kitchen-gpt.vercel.app/',
     image: '/kitchen-gpt-home.png',
