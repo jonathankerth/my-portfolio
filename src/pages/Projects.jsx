@@ -70,43 +70,53 @@ const projects = [
     id: 1,
     title: 'Nicolas Cage Fan Page - Front-end',
     description:
-      'A fan page for Nicolas Cage movies built with React and Bootstrap. Hosted on Netflify. Built to display a backend API I built: NicCage API. Deployed here: https://niccagecllient.netlify.app/login',
+      'A fan page for Nicolas Cage movies built with React and Bootstrap. Hosted on Netlify. Built to display a backend API I built: NicCage API. Deployed here: https://niccagecllient.netlify.app/login',
     link: 'https://github.com/jonathankerth/nicCage-client',
+    link2: 'https://niccagecllient.netlify.app/',
+    image: '/nicCageHome.png',
   },
   {
     id: 2,
-    title: 'NicCage API',
+    title: 'Meet App',
     description:
-      'A RESTful API built with Node.js, Express.js, MongoDB, and hosted on Heroku.',
-    link: 'https://github.com/jonathankerth/Nicolas-Cage-API',
+      'A serverless, PWA built with React/Node.js using TDD. It fetches upcoming tech events by utilizing the Google Calendar API and authentications using OAuth2. Hosted on GitHub Pages: https://jonathankerth.github.io/meet/',
+    link: 'https://github.com/jonathankerth/meet',
+    link2: 'https://jonathankerth.github.io/meet/',
+    image: '/meet-home.png',
   },
   {
     id: 3,
     title: 'Pokedex',
     description:
-      'A Pokedex to display traits, pictures and size of Pokemon. Utilizing the pokeapi.co Built with Javascript.',
+      'A Pokedex to display traits, pictures, and size of Pokemon. Utilizing the PokeAPI.co. Built with JavaScript.',
     link: 'https://github.com/jonathankerth/pokemon-js',
+    link2: 'https://pokemon-js-omega.vercel.app/#',
+    image: '/pokedex-home.png',
   },
   {
     id: 4,
     title: 'KitchenGPT',
     description:
-      'A GPT-3 powered kitchen assitant. Built with React, Node.js, Express.js, backend hosted on Heroku and Vercel for front-end. Deployed here: https://kitchen-gpt.vercel.app/',
+      'A GPT-3 powered kitchen assistant. Built with React, Node.js, Express.js. Backend hosted on Heroku and front-end deployed on Vercel. Deployed here: https://kitchen-gpt.vercel.app/',
     link: 'https://github.com/jonathankerth/KitchenGPT',
+    link2: 'https://kitchen-gpt.vercel.app/',
+    image: '/kitchen-gpt-home.png',
   },
   {
     id: 5,
-    title: 'Weather-App',
+    title: 'Weather App',
     description:
-      'Built on Next.js using Tailwind.CSS to display real-time data from the OpenWeather API. Deployed here using Vercel: https://weather-app-woad-two.vercel.app/',
+      'Built on Next.js using Tailwind CSS to display real-time weather data from the OpenWeather API. Deployed here using Vercel: https://weather-app-woad-two.vercel.app/',
     link: 'https://github.com/jonathankerth/weather-app',
+    link2: 'https://weather-app-woad-two.vercel.app/',
+    image: '/weather-home.png',
   },
   {
     id: 6,
-    title: 'Meet App',
+    title: 'NicCage API',
     description:
-      'A serverless, PWA built with React/Node.js using TDD. It fetches upcoming tech events by utilizing the Google Calendar API and authentications using Oauth2. Hosted on gh-pages: https://jonathankerth.github.io/meet/',
-    link: 'https://github.com/jonathankerth/meet',
+      'A RESTful API built with Node.js, Express.js, MongoDB, and hosted on Heroku.',
+    link: 'https://github.com/jonathankerth/Nicolas-Cage-API',
   },
   {
     id: 7,
@@ -136,7 +146,7 @@ export default function Projects() {
       </Head>
       <Navbar />
       <div className="container mt-16 mx-auto px-4 md:px-8">
-        <h1 className="text-4xl  font-bold text-white text-center my-8">
+        <h1 className="text-4xl font-bold text-white text-center my-8">
           Projects
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-9">
@@ -155,7 +165,30 @@ export default function Projects() {
                   {project.title}
                 </a>
               </h3>
-              <p className="text-gray-700">{project.description}</p>
+              {project.image && (
+                <a
+                  href={project.link2}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-auto mb-4"
+                  />
+                </a>
+              )}
+              <p className="text-gray-700 mb-4">{project.description}</p>
+              {project.link2 && (
+                <a
+                  href={project.link2}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-900 hover:text-green-400"
+                >
+                  Live Site
+                </a>
+              )}
             </div>
           ))}
         </div>
