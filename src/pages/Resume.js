@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import Image from 'next/image'
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -83,16 +84,23 @@ export default function Resume() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <div
-          className="w-full h-auto bg-center bg-no-repeat bg-contain"
-          style={{ backgroundImage: "url('/resume-image.png')" }}
-        ></div>
-        <div className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-          <a href="/resume-image.png" download>
-            Download My Resume
-          </a>
+      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center mt-20">
+        <div>
+          <Image
+            src="/resume-image.png"
+            priority={true}
+            alt="Jonathan Kerth Resume"
+            width={1000}
+            height={1000}
+          />
         </div>
+        <button
+          href="/Jonathan Kerth Resume.pdf"
+          priority={true}
+          className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+        >
+          Download My Resume
+        </button>
       </main>
 
       <footer className="w-full h-24 border-t flex items-center justify-center text-white">
