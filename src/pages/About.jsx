@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import styles from '../styles/About.module.css'
 import { useState } from 'react'
-import ImageCarousel from './ImageCarousel'
+import { Carousel } from 'react-responsive-carousel'
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
+import Image from 'next/image'
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -51,11 +52,10 @@ const Navbar = () => {
           <ul className="px-8 py-4">
             {navLinks.map(({ href, label }) => (
               <li key={href} className="py-2">
-                <Link
-                  href={href}
-                  className="text-white hover:text-gray-200 text-xl font-bold"
-                >
-                  {label}
+                <Link href={href}>
+                  <a className="text-white hover:text-gray-200 text-xl font-bold">
+                    {label}
+                  </a>
                 </Link>
               </li>
             ))}
@@ -63,6 +63,39 @@ const Navbar = () => {
         </div>
       )}
     </nav>
+  )
+}
+
+const ImageCarousel = () => {
+  return (
+    <div className="flex justify-center items-center w-1/4 h-1/4">
+      <Carousel
+        infiniteLoop={true}
+        showStatus={false}
+        showIndicators={true}
+        showThumbs={false}
+        autoPlay={true}
+        interval={3000}
+        stopOnHover={false}
+        transitionTime={500}
+      >
+        <div>
+          <Image src="/IMG_0318.jpeg" alt="Image 1" width={300} height={200} />
+        </div>
+        <div>
+          <Image src="/IMG_4068.jpeg" alt="Image 2" width={300} height={200} />
+        </div>
+        <div>
+          <Image src="/IMG_4902.jpeg" alt="Image 3" width={600} height={400} />
+        </div>
+        <div>
+          <Image src="/IMG_6050.jpeg" alt="Image 4" width={300} height={200} />
+        </div>
+        <div>
+          <Image src="/IMG_6217.jpeg" alt="Image 5" width={300} height={200} />
+        </div>
+      </Carousel>
+    </div>
   )
 }
 
@@ -84,7 +117,13 @@ export default function About() {
   ]
 
   return (
-    <div className={styles.container}>
+    <div
+      className="min-h-screen bg-center bg-cover flex flex-col justify-center items-center px-2"
+      style={{
+        backgroundImage:
+          "url('https://images.unsplash.com/photo-1533335121856-52d185e85ec1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80')",
+      }}
+    >
       <Head>
         <title>About - Software Engineer | My Portfolio</title>
         <meta
@@ -95,36 +134,40 @@ export default function About() {
       </Head>
       <Navbar />
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>Who am I?</h1>
-        <p className={styles.description}>
-          I&apos;m a dedicated and passionate software engineer specializing in
-          building scalable, efficient web applications. With expertise in
-          cutting-edge technologies like React, Next.js, Node.js, Express,
-          ChatGPT, and MongoDB, I&apos;m always ready to tackle new challenges
-          and learn in the process.
-        </p>
-        <p className={styles.description}>
-          Outside the world of code, I&apos;m a food enthusiast, self proclaimed
-          nerd, home cook, pet parent, and traveling the globe with my partner.
-          Feel free to connect for any opportunities or questions about my
-          projects. Thanks for dropping by!
-        </p>
-        <h3 className={styles.descriptionH3}>My Tech Stack</h3>
-        <div className={styles.techStack}>
-          {techStack.map((tech, index) => (
-            <div key={index} className={styles.techStackItem}>
-              <p>{tech}</p>
-            </div>
-          ))}
+      <main className="flex flex-col items-center justify-center flex-1 py-12 mt-10">
+        <div className="bg-white bg-opacity-20 rounded-lg p-6 mb-6">
+          <p className="text-white text-2xl leading-7 text-center max-w-full mb-6">
+            I&apos;m a dedicated and passionate software engineer specializing
+            in building scalable, efficient web applications. With expertise in
+            cutting-edge technologies like React, Next.js, Node.js, Express,
+            ChatGPT, and MongoDB, I&apos;m always ready to tackle new challenges
+            and learn in the process.
+          </p>
+          <p className="text-white text-2xl leading-7 text-center max-w-full mb-12">
+            Outside the world of code, I&apos;m a food enthusiast, self
+            proclaimed nerd, home cook, pet parent, and traveling the globe with
+            my partner. Feel free to connect for any opportunities or questions
+            about my projects. Thanks for dropping by!
+          </p>
         </div>
-        <div className="slideshow mt-20">
-          <ImageCarousel />
+        <h3 className="text-white font-bold text-center text-3xl mb-6">
+          A few technologies I&apos;ve been working with recently:
+        </h3>
+        <div className="flex flex-wrap justify-center items-center mt-6">
+          {techStack.map((tech, index) => (
+            <span
+              key={index}
+              className="inline-block bg-green-100 rounded-full px-3 py-1 text-lg font-semibold text-gray-800 m-2 shadow-md hover:bg-green-500 transition-colors duration-300"
+            >
+              {tech}
+            </span>
+          ))}
         </div>
       </main>
 
-      <footer className={styles.footer}>
-        <Link href="/">← Return to Home</Link>
+      <ImageCarousel />
+      <footer className="flex items-center justify-center w-full h-24 border-t text-white">
+        <Link href="/">Back to home</Link>
       </footer>
     </div>
   )

@@ -10,7 +10,6 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
-import Styles from '../styles/Contact.module.css'
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -76,7 +75,13 @@ const Navbar = () => {
 
 export default function Contact() {
   return (
-    <div className={Styles.container}>
+    <div
+      className="flex flex-col  justify-center min-h-screen p-4 bg-center bg-cover"
+      style={{
+        backgroundImage:
+          "url('https://images.unsplash.com/photo-1533335121856-52d185e85ec1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80')",
+      }}
+    >
       <div className="flex flex-col items-center justify-center min-h-screen">
         <Head>
           <title>Contact - Software Engineer Portfolio</title>
