@@ -68,12 +68,12 @@ const Navbar = () => {
 
 const ImageCarousel = () => {
   return (
-    <div className="flex justify-center items-center w-1/4 h-1/4">
+    <div className="flex justify-center items-center w-full h-full">
       <Carousel
         infiniteLoop={true}
         showStatus={false}
         showIndicators={true}
-        showThumbs={false}
+        showThumbs={true}
         autoPlay={true}
         interval={3000}
         stopOnHover={false}
