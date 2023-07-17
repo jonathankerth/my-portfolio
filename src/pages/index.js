@@ -11,7 +11,7 @@ export default function Home() {
       }}
     >
       <Head>
-        <title>Software Engineer Portfolio</title>
+        <title>Jonathan Kerth&apos;s Portfolio</title>
         <meta
           name="description"
           content="A portfolio showcasing my skills and projects as a software engineer"
