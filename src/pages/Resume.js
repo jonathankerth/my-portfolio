@@ -76,11 +76,8 @@ export default function Resume() {
       }}
     >
       <Head>
-        <title>Resume - Software Engineer Portfolio</title>
-        <meta
-          name="description"
-          content="My resume as a software engineer showcasing my skills, experience, and education."
-        />
+        <title>My Resume</title>
+        <meta name="description" content="Download or view my resume here." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />

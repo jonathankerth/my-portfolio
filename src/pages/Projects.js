@@ -127,7 +127,7 @@ export default function Projects() {
       }}
     >
       <Head>
-        <title>Projects - Software Engineer Portfolio</title>
+        <title>A Selection of My Projects</title>
         <meta
           name="description"
           content="A showcase of my software engineering projects"

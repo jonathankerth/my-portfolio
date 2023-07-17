@@ -125,7 +125,7 @@ export default function About() {
       }}
     >
       <Head>
-        <title>About - Software Engineer | My Portfolio</title>
+        <title>About Me</title>
         <meta
           name="description"
           content="Discover more about my experience and the diverse technologies I utilize"

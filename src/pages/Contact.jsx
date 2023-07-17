@@ -84,7 +84,7 @@ export default function Contact() {
     >
       <div className="flex flex-col items-center justify-center min-h-screen">
         <Head>
-          <title>Contact - Software Engineer Portfolio</title>
+          <title>Contact Me</title>
           <meta
             name="description"
             content="Get in touch with me for collaborations or opportunities"
