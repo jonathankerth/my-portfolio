@@ -133,7 +133,7 @@ export default function Projects() {
       className="bg-cover bg-no-repeat bg-fixed min-h-screen py-0.5"
       style={{
         backgroundImage:
-          "url('https://images.unsplash.com/photo-1533335121856-52d185e85ec1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80')",
+          "url('https://images.unsplash.com/photo-1500964757637-c85e8a162699?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1806&q=80')",
       }}
     >
       <Head>
