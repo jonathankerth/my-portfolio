@@ -145,9 +145,9 @@ export default function Projects() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <div className="container mt-16 mx-auto px-4 md:px-8">
-        <h1 className="text-4xl font-bold text-white text-center my-8">
-          Projects
+      <div className="container mt-24 mx-auto px-4 md:px-8">
+        <h1 className="text-4xl font-bold text-black text-center ">
+          A Few of My Projects
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-9">
           {projects.map((project) => (
@@ -160,7 +160,7 @@ export default function Projects() {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-green-900 hover:text-green-400"
+                  className="text-grey-900 hover:text-blue-400"
                 >
                   {project.title}
                 </a>
@@ -184,7 +184,7 @@ export default function Projects() {
                   href={project.link2}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-green-900 hover:text-green-400"
+                  className="text-grey-900 hover:text-blue-400"
                 >
                   Live Site
                 </a>
