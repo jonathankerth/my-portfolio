@@ -6,6 +6,7 @@ import {
   FaEnvelope,
   FaMedium,
 } from 'react-icons/fa'
+import { FaMeta } from 'react-icons/fa6'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useState } from 'react'
@@ -76,7 +77,7 @@ const Navbar = () => {
 export default function Contact() {
   return (
     <div
-      className="flex flex-col  justify-center min-h-screen p-4 bg-center bg-cover"
+      className="flex flex-col justify-center min-h-screen p-4 bg-center bg-cover"
       style={{
         backgroundImage:
           "url('https://images.unsplash.com/photo-1500964757637-c85e8a162699?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1806&q=80')",
@@ -148,6 +149,15 @@ export default function Contact() {
               className="group text-white"
             >
               <FaMedium className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
+            </a>
+            <a
+              href="https://www.threads.net/@jonathankerth"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Threads"
+              className="group text-white"
+            >
+              <FaMeta className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
             </a>
           </div>
         </main>
