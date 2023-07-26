@@ -184,7 +184,7 @@ export default function Projects() {
                   href={project.link2}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-grey-900 hover:text-blue-400"
+                  className="inline-block px-4 py-2 border-2 border-blue-500 bg-blue-500 text-white hover:bg-blue-600 hover:border-blue-600 hover:text-white rounded transition duration-300 ease-in-out"
                 >
                   Live Site
                 </a>
