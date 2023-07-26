@@ -83,21 +83,21 @@ export default function Resume() {
       <Navbar />
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center mt-20">
         <div>
+          <button
+            href="/Jonathan Kerth Resume.pdf"
+            priority={true}
+            className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+          >
+            Download My Resume
+          </button>
           <Image
-            src="/resume-image.png"
+            src="/images/resume-image.png"
             priority={true}
             alt="Jonathan Kerth Resume"
             width={1000}
             height={1000}
           />
         </div>
-        <button
-          href="/Jonathan Kerth Resume.pdf"
-          priority={true}
-          className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-        >
-          Download My Resume
-        </button>
       </main>
 
       <footer className="w-full h-24 border-t flex items-center justify-center text-white">
