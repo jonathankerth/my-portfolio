@@ -80,19 +80,44 @@ const ImageCarousel = () => {
         transitionTime={500}
       >
         <div>
-          <Image src="/IMG_0318.jpeg" alt="Image 1" width={300} height={200} />
+          <Image
+            src="../../public/images/IMG_0318.jpeg"
+            alt="Image 1"
+            width={300}
+            height={200}
+          />
         </div>
         <div>
-          <Image src="/IMG_4068.jpeg" alt="Image 2" width={300} height={200} />
+          <Image
+            src="../../public/images/IMG_4068.jpeg"
+            alt="Image 2"
+            width={300}
+            height={200}
+          />
         </div>
         <div>
-          <Image src="/IMG_4902.jpeg" alt="Image 3" width={600} height={400} />
+          <Image
+            src="../../public/images/IMG_4902.jpeg"
+            alt="Image 3"
+            width={600}
+            height={400}
+          />
         </div>
         <div>
-          <Image src="/IMG_6050.jpeg" alt="Image 4" width={300} height={200} />
+          <Image
+            src="../../public/images/IMG_6050.jpeg"
+            alt="Image 4"
+            width={300}
+            height={200}
+          />
         </div>
         <div>
-          <Image src="/IMG_6217.jpeg" alt="Image 5" width={300} height={200} />
+          <Image
+            src="../../public/images/IMG_6217.jpeg"
+            alt="Image 5"
+            width={300}
+            height={200}
+          />
         </div>
       </Carousel>
     </div>
