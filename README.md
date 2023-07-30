@@ -1,8 +1,6 @@
-# My Portfolio Website
+# Thank you for checking out my work! 
 
-Welcome to my personal portfolio website! This project is built with [Next.js](https://nextjs.org/) and styled using [Tailwind CSS](https://tailwindcss.com/). It is hosted on [Vercel](https://vercel.com/).
-
-## Getting Started
+Welcome to my personal website! This website is built with [Next.js](https://nextjs.org/) and styled using [Tailwind CSS](https://tailwindcss.com/). It is hosted on [Vercel](https://vercel.com/). 
 
 To get started with this project, follow these steps:
 
@@ -29,34 +27,11 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to see the result. You can now start editing the page by modifying `pages/index.js`. The page will auto-update as you make changes.
 
-## API Routes
-
-This project includes API routes that can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). The endpoint logic is defined in `pages/api/hello.js`. The `pages/api` directory is mapped to `/api/*`, making these files act as API routes instead of React pages.
-
-## Font Optimization
-
-This project utilizes [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load the Inter font, a custom Google Font, ensuring a smooth and efficient loading experience.
-
-## Learn More
-
-To learn more about Next.js, check out the official documentation:
-
-- [Next.js Documentation](https://nextjs.org/docs) - Explore Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - Take an interactive Next.js tutorial to get started.
-
-You can also contribute or provide feedback to the [Next.js GitHub repository](https://github.com/vercel/next.js/). Your contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your own Next.js app is by using the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-For more details on deploying a Next.js app, check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment).
 
 ## Project Information
 
 - **Name:** check-me-out
-- **Version:** 0.1.0
-- **Private:** true (this prevents accidentally publishing your project to npm)
+- **Version:** 1.1.
 
 ## Dependencies
 
