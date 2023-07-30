@@ -81,7 +81,7 @@ const ImageCarousel = () => {
       >
         <div>
           <Image
-            src="../../public/images/IMG_0318.jpeg"
+            src="/images/IMG_0318.jpeg"
             alt="Image 1"
             width={300}
             height={200}
@@ -89,7 +89,7 @@ const ImageCarousel = () => {
         </div>
         <div>
           <Image
-            src="../../public/images/IMG_4068.jpeg"
+            src="/images/IMG_4068.jpeg"
             alt="Image 2"
             width={300}
             height={200}
@@ -97,7 +97,7 @@ const ImageCarousel = () => {
         </div>
         <div>
           <Image
-            src="../../public/images/IMG_4902.jpeg"
+            src="/images/IMG_4902.jpeg"
             alt="Image 3"
             width={600}
             height={400}
@@ -105,7 +105,7 @@ const ImageCarousel = () => {
         </div>
         <div>
           <Image
-            src="../../public/images/IMG_6050.jpeg"
+            src="/images/IMG_6050.jpeg"
             alt="Image 4"
             width={300}
             height={200}
@@ -113,7 +113,7 @@ const ImageCarousel = () => {
         </div>
         <div>
           <Image
-            src="../../public/images/IMG_6217.jpeg"
+            src="/public/images/IMG_6217.jpeg"
             alt="Image 5"
             width={300}
             height={200}
