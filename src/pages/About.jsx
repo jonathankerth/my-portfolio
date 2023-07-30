@@ -113,7 +113,7 @@ const ImageCarousel = () => {
         </div>
         <div>
           <Image
-            src="/public/images/IMG_6217.jpeg"
+            src="/images/IMG_6217.jpeg"
             alt="Image 5"
             width={300}
             height={200}
