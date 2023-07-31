@@ -176,17 +176,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center space-x-2 text-white hover:text-gray-200"
-          >
-            <span className="h-6">
-              <img
-                src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-                alt="GitHub Logo"
-                width={24}
-                height={24}
-              />
-            </span>
-            <span>Powered by GitHub</span>
-          </a>
+          ></a>
         </div>
       </footer>
     </div>
