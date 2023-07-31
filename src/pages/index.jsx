@@ -1,5 +1,77 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { useState } from 'react'
+import {
+  FaBars,
+  FaTimes,
+  FaTwitter,
+  FaLinkedin,
+  FaGithub,
+  FaStackOverflow,
+  FaEnvelope,
+  FaMedium,
+} from 'react-icons/fa'
+import { FaMeta } from 'react-icons/fa6'
+const navLinks = [
+  { href: '/Resume', label: 'Resume' },
+  { href: '/About', label: 'About' },
+  { href: '/Projects', label: 'Projects' },
+]
+
+const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
+
+  return (
+    <nav className="fixed top-0 left-0 z-50 w-full py-4 bg-gray-900/50">
+      <div className="max-w-screen-lg mx-auto px-4 md:px-8 flex justify-between items-center">
+        <div className="hidden md:block">
+          <ul className="flex space-x-8">
+            {navLinks.map(({ href, label }) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className="text-white hover:text-gray-200 text-xl md:text-2xl font-bold"
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="md:hidden flex items-center">
+          <button
+            onClick={toggleMobileMenu}
+            type="button"
+            className="text-white hover:text-gray-200 focus:outline-none focus:text-gray-200"
+            aria-label="toggle menu"
+          >
+            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
+      </div>
+      {isMobileMenuOpen && (
+        <div className="md:hidden absolute top-16 right-0 w-full bg-gray-800">
+          <ul className="px-8 py-4">
+            {navLinks.map(({ href, label }) => (
+              <li key={href} className="py-2">
+                <Link
+                  href={href}
+                  className="text-white hover:text-gray-200 text-xl font-bold"
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </nav>
+  )
+}
 
 export default function Home() {
   return (
@@ -18,63 +90,104 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main className="flex flex-col items-center justify-center w-full px-8 py-8 text-center bg-black bg-opacity-60 max-w-2xl">
+      <Navbar />
+      <main className="flex flex-col items-center justify-center w-full px-8 py-8 mt-6 text-center bg-black bg-opacity-60 max-w-2xl">
         <h1 className="mb-4 text-3xl text-white">Welcome,</h1>
 
         <p className="mb-8 text-2xl text-white">I&apos;m Jonathan Kerth</p>
 
-        <div className="grid w-full grid-cols-1 gap-4 mt-8 max-w-2xl">
-          <Link
-            href="/Projects"
-            className="p-6 text-left text-white border-4 border-white rounded-xl transition-all duration-300 ease-in-out bg-black bg-opacity-60 hover:border-black hover:bg-black hover:bg-opacity-80 focus:border-black focus:bg-black focus:bg-opacity-80 active:border-black active:bg-black active:bg-opacity-80"
+        <div className="text-xl text-white">
+          Welcome to my website! Here, I showcase my work as a web developer and
+          provide insights into who I am. If you&apos;re interested in getting
+          in touch, you can connect with me through any of the following
+          platforms:
+        </div>
+        <div className="flex items-center mt-8 space-x-4">
+          <a
+            href="mailto:jonathanpkerth@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Email"
+            className="group text-white"
           >
-            <h2>Projects &rarr;</h2>
-            <p>Check out my projects!</p>
-          </Link>
-
-          <Link
-            href="/Resume"
-            className="p-6 text-left text-white border-4 border-white rounded-xl transition-all duration-300 ease-in-out bg-black bg-opacity-60 hover:border-black hover:bg-black hover:bg-opacity-80 focus:border-black focus:bg-black focus:bg-opacity-80 active:border-black active:bg-black active:bg-opacity-80"
+            <FaEnvelope className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/jonathankerth"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="group text-white"
           >
-            <h2>Resume &rarr;</h2>
-            <p>View my resume</p>
-          </Link>
-
-          <Link
-            href="/About"
-            className="p-6 text-left text-white border-4 border-white rounded-xl transition-all duration-300 ease-in-out bg-black bg-opacity-60 hover:border-black hover:bg-black hover:bg-opacity-80 focus:border-black focus:bg-black focus:bg-opacity-80 active:border-black active:bg-black active:bg-opacity-80"
+            <FaLinkedin className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
+          </a>
+          <a
+            href="https://github.com/jonathankerth"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="group text-white"
           >
-            <h2>About Me &rarr;</h2>
-            <p>Learn more about my background and experience.</p>
-          </Link>
-
-          <Link
-            href="/Contact"
-            className="p-6 text-left text-white border-4 border-white rounded-xl transition-all duration-300 ease-in-out bg-black bg-opacity-60 hover:border-black hover:bg-black hover:bg-opacity-80 focus:border-black focus:bg-black focus:bg-opacity-80 active:border-black active:bg-black active:bg-opacity-80"
+            <FaGithub className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
+          </a>
+          <a
+            href="https://stackoverflow.com/users/21791075/jonathan-kerth"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Stack Overflow"
+            className="group text-white"
           >
-            <h2>Contact &rarr;</h2>
-            <p>Get in touch with me for collaborations or opportunities.</p>
-          </Link>
+            <FaStackOverflow className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
+          </a>
+          <a
+            href="https://twitter.com/jonathankerth"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Twitter"
+            className="group text-white"
+          >
+            <FaTwitter className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
+          </a>
+          <a
+            href="https://medium.com/@jonathanpkerth"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Medium"
+            className="group text-white"
+          >
+            <FaMedium className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
+          </a>
+          <a
+            href="https://www.threads.net/@jonathankerth"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Threads"
+            className="group text-white"
+          >
+            <FaMeta className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
+          </a>
         </div>
       </main>
 
-      <footer className="flex items-center justify-center w-full h-24 border-t border-white text-white">
-        <a
-          href="https://github.com/jonathankerth"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className="h-4 ml-2">
-            <img
-              src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-              alt="GitHub Logo"
-              width={32}
-              height={32}
-            />
-          </span>
-        </a>
+      <footer className="fixed left-0 bottom-0 w-full bg-gray-900/50 text-white">
+        <div className="flex items-center justify-center h-24">
+          <a
+            href="https://github.com/jonathankerth"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center space-x-2 text-white hover:text-gray-200"
+          >
+            <span className="h-6">
+              <img
+                src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                alt="GitHub Logo"
+                width={24}
+                height={24}
+              />
+            </span>
+            <span>Powered by GitHub</span>
+          </a>
+        </div>
       </footer>
     </div>
   )
