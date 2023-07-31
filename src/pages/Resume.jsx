@@ -99,7 +99,7 @@ export default function Resume() {
         </div>
       </main>
 
-      <footer className="w-full h-24 border-t flex items-center justify-center text-white">
+      <footer className="w-full h-24  flex items-center justify-center  bg-gray-900/50 text-white">
         <Link href="/">← Back to home</Link>
       </footer>
     </div>

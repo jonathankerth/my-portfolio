@@ -8,6 +8,7 @@ import Image from 'next/image'
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/Projects', label: 'Projects' },
+
   { href: '/Resume', label: 'Resume' },
 ]
 
@@ -190,8 +191,8 @@ export default function About() {
       </main>
 
       <ImageCarousel />
-      <footer className="flex items-center justify-center w-full h-24 border-t text-white">
-        <Link href="/">Back to home</Link>
+      <footer className="flex items-center justify-center w-full h-24  text-white  bg-gray-900/50">
+        <Link href="/">← Back to home</Link>
       </footer>
     </div>
   )
