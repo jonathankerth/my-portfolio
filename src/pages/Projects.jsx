@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import Image from 'next/image'
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -172,10 +173,12 @@ export default function Projects() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img
+                  <Image
                     src={project.image}
                     alt={project.title}
                     className="w-full h-auto mb-4"
+                    width={500}
+                    height={300}
                   />
                 </a>
               )}
@@ -194,8 +197,8 @@ export default function Projects() {
           ))}
         </div>
       </div>
-      <footer className="footer text-white text-center py-4 mt-8">
-        <Link href="/">Back to home</Link>
+      <footer className="footer text-white bg-gray-900/50 text-center py-4 mt-8">
+        <Link href="/">← Back to home</Link>
       </footer>
     </div>
   )
