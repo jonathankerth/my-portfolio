@@ -26,7 +26,7 @@ const Navbar = () => {
               <li key={href}>
                 <Link
                   href={href}
-                  className="text-white hover:text-gray-200 text-xl md:text-2xl font-bold"
+                  className="px-6 py-3 font-semibold text-lg bg-white text-black rounded-full shadow-md hover:bg-gray-900/90 hover:text-white transition duration-300"
                 >
                   {label}
                 </Link>
@@ -46,7 +46,7 @@ const Navbar = () => {
         </div>
       </div>
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-16 right-0 w-full bg-gray-800">
+        <div className="md:hidden absolute top-12 right-0 w-full bg-gray-900/50">
           <ul className="px-8 py-4">
             {navLinks.map(({ href, label }) => (
               <li key={href} className="py-2">
@@ -197,8 +197,12 @@ export default function Projects() {
           ))}
         </div>
       </div>
-      <footer className="footer text-white bg-gray-900/50 text-center py-4 mt-8">
-        <Link href="/">← Back to home</Link>
+      <footer className="flex items-center justify-center w-full h-24 text-white bg-gray-900/50">
+        <Link href="/">
+          <button className="px-6 py-3 font-semibold text-lg bg-white text-black rounded-full shadow-md hover:bg-gray-900/90 hover:text-white transition duration-300">
+            ← Back to home
+          </button>
+        </Link>
       </footer>
     </div>
   )
