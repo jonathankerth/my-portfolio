@@ -68,9 +68,9 @@ const Navbar = () => {
 const projects = [
   {
     id: 1,
-    title: 'Nicolas Cage Fan Page - Front-end',
+    title: 'Nicolas Cage Movie Repository',
     description:
-      'A fan page for Nicolas Cage movies built with React and Bootstrap. Hosted on Netlify. Built to display a backend API I built: NicCage API. ',
+      'A Nicolas Cage Movie Repository built with React and Bootstrap. Hosted on Netlify. Built to display a backend API I built: NicCage API.',
     link: 'https://github.com/jonathankerth/nicCage-client',
     link2: 'https://niccagecllient.netlify.app/',
     image: '/images/nicCageHome.png',
