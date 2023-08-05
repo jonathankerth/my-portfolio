@@ -18,8 +18,6 @@ const ProjectModal = ({ project, closeModal }) => {
       {project.title === 'Nicolas Cage Movie Repository' && (
         <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-75 z-50">
           <div className="bg-white w-1/2 p-6 rounded-lg">
-            <h2 className="text-xl font-bold mb-4">View Case Study</h2>
-
             <embed
               src="https://mypublicucket.s3.us-west-2.amazonaws.com/NicCageStudy.pdf"
               type="application/pdf"
