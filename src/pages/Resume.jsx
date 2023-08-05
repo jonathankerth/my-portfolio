@@ -82,15 +82,30 @@ export default function Resume() {
       <Navbar />
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center mt-20">
         <div>
-          <button
-            href="/Jonathan Kerth Resume.pdf"
-            priority={true}
-            className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+          <a
+            href="https://mypublicucket.s3.us-west-2.amazonaws.com/Jkerth+Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex items-center justify-center px-6 py-3 border border-transparent text-base leading-6 font-medium rounded-md mb-6 text-white bg-blue-600 hover:bg-blue-800 focus:outline-none focus:border-blue-800 focus:ring focus:ring-blue-200 active:bg-blue-800 transition ease-in-out duration-150"
           >
+            <svg
+              className="mr-3 h-5 w-5"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fillRule="evenodd"
+                d="M4 3a2 2 0 012-2h8a2 2 0 012 2v3h1a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2zm0 2v12h12V8h-2V5H4zm8-1V3l4 4h-3a1 1 0 01-1-1z"
+                clipRule="evenodd"
+              />
+            </svg>
             Download My Resume
-          </button>
+          </a>
+
           <Image
-            src="/images/resume-image.png"
+            src="/images/Jkerth-Resume.png"
             priority={true}
             alt="Jonathan Kerth Resume"
             width={1000}
