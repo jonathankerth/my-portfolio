@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import Image from 'next/image'
+import ProjectModal from '../components/ProjectModal.js'
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -130,6 +131,17 @@ const projects = [
 ]
 
 export default function Projects() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [currentProject, setCurrentProject] = useState(null)
+
+  const openModal = (project) => {
+    setCurrentProject(project)
+    setIsModalOpen(true)
+  }
+
+  const closeModal = () => {
+    setIsModalOpen(false)
+  }
   return (
     <div
       className="bg-cover bg-no-repeat bg-fixed min-h-screen py-0.5"
@@ -147,6 +159,7 @@ export default function Projects() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
+
       <div className="container mt-24 mx-auto px-4 md:px-8">
         <h1 className="text-4xl font-bold text-black text-center ">
           A Few of My Projects
@@ -183,6 +196,14 @@ export default function Projects() {
                 </a>
               )}
               <p className="text-gray-700 mb-4">{project.description}</p>
+              {project.title === 'Nicolas Cage Movie Repository' ? (
+                <button
+                  onClick={() => openModal(project)}
+                  className="inline-block px-4 py-2 mr-2 bg-yellow-500 text-white rounded hover:bg-yellow-600"
+                >
+                  View Case Study
+                </button>
+              ) : null}
               {project.link2 && (
                 <a
                   href={project.link2}
@@ -204,6 +225,9 @@ export default function Projects() {
           </button>
         </Link>
       </footer>
+      {isModalOpen && (
+        <ProjectModal project={currentProject} closeModal={closeModal} />
+      )}
     </div>
   )
 }
