@@ -78,24 +78,15 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Meet App',
+    title: 'Weather App',
     description:
-      'A serverless, PWA built with React/Node.js using TDD. It fetches upcoming tech events by utilizing the Google Calendar API and authentications using OAuth2. ',
-    link: 'https://github.com/jonathankerth/meet',
-    link2: 'https://jonathankerth.github.io/meet/',
-    image: '/images/meet-home.png',
+      'Built on Next.js using Tailwind CSS to display real-time weather data from the OpenWeather API. Deployed on Vercel.',
+    link: 'https://github.com/jonathankerth/weather-app',
+    link2: 'https://weather-app-woad-two.vercel.app/',
+    image: '/images/weather-home.png',
   },
   {
     id: 3,
-    title: 'Pokedex',
-    description:
-      'A Pokedex to display traits, pictures, and size of Pokemon. Utilizing the PokeAPI.co. Built with JavaScript.',
-    link: 'https://github.com/jonathankerth/pokemon-js',
-    link2: 'https://pokemon-js-omega.vercel.app/#',
-    image: '/images/pokedex-home.png',
-  },
-  {
-    id: 4,
     title: 'KitchenGPT',
     description:
       'A GPT-3 powered kitchen assistant. Built with React, Node.js, Express.js. Backend hosted on Heroku and front-end deployed on Vercel. ',
@@ -104,22 +95,32 @@ const projects = [
     image: '/images/kitchen-gpt-home.png',
   },
   {
-    id: 5,
-    title: 'Weather App',
+    id: 4,
+    title: 'Oregonized Design Co Shopify Frontend',
     description:
-      'Built on Next.js using Tailwind CSS to display real-time weather data from the OpenWeather API. Deployed here using Vercel: https://weather-app-woad-two.vercel.app/',
-    link: 'https://github.com/jonathankerth/weather-app',
-    link2: 'https://weather-app-woad-two.vercel.app/',
-    image: '/images/weather-home.png',
+      "A frontend to Shopify's headless api built using Next.js and Tailwind CSS. Company owned and operated by Jonathan Kerth and Sidney Gallardo. Selling custom designed clothing and accessories for Bachelorette Parties. Hosted on Vercel. ",
+    link: 'https://github.com/jonathankerth/oregonized-design',
+    link2: 'https://oregonizeddesign.com/',
+    image: '/images/designHome.png',
   },
   {
-    id: 6,
-    title: 'NicCage API',
+    id: 5,
+    title: 'Meet App',
     description:
-      'A RESTful API built with Node.js, Express.js, MongoDB, and hosted on Heroku.',
-    link: 'https://github.com/jonathankerth/Nicolas-Cage-API',
-    link2: 'https://niccage.herokuapp.com/',
-    image: '/images/nicCage-API.png',
+      'A serverless, PWA built with React/Node.js using TDD. It fetches upcoming tech events by utilizing the Google Calendar API and authentications using OAuth2. ',
+    link: 'https://github.com/jonathankerth/meet',
+    link2: 'https://jonathankerth.github.io/meet/',
+    image: '/images/meet-home.png',
+  },
+
+  {
+    id: 6,
+    title: 'Pokedex',
+    description:
+      'A Pokedex to display traits, pictures, and size of Pokemon. Utilizing the PokeAPI.co. Built with JavaScript.',
+    link: 'https://github.com/jonathankerth/pokemon-js',
+    link2: 'https://pokemon-js-omega.vercel.app/#',
+    image: '/images/pokedex-home.png',
   },
   {
     id: 7,
@@ -127,6 +128,15 @@ const projects = [
     description:
       'This project involves building a mobile chat application using React Native. The app provides users with a chat interface and options to share images and their location.',
     link: 'https://github.com/jonathankerth/chat-app',
+  },
+  {
+    id: 8,
+    title: 'NicCage API',
+    description:
+      'A RESTful API built with Node.js, Express.js, MongoDB, and hosted on Heroku.',
+    link: 'https://github.com/jonathankerth/Nicolas-Cage-API',
+    link2: 'https://niccage.herokuapp.com/',
+    image: '/images/nicCage-API.png',
   },
 ]
 
@@ -195,7 +205,9 @@ export default function Projects() {
                   />
                 </a>
               )}
-              <p className="text-gray-700 mb-4">{project.description}</p>
+              <p className="text-gray-700 mb-4 flex-grow">
+                {project.description}
+              </p>
               {project.title === 'Nicolas Cage Movie Repository' ? (
                 <button
                   onClick={() => openModal(project)}
