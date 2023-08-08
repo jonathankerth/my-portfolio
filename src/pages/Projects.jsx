@@ -96,7 +96,7 @@ const projects = [
   },
   {
     id: 4,
-    title: 'Oregonized Design Co Shopify Frontend',
+    title: 'Oregonized Design Co Shopify Frontend (WIP)',
     description:
       "A frontend to Shopify's headless api built using Next.js and Tailwind CSS. Company owned and operated by Jonathan Kerth and Sidney Gallardo. Selling custom designed clothing and accessories for Bachelorette Parties. Hosted on Vercel. ",
     link: 'https://github.com/jonathankerth/oregonized-design',
