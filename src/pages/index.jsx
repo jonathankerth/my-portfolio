@@ -178,7 +178,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="fixed left-0 bottom-0 w-full h-6 bg-gray-900 text-white z-50"></footer>
+      <footer className="fixed left-0 bottom-0 w-full h-6 bg-gray-900/50 text-white z-50"></footer>
     </div>
   )
 }
