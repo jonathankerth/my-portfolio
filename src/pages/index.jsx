@@ -95,14 +95,22 @@ export default function Home() {
       <main className="flex flex-col items-center justify-center w-full px-8 py-8 mt-6 text-center bg-black bg-opacity-60 max-w-2xl">
         <h1 className="mb-4 text-3xl text-white">Welcome,</h1>
 
-        <p className="mb-8 text-2xl text-white">I&apos;m Jonathan Kerth</p>
+        <p className="mb-8 text-2xl text-white">
+          I&apos;m Jonathan Gallardo-Kerth
+        </p>
 
-        <div className="text-xl text-white">
-          Welcome to my website! Here, I showcase my work as a web developer and
-          provide insights into who I am. If you&apos;re interested in getting
-          in touch, you can connect with me through any of the following
-          platforms:
+        <div className="text-xl text-white mb-4">
+          As a web developer, I specialize in crafting engaging online
+          experiences. On my website, you&apos;ll find a showcase of my recent
+          work, and a glimpse of who I am both behind the code and beyond the
+          screen.
         </div>
+        <div className="text-xl text-white">
+          Looking to collaborate or just want to say hi? Feel free to reach out
+          through any of the platforms below. I look forward to connecting with
+          you!
+        </div>
+
         <div className="flex items-center mt-8 space-x-4">
           <a
             href="mailto:jonathanpkerth@gmail.com"

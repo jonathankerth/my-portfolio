@@ -105,7 +105,7 @@ export default function Resume() {
           </a>
 
           <Image
-            src="/images/jonathank.png"
+            src="/images/jonathangk.png"
             priority={true}
             alt="Jonathan Kerth Resume"
             width={1000}
