@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { useState } from 'react'
+import { React, useState } from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import Image from 'next/image'
@@ -68,6 +68,9 @@ const Navbar = () => {
 }
 
 const ImageCarousel = () => {
+  const commonWidth = 300
+  const commonHeight = 200
+
   return (
     <div className="flex justify-center items-center w-full h-full">
       <Carousel
@@ -84,40 +87,40 @@ const ImageCarousel = () => {
           <Image
             src="/images/IMG_0318.jpeg"
             alt="Image 1"
-            width={300}
-            height={200}
+            width={commonWidth}
+            height={commonHeight}
           />
         </div>
         <div>
           <Image
             src="/images/IMG_4068.jpeg"
             alt="Image 2"
-            width={300}
-            height={200}
+            width={commonWidth}
+            height={commonHeight}
           />
         </div>
         <div>
           <Image
             src="/images/IMG_4902.jpeg"
             alt="Image 3"
-            width={600}
-            height={400}
+            width={commonWidth}
+            height={commonHeight}
           />
         </div>
         <div>
           <Image
             src="/images/IMG_6050.jpeg"
             alt="Image 4"
-            width={300}
-            height={200}
+            width={commonWidth}
+            height={commonHeight}
           />
         </div>
         <div>
           <Image
             src="/images/IMG_6217.jpeg"
             alt="Image 5"
-            width={300}
-            height={200}
+            width={commonWidth}
+            height={commonHeight}
           />
         </div>
       </Carousel>
@@ -127,21 +130,31 @@ const ImageCarousel = () => {
 
 export default function About() {
   const techStack = [
-    'React',
-    'React Native',
-    'Next.js',
-    'Node.js',
-    'Express',
-    'MongoDB',
-    'Bootstrap',
-    'Tailwind CSS',
-    'Redux',
-    'Atatus',
-    'Jest',
-    'Cucumber',
-    'Progressive Web Apps (PWAs)',
+    { name: 'React', url: 'https://reactjs.org/' },
+    { name: 'React Native', url: 'https://reactnative.dev/' },
+    { name: 'Next.js', url: 'https://nextjs.org/' },
+    { name: 'Node.js', url: 'https://nodejs.org/' },
+    { name: 'Express', url: 'https://expressjs.com/' },
+    { name: 'MongoDB', url: 'https://www.mongodb.com/' },
+    { name: 'Bootstrap', url: 'https://getbootstrap.com/' },
+    { name: 'Tailwind CSS', url: 'https://tailwindcss.com/' },
+    { name: 'Redux', url: 'https://redux.js.org/' },
+    { name: 'Atatus', url: 'https://www.atatus.com/' },
+    { name: 'Jest', url: 'https://jestjs.io/' },
+    { name: 'Cucumber', url: 'https://cucumber.io/' },
+    {
+      name: 'Progressive Web Apps (PWAs)',
+      url: 'https://web.dev/progressive-web-apps/',
+    },
+    { name: 'HTML', url: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
+    { name: 'CSS', url: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
+    {
+      name: 'JavaScript',
+      url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+    },
+    { name: 'TypeScript', url: 'https://www.typescriptlang.org/' },
+    { name: 'SCSS', url: 'https://sass-lang.com/' },
   ]
-
   return (
     <div
       className="min-h-screen bg-center bg-cover flex flex-col justify-center items-center px-2"
@@ -181,12 +194,15 @@ export default function About() {
         </h3>
         <div className="flex flex-wrap justify-center items-center mt-6">
           {techStack.map((tech, index) => (
-            <span
+            <a
               key={index}
+              href={tech.url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-red-200 rounded-full px-3 py-1 text-lg font-semibold text-gray-800 m-2 shadow-md hover:bg-red-500 transition-colors duration-300"
             >
-              {tech}
-            </span>
+              {tech.name}
+            </a>
           ))}
         </div>
       </main>
