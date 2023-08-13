@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Script from 'next/script'
 import { useState } from 'react'
 import {
   FaBars,
@@ -91,6 +92,17 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-8LGP2ZRQYQ" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-8LGP2ZRQYQ');
+        `}
+      </Script>
+
       <Navbar />
       <main className="flex flex-col items-center justify-center w-full px-8 py-8 mt-6 text-center bg-black bg-opacity-60 max-w-2xl">
         <h1 className="mb-4 text-3xl text-white">Welcome,</h1>
