@@ -5,6 +5,7 @@ import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import Image from 'next/image'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import Wheel from '../components/Wheel.js'
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -205,6 +206,7 @@ export default function About() {
             </a>
           ))}
         </div>
+        <Wheel />
       </main>
 
       <ImageCarousel />
