@@ -112,9 +112,18 @@ const projects = [
     link2: 'https://jonathankerth.github.io/meet/',
     image: '/images/meet-home.png',
   },
-
   {
     id: 6,
+    title: 'Magic Wheel Component',
+    description:
+      'An innovative wheel spinner component, created with Tailwind CSS. Seamlessly integrated into a Next.js environment, this component showcases advanced CSS techniques, state-of-the-art animations, and responsive design.',
+    link: 'https://github.com/jonathankerth/magic-wheel',
+    link2: 'https://magic-wheel-rosy.vercel.app/',
+    image: '/images/wheel.png',
+  },
+
+  {
+    id: 7,
     title: 'Pokedex',
     description:
       'A Pokedex to display traits, pictures, and size of Pokemon. Utilizing the PokeAPI.co. Built with JavaScript.',
@@ -122,13 +131,7 @@ const projects = [
     link2: 'https://pokemon-js-omega.vercel.app/#',
     image: '/images/pokedex-home.png',
   },
-  {
-    id: 7,
-    title: 'React Native Chat App',
-    description:
-      'This project involves building a mobile chat application using React Native. The app provides users with a chat interface and options to share images and their location.',
-    link: 'https://github.com/jonathankerth/chat-app',
-  },
+
   {
     id: 8,
     title: 'NicCage API',
@@ -137,6 +140,13 @@ const projects = [
     link: 'https://github.com/jonathankerth/Nicolas-Cage-API',
     link2: 'https://niccage.herokuapp.com/',
     image: '/images/nicCage-API.png',
+  },
+  {
+    id: 9,
+    title: 'React Native Chat App',
+    description:
+      'This project involves building a mobile chat application using React Native. The app provides users with a chat interface and options to share images and their location.',
+    link: 'https://github.com/jonathankerth/chat-app',
   },
 ]
 
@@ -178,7 +188,9 @@ export default function Projects() {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="project-container transition-transform duration-300 hover:scale-105 bg-white rounded-lg shadow-md p-6"
+              className={`project-container transition-transform duration-300 hover:scale-105 bg-white rounded-lg shadow-md p-6 ${
+                project.id === 9 ? 'pb-2 md:pb-4' : '' // Adjust padding for the specific project
+              }`}
             >
               <h3 className="text-xl font-bold mb-2">
                 <a
