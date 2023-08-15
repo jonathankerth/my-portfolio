@@ -116,7 +116,7 @@ const projects = [
     id: 6,
     title: 'Magic Wheel Component',
     description:
-      'An innovative wheel spinner component, created with Tailwind CSS. Seamlessly integrated into a Next.js environment, this component showcases advanced CSS techniques, state-of-the-art animations, and responsive design.',
+      'An innovative wheel spinner component, created with Tailwind CSS. Seamlessly integrated into a Next.js environment, this component showcases advanced CSS techniques, animations, and responsive design.',
     link: 'https://github.com/jonathankerth/magic-wheel',
     link2: 'https://magic-wheel-rosy.vercel.app/',
     image: '/images/wheel.png',
