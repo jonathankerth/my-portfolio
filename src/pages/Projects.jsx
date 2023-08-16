@@ -94,6 +94,7 @@ const projects = [
     link2: 'https://kitchen-gpt.vercel.app/',
     image: '/images/kitchen-gpt-home.png',
   },
+
   {
     id: 4,
     title: 'Oregonized Design Co Shopify Frontend (WIP)',
@@ -113,7 +114,7 @@ const projects = [
     image: '/images/meet-home.png',
   },
   {
-    id: 6,
+    id: 7,
     title: 'Magic Wheel Component',
     description:
       'An innovative wheel spinner component, created with Tailwind CSS. Seamlessly integrated into a Next.js environment, this component showcases advanced CSS techniques, animations, and responsive design.',
@@ -123,7 +124,7 @@ const projects = [
   },
 
   {
-    id: 7,
+    id: 8,
     title: 'Pokedex',
     description:
       'A Pokedex to display traits, pictures, and size of Pokemon. Utilizing the PokeAPI.co. Built with JavaScript.',
@@ -131,9 +132,8 @@ const projects = [
     link2: 'https://pokemon-js-omega.vercel.app/#',
     image: '/images/pokedex-home.png',
   },
-
   {
-    id: 8,
+    id: 6,
     title: 'NicCage API',
     description:
       'A RESTful API built with Node.js, Express.js, MongoDB, and hosted on Heroku.',
@@ -141,12 +141,14 @@ const projects = [
     link2: 'https://niccage.herokuapp.com/',
     image: '/images/nicCage-API.png',
   },
+
   {
     id: 9,
     title: 'React Native Chat App',
     description:
       'This project involves building a mobile chat application using React Native. The app provides users with a chat interface and options to share images and their location.',
     link: 'https://github.com/jonathankerth/chat-app',
+    image: '/images/chatExample.png',
   },
 ]
 
@@ -188,11 +190,10 @@ export default function Projects() {
           {projects.map((project) => (
             <div
               key={project.id}
-              className={`project-container transition-transform duration-300 hover:scale-105 bg-white rounded-lg shadow-md p-6 ${
-                project.id === 9 ? 'pb-2 md:pb-4' : '' // Adjust padding for the specific project
-              }`}
+              className="project-container transition-transform duration-300 hover:scale-105 bg-white rounded-lg shadow-md flex flex-col p-6"
+              style={{ minHeight: '400px' }} // You can adjust this based on your content
             >
-              <h3 className="text-xl font-bold mb-2">
+              <h3 className="text-xl font-bold mb-2 flex-shrink-0">
                 <a
                   href={project.link}
                   target="_blank"
@@ -202,7 +203,6 @@ export default function Projects() {
                   {project.title}{' '}
                 </a>
               </h3>
-
               {project.image && (
                 <a
                   href={project.link2}
@@ -212,33 +212,35 @@ export default function Projects() {
                   <Image
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-auto mb-4"
+                    className="object-top w-full h-64 mb-4"
                     width={500}
-                    height={300}
+                    height={500}
                   />
                 </a>
               )}
               <p className="text-gray-700 mb-4 flex-grow">
                 {project.description}
               </p>
-              {project.title === 'Nicolas Cage Movie Repository' ? (
-                <button
-                  onClick={() => openModal(project)}
-                  className="inline-block px-4 py-2 mr-2 bg-yellow-500 text-white rounded hover:bg-yellow-600"
-                >
-                  View Case Study
-                </button>
-              ) : null}
-              {project.link2 && (
-                <a
-                  href={project.link2}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-4 py-2 border-2 border-blue-500 bg-blue-500 text-white hover:bg-blue-600 hover:border-blue-600 hover:text-white rounded transition duration-300 ease-in-out"
-                >
-                  Live Site
-                </a>
-              )}
+              <div className="flex-shrink-0">
+                {project.title === 'Nicolas Cage Movie Repository' ? (
+                  <button
+                    onClick={() => openModal(project)}
+                    className="inline-block px-4 py-2 mr-2 bg-yellow-500 text-white rounded hover:bg-yellow-600"
+                  >
+                    View Case Study
+                  </button>
+                ) : null}
+                {project.link2 && (
+                  <a
+                    href={project.link2}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-4 py-2 border-2 border-blue-500 bg-blue-500 text-white hover:bg-blue-600 hover:border-blue-600 hover:text-white rounded transition duration-300 ease-in-out"
+                  >
+                    Live Site
+                  </a>
+                )}
+              </div>
             </div>
           ))}
         </div>
