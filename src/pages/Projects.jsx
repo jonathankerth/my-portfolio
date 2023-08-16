@@ -197,11 +197,12 @@ export default function Projects() {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-grey-900 hover:text-blue-400"
+                  className="text-blue-600 hover:text-blue-400 underline flex items-center"
                 >
-                  {project.title}
+                  {project.title}{' '}
                 </a>
               </h3>
+
               {project.image && (
                 <a
                   href={project.link2}
