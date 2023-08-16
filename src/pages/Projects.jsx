@@ -146,9 +146,10 @@ const projects = [
     id: 9,
     title: 'React Native Chat App',
     description:
-      'This project involves building a mobile chat application using React Native. The app provides users with a chat interface and options to share images and their location.',
+      'A mobile chat application using React Native. The app provides users with a chat interface and options to share images and their location. Build with Firebase, React native, and Expo.',
     link: 'https://github.com/jonathankerth/chat-app',
     image: '/images/chatExample.png',
+    link3: 'https://github.com/jonathankerth/chat-app',
   },
 ]
 
@@ -238,6 +239,16 @@ export default function Projects() {
                     className="inline-block px-4 py-2 border-2 border-blue-500 bg-blue-500 text-white hover:bg-blue-600 hover:border-blue-600 hover:text-white rounded transition duration-300 ease-in-out"
                   >
                     Live Site
+                  </a>
+                )}
+                {project.link3 && (
+                  <a
+                    href={project.link3}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-4 py-2 border-2 border-blue-500 bg-blue-500 text-white hover:bg-blue-600 hover:border-blue-600 hover:text-white rounded transition duration-300 ease-in-out"
+                  >
+                    Codebase
                   </a>
                 )}
               </div>
