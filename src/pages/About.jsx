@@ -154,6 +154,10 @@ export default function About() {
     },
     { name: 'TypeScript', url: 'https://www.typescriptlang.org/' },
     { name: 'SCSS', url: 'https://sass-lang.com/' },
+    {
+      name: 'Google Analytics',
+      url: 'https://developers.google.com/analytics',
+    },
   ]
   return (
     <div
@@ -174,7 +178,7 @@ export default function About() {
       <Navbar />
 
       <main className="flex flex-col items-center justify-center flex-1 py-12 mt-10">
-        <div className="bg-black bg-opacity-40 rounded-lg p-6 mb-6">
+        <div className="bg-black bg-opacity-40 rounded-lg p-2 mb-6 max-w-3xl">
           <p className="text-white text-2xl leading-7 text-center max-w-full mb-6">
             I&apos;m a dedicated and passionate software engineer specializing
             in building scalable, efficient web applications. With expertise in
@@ -182,14 +186,14 @@ export default function About() {
             ChatGPT, and MongoDB, I&apos;m always ready to tackle new challenges
             and learn in the process.
           </p>
-          <p className="text-white text-2xl leading-7 text-center max-w-full mb-12">
+          <p className="text-white text-2xl leading-7 text-center max-w-full mb-2">
             Outside the world of code, I&apos;m a food enthusiast, self
             proclaimed nerd, home cook, pet parent, and traveling the globe with
             my partner. Feel free to connect for any opportunities or questions
             about my projects. Thanks for dropping by!
           </p>
         </div>
-        <h3 className="bg-black bg-opacity-40 text-white font-bold text-center text-2xl p-6 rounded-lg mb-6">
+        <h3 className="bg-black bg-opacity-40 text-white  text-center text-2xl p-6 rounded-lg ">
           A few technologies I&apos;ve been working with recently:
         </h3>
         <div className="flex flex-wrap justify-center items-center mt-6">
@@ -206,8 +210,9 @@ export default function About() {
           ))}
         </div>
       </main>
-
-      <ImageCarousel />
+      <div className="max-w-xl">
+        <ImageCarousel />
+      </div>
       <footer className="flex items-center justify-center w-full h-24 text-white bg-gray-900/50">
         <Link href="/">
           <button className="px-6 py-3 font-semibold text-lg bg-white text-black rounded-full shadow-md hover:bg-gray-900/90 hover:text-white transition duration-300">
