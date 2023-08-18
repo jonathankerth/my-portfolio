@@ -114,7 +114,7 @@ export default function Home() {
           alt="Jonathan Kerth"
           width={150}
           height={150}
-          className="rounded-full mb-4"
+          className="rounded-full mb-4 mt-8"
         />
       </div>
       <main className="flex flex-col items-center justify-center w-full px-4 sm:px-8 py-8 text-center bg-black bg-opacity-60 max-w-xl">
