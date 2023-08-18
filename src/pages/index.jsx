@@ -75,6 +75,8 @@ const Navbar = () => {
     </nav>
   )
 }
+const imageUrl =
+  'https://mypublicucket.s3.us-west-2.amazonaws.com/DALL%C2%B7E+2023-08-18+15.22.22.png'
 
 export default function Home() {
   return (
@@ -105,6 +107,16 @@ export default function Home() {
       </Script>
 
       <Navbar />
+      {/* Profile Image */}
+      <div className="mr-8">
+        <Image
+          src={imageUrl}
+          alt="Jonathan Kerth"
+          width={150}
+          height={150}
+          className="rounded-full mb-4"
+        />
+      </div>
       <main className="flex flex-col items-center justify-center w-full px-4 sm:px-8 py-8 text-center bg-black bg-opacity-60 max-w-xl">
         <h1 className="mb-4 text-3xl text-white">Welcome,</h1>
 
