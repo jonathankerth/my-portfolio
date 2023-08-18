@@ -105,7 +105,7 @@ export default function Home() {
       </Script>
 
       <Navbar />
-      <main className="flex flex-col items-center justify-center w-full px-8 py-8  text-center bg-black bg-opacity-60 max-w-xl">
+      <main className="flex flex-col items-center justify-center w-full px-4 sm:px-8 py-8 text-center bg-black bg-opacity-60 max-w-xl">
         <h1 className="mb-4 text-3xl text-white">Welcome,</h1>
 
         <p className="mb-8 text-2xl text-white">
@@ -122,7 +122,7 @@ export default function Home() {
           of the sites below. Thank you for stopping by!
         </div>
 
-        <div className="flex items-center mt-8 space-x-4">
+        <div className="flex flex-wrap items-center mt-8 space-x-2 sm:space-x-4">
           <a
             href="mailto:jonathanpkerth@gmail.com"
             target="_blank"
