@@ -13,6 +13,7 @@ import {
   FaMedium,
 } from 'react-icons/fa'
 import { FaMeta } from 'react-icons/fa6'
+import Image from 'next/image'
 
 const navLinks = [
   { href: '/Resume', label: 'Resume' },
@@ -188,7 +189,20 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="fixed left-0 bottom-0 w-full h-6 bg-gray-900/50 text-white z-50"></footer>
+      <footer className="fixed left-0 bottom-0 w-full h-6 bg-gray-900 text-white z-50 flex items-center justify-start pl-2">
+        <Link
+          href="https://api.checklyhq.com/v1/badges/checks/319f6d4d-8c0d-4ae2-ae10-d0eaf4d8fbad?style=for-the-badge&theme=dark"
+          passHref
+        >
+          <Image
+            src="https://api.checklyhq.com/v1/badges/checks/319f6d4d-8c0d-4ae2-ae10-d0eaf4d8fbad?style=for-the-badge&theme=dark"
+            alt="Checkly"
+            height={28}
+            width={120}
+            className="h-6 w-48 cursor-pointer"
+          />
+        </Link>
+      </footer>
     </div>
   )
 }
