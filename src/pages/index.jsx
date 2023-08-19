@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import {
   FaBars,
   FaTimes,
@@ -75,10 +75,23 @@ const Navbar = () => {
     </nav>
   )
 }
-const imageUrl =
-  'https://mypublicucket.s3.us-west-2.amazonaws.com/DALL%C2%B7E+2023-08-18+15.22.22.png'
 
 export default function Home() {
+  const [isFlipped, setIsFlipped] = useState(false)
+
+  const handleFlipClick = () => {
+    setIsFlipped(!isFlipped)
+  }
+
+  const [isZoomed, setIsZoomed] = useState(false)
+
+  const imageUrl =
+    'https://mypublicucket.s3.us-west-2.amazonaws.com/DALL%C2%B7E+2023-08-18+15.22.22.png'
+
+  const handleImageClick = () => {
+    setIsZoomed(!isZoomed)
+  }
+
   return (
     <div
       className="flex flex-col items-center justify-center min-h-screen p-4 bg-center bg-cover"
@@ -108,100 +121,122 @@ export default function Home() {
 
       <Navbar />
       {/* Profile Image */}
-      <div className="mr-8">
+      <div
+        className={`relative mb-4 mt-12 md:mt-0 md:mb-0 md:mr-8 float-left transition-transform duration-700 ease-in-out ${
+          isZoomed ? 'transform scale-150' : ''
+        }`}
+        onClick={handleImageClick}
+        style={{ width: '150px', height: '150px' }} // Set the size of the container
+      >
         <Image
           src={imageUrl}
           alt="Jonathan Kerth"
           width={150}
           height={150}
-          className="rounded-full mb-4 mt-8"
+          className="rounded-full cursor-pointer"
         />
       </div>
-      <main className="flex flex-col items-center justify-center w-full px-4 sm:px-8 py-8 text-center bg-black bg-opacity-60 max-w-xl">
-        <h1 className="mb-4 text-3xl text-white">Welcome,</h1>
 
-        <p className="mb-8 text-2xl text-white">
-          I&apos;m Jonathan Gallardo-Kerth
-        </p>
+      <main
+        className={`flex flex-col md:flex-row items-center justify-center w-full px-4 sm:px-8 py-8 text-center bg-black bg-opacity-60 max-w-xl transition-transform duration-700 ease-in-out ${
+          isFlipped ? 'transform rotate-180' : ''
+        }`}
+      >
+        <div className="text-white">
+          <h1 className="mb-4 text-3xl">Welcome,</h1>
+          <p className="mb-8 text-2xl text-white">
+            I&apos;m Jonathan Gallardo-Kerth
+          </p>
 
-        <div className="text-xl text-white mb-4">
-          As a Software Engineer, I specialize in crafting engaging online
-          experiences. On my website, you&apos;ll find a showcase of my recent
-          work, and a glimpse of who I am both behind the code.
-        </div>
-        <div className="text-xl text-white">
-          Looking to collaborate or connect? Feel free to reach out through any
-          of the sites below. Thank you for stopping by!
-        </div>
+          <div className="text-xl text-white mb-4">
+            As a Software Engineer, I specialize in crafting engaging online
+            experiences. On my website, you&apos;ll find a showcase of my recent
+            work, and a glimpse of who I am both behind the code.
+          </div>
+          <div className="text-xl text-white">
+            Looking to collaborate or connect? Feel free to reach out through
+            any of the sites below. Thank you for stopping by!
+          </div>
 
-        <div className="flex flex-wrap items-center mt-8 space-x-2 sm:space-x-4">
-          <a
-            href="mailto:jonathanpkerth@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Email"
-            className="group text-white"
-          >
-            <FaEnvelope className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/jonathankerth"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            className="group text-white"
-          >
-            <FaLinkedin className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
-          </a>
-          <a
-            href="https://github.com/jonathankerth"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            className="group text-white"
-          >
-            <FaGithub className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
-          </a>
-          <a
-            href="https://stackoverflow.com/users/21791075/jonathan-kerth"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Stack Overflow"
-            className="group text-white"
-          >
-            <FaStackOverflow className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
-          </a>
-          <a
-            href="https://twitter.com/jonathankerth"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Twitter"
-            className="group text-white"
-          >
-            <FaTwitter className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
-          </a>
-          <a
-            href="https://medium.com/@jonathanpkerth"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Medium"
-            className="group text-white"
-          >
-            <FaMedium className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
-          </a>
-          <a
-            href="https://www.threads.net/@jonathankerth"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Threads"
-            className="group text-white"
-          >
-            <FaMeta className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
-          </a>
+          <div className="flex flex-wrap items-center mt-8 space-x-2 sm:space-x-4">
+            <a
+              href="mailto:jonathanpkerth@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Email"
+              className="group text-white"
+            >
+              <FaEnvelope className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/jonathankerth"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="group text-white"
+            >
+              <FaLinkedin className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
+            </a>
+            <a
+              href="https://github.com/jonathankerth"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="group text-white"
+            >
+              <FaGithub className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
+            </a>
+            <a
+              href="https://stackoverflow.com/users/21791075/jonathan-kerth"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Stack Overflow"
+              className="group text-white"
+            >
+              <FaStackOverflow className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
+            </a>
+            <a
+              href="https://twitter.com/jonathankerth"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+              className="group text-white"
+            >
+              <FaTwitter className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
+            </a>
+            <a
+              href="https://medium.com/@jonathanpkerth"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Medium"
+              className="group text-white"
+            >
+              <FaMedium className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
+            </a>
+            <a
+              href="https://www.threads.net/@jonathankerth"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Threads"
+              className="group text-white"
+            >
+              <FaMeta className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
+            </a>
+          </div>
         </div>
       </main>
 
-      <footer className="fixed left-0 bottom-0 w-full h-6 bg-gray-900 text-white z-50 flex items-center justify-start pl-2">
+      {/* Flip Button */}
+      <div className="flex items- justify-right mt-6 mb-6 ">
+        <button
+          onClick={handleFlipClick}
+          className="text-xs px-1 py-0.5 bg-red-500/70 hover:bg-red-900/70 rounded-md  "
+        >
+          Press for fun
+        </button>
+      </div>
+
+      <footer className="fixed left-0 bottom-0 w-full h-6 bg-gray-900/50 text-white z-50 flex items-center justify-start pl-2">
         <Link
           href="https://api.checklyhq.com/v1/badges/checks/319f6d4d-8c0d-4ae2-ae10-d0eaf4d8fbad?style=for-the-badge&theme=dark"
           passHref
