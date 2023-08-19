@@ -142,7 +142,7 @@ export default function Home() {
           isFlipped ? 'transform rotate-180' : ''
         }`}
       >
-        <div className="text-white">
+        <div className="text-white ">
           <h1 className="mb-4 text-3xl">Welcome,</h1>
           <p className="mb-8 text-2xl text-white">
             I&apos;m Jonathan Gallardo-Kerth
@@ -158,7 +158,7 @@ export default function Home() {
             any of the sites below. Thank you for stopping by!
           </div>
 
-          <div className="flex flex-wrap items-center mt-8 space-x-2 sm:space-x-4">
+          <div className="flex flex-wrap items-center mt-8 space-x-2 sm:space-x-4 justify-center">
             <a
               href="mailto:jonathanpkerth@gmail.com"
               target="_blank"
@@ -227,7 +227,7 @@ export default function Home() {
       </main>
 
       {/* Flip Button */}
-      <div className="flex items- justify-right mt-6 mb-6 ">
+      <div className="flex  mt-6 mb-6 ">
         <button
           onClick={handleFlipClick}
           className="text-xs px-1 py-0.5 bg-red-500/70 hover:bg-red-900/70 rounded-md  "
