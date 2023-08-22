@@ -122,7 +122,7 @@ export default function Home() {
       <Navbar />
       {/* Profile Image */}
       <div
-        className={`relative mb-4 mt-12 md:mt-0 md:mb-0 md:mr-8 float-left transition-transform duration-700 ease-in-out ${
+        className={`relative mb-4 mt-12 md:mt-0 md:mb-2 md:mr-8 float-left transition-transform duration-700 ease-in-out ${
           isZoomed ? 'transform scale-150' : ''
         }`}
         onClick={handleImageClick}
