@@ -7,6 +7,7 @@ const nextConfig = {
       'mypublicucket.s3.us-west-2.amazonaws.com',
       'catmemes.s3.us-west-2.amazonaws.com',
       'memedisplay.s3.us-west-2.amazonaws.com',
+      'https://mypublicucket.s3.us-west-2.amazonaws.com',
     ],
     dangerouslyAllowSVG: true,
   },

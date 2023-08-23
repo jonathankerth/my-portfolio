@@ -67,63 +67,63 @@ const Navbar = () => {
     </nav>
   )
 }
-
 const ImageCarousel = () => {
-  const commonWidth = 300
-  const commonHeight = 200
+  const aspectRatio = 4 / 3 // 4:3 aspect ratio
+  const commonWidth = 200 // You can adjust this as needed
+  const commonHeight = commonWidth / aspectRatio // Calculated based on the aspect ratio
 
+  const images = [
+    // Add your images here
+    {
+      src: 'https://mypublicucket.s3.us-west-2.amazonaws.com/IMG_6217.jpeg',
+      alt: 'Image 1',
+    },
+    {
+      src: 'https://mypublicucket.s3.us-west-2.amazonaws.com/IMG_6050.jpeg',
+      alt: 'Image 2',
+    },
+    {
+      src: 'https://mypublicucket.s3.us-west-2.amazonaws.com/IMG_4902.jpeg',
+      alt: 'Image 3',
+    },
+    {
+      src: 'https://mypublicucket.s3.us-west-2.amazonaws.com/IMG_4068.jpeg',
+      alt: 'Image 4',
+    },
+    {
+      src: 'https://mypublicucket.s3.us-west-2.amazonaws.com/sid+and+J+selfie.jpeg',
+      alt: 'Image 5',
+    },
+  ]
+
+  const carouselProps = {
+    infiniteLoop: true,
+    showStatus: false,
+    showIndicators: true,
+    showThumbs: false,
+    autoPlay: true,
+    interval: 3000,
+    stopOnHover: false,
+    transitionTime: 500,
+  }
   return (
-    <div className="flex justify-center items-center w-full h-full">
-      <Carousel
-        infiniteLoop={true}
-        showStatus={false}
-        showIndicators={true}
-        showThumbs={true}
-        autoPlay={true}
-        interval={3000}
-        stopOnHover={false}
-        transitionTime={500}
-      >
-        <div>
-          <Image
-            src="/images/IMG_0318.jpeg"
-            alt="Image 1"
-            width={commonWidth}
-            height={commonHeight}
-          />
-        </div>
-        <div>
-          <Image
-            src="/images/IMG_4068.jpeg"
-            alt="Image 2"
-            width={commonWidth}
-            height={commonHeight}
-          />
-        </div>
-        <div>
-          <Image
-            src="/images/IMG_4902.jpeg"
-            alt="Image 3"
-            width={commonWidth}
-            height={commonHeight}
-          />
-        </div>
-        <div>
-          <Image
-            src="/images/IMG_6050.jpeg"
-            alt="Image 4"
-            width={commonWidth}
-            height={commonHeight}
-          />
-        </div>
-        <div>
-          <Image
-            src="/images/IMG_6217.jpeg"
-            alt="Image 5"
-            width={commonWidth}
-            height={commonHeight}
-          />
-        </div>
+    <div className="flex justify-center items-center w-full h-full p-4 rounded-lg bg-white bg-opacity-40">
+      <Carousel {...carouselProps}>
+        {images.map((image, index) => (
+          <div key={index} className="flex justify-center items-center">
+            <div className="relative rounded-lg shadow-md max-h-full">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                layout="responsive"
+                objectFit="contain"
+                width={1} // These values are used in combination with layout="responsive"
+                height={1} // to maintain the original aspect ratio of the image
+                className="rounded-lg"
+              />
+            </div>
+          </div>
+        ))}
       </Carousel>
     </div>
   )
