@@ -71,6 +71,7 @@ export default function Cats() {
   const [selectedFile, setSelectedFile] = useState(null)
   const [selectedFileName, setSelectedFileName] = useState(null)
   const [uploadMessage, setUploadMessage] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
 
   const favoriteMemes = [
     'https://memedisplay.s3.us-west-2.amazonaws.com/cat+and+kid.jpeg',
@@ -90,9 +91,11 @@ export default function Cats() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const file = selectedFile
+    setIsLoading(true) // Set loading state to true
 
+    const file = selectedFile
     if (!file) {
+      setIsLoading(false) // Reset loading state if no file selected
       return
     }
 
@@ -113,6 +116,7 @@ export default function Cats() {
     setUploadMessage(
       'Your file has been uploaded, check back to see if your meme is posted!'
     )
+    setIsLoading(false)
   }
 
   return (
@@ -164,9 +168,13 @@ export default function Cats() {
             )}
             <button
               type="submit"
-              className="px-6 py-2 text-white bg-blue-500 rounded-lg shadow-md hover:bg-blue-600 focus:bg-blue-700 focus:outline-none transition duration-300 ease-in-out"
+              className={`px-6 py-2 text-white rounded-lg shadow-md hover:bg-blue-600 focus:bg-blue-700 focus:outline-none transition duration-300 ease-in-out ${
+                isLoading ? 'bg-blue-400 cursor-not-allowed' : 'bg-blue-500'
+              }`}
+              disabled={isLoading} // Disable the button during loading
             >
-              Upload
+              {isLoading ? 'Uploading...' : 'Upload'}{' '}
+              {/* Change button text based on loading state */}
             </button>
           </form>
 
