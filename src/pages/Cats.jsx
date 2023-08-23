@@ -70,6 +70,7 @@ export default function Cats() {
   const [uploadedImageUrl, setUploadedImageUrl] = useState(null)
   const [selectedFile, setSelectedFile] = useState(null)
   const [selectedFileName, setSelectedFileName] = useState(null)
+  const [uploadMessage, setUploadMessage] = useState('')
 
   const favoriteMemes = [
     'https://memedisplay.s3.us-west-2.amazonaws.com/cat+and+kid.jpeg',
@@ -106,6 +107,9 @@ export default function Cats() {
 
     const imageUrl = url.split('?')[0]
     setUploadedImageUrl(imageUrl)
+    setUploadMessage(
+      'Your file has been uploaded, check back to see if your meme is posted!'
+    )
   }
 
   return (
@@ -150,6 +154,11 @@ export default function Cats() {
                 onChange={handleFileChange}
               />
             </label>
+            {uploadMessage && (
+              <p className="text-md font-bold text-white text-center">
+                {uploadMessage}
+              </p>
+            )}
             <button
               type="submit"
               className="px-6 py-2 text-white bg-blue-500 rounded-lg shadow-md hover:bg-blue-600 focus:bg-blue-700 focus:outline-none transition duration-300 ease-in-out"
@@ -157,6 +166,7 @@ export default function Cats() {
               Upload
             </button>
           </form>
+
           {uploadedImageUrl && (
             <div className="mb-6 text-center">
               <p className="text-md font-bold text-white">
@@ -167,7 +177,7 @@ export default function Cats() {
                 alt="Uploaded preview"
                 width={128}
                 height={128}
-                className="rounded-full inline-block"
+                className="inline-block"
               />
             </div>
           )}
