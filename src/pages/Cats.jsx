@@ -96,7 +96,9 @@ export default function Cats() {
       return
     }
 
-    const { url } = await fetch('/api/s3Url').then((res) => res.json())
+    const { url } = await fetch(`/api/s3Url?fileType=${file.type}`).then(
+      (res) => res.json()
+    )
 
     await fetch(url, {
       method: 'PUT',
