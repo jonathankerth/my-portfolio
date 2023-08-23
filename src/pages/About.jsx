@@ -10,7 +10,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/Projects', label: 'Projects' },
   { href: '/Resume', label: 'Resume' },
-  { href: '/Cats', label: 'Cats' },
+  { href: '/Cats', label: 'Cat Memes' },
 ]
 
 const Navbar = () => {
