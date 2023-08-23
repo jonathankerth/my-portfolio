@@ -123,7 +123,12 @@ export default function Cats() {
             Send Me Your Cat Memes!
           </h1>
           <h2 className="text-2xl text-white text-center mb-9">
-            Upload a cat meme to my AWS s3 bucket and I&apos;ll display my
+            This page was built because I love cats, memes, and cat memes. I
+            also wanted to show my knowledge of AWS S3 buckets and IAM user
+            policies.{' '}
+          </h2>
+          <h2 className="text-2xl text-white text-center mb-9">
+            Upload a cat meme to my S3 bucket and I&apos;ll display my
             favorites!{' '}
           </h2>
           <form
