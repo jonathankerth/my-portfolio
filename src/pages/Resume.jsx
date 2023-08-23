@@ -8,6 +8,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/About', label: 'About Me' },
   { href: '/Projects', label: 'Projects' },
+  { href: '/Cats', label: 'Cat Memes' },
 ]
 
 const Navbar = () => {
@@ -113,7 +114,6 @@ export default function Resume() {
           />
         </div>
       </main>
-
       <footer className="flex items-center justify-center w-full h-24 text-white bg-gray-900/50">
         <Link href="/">
           <button className="px-6 py-3 font-semibold text-lg bg-white text-black rounded-full shadow-md hover:bg-gray-900/90 hover:text-white transition duration-300">

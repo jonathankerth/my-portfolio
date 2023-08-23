@@ -19,6 +19,7 @@ const navLinks = [
   { href: '/Resume', label: 'Resume' },
   { href: '/About', label: 'About Me' },
   { href: '/Projects', label: 'Projects' },
+  { href: '/Cats', label: 'Cat Memes' },
 ]
 
 const Navbar = () => {
