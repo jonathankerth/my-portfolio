@@ -77,6 +77,7 @@ export default function Cats() {
     'https://memedisplay.s3.us-west-2.amazonaws.com/cat+philosophy.jpeg',
     'https://memedisplay.s3.us-west-2.amazonaws.com/photogenic+cat.jpeg',
     'https://memedisplay.s3.us-west-2.amazonaws.com/pizza+cat.jpeg',
+    'https://memedisplay.s3.us-west-2.amazonaws.com/code+cat.png',
   ]
 
   const handleFileChange = (e) => {
