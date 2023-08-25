@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import Image from 'next/image'
 import { FaBars, FaTimes } from 'react-icons/fa'
 
@@ -13,13 +13,36 @@ const navLinks = [
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [prevScrollPos, setPrevScrollPos] = useState(0)
+  const [visible, setVisible] = useState(true)
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
   }
 
+  // Handling navbar visibility while scrolling
+  const handleScroll = useCallback(() => {
+    const currentScrollPos = window.pageYOffset
+    const isVisible = prevScrollPos > currentScrollPos
+
+    setPrevScrollPos(currentScrollPos)
+    setVisible(isVisible)
+  }, [prevScrollPos])
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [handleScroll])
+
   return (
-    <nav className="fixed top-0 left-0 z-50 w-full py-4 bg-gray-900/50">
+    <nav
+      className={`fixed top-0 left-0 z-50 w-full py-4 bg-gray-900/50 transition-all duration-200 ${
+        visible ? 'visible' : 'invisible'
+      }`}
+    >
       <div className="max-w-screen-lg mx-auto px-4 md:px-8 flex justify-between items-center">
         <div className="hidden md:block">
           <ul className="flex space-x-8">
