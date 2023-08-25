@@ -253,10 +253,10 @@ export default function Home() {
       <div className="flex mt-6 mb-6">
         <button
           onClick={handleFlipClick}
-          className={`text-xs px-1 py-0.5 rounded-md ${
+          className={`text-md px-1 py-0.5 rounded-md ${
             isFlipped
-              ? 'bg-blue-500/70 hover:bg-blue-900/70'
-              : 'bg-red-500/70 hover:bg-red-900/70'
+              ? 'bg-orange-500/80 hover:bg-yellow-100/50'
+              : 'bg-red-600/80 hover:bg-red-100/50'
           }`}
         >
           {isFlipped ? 'Less Fun' : 'Press for Fun'}
