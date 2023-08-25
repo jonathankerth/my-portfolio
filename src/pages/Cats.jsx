@@ -130,15 +130,15 @@ export default function Cats() {
       <Navbar />
       <main className="flex flex-col items-center justify-center flex-1 py-12 mt-10">
         <div className="bg-black bg-opacity-40 rounded-lg p-4 mb-6 max-w-2xl">
-          <h1 className="text-4xl font-bold text-white text-center mb-9">
+          <h1 className="text-2xl font-bold text-white text-center mb-4">
             Send Me Your Cat Memes!
           </h1>
-          <h2 className="text-2xl text-white text-center mb-9">
+          <h2 className="text-xl text-white text-center mb-2">
             This page was built because I love cats, memes, and cat memes. I
             also wanted to show my knowledge of AWS S3 buckets and IAM user
             policies.{' '}
           </h2>
-          <h2 className="text-2xl text-white text-center mb-9">
+          <h2 className="text-xl text-white text-center mb-2">
             Upload a cat meme to my S3 bucket and I&apos;ll display my
             favorites!{' '}
           </h2>

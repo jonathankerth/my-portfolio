@@ -180,14 +180,17 @@ export default function About() {
 
       <main className="flex flex-col items-center justify-center flex-1 py-12 mt-10">
         <div className="bg-black bg-opacity-40 rounded-lg p-4 mb-6 max-w-2xl">
-          <p className="text-white text-md leading-6 text-center max-w-full mb-4">
+          <h1 className="text-2xl font-bold text-white text-center mb-4">
+            About Me
+          </h1>
+          <p className="text-white text-xl leading-6 text-center max-w-full mb-4">
             I&apos;m a dedicated and passionate software engineer specializing
             in building scalable, efficient web applications. With expertise in
             cutting-edge technologies like React, Next.js, Node.js, Express,
             ChatGPT, and MongoDB, I&apos;m always ready to tackle new challenges
             and learn in the process.
           </p>
-          <p className="text-white text-md leading-6 text-center max-w-full">
+          <p className="text-white text-xl leading-6 text-center max-w-full">
             Outside the world of code, I&apos;m a food enthusiast, self
             proclaimed nerd, home cook, pet parent, and traveling the globe with
             my partner. Feel free to connect for any opportunities or questions
