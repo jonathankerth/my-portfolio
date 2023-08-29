@@ -88,13 +88,12 @@ const Navbar = () => {
     </nav>
   )
 }
-
 const projects = [
   {
     id: 1,
     title: 'Nicolas Cage Movie Repository',
     description:
-      'A Nicolas Cage Movie Repository built with React and Bootstrap. Hosted on Netlify. Built to display a backend API I built: NicCage API.',
+      'A comprehensive repository dedicated to Nicolas Cage movies, built using React and styled with Bootstrap. The project is integrated with a custom-built RESTful API, NicCage API, to fetch and display movie data. Hosted on Netlify for seamless user experience.',
     link: 'https://github.com/jonathankerth/nicCage-client',
     link2: 'https://niccagecllient.netlify.app/',
     image: '/images/nicCageHome.png',
@@ -103,7 +102,7 @@ const projects = [
     id: 2,
     title: 'Weather App',
     description:
-      'Built on Next.js using Tailwind CSS to display real-time weather data from the OpenWeather API. Deployed on Vercel.',
+      'A real-time weather application developed using Next.js and styled with Tailwind CSS. It fetches current weather data from the OpenWeather API and is deployed on Vercel for high availability.',
     link: 'https://github.com/jonathankerth/weather-app',
     link2: 'https://weather-app-woad-two.vercel.app/',
     image: '/images/weather-home.png',
@@ -112,17 +111,16 @@ const projects = [
     id: 3,
     title: 'KitchenGPT',
     description:
-      'A GPT-3 powered kitchen assistant. Built with React, Node.js, Express.js. Backend hosted on Heroku and front-end deployed on Vercel. ',
+      'A cutting-edge kitchen assistant powered by GPT-3. The front-end is built with React, while the back-end utilizes Node.js and Express.js. The application is hosted on Heroku and Vercel for robust scalability.',
     link: 'https://github.com/jonathankerth/KitchenGPT',
     link2: 'https://kitchen-gpt.vercel.app/',
     image: '/images/kitchen-gpt-home.png',
   },
-
   {
     id: 4,
     title: 'Oregonized Design Co Shopify Frontend (WIP)',
     description:
-      "A frontend to Shopify's headless api built using Next.js and Tailwind CSS. Company owned and operated by Jonathan Kerth and Sidney Gallardo. Selling custom designed clothing and accessories for Bachelorette Parties. Hosted on Vercel. ",
+      "A custom e-commerce frontend built on top of Shopify's headless API. Developed using Next.js and Tailwind CSS, this project is a collaboration between Jonathan Kerth and Sidney Gallardo. The platform specializes in custom-designed clothing and accessories for Bachelorette Parties and is hosted on Vercel.",
     link: 'https://github.com/jonathankerth/oregonized-design',
     link2: 'https://oregonizeddesign.com/',
     image: '/images/designHome.png',
@@ -131,7 +129,7 @@ const projects = [
     id: 5,
     title: 'Meet App',
     description:
-      'A serverless, PWA built with React/Node.js using TDD. It fetches upcoming tech events by utilizing the Google Calendar API and authentications using OAuth2. ',
+      'A serverless Progressive Web App (PWA) built using React and Node.js. Developed with a Test-Driven Development (TDD) approach, the app fetches upcoming tech events from Google Calendar API and features OAuth2 authentication.',
     link: 'https://github.com/jonathankerth/meet',
     link2: 'https://jonathankerth.github.io/meet/',
     image: '/images/meet-home.png',
@@ -140,17 +138,16 @@ const projects = [
     id: 7,
     title: 'Magic Wheel Component',
     description:
-      'An innovative wheel spinner component, created with Tailwind CSS. Seamlessly integrated into a Next.js environment, this component showcases advanced CSS techniques, animations, and responsive design.',
+      'An innovative wheel spinner component, created entirely with Tailwind CSS. Seamlessly integrated into a Next.js environment, this component showcases advanced CSS techniques, and animations',
     link: 'https://github.com/jonathankerth/magic-wheel',
     link2: 'https://magic-wheel-rosy.vercel.app/',
     image: '/images/wheel.png',
   },
-
   {
     id: 8,
     title: 'Pokedex',
     description:
-      'A Pokedex to display traits, pictures, and size of Pokemon. Utilizing the PokeAPI.co. Built with JavaScript.',
+      'An interactive Pokedex application that displays detailed information about various Pokemon. Built using vanilla JavaScript and fetches data from PokeAPI.co for an authentic experience.',
     link: 'https://github.com/jonathankerth/pokemon-js',
     link2: 'https://pokemon-js-omega.vercel.app/#',
     image: '/images/pokedex-home.png',
@@ -159,17 +156,16 @@ const projects = [
     id: 6,
     title: 'NicCage API',
     description:
-      'A RESTful API built with Node.js, Express.js, MongoDB, and hosted on Heroku.',
+      'A custom-built RESTful API that serves as a comprehensive database for Nicolas Cage movies. Developed using Node.js, Express.js, and MongoDB, the API is hosted on Heroku for easy access and high availability.',
     link: 'https://github.com/jonathankerth/Nicolas-Cage-API',
     link2: 'https://niccage.herokuapp.com/',
     image: '/images/nicCage-API.png',
   },
-
   {
     id: 9,
     title: 'React Native Chat App',
     description:
-      'A mobile chat application using React Native. The app provides users with a chat interface and options to share images and their location. Build with Firebase, React native, and Expo.',
+      'A mobile-friendly chat application built using React Native and Expo. The app features a real-time chat interface, image sharing, and location sharing capabilities, all backed by Firebase for data storage and user authentication.',
     link: 'https://github.com/jonathankerth/chat-app',
     image: '/images/chatExample.png',
     link3: 'https://github.com/jonathankerth/chat-app',
