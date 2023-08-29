@@ -96,7 +96,7 @@ const projects = [
       'A comprehensive repository dedicated to Nicolas Cage movies, built using React and styled with Bootstrap. The project is integrated with a custom-built RESTful API, NicCage API, to fetch and display movie data. Hosted on Netlify for seamless user experience.',
     link: 'https://github.com/jonathankerth/nicCage-client',
     link2: 'https://niccagecllient.netlify.app/',
-    image: '/images/nicCageHome.png',
+    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/nicCageHome.png',
   },
   {
     id: 2,
@@ -105,7 +105,7 @@ const projects = [
       'A real-time weather application developed using Next.js and styled with Tailwind CSS. It fetches current weather data from the OpenWeather API and is deployed on Vercel for high availability.',
     link: 'https://github.com/jonathankerth/weather-app',
     link2: 'https://weather-app-woad-two.vercel.app/',
-    image: '/images/weather-home.png',
+    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/weather-home.png',
   },
   {
     id: 3,
@@ -114,7 +114,8 @@ const projects = [
       'A cutting-edge kitchen assistant powered by GPT-3. The front-end is built with React, while the back-end utilizes Node.js and Express.js. The application is hosted on Heroku and Vercel for robust scalability.',
     link: 'https://github.com/jonathankerth/KitchenGPT',
     link2: 'https://kitchen-gpt.vercel.app/',
-    image: '/images/kitchen-gpt-home.png',
+    image:
+      'https://mypublicucket.s3.us-west-2.amazonaws.com/kitchen-gpt-home.png',
   },
   {
     id: 4,
@@ -123,7 +124,7 @@ const projects = [
       "A custom e-commerce frontend built on top of Shopify's headless API. Developed using Next.js and Tailwind CSS, this project is a collaboration between Jonathan Kerth and Sidney Gallardo. The platform specializes in custom-designed clothing and accessories for Bachelorette Parties and is hosted on Vercel.",
     link: 'https://github.com/jonathankerth/oregonized-design',
     link2: 'https://oregonizeddesign.com/',
-    image: '/images/designHome.png',
+    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/designHome.png',
   },
   {
     id: 5,
@@ -132,7 +133,7 @@ const projects = [
       'A serverless Progressive Web App (PWA) built using React and Node.js. Developed with a Test-Driven Development (TDD) approach, the app fetches upcoming tech events from Google Calendar API and features OAuth2 authentication.',
     link: 'https://github.com/jonathankerth/meet',
     link2: 'https://jonathankerth.github.io/meet/',
-    image: '/images/meet-home.png',
+    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/meet-home.png',
   },
   {
     id: 7,
@@ -141,7 +142,7 @@ const projects = [
       'An innovative wheel spinner component, created entirely with Tailwind CSS. Seamlessly integrated into a Next.js environment, this component showcases advanced CSS techniques, and animations',
     link: 'https://github.com/jonathankerth/magic-wheel',
     link2: 'https://magic-wheel-rosy.vercel.app/',
-    image: '/images/wheel.png',
+    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/wheel.png',
   },
   {
     id: 8,
@@ -150,7 +151,7 @@ const projects = [
       'An interactive Pokedex application that displays detailed information about various Pokemon. Built using vanilla JavaScript and fetches data from PokeAPI.co for an authentic experience.',
     link: 'https://github.com/jonathankerth/pokemon-js',
     link2: 'https://pokemon-js-omega.vercel.app/#',
-    image: '/images/pokedex-home.png',
+    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/pokedex-home.png',
   },
   {
     id: 6,
@@ -159,7 +160,7 @@ const projects = [
       'A custom-built RESTful API that serves as a comprehensive database for Nicolas Cage movies. Developed using Node.js, Express.js, and MongoDB, the API is hosted on Heroku for easy access and high availability.',
     link: 'https://github.com/jonathankerth/Nicolas-Cage-API',
     link2: 'https://niccage.herokuapp.com/',
-    image: '/images/nicCage-API.png',
+    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/nicCage-API.png',
   },
   {
     id: 9,
@@ -167,7 +168,7 @@ const projects = [
     description:
       'A mobile-friendly chat application built using React Native and Expo. The app features a real-time chat interface, image sharing, and location sharing capabilities, all backed by Firebase for data storage and user authentication.',
     link: 'https://github.com/jonathankerth/chat-app',
-    image: '/images/chatExample.png',
+    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/chatExample.png',
     link3: 'https://github.com/jonathankerth/chat-app',
   },
 ]
