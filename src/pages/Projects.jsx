@@ -194,9 +194,9 @@ export default function Projects() {
       }}
     >
       <Head>
-        <title>A Selection of My Projects</title>
+        <title>Projects</title>
         <meta
-          name="description"
+          name="Projects"
           content="A showcase of my software engineering projects"
         />
         <link rel="icon" href="/favicon.ico" />

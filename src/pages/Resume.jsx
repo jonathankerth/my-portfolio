@@ -126,7 +126,6 @@ export default function Resume() {
             </svg>
             Download My Resume
           </a>
-
           <Image
             src="https://mypublicucket.s3.us-west-2.amazonaws.com/jonathangk.png"
             priority={true}

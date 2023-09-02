@@ -208,22 +208,22 @@ export default function About() {
           </h1>
           <p className="text-white text-xl leading-6 text-center max-w-full mb-4">
             I&apos;m a dedicated and passionate software engineer specializing
-            in building scalable, efficient web applications. With expertise in
-            cutting-edge technologies like React, Next.js, Node.js, Express,
-            ChatGPT, and MongoDB, I&apos;m always ready to tackle new challenges
-            and learn in the process.
+            in building scalable, and efficient web applications. I primarily
+            use cutting-edge technologies like React, Next.js, Node.js, Express,
+            Redux, Javascript, ChatGPT, and MongoDB, I love tackling new
+            challenges and continous learning.
           </p>
           <p className="text-white text-xl leading-6 text-center max-w-full">
             Outside the world of code, I&apos;m a food enthusiast, self
-            proclaimed nerd, home cook, pet parent, and traveling the globe with
-            my partner. Feel free to connect for any opportunities or questions
-            about my projects. Thanks for dropping by!
+            proclaimed nerd, home chef, pet parent, and I&apos;ve been to 5 out
+            of the 7 continents. Feel free to connect for any opportunities or
+            questions about my projects. Thanks for dropping by!
+          </p>
+          <p className="text-white text-xl leading-6 text-center max-w-full mt-4">
+            A few technologies I&apos;ve been working with recently:
           </p>
         </div>
-        <h3 className="bg-black bg-opacity-40 text-white text-center text-xl p-4 rounded-lg">
-          A few technologies I&apos;ve been working with recently:
-        </h3>
-        <div className="flex flex-wrap justify-center items-center mt-4">
+        <div className="flex flex-wrap items-center justify-center  mt-4">
           {techStack.map((tech, index) => (
             <a
               key={index}
