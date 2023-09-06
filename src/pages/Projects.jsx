@@ -139,10 +139,10 @@ const projects = [
     id: 7,
     title: 'Magic Wheel Component',
     description:
-      'An innovative wheel spinner component, created entirely with Tailwind CSS. Seamlessly integrated into a Next.js environment, this component showcases advanced CSS techniques, and animations',
+      'An innovative wheel spinner component, created entirely with Tailwind CSS. Seamlessly integrated into a Next.js environment, this component showcases advanced CSS techniques, and animations. This is displayed in an Iframe while others are displayed from an AWS S3 bucket.',
     link: 'https://github.com/jonathankerth/magic-wheel',
     link2: 'https://magic-wheel-rosy.vercel.app/',
-    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/wheel.png',
+    iframe: 'https://magic-wheel-rosy.vercel.app/',
   },
   {
     id: 8,
@@ -204,15 +204,16 @@ export default function Projects() {
       <Navbar />
 
       <div className="container mt-24 mx-auto px-4 md:px-8">
-        <h1 className="text-4xl font-bold text-black text-center ">
-          A Few of My Projects
-        </h1>
+        <div className="bg-black bg-opacity-40 rounded-lg p-4 mb-6 max-w-sm mx-auto">
+          <h1 className="text-2xl font-bold text-white text-center">
+            A Few of My Projects
+          </h1>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-9">
           {projects.map((project) => (
             <div
               key={project.id}
               className="project-container transition-transform duration-300 hover:scale-105 bg-white rounded-lg shadow-md flex flex-col p-6"
-              style={{ minHeight: '400px' }} // You can adjust this based on your content
             >
               <h3 className="text-xl font-bold mb-2 flex-shrink-0">
                 <a
@@ -224,20 +225,27 @@ export default function Projects() {
                   {project.title}{' '}
                 </a>
               </h3>
-              {project.image && (
-                <a
-                  href={project.link2}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    className="object-top w-full h-64 mb-4"
-                    width={500}
-                    height={500}
-                  />
-                </a>
+              {project.title === 'Magic Wheel Component' ? (
+                <iframe
+                  src={project.iframe}
+                  className="object-top w-full h-full mb-4 flex-grow-0"
+                ></iframe>
+              ) : (
+                project.image && (
+                  <a
+                    href={project.link2}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      className="object-top w-full h-full mb-4 flex-grow-0"
+                      width={500}
+                      height={500}
+                    />
+                  </a>
+                )
               )}
               <p className="text-gray-700 mb-4 flex-grow">
                 {project.description}
@@ -276,7 +284,7 @@ export default function Projects() {
           ))}
         </div>
       </div>
-      <footer className="flex items-center justify-center w-full h-24 text-white bg-gray-900/50">
+      <footer className="flex items-center justify-center w-full h-24 text-white mt-8 bg-gray-900/50">
         <Link href="/">
           <button className="px-6 py-3 font-semibold text-lg bg-white text-black rounded-full shadow-md hover:bg-gray-900/90 hover:text-white transition duration-300">
             ← Back to home
