@@ -114,6 +114,21 @@ export default function Home() {
   const handleImageClick = () => {
     setIsZoomed(!isZoomed)
   }
+  const [isFooterVisible, setIsFooterVisible] = useState(true)
+
+  const handleFooterVisibility = useCallback(() => {
+    const bottomReached =
+      window.innerHeight + window.scrollY >= document.body.scrollHeight
+    setIsFooterVisible(bottomReached)
+  }, [])
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleFooterVisibility)
+
+    return () => {
+      window.removeEventListener('scroll', handleFooterVisibility)
+    }
+  }, [handleFooterVisibility])
 
   return (
     <div
@@ -145,7 +160,7 @@ export default function Home() {
       <Navbar />
       {/* Profile Image */}
       <div
-        className={`relative mb-4 mt-12 md:mt-0 md:mb-2 md:mr-8 float-left transition-transform duration-700 ease-in-out ${
+        className={`relative mb-4 mt-12 md:mt-8 md:mb-2 md:mr-8 float-left transition-transform duration-700 ease-in-out z-10 ${
           isZoomed ? 'transform scale-150' : ''
         }`}
         onClick={handleImageClick}
@@ -250,32 +265,36 @@ export default function Home() {
       </main>
 
       {/* Flip Button */}
-      <div className="flex mt-6 mb-6">
+      <div className="flex mt-6 mb-12">
         <button
           onClick={handleFlipClick}
           className={`text-md px-1 py-0.5 rounded-md ${
-            isFlipped
-              ? 'bg-orange-500/80 hover:bg-yellow-100/50'
-              : 'bg-red-600/80 hover:bg-red-100/50'
+            isFlipped ? 'bg-orange-500/90' : 'bg-red-600/90'
           }`}
         >
           {isFlipped ? 'Less Fun' : 'Press for Fun'}
         </button>
       </div>
 
-      <footer className="fixed left-0 bottom-0 w-full h-6 bg-gray-900/50 text-white z-50 flex items-center justify-start pl-2">
-        <Link
-          href="https://api.checklyhq.com/v1/badges/checks/319f6d4d-8c0d-4ae2-ae10-d0eaf4d8fbad?style=for-the-badge&theme=dark"
-          passHref
-        >
-          <Image
-            src="https://api.checklyhq.com/v1/badges/checks/319f6d4d-8c0d-4ae2-ae10-d0eaf4d8fbad?style=for-the-badge&theme=dark"
-            alt="Checkly"
-            height={28}
-            width={120}
-            className="h-6 w-48 cursor-pointer"
-          />
-        </Link>
+      <footer
+        className={`fixed inset-x-0 bottom-0 flex items-center justify-between bg-gray-900/50 text-white p-4 z-50 ${
+          isFooterVisible ? 'visible' : 'invisible'
+        }`}
+      >
+        <div className="flex items-center">
+          <Link
+            href="https://api.checklyhq.com/v1/badges/checks/319f6d4d-8c0d-4ae2-ae10-d0eaf4d8fbad?style=for-the-badge&theme=dark"
+            passHref
+          >
+            <Image
+              src="https://api.checklyhq.com/v1/badges/checks/319f6d4d-8c0d-4ae2-ae10-d0eaf4d8fbad?style=for-the-badge&theme=dark"
+              alt="Checkly"
+              height={28}
+              width={120}
+              className="cursor-pointer"
+            />
+          </Link>
+        </div>
       </footer>
     </div>
   )
