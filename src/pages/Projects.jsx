@@ -133,7 +133,7 @@ const projects = [
       'A serverless Progressive Web App (PWA) built using React and Node.js. Developed with a Test-Driven Development (TDD) approach, the app fetches upcoming tech events from Google Calendar API and features OAuth2 authentication.',
     link: 'https://github.com/jonathankerth/meet',
     link2: 'https://jonathankerth.github.io/meet/',
-    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/meet-home.png',
+    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/meetHome.png',
   },
   {
     id: 7,
