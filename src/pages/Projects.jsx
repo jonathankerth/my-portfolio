@@ -118,13 +118,23 @@ const projects = [
       'https://mypublicucket.s3.us-west-2.amazonaws.com/kitchen-gpt-home.png',
   },
   {
-    id: 4,
-    title: 'Oregonized Design Co Shopify Frontend (WIP)',
+    id: 10,
+    title: 'Todo-List',
     description:
-      "A custom e-commerce frontend built on top of Shopify's headless API. Developed using Next.js and Tailwind CSS, this project is a collaboration between Jonathan Kerth and Sidney Gallardo. The platform specializes in custom-designed clothing and accessories for Bachelorette Parties and is hosted on Vercel.",
-    link: 'https://github.com/jonathankerth/oregonized-design',
-    link2: 'https://oregonizeddesign.com/',
-    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/designHome.png',
+      'A real-time Todo List application developed using React and WebSockets. The application keeps tasks in sync across multiple devices. Styled using Bootstrap, the app offers a clean and intuitive user interface. The WebSocket server handles real-time updates, and the entire app is hosted on Vercel.',
+    link: 'https://github.com/jonathankerth/todo-list',
+    link2: 'https://todo-list-liard-seven.vercel.app/',
+    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/todo-list.png',
+  },
+
+  {
+    id: 8,
+    title: 'Pokedex',
+    description:
+      'An interactive Pokedex application that displays detailed information about various Pokemon. Built using vanilla JavaScript and fetches data from PokeAPI.co for an authentic experience.',
+    link: 'https://github.com/jonathankerth/pokemon-js',
+    link2: 'https://pokemon-js-omega.vercel.app/#',
+    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/pokemon.png',
   },
   {
     id: 5,
@@ -145,14 +155,15 @@ const projects = [
     iframe: 'https://magic-wheel-rosy.vercel.app/',
   },
   {
-    id: 8,
-    title: 'Pokedex',
+    id: 4,
+    title: 'Oregonized Design Co Shopify Frontend (WIP)',
     description:
-      'An interactive Pokedex application that displays detailed information about various Pokemon. Built using vanilla JavaScript and fetches data from PokeAPI.co for an authentic experience.',
-    link: 'https://github.com/jonathankerth/pokemon-js',
-    link2: 'https://pokemon-js-omega.vercel.app/#',
-    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/pokemon.png',
+      "A custom e-commerce frontend built on top of Shopify's headless API. Developed using Next.js and Tailwind CSS, this project is a collaboration between Jonathan Kerth and Sidney Gallardo. The platform specializes in custom-designed clothing and accessories for Bachelorette Parties and is hosted on Vercel.",
+    link: 'https://github.com/jonathankerth/oregonized-design',
+    link2: 'https://oregonizeddesign.com/',
+    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/designHome.png',
   },
+
   {
     id: 6,
     title: 'NicCage API',
