@@ -121,7 +121,7 @@ const projects = [
     id: 10,
     title: 'Todo-List',
     description:
-      'A real-time Todo List application developed using React and WebSockets. The application keeps tasks in sync across multiple devices. Styled using Bootstrap, the app offers a clean and intuitive user interface. The WebSocket server handles real-time updates, and the entire app is hosted on Vercel.',
+      'A real-time Todo List application developed using React and WebSockets. Authentication using Firebase. The application keeps tasks in sync across multiple devices. Styled using Bootstrap, the app offers a clean and intuitive user interface. The WebSocket server handles real-time updates, and the entire app is hosted on Vercel.',
     link: 'https://github.com/jonathankerth/todo-list',
     link2: 'https://todo-list-liard-seven.vercel.app/',
     image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/todo-list.png',
