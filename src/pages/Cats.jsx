@@ -147,12 +147,12 @@ export default function Cats() {
       className="min-h-screen bg-center bg-cover flex flex-col justify-center items-center px-2"
       style={{
         backgroundImage:
-          "url('https://images.unsplash.com/photo-1500964757637-c85e8a162699?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1806&q=80')",
+          "url('https://images.unsplash.com/photo-1445108771252-d1cc31a02a3c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3086&q=80')",
       }}
     >
       <Navbar />
       <main className="flex flex-col items-center justify-center flex-1 py-12 mt-10">
-        <div className="bg-black bg-opacity-40 rounded-lg p-4 mb-6 max-w-2xl">
+        <div className="bg-black bg-opacity-70 rounded-lg p-4 mb-6 max-w-2xl">
           <h1 className="text-2xl font-bold text-white text-center mb-4">
             Send Me Your Cat Memes!
           </h1>
