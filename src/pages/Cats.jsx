@@ -50,7 +50,7 @@ const Navbar = () => {
               <li key={href}>
                 <Link
                   href={href}
-                  className="px-6 py-3 font-semibold text-lg bg-white text-black rounded-full shadow-md hover:bg-gray-900/90 hover:text-white transition duration-300"
+                  className="px-6 py-3 font-semibold text-md bg-white text-black rounded-full shadow-md hover:bg-gray-900/90 hover:text-white transition duration-300"
                 >
                   {label}
                 </Link>
