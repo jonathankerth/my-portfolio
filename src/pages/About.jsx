@@ -158,6 +158,7 @@ export default function About() {
     { name: 'React Native', url: 'https://reactnative.dev/' },
     { name: 'Next.js', url: 'https://nextjs.org/' },
     { name: 'Node.js', url: 'https://nodejs.org/' },
+    { name: 'Angular', url: 'https://angular.io/' },
     { name: 'Express', url: 'https://expressjs.com/' },
     { name: 'MongoDB', url: 'https://www.mongodb.com/' },
     { name: 'Bootstrap', url: 'https://getbootstrap.com/' },
@@ -182,13 +183,14 @@ export default function About() {
       name: 'Google Analytics',
       url: 'https://developers.google.com/analytics',
     },
+    { name: 'Firebase', url: 'https://firebase.google.com/' },
   ]
   return (
     <div
       className="min-h-screen bg-center bg-cover flex flex-col justify-center items-center px-2"
       style={{
         backgroundImage:
-          "url('https://images.unsplash.com/photo-1445108771252-d1cc31a02a3c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3086&q=80')",
+          "url('https://mypublicucket.s3.us-west-2.amazonaws.com/portfolio+bg.avif')",
       }}
     >
       <Head>

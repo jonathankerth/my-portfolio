@@ -147,7 +147,7 @@ export default function Cats() {
       className="min-h-screen bg-center bg-cover flex flex-col justify-center items-center px-2"
       style={{
         backgroundImage:
-          "url('https://images.unsplash.com/photo-1445108771252-d1cc31a02a3c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3086&q=80')",
+          "url('https://mypublicucket.s3.us-west-2.amazonaws.com/portfolio+bg.avif')",
       }}
     >
       <Navbar />
