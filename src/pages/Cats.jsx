@@ -220,16 +220,24 @@ export default function Cats() {
           {favoriteMemes.map((meme, index) => (
             <div
               key={index}
-              className="bg-black bg-opacity-40 rounded-lg shadow-md overflow-hidden"
+              className="bg-black bg-opacity-40 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 overflow-hidden"
             >
               <div className="relative aspect-w-1 aspect-h-1">
                 <Image
                   src={meme}
                   alt={`Cat meme ${index}`}
-                  width={300} // Set the desired width
-                  height={200} // Set the desired height
-                  className="object-cover"
+                  width={300}
+                  height={200}
+                  className="object-cover hover:scale-110 transition-transform duration-300"
                 />
+              </div>
+              <div className="p-4 flex justify-center">
+                <button
+                  onClick={() => window.open(meme, '_blank')}
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                >
+                  Download
+                </button>
               </div>
             </div>
           ))}
