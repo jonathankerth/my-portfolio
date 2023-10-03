@@ -12,7 +12,7 @@ import {
   FaEnvelope,
   FaMedium,
 } from 'react-icons/fa'
-import { FaMeta } from 'react-icons/fa6'
+import { FaMeta, FaSquareXTwitter } from 'react-icons/fa6'
 import Image from 'next/image'
 
 const navLinks = [
@@ -240,7 +240,7 @@ export default function Home() {
               aria-label="Twitter"
               className="group text-white"
             >
-              <FaTwitter className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
+              <FaSquareXTwitter className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
             </a>
             <a
               href="https://medium.com/@jonathanpkerth"
@@ -269,7 +269,7 @@ export default function Home() {
         <button
           onClick={handleFlipClick}
           className={`text-md px-1 py-0.5 rounded-md ${
-            isFlipped ? 'bg-orange-500/90' : 'bg-red-600/90'
+            isFlipped ? 'bg-gray-200/90' : 'bg-gray-200/90'
           }`}
         >
           {isFlipped ? 'Less Fun' : 'Press for Fun'}
