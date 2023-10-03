@@ -225,14 +225,14 @@ export default function About() {
             A few technologies I&apos;ve been working with recently:
           </p>
         </div>
-        <div className="flex flex-wrap items-center justify-center  mt-4">
+        <div className="flex flex-wrap items-center justify-center w-3/4 mx-auto mt-4">
           {techStack.map((tech, index) => (
             <a
               key={index}
               href={tech.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-red-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-800 m-1 shadow-md hover:bg-red-500 transition-colors duration-300"
+              className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-800 m-1 shadow-md hover:bg-gray-500 transition-colors duration-300"
             >
               {tech.name}
             </a>
