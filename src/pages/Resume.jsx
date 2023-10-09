@@ -94,7 +94,7 @@ export default function Resume() {
       className="min-h-screen bg-center bg-cover flex flex-col justify-center items-center px-2"
       style={{
         backgroundImage:
-          "url('https://mypublicucket.s3.us-west-2.amazonaws.com/portfolio+bg.avif')",
+          "url('https://mypublicucket.s3.us-west-2.amazonaws.com/portfolio-bg.webp')",
       }}
     >
       <Head>
