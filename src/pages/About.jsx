@@ -184,6 +184,15 @@ export default function About() {
       url: 'https://developers.google.com/analytics',
     },
     { name: 'Firebase', url: 'https://firebase.google.com/' },
+    { name: 'Python', url: 'https://www.python.org/' },
+    { name: 'Flask', url: 'https://flask.palletsprojects.com/' },
+    {
+      name: 'Beautiful Soup',
+      url: 'https://www.crummy.com/software/BeautifulSoup/',
+    },
+    { name: 'Requests', url: 'https://docs.python-requests.org/en/latest/' },
+    { name: 'JSON', url: 'https://www.json.org/json-en.html' },
+    { name: 'Heroku', url: 'https://www.heroku.com/' },
   ]
   return (
     <div
