@@ -252,7 +252,7 @@ export default function About() {
       <div className="max-w-xl">
         <ImageCarousel />
       </div>
-      <footer className="flex items-center justify-center w-full h-24 text-white bg-gray-900/50">
+      <footer className="flex items-center justify-center w-full h-24 text-white bg-gray-900/50 mt-8">
         <Link href="/">
           <button className="px-6 py-3 font-semibold text-lg bg-white text-black rounded-full shadow-md hover:bg-gray-900/90 hover:text-white transition duration-300">
             ← Back to home
