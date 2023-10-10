@@ -1,24 +1,22 @@
-/** @type {import('tailwindcss').Config} */
+/** @type {import('tailwindcss').UserConfig} */
 module.exports = {
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
       colors: {
-        'red-clay': '#b25042', // adding red clay color to the palette
+        'red-clay': '#b25042', // Adding a custom color to the palette
       },
       transitionProperty: {
-        scale: 'transform',
+        scale: 'transform', // Define a custom transition property
       },
     },
   },
   variants: {
     extend: {
-      scale: ['hover', 'group-hover'],
+      scale: ['hover', 'group-hover'], // Extend the scale variant
     },
   },
-  plugins: [],
+  plugins: [
+    // Add any additional Tailwind CSS plugins here
+  ],
 }
