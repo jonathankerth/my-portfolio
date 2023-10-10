@@ -1,55 +1,21 @@
-# Thank you for checking out my work!
+# Welcome to My Portfolio Website!
 
-Welcome to my personal website! This website is built with [Next.js](https://nextjs.org/) and styled using [Tailwind CSS](https://tailwindcss.com/). It is hosted on [Vercel](https://vercel.com/).
+Thank you for visiting my portfolio website, where I showcase my skills and projects as a JavaScript software engineer based in Portland, Oregon. This website not only demonstrates my proficiency in software development but also serves as a reflection of my passion for creating engaging online experiences.
 
-To get started with this project, follow these steps:
+## Technologies Utilized
 
-1. Clone the repository to your local machine.
-2. Install the project dependencies using npm, yarn, or pnpm:
+My portfolio website is a testament to my expertise in several key technologies, including:
 
-```bash
-npm install
-# or
-yarn
-# or
-pnpm install
-```
+-   **React**: Powering the dynamic user interface and interactivity.
+-   **Next.js**: Ensuring optimal performance and SEO for a seamless user experience.
+-   **Tailwind CSS**: Styling the website with a modern and responsive design.
+-   **Node.js**: Supporting server-side rendering and backend functionality.
+-   **Other Dependencies**: Utilizing various libraries and tools to create compelling features and functionalities.
 
-3. Run the development server:
+## Explore My Projects
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+You can explore a selection of my projects that highlight my capabilities as a developer. Each project demonstrates my commitment to craftsmanship and innovation. If you have any questions or want to collaborate, feel free to reach out.
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to see the result. You can now start editing the page by modifying `pages/index.js`. The page will auto-update as you make changes.
+Thank you for taking the time to check out my work, and I look forward to connecting with you!
 
-## Project Information
-
--   **Name:** check-me-out
--   **Version:** 1.1.
-
-## Dependencies
-
-Here are the major dependencies used in this project:
-
--   **Next.js**: A powerful React framework for building server-rendered applications.
--   **Tailwind CSS**: A utility-first CSS framework for quickly designing custom UIs.
--   **React**: A JavaScript library for building user interfaces.
--   **react-dom**: A package for rendering React components in the browser.
--   **react-icons**: A collection of popular icons as React components.
--   **react-responsive-carousel**: A responsive carousel component for React.
--   **@react-icons/all-files**: A package to access all icons from the React Icons collection.
--   **@sendgrid/mail**: A library to send emails using the SendGrid API.
--   **eslint**: A tool for identifying and reporting on patterns in JavaScript code.
--   **eslint-config-next**: A preset for ESLint specifically tailored for Next.js projects.
--   **autoprefixer**: A tool for parsing CSS and adding vendor prefixes automatically.
--   **postcss**: A tool for transforming CSS with JavaScript plugins.
--   **tailwindcss**: The core CSS engine for the Tailwind CSS framework.
-
-Feel free to explore the code and enjoy your visit to my portfolio website! If you have any questions or feedback, don't hesitate to contact me.
-
-Thank you for checking out my work! 🚀
+[Visit my portfolio website](www.jonathankerth.com)
