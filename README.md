@@ -18,4 +18,4 @@ You can explore a selection of my projects that highlight my capabilities as a d
 
 Thank you for taking the time to check out my work, and I look forward to connecting with you!
 
-[Visit my portfolio website](www.jonathankerth.com)
+[Visit my portfolio website](https://www.jonathankerth.com)
