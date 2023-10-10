@@ -31,7 +31,6 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
   }
 
-  // Handling navbar visibility while scrolling
   const handleScroll = useCallback(() => {
     const currentScrollPos = window.pageYOffset
     const isVisible = prevScrollPos > currentScrollPos
@@ -99,23 +98,21 @@ const Navbar = () => {
     </nav>
   )
 }
+
 export default function Home() {
   const [isFlipped, setIsFlipped] = useState(false)
-
   const handleFlipClick = () => {
     setIsFlipped(!isFlipped)
   }
 
   const [isZoomed, setIsZoomed] = useState(false)
-
   const imageUrl =
     'https://mypublicucket.s3.us-west-2.amazonaws.com/DALL%C2%B7E+2023-08-18+15.22.22.png'
-
   const handleImageClick = () => {
     setIsZoomed(!isZoomed)
   }
-  const [isFooterVisible, setIsFooterVisible] = useState(true)
 
+  const [isFooterVisible, setIsFooterVisible] = useState(true)
   const handleFooterVisibility = useCallback(() => {
     const bottomReached =
       window.innerHeight + window.scrollY >= document.body.scrollHeight
@@ -124,7 +121,6 @@ export default function Home() {
 
   useEffect(() => {
     window.addEventListener('scroll', handleFooterVisibility)
-
     return () => {
       window.removeEventListener('scroll', handleFooterVisibility)
     }
@@ -152,19 +148,16 @@ export default function Home() {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
- 
           gtag('config', 'G-8LGP2ZRQYQ');
         `}
       </Script>
-
       <Navbar />
-      {/* Profile Image */}
       <div
         className={`relative mb-4 mt-12 md:mt-8 md:mb-2 md:mr-8 float-left transition-transform duration-700 ease-in-out z-10 ${
           isZoomed ? 'transform scale-150' : ''
         }`}
         onClick={handleImageClick}
-        style={{ width: '150px', height: '150px' }} // Set the size of the container
+        style={{ width: '150px', height: '150px' }}
       >
         <Image
           src={imageUrl}
@@ -174,18 +167,16 @@ export default function Home() {
           className="rounded-full cursor-pointer"
         />
       </div>
-
       <main
         className={`flex flex-col md:flex-row items-center justify-center w-full px-4 sm:px-8 py-8 text-center bg-black bg-opacity-70 max-w-xl transition-transform duration-700 ease-in-out ${
           isFlipped ? 'transform rotate-180' : ''
         }`}
       >
-        <div className="text-white ">
+        <div className="text-white">
           <h1 className="mb-4 text-3xl">Welcome,</h1>
           <p className="mb-8 text-2xl text-white">
             I&apos;m Jonathan Gallardo-Kerth
           </p>
-
           <div className="text-xl text-white mb-4">
             As a Software Engineer, I specialize in crafting engaging online
             experiences. On my website, you&apos;ll find a showcase of my recent
@@ -195,7 +186,6 @@ export default function Home() {
             Looking to collaborate or connect? Feel free to reach out through
             any of the sites below. Thank you for stopping by!
           </div>
-
           <div className="flex flex-wrap items-center mt-8 space-x-2 sm:space-x-4 justify-center">
             <a
               href="mailto:jonathanpkerth@gmail.com"
@@ -263,8 +253,6 @@ export default function Home() {
           </div>
         </div>
       </main>
-
-      {/* Flip Button */}
       <div className="flex mt-6 mb-12">
         <button
           onClick={handleFlipClick}
@@ -275,7 +263,6 @@ export default function Home() {
           {isFlipped ? 'Less Fun' : 'Press for Fun'}
         </button>
       </div>
-
       <footer
         className={`fixed inset-x-0 bottom-0 flex items-center justify-between bg-gray-900/50 text-white p-4 z-50 ${
           isFooterVisible ? 'visible' : 'invisible'
