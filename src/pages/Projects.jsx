@@ -134,91 +134,93 @@ export default function Projects() {
       </Head>
       <Navbar />
 
-      <div className="container mt-24 mx-auto px-4 md:px-8">
-        <div className="bg-black bg-opacity-70 rounded-lg p-4 mb-6 max-w-sm mx-auto">
-          <h1 className="text-2xl font-bold text-white text-center">
-            A Few of My Projects
-          </h1>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-9">
-          {projects.map((project) => (
-            <div
-              key={project.id}
-              className="project-container transition-transform duration-300 hover:scale-105 bg-white rounded-lg shadow-md flex flex-col p-6"
-            >
-              <h3 className="text-xl font-bold mb-2 flex-shrink-0">
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-400 underline flex items-center"
-                >
-                  {project.title}{' '}
-                </a>
-              </h3>
-              {project.title === 'Magic Wheel Component' ? (
-                <iframe
-                  src={project.iframe}
-                  className="object-top w-full h-full mb-4 flex-grow-0"
-                ></iframe>
-              ) : (
-                project.image && (
+      <div className="min-h-[calc(100vh-64px)] flex flex-col justify-between">
+        <div className="container mt-24 mb-18 mx-auto px-4 md:px-8">
+          <div className="bg-black bg-opacity-70 rounded-lg p-4 mb-6 max-w-sm mx-auto">
+            <h1 className="text-2xl font-bold text-white text-center">
+              A Few of My Projects
+            </h1>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-9">
+            {projects.map((project) => (
+              <div
+                key={project.id}
+                className="project-container transition-transform duration-300 hover:scale-105 bg-white rounded-lg shadow-md flex flex-col p-6"
+              >
+                <h3 className="text-xl font-bold mb-2 flex-shrink-0">
                   <a
-                    href={project.link2}
+                    href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-400 underline flex items-center"
                   >
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      className="object-top w-full h-full mb-4 flex-grow-0"
-                      width={500}
-                      height={500}
-                    />
+                    {project.title}{' '}
                   </a>
-                )
-              )}
-              <p className="text-gray-700 mb-4 flex-grow">
-                {project.description}
-              </p>
-              <div className="flex-shrink-0">
-                {project.title === 'Nicolas Cage Movie Repository' ? (
-                  <button
-                    onClick={() => openModal(project)}
-                    className="inline-block px-4 py-2 mr-2 bg-yellow-500 text-white rounded hover:bg-yellow-600"
-                  >
-                    View Case Study
-                  </button>
-                ) : null}
-                {project.link2 && (
-                  <a
-                    href={project.link2}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block px-4 py-2 border-2 border-blue-500 bg-blue-500 text-white hover:bg-blue-600 hover:border-blue-600 hover:text-white rounded transition duration-300 ease-in-out"
-                  >
-                    Live Site
-                  </a>
+                </h3>
+                {project.title === 'Magic Wheel Component' ? (
+                  <iframe
+                    src={project.iframe}
+                    className="object-top w-full h-full mb-4 flex-grow-0"
+                  ></iframe>
+                ) : (
+                  project.image && (
+                    <a
+                      href={project.link2}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        className="object-top w-full h-full mb-4 flex-grow-0"
+                        width={500}
+                        height={500}
+                      />
+                    </a>
+                  )
                 )}
-                {project.link3 && (
-                  <a
-                    href={project.link3}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block px-4 py-2 border-2 border-blue-500 bg-blue-500 text-white hover:bg-blue-600 hover:border-blue-600 hover:text-white rounded transition duration-300 ease-in-out"
-                  >
-                    Codebase
-                  </a>
-                )}
+                <p className="text-gray-700 mb-4 flex-grow">
+                  {project.description}
+                </p>
+                <div className="flex-shrink-0">
+                  {project.title === 'Nicolas Cage Movie Repository' ? (
+                    <button
+                      onClick={() => openModal(project)}
+                      className="inline-block px-4 py-2 mr-2 bg-yellow-500 text-white rounded hover:bg-yellow-600"
+                    >
+                      View Case Study
+                    </button>
+                  ) : null}
+                  {project.link2 && (
+                    <a
+                      href={project.link2}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block px-4 py-2 border-2 border-blue-500 bg-blue-500 text-white hover:bg-blue-600 hover:border-blue-600 hover:text-white rounded transition duration-300 ease-in-out"
+                    >
+                      Live Site
+                    </a>
+                  )}
+                  {project.link3 && (
+                    <a
+                      href={project.link3}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block px-4 py-2 border-2 border-blue-500 bg-blue-500 text-white hover:bg-blue-600 hover:border-blue-600 hover:text-white rounded transition duration-300 ease-in-out"
+                    >
+                      Codebase
+                    </a>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+        <Footer />
+        {isModalOpen && (
+          <ProjectModal project={currentProject} closeModal={closeModal} />
+        )}
       </div>
-      <Footer />
-      {isModalOpen && (
-        <ProjectModal project={currentProject} closeModal={closeModal} />
-      )}
     </div>
   )
 }
