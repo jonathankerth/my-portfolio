@@ -119,7 +119,7 @@ export default function Home() {
       </Script>
       <Navbar />
       <main
-        className={`flex flex-col md:flex-row items-center justify-center w-full px-4 mt-16 sm:px-8 py-8 text-center bg-black bg-opacity-80 max-w-5xl transition-transform duration-700 ease-in-out ${
+        className={`flex flex-col md:flex-row items-center rounded-xl justify-center w-full px-4 mt-16 sm:px-8 py-8 text-center bg-black bg-opacity-80 max-w-5xl transition-transform duration-700 ease-in-out ${
           isFlipped ? 'transform rotate-180' : ''
         }`}
       >
