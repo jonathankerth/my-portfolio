@@ -44,7 +44,7 @@ const projects = [
       'https://mypublicucket.s3.us-west-2.amazonaws.com/kitchen-gpt-home.png',
   },
   {
-    id: 10,
+    id: 4,
     title: 'Todo-List',
     description:
       'A real-time Todo List application developed using React and WebSockets. Authentication using Firebase. The application keeps tasks in sync across multiple devices. Styled using Bootstrap, the app offers a clean and intuitive user interface. The WebSocket server handles real-time updates, and the entire app is hosted on Vercel.',
@@ -52,18 +52,18 @@ const projects = [
     link2: 'https://todo-list-liard-seven.vercel.app/',
     image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/todo-list.png',
   },
-
-  {
-    id: 8,
-    title: 'Pokedex',
-    description:
-      'An interactive Pokedex application that displays detailed information about various Pokemon. Built using vanilla JavaScript and fetches data from PokeAPI.co for an authentic experience.',
-    link: 'https://github.com/jonathankerth/pokemon-js',
-    link2: 'https://pokemon-js-omega.vercel.app/#',
-    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/pokemon.png',
-  },
   {
     id: 5,
+    title: 'Filament Scraper Python App',
+    description:
+      "A Python app built using Flask to scrape filament data from eSUN's website. The scraped data is exposed via an API endpoint. This is the only Python app in the portfolio, showcasing skills in web scraping and API creation.",
+    link: 'https://github.com/jonathankerth/filament_scraper',
+    link2: 'https://filament-scraper.herokuapp.com/',
+    image:
+      'https://mypublicucket.s3.us-west-2.amazonaws.com/PythonScrapper.png',
+  },
+  {
+    id: 6,
     title: 'Meet App',
     description:
       'A serverless Progressive Web App (PWA) built using React and Node.js. Developed with a Test-Driven Development (TDD) approach, the app fetches upcoming tech events from Google Calendar API and features OAuth2 authentication.',
@@ -73,6 +73,16 @@ const projects = [
   },
   {
     id: 7,
+    title: 'NicCage API',
+    description:
+      'A custom-built RESTful API that serves as a comprehensive database for Nicolas Cage movies. Developed using Node.js, Express.js, and MongoDB, the API is hosted on Heroku for easy access and high availability.',
+    link: 'https://github.com/jonathankerth/Nicolas-Cage-API',
+    link2: 'https://niccage.herokuapp.com/',
+    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/nicCage-API.png',
+  },
+
+  {
+    id: 8,
     title: 'Magic Wheel Component',
     description:
       'An innovative wheel spinner component, created entirely with Tailwind CSS. Seamlessly integrated into a Next.js environment, this component showcases advanced CSS techniques, and animations. This is displayed in an Iframe while others are displayed from an AWS S3 bucket.',
@@ -81,7 +91,28 @@ const projects = [
     iframe: 'https://magic-wheel-rosy.vercel.app/',
   },
   {
-    id: 4,
+    id: 12,
+    title: 'React Native Chat App',
+    description:
+      'A mobile-friendly chat application built using React Native and Expo. The app features a real-time chat interface, image sharing, and location sharing capabilities, all backed by Firebase for data storage and user authentication.',
+    link: 'https://github.com/jonathankerth/chat-app',
+    image:
+      'https://mypublicucket.s3.us-west-2.amazonaws.com/small+chat+example.png',
+    link3: 'https://github.com/jonathankerth/chat-app',
+  },
+
+  {
+    id: 10,
+    title: 'Pokedex',
+    description:
+      'An interactive Pokedex application that displays detailed information about various Pokemon. Built using vanilla JavaScript and fetches data from PokeAPI.co for an authentic experience.',
+    link: 'https://github.com/jonathankerth/pokemon-js',
+    link2: 'https://pokemon-js-omega.vercel.app/#',
+    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/pokemon.png',
+  },
+
+  {
+    id: 11,
     title: 'Oregonized Design Co Shopify Frontend (WIP)',
     description:
       "A custom e-commerce frontend built on top of Shopify's headless API. Developed using Next.js and Tailwind CSS, this project is a collaboration between Jonathan Kerth and Sidney Gallardo. The platform specializes in custom-designed clothing and accessories for Bachelorette Parties and is hosted on Vercel.",
@@ -89,24 +120,14 @@ const projects = [
     link2: 'https://oregonizeddesign.com/',
     image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/designHome.png',
   },
-
-  {
-    id: 6,
-    title: 'NicCage API',
-    description:
-      'A custom-built RESTful API that serves as a comprehensive database for Nicolas Cage movies. Developed using Node.js, Express.js, and MongoDB, the API is hosted on Heroku for easy access and high availability.',
-    link: 'https://github.com/jonathankerth/Nicolas-Cage-API',
-    link2: 'https://niccage.herokuapp.com/',
-    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/nicCage-API.png',
-  },
   {
     id: 9,
-    title: 'React Native Chat App',
+    title: 'WebSocket Todo-List Backend',
     description:
-      'A mobile-friendly chat application built using React Native and Expo. The app features a real-time chat interface, image sharing, and location sharing capabilities, all backed by Firebase for data storage and user authentication.',
-    link: 'https://github.com/jonathankerth/chat-app',
-    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/chatExample.png',
-    link3: 'https://github.com/jonathankerth/chat-app',
+      'The backend infrastructure for a Todo List application, built using Node.js and the WebSocket API to handle real-time task synchronization across multiple devices. Hosted on Heroku for high availability.',
+    link: 'https://github.com/jonathankerth/todo-websocket',
+    link2: 'https://get-it-done-6f00422d8b4b.herokuapp.com/',
+    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/websocket.png',
   },
 ]
 
@@ -135,7 +156,7 @@ export default function Projects() {
       <Navbar />
 
       <div className="min-h-[calc(100vh-64px)] flex flex-col justify-between">
-        <div className="container mt-24 mb-18 mx-auto px-4 md:px-8">
+        <div className="container mt-28 mb-28 mx-auto px-4 md:px-8">
           <div className="bg-black bg-opacity-70 rounded-lg p-4 mb-6 max-w-sm mx-auto">
             <h1 className="text-2xl font-bold text-white text-center">
               A Few of My Projects
