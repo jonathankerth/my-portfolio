@@ -17,7 +17,7 @@ import Image from 'next/image'
 import Navbar from '../components/Navbar'
 
 const Footer = () => {
-  const [isFooterVisible, setIsFooterVisible] = useState(false)
+  const [isFooterVisible, setIsFooterVisible] = useState(true) // set initial state to true
   const [isMobile, setIsMobile] = useState(false)
 
   const checkIsMobile = () => {
@@ -28,7 +28,8 @@ const Footer = () => {
     const bottomReached =
       window.innerHeight + window.scrollY >= document.body.scrollHeight
     const notAtTop = window.pageYOffset > 0
-    setIsFooterVisible(bottomReached && notAtTop)
+
+    setIsFooterVisible(bottomReached || notAtTop)
   }, [])
 
   useEffect(() => {

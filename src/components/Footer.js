@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
+
 const Footer = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
   const [visible, setVisible] = useState(true) // set initial state to true
@@ -7,9 +8,12 @@ const Footer = () => {
   const handleScroll = useCallback(() => {
     const currentScrollPos = window.pageYOffset
     const isVisible = prevScrollPos > currentScrollPos
+    const isBottom =
+      window.innerHeight + window.scrollY >=
+      document.documentElement.scrollHeight
 
     setPrevScrollPos(currentScrollPos)
-    setVisible(isVisible)
+    setVisible(isVisible || isBottom)
   }, [prevScrollPos])
 
   useEffect(() => {
@@ -36,4 +40,5 @@ const Footer = () => {
     </footer>
   )
 }
+
 export default Footer
