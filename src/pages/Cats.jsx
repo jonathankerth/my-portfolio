@@ -143,13 +143,7 @@ export default function Cats() {
   }
 
   return (
-    <div
-      className="min-h-screen bg-center bg-cover flex flex-col justify-center items-center px-2"
-      style={{
-        backgroundImage:
-          "url('https://mypublicucket.s3.us-west-2.amazonaws.com/portfolio-bg.webp')",
-      }}
-    >
+    <div className="min-h-screen bg-portfolio bg-center bg-cover flex flex-col justify-center items-center px-2">
       <Navbar />
       <main className="flex flex-col items-center justify-center flex-1 py-12 mt-10">
         <div className="bg-black bg-opacity-70 rounded-lg p-4 mb-6 max-w-2xl">
