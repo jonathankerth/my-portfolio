@@ -229,7 +229,7 @@ export default function Home() {
               : 'bg-gray-200/80 text-black'
           } hover:bg-gray-300/80 hover:text-white transition duration-300`}
         >
-          {isFlipped ? 'Less Fun' : 'Press for Fun'}
+          {isFlipped ? 'Reset' : 'Do a flip'}
         </button>
       </div>
       <Footer />
