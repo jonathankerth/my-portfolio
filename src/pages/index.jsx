@@ -21,6 +21,60 @@ const navLinks = [
   { href: '/Projects', label: 'Projects' },
   { href: '/Cats', label: 'Cat Memes' },
 ]
+const Footer = () => {
+  const [isFooterVisible, setIsFooterVisible] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  const checkIsMobile = () => {
+    setIsMobile(window.innerWidth <= 768)
+  }
+
+  const handleFooterVisibility = useCallback(() => {
+    const bottomReached =
+      window.innerHeight + window.scrollY >= document.body.scrollHeight
+    const notAtTop = window.pageYOffset > 0
+    setIsFooterVisible(bottomReached && notAtTop)
+  }, [])
+
+  useEffect(() => {
+    checkIsMobile()
+    window.addEventListener('resize', checkIsMobile)
+    return () => {
+      window.removeEventListener('resize', checkIsMobile)
+    }
+  }, [])
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleFooterVisibility)
+    return () => {
+      window.removeEventListener('scroll', handleFooterVisibility)
+    }
+  }, [handleFooterVisibility])
+
+  return (
+    <footer
+      className={`fixed inset-x-0 bottom-0 flex items-center justify-between bg-gray-900/90 text-white p-4 z-50 ${
+        isFooterVisible || !isMobile ? 'visible' : 'invisible'
+      }`}
+    >
+      <div className="flex items-center">
+        <Link
+          href="https://api.checklyhq.com/v1/badges/checks/319f6d4d-8c0d-4ae2-ae10-d0eaf4d8fbad?style=for-the-badge&theme=dark"
+          passHref
+          target="_blank"
+        >
+          <Image
+            src="https://api.checklyhq.com/v1/badges/checks/319f6d4d-8c0d-4ae2-ae10-d0eaf4d8fbad?style=for-the-badge&theme=dark"
+            alt="Checkly"
+            height={28}
+            width={120}
+            className="cursor-pointer"
+          />
+        </Link>
+      </div>
+    </footer>
+  )
+}
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -49,18 +103,18 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 z-50 w-full py-4 bg-gray-900/50 transition-all duration-200 ${
+      className={`fixed top-0 left-0 z-50 w-full py-4 bg-gradient-to-b from-gray-800 to-black transition-all duration-200 ${
         visible ? 'visible' : 'invisible'
       }`}
     >
-      <div className="max-w-screen-lg mx-auto px-4 md:px-8 flex justify-between items-center">
+      <div className="max-w-screen-xl mx-auto px-4 md:px-8 flex justify-between items-center">
         <div className="hidden md:block">
-          <ul className="flex space-x-8">
+          <ul className="flex space-x-6">
             {navLinks.map(({ href, label }) => (
               <li key={href}>
                 <Link
                   href={href}
-                  className="px-6 py-3 font-semibold text-md bg-white text-black rounded-full shadow-md hover:bg-gray-900/90 hover:text-white transition duration-300"
+                  className="px-4 py-2 font-medium text-white hover:text-gray-200 transition duration-300"
                 >
                   {label}
                 </Link>
@@ -80,13 +134,13 @@ const Navbar = () => {
         </div>
       </div>
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-12 right-0 w-full bg-gray-900/50">
+        <div className="md:hidden absolute top-12 right-0 w-full bg-gray-900/90">
           <ul className="px-8 py-4">
             {navLinks.map(({ href, label }) => (
               <li key={href} className="py-2">
                 <Link
                   href={href}
-                  className="text-white hover:text-gray-200 text-xl font-bold"
+                  className="text-white hover:text-gray-200 text-lg font-semibold"
                 >
                   {label}
                 </Link>
@@ -127,7 +181,7 @@ export default function Home() {
   }, [handleFooterVisibility])
 
   return (
-    <div className="min-h-screen bg-portfolio bg-center bg-cover flex flex-col justify-center items-center px-2">
+    <div className="min-h-screen bg-gradient-to-b from-gray-800 via-dark-blue to-black text-white flex flex-col justify-center items-center px-4">
       <Head>
         <title>Jonathan Kerth&apos;s Portfolio</title>
         <meta
@@ -146,37 +200,22 @@ export default function Home() {
         `}
       </Script>
       <Navbar />
-      <div
-        className={`relative mb-4 mt-12 md:mt-8 md:mb-2 md:mr-8 float-left transition-transform duration-700 ease-in-out z-10 ${
-          isZoomed ? 'transform scale-150' : ''
-        }`}
-        onClick={handleImageClick}
-        style={{ width: '150px', height: '150px' }}
-      >
-        <Image
-          src={imageUrl}
-          alt="Jonathan Kerth"
-          width={150}
-          height={150}
-          className="rounded-full cursor-pointer"
-        />
-      </div>
       <main
-        className={`flex flex-col md:flex-row items-center justify-center w-full px-4 sm:px-8 py-8 text-center bg-black bg-opacity-70 max-w-xl transition-transform duration-700 ease-in-out ${
+        className={`flex flex-col md:flex-row items-center justify-center w-full px-4 mt-16 sm:px-8 py-8 text-center bg-black bg-opacity-80 max-w-5xl transition-transform duration-700 ease-in-out ${
           isFlipped ? 'transform rotate-180' : ''
         }`}
       >
-        <div className="text-white">
-          <h1 className="mb-4 text-3xl">Welcome,</h1>
-          <p className="mb-8 text-2xl text-white">
+        <div className="text-white md:w-2/3 pr-8">
+          <h1 className="mb-4 text-4xl">Welcome,</h1>
+          <p className="mb-8 text-2xl text-gray-300">
             I&apos;m Jonathan Gallardo-Kerth
           </p>
-          <div className="text-xl text-white mb-4">
+          <div className="text-xl text-gray-300 mb-4">
             As a Software Engineer, I specialize in crafting engaging online
             experiences. On my website, you&apos;ll find a showcase of my recent
             work, and a glimpse of who I am both behind the code.
           </div>
-          <div className="text-xl text-white">
+          <div className="text-xl text-gray-300">
             Looking to collaborate or connect? Feel free to reach out through
             any of the sites below. Thank you for stopping by!
           </div>
@@ -246,38 +285,35 @@ export default function Home() {
             </a>
           </div>
         </div>
+        <div
+          className={`relative md:w-1/3 mb-4 md:mt-12 md:mb-2 md:mr-8 float-right transition-transform duration-700 ease-in-out z-10 ${
+            isZoomed ? 'transform scale-150' : ''
+          }`}
+          onClick={handleImageClick}
+          style={{ width: '150px', height: '150px' }}
+        >
+          <Image
+            src={imageUrl}
+            alt="Jonathan Kerth"
+            width={150}
+            height={150}
+            className="rounded-full cursor-pointer"
+          />
+        </div>
       </main>
       <div className="flex mt-6 mb-12">
         <button
           onClick={handleFlipClick}
-          className={`text-md px-1 py-0.5 rounded-md ${
-            isFlipped ? 'bg-gray-200/90' : 'bg-gray-200/90'
-          }`}
+          className={`text-lg px-4 py-2 rounded-full ${
+            isFlipped
+              ? 'bg-gray-200/80 text-black'
+              : 'bg-gray-200/80 text-black'
+          } hover:bg-gray-300/80 hover:text-white transition duration-300`}
         >
           {isFlipped ? 'Less Fun' : 'Press for Fun'}
         </button>
       </div>
-      <footer
-        className={`fixed inset-x-0 bottom-0 flex items-center justify-between bg-gray-900/50 text-white p-4 z-50 ${
-          isFooterVisible ? 'visible' : 'invisible'
-        }`}
-      >
-        <div className="flex items-center">
-          <Link
-            href="https://api.checklyhq.com/v1/badges/checks/319f6d4d-8c0d-4ae2-ae10-d0eaf4d8fbad?style=for-the-badge&theme=dark"
-            passHref
-            target="_blank"
-          >
-            <Image
-              src="https://api.checklyhq.com/v1/badges/checks/319f6d4d-8c0d-4ae2-ae10-d0eaf4d8fbad?style=for-the-badge&theme=dark"
-              alt="Checkly"
-              height={28}
-              width={120}
-              className="cursor-pointer"
-            />
-          </Link>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

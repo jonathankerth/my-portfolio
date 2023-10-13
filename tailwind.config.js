@@ -4,19 +4,24 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'red-clay': '#b25042', // Adding a custom color to the palette
+        'red-clay': '#b25042',
+        'dark-gray': '#2B2B2B',
+        'light-gray': '#3A3A3A',
+        'soft-gray': '#6B6B6B',
+        'soft-white': '#EDEDED',
+        'dark-blue': '#1A2138',
+        'medium-blue': '#2C3A63',
+        'soft-blue': '#5A74DA',
       },
       transitionProperty: {
-        scale: 'transform', // Define a custom transition property
+        scale: 'transform',
       },
     },
   },
   variants: {
     extend: {
-      scale: ['hover', 'group-hover'], // Extend the scale variant
+      scale: ['hover', 'group-hover'],
     },
   },
-  plugins: [
-    // Add any additional Tailwind CSS plugins here
-  ],
+  plugins: [],
 }

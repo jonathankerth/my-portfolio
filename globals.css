@@ -1,11 +1,4 @@
 @tailwind base;
 @tailwind components;
 
-/* Define a custom class for your background image */
-.bg-portfolio {
-  background-image: url('/portfolio-bg.webp');
-  background-size: cover;
-  background-position: center;
-}
-
 @tailwind utilities;
