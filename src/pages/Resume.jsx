@@ -18,7 +18,7 @@ export default function Resume() {
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center mt-20 mb-20">
         <div className=" rounded-lg shadow-md">
           <a
-            href="https://mypublicucket.s3.us-west-2.amazonaws.com/Resume+JGK.pdf"
+            href="https://mypublicucket.s3.us-west-2.amazonaws.com/Jonathan's+Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-4 inline-flex items-center justify-center px-6 py-3 border border-transparent text-base leading-6 font-medium rounded-md mb-6 text-dark-gray bg-soft-blue hover:bg-medium-blue focus:outline-none focus:border-medium-blue focus:ring focus:ring-soft-blue active:bg-medium-blue transition ease-in-out duration-150"
@@ -39,7 +39,7 @@ export default function Resume() {
             Download My Resume
           </a>
           <Image
-            src="https://mypublicucket.s3.us-west-2.amazonaws.com/Resume-JGK.webp"
+            src="https://mypublicucket.s3.us-west-2.amazonaws.com/resume-img.png"
             priority={true}
             alt="Jonathan Kerth Resume"
             width={750}
