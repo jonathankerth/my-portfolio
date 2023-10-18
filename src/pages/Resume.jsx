@@ -38,14 +38,13 @@ export default function Resume() {
             </svg>
             Download My Resume
           </a>
-          <Image
-            src="https://mypublicucket.s3.us-west-2.amazonaws.com/resume-img.png"
-            priority={true}
-            alt="Jonathan Kerth Resume"
-            width={750}
-            height={500}
+          <iframe
+            src="https://jonathankerth.github.io/resume/"
+            width="750"
+            height="1100"
             className="border rounded-lg border-black"
-          />
+            title="Jonathan Kerth Resume"
+          ></iframe>
         </div>
       </main>
       <Footer />
