@@ -205,7 +205,7 @@ export default function Home() {
           </div>
         </div>
         <div
-          className={`relative md:w-1/3 mb-4 md:mt-12 md:mb-2 md:mr-8 float-right transition-transform duration-700 ease-in-out z-10 ${
+          className={`relative md:w-1/3 mb-4 mt-4 md:mt-12 md:mb-2 md:mr-8 float-right transition-transform duration-700 ease-in-out z-10 ${
             isZoomed ? 'transform scale-150' : ''
           }`}
           onClick={handleImageClick}
