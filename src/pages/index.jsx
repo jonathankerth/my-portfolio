@@ -62,8 +62,8 @@ const Footer = () => {
           <Image
             src="https://api.checklyhq.com/v1/badges/checks/319f6d4d-8c0d-4ae2-ae10-d0eaf4d8fbad?style=for-the-badge&theme=dark"
             alt="Checkly"
-            height={28}
-            width={120}
+            height={42}
+            width={180}
             className="cursor-pointer"
           />
         </Link>
