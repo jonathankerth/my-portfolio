@@ -209,13 +209,13 @@ export default function Home() {
             isZoomed ? 'transform scale-150' : ''
           }`}
           onClick={handleImageClick}
-          style={{ width: '150px', height: '150px' }}
+          style={{ width: '300px', height: '300px' }} // increased to 300x300
         >
           <Image
             src={imageUrl}
             alt="Jonathan Kerth"
-            width={150}
-            height={150}
+            width={300} // increased to 300
+            height={300} // increased to 300
             className="rounded-full cursor-pointer"
           />
         </div>
