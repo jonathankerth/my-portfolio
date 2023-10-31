@@ -16,6 +16,8 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const { theme, setTheme } = useTheme()
   const router = useRouter()
+  const [isVisible, setIsVisible] = useState(true)
+  const [lastScrollPosition, setLastScrollPosition] = useState(0)
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
@@ -26,24 +28,32 @@ const Navbar = () => {
   }
 
   useEffect(() => {
-    // Add an event listener to close the mobile menu when scrolling
     const handleScroll = () => {
+      const currentScrollPosition = window.pageYOffset
+
       if (isMobileMenuOpen) {
         closeMobileMenu()
       }
+
+      setIsVisible(
+        lastScrollPosition > currentScrollPosition || currentScrollPosition < 10
+      )
+
+      setLastScrollPosition(currentScrollPosition)
     }
+
     window.addEventListener('scroll', handleScroll)
 
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-  }, [isMobileMenuOpen])
+  }, [lastScrollPosition, isMobileMenuOpen])
 
   return (
     <nav
       className={`fixed top-0 left-0 z-50 w-full py-4 transition-all duration-200 ${
-        theme === 'dark' ? 'bg-black' : 'bg-white'
-      }`}
+        isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
+      } ${theme === 'dark' ? 'text-white' : 'text-black'}`}
     >
       <div className="max-w-screen-xl mx-auto px-4 md:px-8 flex justify-between items-center">
         <button
