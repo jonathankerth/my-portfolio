@@ -81,7 +81,7 @@ const Navbar = () => {
                       isActive || isMobileMenuOpen || theme === 'dark'
                         ? 'text-white hover:text-gray-300'
                         : 'text-black hover:text-gray-600'
-                    }`}
+                    } border rounded-full border-transparent hover:border-current`}
                     onClick={closeMobileMenu}
                   >
                     {label}
@@ -125,7 +125,7 @@ const Navbar = () => {
                       isActive || theme === 'dark'
                         ? 'text-white hover:text-gray-300'
                         : 'text-black hover:text-gray-600'
-                    }`}
+                    } border rounded-full border-transparent hover:border-current`}
                     onClick={closeMobileMenu}
                   >
                     {label}
