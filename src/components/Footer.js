@@ -26,7 +26,7 @@ const Footer = () => {
 
   return (
     <footer
-      className={`fixed bottom-0 left-0 z-50 w-full py-4 bg-gray-900/80 transition-all duration-200 ${
+      className={`fixed bottom-0 left-0 z-50 w-full py-2 bg-gray-900/40 transition-all duration-200 ${
         visible ? '' : 'translate-y-full'
       }`}
     >
