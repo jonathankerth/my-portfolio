@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import { useTheme } from 'next-themes'
 
 export default function Cats() {
   const [uploadedImageUrl, setUploadedImageUrl] = useState(null)
@@ -12,6 +13,11 @@ export default function Cats() {
   const [selectedFileName, setSelectedFileName] = useState(null)
   const [uploadMessage, setUploadMessage] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const { theme } = useTheme()
+  const backgroundColorClasses = {
+    light: 'bg-gradient-to-b from-blue-200 to-blue-400',
+    dark: 'bg-gradient-to-b from-gray-800 via-dark-blue to-black', // Dark mode gradient background
+  }
 
   const favoriteMemes = [
     'https://memedisplay.s3.us-west-2.amazonaws.com/cat+and+kid.jpeg',
@@ -60,7 +66,13 @@ export default function Cats() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-800 via-dark-blue to-black text-white flex flex-col justify-center items-center px-4">
+    <div
+      className={`min-h-screen ${
+        theme === 'dark'
+          ? backgroundColorClasses.dark
+          : backgroundColorClasses.light
+      } text-white flex flex-col justify-center items-center px-4`}
+    >
       <Navbar />
       <main className="flex flex-col items-center justify-center flex-1 py-12 mt-10">
         <div className="bg-black bg-opacity-70 rounded-lg p-4 mb-6 max-w-2xl">

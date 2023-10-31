@@ -1,14 +1,23 @@
 import Head from 'next/head'
-import Link from 'next/link'
-import { useState, useEffect, useCallback } from 'react'
-import { FaBars, FaTimes } from 'react-icons/fa'
-import Image from 'next/image'
-import Navbar from '../components/Navbar'
+import { useTheme } from 'next-themes'
+import Navbar from '../components/Navbar' // Import the Navbar component
 import Footer from '../components/Footer'
 
 export default function Resume() {
+  const { theme, setTheme } = useTheme()
+  const backgroundColorClasses = {
+    light: 'bg-gradient-to-b from-blue-200 to-blue-400',
+    dark: 'bg-gradient-to-b from-gray-800 via-dark-blue to-black', // Dark mode gradient background
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-800 via-dark-blue to-black text-white flex flex-col justify-center items-center px-4">
+    <div
+      className={`min-h-screen ${
+        theme === 'dark'
+          ? backgroundColorClasses.dark // Use the background color class for the dark theme
+          : backgroundColorClasses.light // Use the background color class for the light theme
+      } text-white flex flex-col justify-center items-center px-4`}
+    >
       <Head>
         <title>My Resume</title>
         <meta name="description" content="Download or view my resume here." />

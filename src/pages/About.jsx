@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import { useTheme } from 'next-themes'
 
 const ImageCarousel = () => {
   const aspectRatio = 4 / 3 // 4:3 aspect ratio
@@ -71,6 +72,11 @@ const ImageCarousel = () => {
 }
 
 export default function About() {
+  const { theme } = useTheme()
+  const backgroundColorClasses = {
+    light: 'bg-gradient-to-b from-blue-200 to-blue-400',
+    dark: 'bg-gradient-to-b from-gray-800 via-dark-blue to-black', // Dark mode gradient background
+  }
   const techStack = [
     { name: 'React', url: 'https://reactjs.org/' },
     { name: 'React Native', url: 'https://reactnative.dev/' },
@@ -113,7 +119,13 @@ export default function About() {
     { name: 'Heroku', url: 'https://www.heroku.com/' },
   ]
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-800 via-dark-blue to-black text-white flex flex-col justify-center items-center px-4">
+    <div
+      className={`min-h-screen ${
+        theme === 'dark'
+          ? backgroundColorClasses.dark
+          : backgroundColorClasses.light
+      } text-white flex flex-col justify-center items-center px-4`}
+    >
       <Head>
         <title>About Me</title>
         <meta

@@ -6,6 +6,7 @@ import Image from 'next/image'
 import ProjectModal from '../components/ProjectModal.js'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import { useTheme } from 'next-themes'
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -134,7 +135,11 @@ const projects = [
 export default function Projects() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [currentProject, setCurrentProject] = useState(null)
-
+  const { theme } = useTheme()
+  const backgroundColorClasses = {
+    light: 'bg-gradient-to-b from-blue-200 to-blue-400',
+    dark: 'bg-gradient-to-b from-gray-800 via-dark-blue to-black', // Dark mode gradient background
+  }
   const openModal = (project) => {
     setCurrentProject(project)
     setIsModalOpen(true)
@@ -143,8 +148,15 @@ export default function Projects() {
   const closeModal = () => {
     setIsModalOpen(false)
   }
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-800 via-dark-blue to-black text-white flex flex-col justify-center items-center px-4">
+    <div
+      className={`min-h-screen ${
+        theme === 'dark'
+          ? backgroundColorClasses.dark
+          : backgroundColorClasses.light
+      } text-white flex flex-col justify-center items-center px-4`}
+    >
       <Head>
         <title>Projects</title>
         <meta

@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
 import { useState, useEffect, useCallback } from 'react'
+import { useTheme } from 'next-themes' // Import the useTheme hook
 import {
   FaBars,
   FaTimes,
@@ -17,7 +18,7 @@ import Image from 'next/image'
 import Navbar from '../components/Navbar'
 
 const Footer = () => {
-  const [isFooterVisible, setIsFooterVisible] = useState(true) // set initial state to true
+  const [isFooterVisible, setIsFooterVisible] = useState(true)
   const [isMobile, setIsMobile] = useState(false)
 
   const checkIsMobile = () => {
@@ -46,6 +47,9 @@ const Footer = () => {
       window.removeEventListener('scroll', handleFooterVisibility)
     }
   }, [handleFooterVisibility])
+
+  // Use the useTheme hook to get the theme
+  const { theme } = useTheme()
 
   return (
     <footer
@@ -99,8 +103,21 @@ export default function Home() {
     }
   }, [handleFooterVisibility])
 
+  // Use the useTheme hook to get the theme
+  const { theme } = useTheme()
+
+  // Define background colors for light and dark modes
+  const backgroundColors = {
+    light: 'bg-gradient-to-b from-blue-200 to-blue-400',
+    dark: 'bg-gradient-to-b from-gray-800 via-dark-blue to-black', // Dark mode gradient background
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-800 via-dark-blue to-black text-white flex flex-col justify-center items-center px-4">
+    <div
+      className={`min-h-screen ${
+        theme === 'dark' ? backgroundColors.dark : backgroundColors.light
+      } text-white flex flex-col justify-center items-center px-4`}
+    >
       <Head>
         <title>Jonathan Kerth&apos;s Portfolio</title>
         <meta
@@ -120,7 +137,7 @@ export default function Home() {
       </Script>
       <Navbar />
       <main
-        className={`flex flex-col md:flex-row items-center rounded-xl justify-center w-full px-4 mt-16 sm:px-8 py-8 text-center bg-black bg-opacity-80 max-w-5xl transition-transform duration-700 ease-in-out ${
+        className={`flex flex-col md:flex-row items-center rounded-xl justify-center w-full px-4 mt-16 sm:px-8 py-8 text-center bg-black/40 bg-opacity-80 max-w-5xl transition-transform duration-700 ease-in-out ${
           isFlipped ? 'transform rotate-180' : ''
         }`}
       >
