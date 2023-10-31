@@ -4,9 +4,6 @@ import Script from 'next/script'
 import { useState, useEffect, useCallback } from 'react'
 import { useTheme } from 'next-themes' // Import the useTheme hook
 import {
-  FaBars,
-  FaTimes,
-  FaTwitter,
   FaLinkedin,
   FaGithub,
   FaStackOverflow,

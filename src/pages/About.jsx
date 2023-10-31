@@ -15,7 +15,6 @@ const ImageCarousel = () => {
   const commonHeight = commonWidth / aspectRatio // Calculated based on the aspect ratio
 
   const images = [
-    // Add your images here
     {
       src: 'https://mypublicucket.s3.us-west-2.amazonaws.com/IMG_6217.jpeg',
       alt: 'Image 1',
