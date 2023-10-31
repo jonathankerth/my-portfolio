@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import { FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa'
 import { useTheme } from 'next-themes'
+import { useRouter } from 'next/router' // Import useRouter to get the current route
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -14,6 +15,7 @@ const navLinks = [
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const { theme, setTheme } = useTheme()
+  const router = useRouter() // Get the current route using useRouter()
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
@@ -53,20 +55,24 @@ const Navbar = () => {
 
         <div className="hidden md:block">
           <ul className="flex space-x-6">
-            {navLinks.map(({ href, label }) => (
-              <li key={href}>
-                <Link
-                  href={href}
-                  className={`px-4 py-2 font-medium transition duration-300 ${
-                    isMobileMenuOpen || theme === 'dark'
-                      ? 'text-white hover:text-gray-300'
-                      : 'text-black hover:text-gray-600'
-                  }`}
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
+            {/* Conditionally render the "Home" link based on the current route */}
+            {navLinks.map(({ href, label }) =>
+              // Check if the current route matches the href
+              router.pathname === href ? null : (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className={`px-4 py-2 font-medium transition duration-300 ${
+                      isMobileMenuOpen || theme === 'dark'
+                        ? 'text-white hover:text-gray-300'
+                        : 'text-black hover:text-gray-600'
+                    }`}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              )
+            )}
           </ul>
         </div>
 
@@ -89,20 +95,23 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-12 right-0 w-full bg-gray-900/90">
           <ul className="px-8 py-4">
-            {navLinks.map(({ href, label }) => (
-              <li key={href} className="py-2">
-                <Link
-                  href={href}
-                  className={`text-lg font-semibold ${
-                    theme === 'dark'
-                      ? 'text-white hover:text-gray-300'
-                      : 'text-black hover:text-gray-600'
-                  }`}
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
+            {navLinks.map(({ href, label }) =>
+              // Check if the current route matches the href
+              router.pathname === href ? null : (
+                <li key={href} className="py-2">
+                  <Link
+                    href={href}
+                    className={`text-lg font-semibold ${
+                      theme === 'dark'
+                        ? 'text-white hover:text-gray-300'
+                        : 'text-black hover:text-gray-600'
+                    }`}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              )
+            )}
           </ul>
         </div>
       )}
