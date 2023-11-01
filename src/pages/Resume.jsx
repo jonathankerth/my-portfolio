@@ -27,7 +27,7 @@ export default function Resume() {
       <Navbar />
 
       <main className="flex flex-col items-center justify-center w-full flex-1 text-center mt-20 mb-20">
-        <div className="rounded-lg shadow-md">
+        <div className="rounded-lg shadow-md w-3/4 mx-auto">
           <iframe
             src="https://jonathankerth.github.io/resume/"
             className="border rounded-lg border-black w-full"
@@ -36,6 +36,7 @@ export default function Resume() {
           ></iframe>
         </div>
       </main>
+
       <Footer />
     </div>
   )
