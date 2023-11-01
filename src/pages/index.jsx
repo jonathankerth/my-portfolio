@@ -50,7 +50,7 @@ const Footer = () => {
 
   return (
     <footer
-      className={`fixed inset-x-0 bottom-0 flex items-center justify-between bg-gray-900/90 text-white p-4 z-50 ${
+      className={`fixed inset-x-0 bottom-0 flex items-center justify-between bg-gray-900/20 text-white p-4 z-50 ${
         isFooterVisible || !isMobile ? 'visible' : 'invisible'
       }`}
     >
