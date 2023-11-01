@@ -140,15 +140,15 @@ export default function Home() {
       >
         <div className="text-white md:w-2/3 pr-8">
           <h1 className="mb-4 text-4xl">Welcome,</h1>
-          <p className="mb-8 text-2xl text-gray-300">
+          <p className="mb-8 text-2xl text-white">
             I&apos;m Jonathan Gallardo-Kerth
           </p>
-          <div className="text-xl text-gray-300 mb-4">
+          <div className="text-xl text-white mb-4">
             As a Software Engineer, I specialize in crafting engaging online
             experiences. On my website, you&apos;ll find a showcase of my recent
             work, and a glimpse of who I am both behind the code.
           </div>
-          <div className="text-xl text-gray-300">
+          <div className="text-xl text-white">
             Looking to collaborate or connect? Feel free to reach out through
             any of the sites below. Thank you for stopping by!
           </div>
