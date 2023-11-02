@@ -75,7 +75,7 @@ export default function Cats() {
     >
       <Navbar />
       <main className="flex flex-col items-center justify-center flex-1 py-12 mt-10">
-        <div className="bg-black bg-opacity-70 rounded-lg p-4 mb-6 max-w-2xl">
+        <div className="bg-black/40 bg-opacity-80 rounded-lg p-4 mb-6 max-w-2xl">
           <h1 className="text-2xl font-bold text-white text-center mb-4">
             Send Me Your Cat Memes!
           </h1>
