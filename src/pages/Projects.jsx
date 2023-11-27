@@ -113,15 +113,6 @@ const projects = [
   },
 
   {
-    id: 11,
-    title: 'Oregonized Design Co Shopify Frontend (WIP)',
-    description:
-      "A custom e-commerce frontend built on top of Shopify's headless API. Developed using Next.js and Tailwind CSS, this project is a collaboration between Jonathan Kerth and Sidney Gallardo. The platform specializes in custom-designed clothing and accessories for Bachelorette Parties and is hosted on Vercel.",
-    link: 'https://github.com/jonathankerth/oregonized-design',
-    link2: 'https://oregonizeddesign.com/',
-    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/designHome.png',
-  },
-  {
     id: 9,
     title: 'WebSocket Todo-List Backend',
     description:
