@@ -4,7 +4,12 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: ['eslint:recommended', 'plugin:react/recommended', 'airbnb'],
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'airbnb',
+    'next/core-web-vitals',
+  ],
   parserOptions: {
     ecmaVersion: 12,
     sourceType: 'module',
@@ -40,4 +45,12 @@ module.exports = {
     'jsx-a11y/anchor-is-valid': 'off',
     'react/jsx-props-no-spreading': 'off',
   },
+  overrides: [
+    {
+      files: ['*.js'],
+      rules: {
+        '@typescript-eslint/*': 'off',
+      },
+    },
+  ],
 }
