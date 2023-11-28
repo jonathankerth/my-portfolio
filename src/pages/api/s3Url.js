@@ -1,6 +1,6 @@
 import { generateUploadURL } from '../../../lib/s3'
 
-export default async (req, res) => {
+const uploadURLHandler = async (req, res) => {
   if (req.method === 'GET') {
     try {
       const fileType = req.query.fileType
@@ -13,3 +13,5 @@ export default async (req, res) => {
     res.status(405).end() // Method Not Allowed
   }
 }
+
+export default uploadURLHandler
