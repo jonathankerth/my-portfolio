@@ -27,11 +27,11 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Weather App',
+    title: 'Climate Cue',
     description:
       'A real-time weather application developed using Next.js and styled with Tailwind CSS. It fetches current weather data from the OpenWeather API and is deployed on Vercel for high availability.',
     link: 'https://github.com/jonathankerth/weather-app',
-    link2: 'https://weather-app-woad-two.vercel.app/',
+    link2: 'https://www.climatecue.com/',
     image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/weather-home.png',
   },
   {
