@@ -35,16 +35,6 @@ const projects = [
     image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/weather-home.png',
   },
   {
-    id: 3,
-    title: 'KitchenGPT',
-    description:
-      'A cutting-edge kitchen assistant powered by GPT-3. The front-end is built with React, while the back-end utilizes Node.js and Express.js. The application is hosted on Heroku and Vercel for robust scalability.',
-    link: 'https://github.com/jonathankerth/KitchenGPT',
-    link2: 'https://kitchen-gpt.vercel.app/',
-    image:
-      'https://mypublicucket.s3.us-west-2.amazonaws.com/kitchen-gpt-home.png',
-  },
-  {
     id: 4,
     title: 'Todo-List',
     description:
@@ -52,16 +42,6 @@ const projects = [
     link: 'https://github.com/jonathankerth/todo-list',
     link2: 'https://todo-list-liard-seven.vercel.app/',
     image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/todo-list.png',
-  },
-  {
-    id: 5,
-    title: 'Filament Scraper Python App',
-    description:
-      "A Python app built using Flask to scrape filament data from eSUN's website. The scraped data is exposed via an API endpoint. This is the only Python app in the portfolio, showcasing skills in web scraping and API creation.",
-    link: 'https://github.com/jonathankerth/filament_scraper',
-    link2: 'https://filament-scraper.herokuapp.com/',
-    image:
-      'https://mypublicucket.s3.us-west-2.amazonaws.com/PythonScrapper.png',
   },
   {
     id: 6,
@@ -73,13 +53,14 @@ const projects = [
     image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/meetHome.png',
   },
   {
-    id: 7,
-    title: 'NicCage API',
+    id: 3,
+    title: 'KitchenGPT',
     description:
-      'A custom-built RESTful API that serves as a comprehensive database for Nicolas Cage movies. Developed using Node.js, Express.js, and MongoDB, the API is hosted on Heroku for easy access and high availability.',
-    link: 'https://github.com/jonathankerth/Nicolas-Cage-API',
-    link2: 'https://niccage.herokuapp.com/',
-    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/nicCage-API.png',
+      'A cutting-edge kitchen assistant powered by GPT-3. The front-end is built with React, while the back-end utilizes Node.js and Express.js. The application is hosted on Heroku and Vercel for robust scalability.',
+    link: 'https://github.com/jonathankerth/KitchenGPT',
+    link2: 'https://kitchen-gpt.vercel.app/',
+    image:
+      'https://mypublicucket.s3.us-west-2.amazonaws.com/kitchen-gpt-home.png',
   },
 
   {
@@ -92,6 +73,25 @@ const projects = [
     iframe: 'https://magic-wheel-rosy.vercel.app/',
   },
   {
+    id: 7,
+    title: 'NicCage API',
+    description:
+      'A custom-built RESTful API that serves as a comprehensive database for Nicolas Cage movies. Developed using Node.js, Express.js, and MongoDB, the API is hosted on Heroku for easy access and high availability.',
+    link: 'https://github.com/jonathankerth/Nicolas-Cage-API',
+    link2: 'https://niccage.herokuapp.com/',
+    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/nicCage-API.png',
+  },
+  {
+    id: 13,
+    title: 'Discord & Spotify Song Saver',
+    description:
+      'A Python bot developed to capture and compile Spotify song links from Discord into an ever-updating playlist. This project showcases my skills with Discord and Spotify APIs and Python, enhancing our music-sharing experience while broadening my technical expertise.',
+    link: 'https://github.com/jonathankerth/discord-spotify-song-saver',
+    link3: 'https://github.com/jonathankerth/discord-spotify-song-saver',
+    image:
+      'https://mypublicucket.s3.us-west-2.amazonaws.com/spotifybot+endpoints.png',
+  },
+  {
     id: 12,
     title: 'React Native Chat App',
     description:
@@ -102,6 +102,16 @@ const projects = [
     link3: 'https://github.com/jonathankerth/chat-app',
   },
 
+  {
+    id: 5,
+    title: 'Filament Scraper Python App',
+    description:
+      "A Python app built using Flask to scrape filament data from eSUN's website. The scraped data is exposed via an API endpoint. This is the only Python app in the portfolio, showcasing skills in web scraping and API creation.",
+    link: 'https://github.com/jonathankerth/filament_scraper',
+    link2: 'https://filament-scraper.herokuapp.com/',
+    image:
+      'https://mypublicucket.s3.us-west-2.amazonaws.com/PythonScrapper.png',
+  },
   {
     id: 10,
     title: 'Pokedex',
