@@ -243,7 +243,7 @@ export default function Home() {
               : 'bg-gray-200/80 text-black'
           } hover:bg-gray-300/80 hover:text-white transition duration-300`}
         >
-          {isFlipped ? 'Reset' : 'Do a flip'}
+          {isFlipped ? 'Reset' : 'Rotate'}
         </button>
       </div>
       <Footer />
