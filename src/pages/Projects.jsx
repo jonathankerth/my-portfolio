@@ -150,6 +150,11 @@ export default function Projects() {
     setIsModalOpen(false)
   }
 
+  const textColors = {
+    light: 'text-black',
+    dark: 'text-white',
+  }
+
   return (
     <div
       className={`min-h-screen ${
@@ -171,7 +176,11 @@ export default function Projects() {
       <div className="min-h-[calc(100vh-64px)] flex flex-col justify-between">
         <div className="container mt-28 mb-28 mx-auto px-4 md:px-8">
           <div className="bg-black/40 bg-opacity-80 rounded-lg p-4 mb-6 max-w-sm mx-auto">
-            <h1 className="text-2xl font-bold text-white text-center">
+            <h1
+              className={` ${
+                theme === 'dark' ? textColors.dark : textColors.light
+              }  text-2xl font-bold text-center`}
+            >
               A Few of My Projects
             </h1>
           </div>

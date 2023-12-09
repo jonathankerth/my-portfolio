@@ -109,6 +109,11 @@ export default function Home() {
     dark: 'bg-gradient-to-b from-gray-800 via-dark-blue to-black', // Dark mode gradient background
   }
 
+  const textColors = {
+    light: 'text-black',
+    dark: 'text-white',
+  }
+
   return (
     <div
       className={`min-h-screen ${
@@ -138,17 +143,34 @@ export default function Home() {
           isFlipped ? 'transform rotate-180' : ''
         }`}
       >
-        <div className="text-white md:w-2/3 pr-8">
-          <h1 className="mb-4 text-4xl">Welcome,</h1>
-          <p className="mb-8 text-2xl text-white">
-            I&apos;m Jonathan Gallardo-Kerth
+        <div
+          className={` ${
+            theme === 'dark' ? textColors.dark : textColors.light
+          }  pr-8`}
+        >
+          <p
+            className={` ${
+              theme === 'dark' ? textColors.dark : textColors.light
+            } font-bold pr-8 mb-4 text-2xl`}
+          >
+            Hi, I&apos;m Jonathan Gallardo-Kerth
           </p>
-          <div className="text-xl text-white mb-4">
-            As a Software Engineer, I specialize in crafting engaging online
-            experiences. On my website, you&apos;ll find a showcase of my recent
-            work, and a glimpse of who I am both behind the code.
+          <div
+            className={` ${
+              theme === 'dark' ? textColors.dark : textColors.light
+            }  pr-8 mb-4 text-xl`}
+          >
+            As a Software Engineer, I specialize in javascript technologies to
+            build cutting edge web experiences. Here, you&apos;ll find a
+            showcase of my recent work, and a glimpse of who I am both behind
+            the code.
           </div>
-          <div className="text-xl text-white">
+
+          <div
+            className={` ${
+              theme === 'dark' ? textColors.dark : textColors.light
+            }  pr-8 mb-4 text-xl`}
+          >
             Looking to collaborate or connect? Feel free to reach out through
             any of the sites below. Thank you for stopping by!
           </div>
@@ -158,7 +180,9 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Email"
-              className="group text-white"
+              className={` ${
+                theme === 'dark' ? textColors.dark : textColors.light
+              }  group`}
             >
               <FaEnvelope className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
             </a>
@@ -167,7 +191,9 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="group text-white"
+              className={` ${
+                theme === 'dark' ? textColors.dark : textColors.light
+              }  group`}
             >
               <FaLinkedin className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
             </a>
@@ -176,7 +202,9 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="group text-white"
+              className={` ${
+                theme === 'dark' ? textColors.dark : textColors.light
+              }  group`}
             >
               <FaGithub className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
             </a>
@@ -185,7 +213,9 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Stack Overflow"
-              className="group text-white"
+              className={` ${
+                theme === 'dark' ? textColors.dark : textColors.light
+              }  group`}
             >
               <FaStackOverflow className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
             </a>
@@ -194,7 +224,9 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Twitter"
-              className="group text-white"
+              className={` ${
+                theme === 'dark' ? textColors.dark : textColors.light
+              }  group`}
             >
               <FaSquareXTwitter className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
             </a>
@@ -203,7 +235,9 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Medium"
-              className="group text-white"
+              className={` ${
+                theme === 'dark' ? textColors.dark : textColors.light
+              }  group`}
             >
               <FaMedium className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
             </a>
@@ -212,7 +246,9 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Threads"
-              className="group text-white"
+              className={` ${
+                theme === 'dark' ? textColors.dark : textColors.light
+              }  group`}
             >
               <FaMeta className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
             </a>

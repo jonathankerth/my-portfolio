@@ -18,7 +18,10 @@ export default function Cats() {
     light: 'bg-gradient-to-b from-blue-200 to-blue-400',
     dark: 'bg-gradient-to-b from-gray-800 via-dark-blue to-black', // Dark mode gradient background
   }
-
+  const textColors = {
+    light: 'text-black',
+    dark: 'text-white',
+  }
   const favoriteMemes = [
     'https://memedisplay.s3.us-west-2.amazonaws.com/cat+and+kid.jpeg',
     'https://memedisplay.s3.us-west-2.amazonaws.com/cat+philosophy.jpeg',
@@ -76,15 +79,27 @@ export default function Cats() {
       <Navbar />
       <main className="flex flex-col items-center justify-center flex-1 py-12 mt-10">
         <div className="bg-black/40 bg-opacity-80 rounded-lg p-4 mb-6 max-w-2xl">
-          <h1 className="text-2xl font-bold text-white text-center mb-4">
+          <h1
+            className={` ${
+              theme === 'dark' ? textColors.dark : textColors.light
+            }  text-2xl font-bold text-center mb-4`}
+          >
             Send Me Your Cat Memes!
           </h1>
-          <h2 className="text-xl text-white text-center mb-2">
+          <h2
+            className={` ${
+              theme === 'dark' ? textColors.dark : textColors.light
+            } text-xl text-center mb-2`}
+          >
             This page was built because I love cats, memes, and cat memes. I
             also wanted to show my knowledge of AWS S3 buckets and IAM user
             policies.{' '}
           </h2>
-          <h2 className="text-xl text-white text-center mb-2">
+          <h2
+            className={` ${
+              theme === 'dark' ? textColors.dark : textColors.light
+            } text-xl text-center mb-2`}
+          >
             Upload a cat meme to my S3 bucket and I&apos;ll display my
             favorites!{' '}
           </h2>

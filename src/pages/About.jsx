@@ -76,6 +76,11 @@ export default function About() {
     light: 'bg-gradient-to-b from-blue-200 to-blue-400',
     dark: 'bg-gradient-to-b from-gray-800 via-dark-blue to-black', // Dark mode gradient background
   }
+
+  const textColors = {
+    light: 'text-black',
+    dark: 'text-white',
+  }
   const techStack = [
     { name: 'React', url: 'https://reactjs.org/' },
     { name: 'React Native', url: 'https://reactnative.dev/' },
@@ -136,24 +141,40 @@ export default function About() {
       <Navbar />
       <main className="flex flex-col items-center justify-center flex-1 py-12 mt-10">
         <div className="bg-black/40 bg-opacity-80 rounded-lg p-4 mb-6 max-w-2xl">
-          <h1 className="text-2xl font-bold text-white text-center mb-4">
+          <h1
+            className={` ${
+              theme === 'dark' ? textColors.dark : textColors.light
+            }  font-bold text-xl leading-6 text-center max-w-full mb-4`}
+          >
             About Me
           </h1>
-          <p className="text-white text-xl leading-6 text-center max-w-full mb-4">
+          <p
+            className={` ${
+              theme === 'dark' ? textColors.dark : textColors.light
+            }  text-xl leading-6 text-center max-w-full mb-4`}
+          >
             I&apos;m a dedicated and passionate software engineer specializing
             in building scalable, and efficient web applications. I primarily
             use cutting-edge technologies like React, Next.js, Node.js, Express,
             Redux, Javascript, ChatGPT, and MongoDB, I love tackling new
             challenges and continous learning.
           </p>
-          <p className="text-white text-xl leading-6 text-center max-w-full">
+          <p
+            className={` ${
+              theme === 'dark' ? textColors.dark : textColors.light
+            }  text-xl leading-6 text-center max-w-full`}
+          >
             Outside the world of code, I&apos;m a food enthusiast, self
             proclaimed nerd, home chef, pet parent, and I&apos;ve been to 5 out
             of the 7 continents. Feel free to connect for any opportunities or
             questions about my projects. Thanks for dropping by!
           </p>
-          <p className="text-white text-xl leading-6 text-center max-w-full mt-4">
-            A few technologies I&apos;ve been working with recently:
+          <p
+            className={` ${
+              theme === 'dark' ? textColors.dark : textColors.light
+            }  text-xl leading-6 text-center max-w-full mt-4`}
+          >
+            Below are a few technologies I am familiar working with:
           </p>
         </div>
         <div className="flex flex-wrap items-center justify-center w-3/4 mx-auto mt-4">
