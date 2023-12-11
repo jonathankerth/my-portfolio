@@ -21,8 +21,8 @@ export default function Cats() {
   }
 
   const textBoxBackground = {
-    light: 'bg-blue-300', // Simplified light background
-    dark: 'bg-gray-800', // Simplified dark background
+    light: 'bg-blue-300',
+    dark: 'bg-gray-800',
   }
 
   const textColors = {
@@ -48,11 +48,11 @@ export default function Cats() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    setIsLoading(true) // Set loading state to true
+    setIsLoading(true)
 
     const file = selectedFile
     if (!file) {
-      setIsLoading(false) // Reset loading state if no file selected
+      setIsLoading(false)
       return
     }
 
@@ -143,10 +143,9 @@ export default function Cats() {
               className={`px-6 py-2 text-white rounded-lg shadow-md hover:bg-blue-600 focus:bg-blue-700 focus:outline-none transition duration-300 ease-in-out ${
                 isLoading ? 'bg-blue-400 cursor-not-allowed' : 'bg-blue-500'
               }`}
-              disabled={isLoading} // Disable the button during loading
+              disabled={isLoading}
             >
               {isLoading ? 'Uploading...' : 'Upload'}{' '}
-              {/* Change button text based on loading state */}
             </button>
           </form>
 

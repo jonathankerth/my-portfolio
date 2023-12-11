@@ -10,9 +10,9 @@ import Footer from '../components/Footer'
 import { useTheme } from 'next-themes'
 
 const ImageCarousel = () => {
-  const aspectRatio = 4 / 3 // 4:3 aspect ratio
-  const commonWidth = 200 // You can adjust this as needed
-  const commonHeight = commonWidth / aspectRatio // Calculated based on the aspect ratio
+  const aspectRatio = 4 / 3
+  const commonWidth = 200
+  const commonHeight = commonWidth / aspectRatio
 
   const images = [
     {
@@ -58,9 +58,10 @@ const ImageCarousel = () => {
                 alt={image.alt}
                 layout="responsive"
                 objectFit="contain"
-                width={1} // These values are used in combination with layout="responsive"
-                height={1} // to maintain the original aspect ratio of the image
+                width={300}
+                height={225}
                 className="rounded-lg"
+                priority={index === 0}
               />
             </div>
           </div>
@@ -83,8 +84,8 @@ export default function About() {
   }
 
   const textBoxBackground = {
-    light: 'bg-gradient-to-b from-blue-300 via-blue-350 to-blue-450', // Complementing light mode gradient
-    dark: 'bg-gradient-to-b from-gray-700 via-gray-800 to-gray-900', // Complementing dark mode gradient
+    light: 'bg-gradient-to-b from-blue-300 via-blue-350 to-blue-450',
+    dark: 'bg-gradient-to-b from-gray-700 via-gray-800 to-gray-900',
   }
   const techStack = [
     { name: 'React', url: 'https://reactjs.org/' },

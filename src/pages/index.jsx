@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Script from 'next/script'
 import { useState, useEffect, useCallback } from 'react'
-import { useTheme } from 'next-themes' // Import the useTheme hook
+import { useTheme } from 'next-themes'
 import {
   FaLinkedin,
   FaGithub,
@@ -45,7 +45,6 @@ const Footer = () => {
     }
   }, [handleFooterVisibility])
 
-  // Use the useTheme hook to get the theme
   const { theme } = useTheme()
 
   return (
@@ -107,8 +106,8 @@ export default function Home() {
     dark: 'bg-gradient-to-b from-gray-800 via-gray-900 to-gray-1000',
   }
   const mainBackgroundColors = {
-    light: 'bg-gradient-to-b from-blue-300 via-blue-350 to-blue-450', // Complementing light mode gradient
-    dark: 'bg-gradient-to-b from-gray-700 via-gray-800 to-gray-900', // Complementing dark mode gradient
+    light: 'bg-gradient-to-b from-blue-300 via-blue-350 to-blue-450',
+    dark: 'bg-gradient-to-b from-gray-700 via-gray-800 to-gray-900',
   }
 
   const textColors = {
@@ -148,7 +147,7 @@ export default function Home() {
             ? mainBackgroundColors.dark
             : mainBackgroundColors.light
         } text-white mx-auto shadow-lg`}
-        style={{ maxWidth: '75%' }} // 75% of the viewport width for larger screens
+        style={{ maxWidth: '75%' }}
       >
         <div
           className={`w-full ${
