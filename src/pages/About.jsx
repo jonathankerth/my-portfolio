@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { React, useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import Image from 'next/image'
@@ -71,15 +71,20 @@ const ImageCarousel = () => {
 }
 
 export default function About() {
-  const { theme } = useTheme()
-  const backgroundColorClasses = {
-    light: 'bg-gradient-to-b from-blue-200 to-blue-400',
-    dark: 'bg-gradient-to-b from-gray-800 via-dark-blue to-black', // Dark mode gradient background
-  }
-
   const textColors = {
     light: 'text-black',
     dark: 'text-white',
+  }
+  const { theme } = useTheme()
+
+  const backgroundColors = {
+    light: 'bg-gradient-to-b from-blue-200 to-blue-400',
+    dark: 'bg-gradient-to-b from-gray-800 via-gray-900 to-gray-900',
+  }
+
+  const textBoxBackground = {
+    light: 'bg-gradient-to-b from-blue-300 via-blue-350 to-blue-450', // Complementing light mode gradient
+    dark: 'bg-gradient-to-b from-gray-700 via-gray-800 to-gray-900', // Complementing dark mode gradient
   }
   const techStack = [
     { name: 'React', url: 'https://reactjs.org/' },
@@ -125,9 +130,7 @@ export default function About() {
   return (
     <div
       className={`min-h-screen ${
-        theme === 'dark'
-          ? backgroundColorClasses.dark
-          : backgroundColorClasses.light
+        theme === 'dark' ? backgroundColors.dark : backgroundColors.light
       } text-white flex flex-col justify-center items-center px-4`}
     >
       <Head>
@@ -140,11 +143,15 @@ export default function About() {
       </Head>
       <Navbar />
       <main className="flex flex-col items-center justify-center flex-1 py-12 mt-10">
-        <div className="bg-black/40 bg-opacity-80 rounded-lg p-4 mb-6 max-w-2xl">
+        <div
+          className={`${
+            theme === 'dark' ? textBoxBackground.dark : textBoxBackground.light
+          } rounded-lg p-4 mb-6 max-w-2xl`}
+        >
           <h1
-            className={` ${
+            className={`${
               theme === 'dark' ? textColors.dark : textColors.light
-            }  font-bold text-xl leading-6 text-center max-w-full mb-4`}
+            } font-bold text-xl leading-6 text-center max-w-full mb-4`}
           >
             About Me
           </h1>

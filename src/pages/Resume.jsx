@@ -5,17 +5,14 @@ import Footer from '../components/Footer'
 
 export default function Resume() {
   const { theme, setTheme } = useTheme()
-  const backgroundColorClasses = {
+  const backgroundColor = {
     light: 'bg-gradient-to-b from-blue-200 to-blue-400',
-    dark: 'bg-gradient-to-b from-gray-800 via-dark-blue to-black',
+    dark: 'bg-gradient-to-b from-gray-800 via-gray-900 to-gray-900',
   }
-
   return (
     <div
       className={`min-h-screen ${
-        theme === 'dark'
-          ? backgroundColorClasses.dark
-          : backgroundColorClasses.light
+        theme === 'dark' ? backgroundColor.dark : backgroundColor.light
       } text-white flex flex-col justify-center items-center px-4`}
     >
       <Head>

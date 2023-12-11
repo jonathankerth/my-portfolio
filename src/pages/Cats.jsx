@@ -14,14 +14,22 @@ export default function Cats() {
   const [uploadMessage, setUploadMessage] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const { theme } = useTheme()
-  const backgroundColorClasses = {
+
+  const backgroundColors = {
     light: 'bg-gradient-to-b from-blue-200 to-blue-400',
-    dark: 'bg-gradient-to-b from-gray-800 via-dark-blue to-black', // Dark mode gradient background
+    dark: 'bg-gradient-to-b from-gray-800 via-gray-900 to-gray-900',
   }
+
+  const textBoxBackground = {
+    light: 'bg-blue-300', // Simplified light background
+    dark: 'bg-gray-800', // Simplified dark background
+  }
+
   const textColors = {
     light: 'text-black',
     dark: 'text-white',
   }
+
   const favoriteMemes = [
     'https://memedisplay.s3.us-west-2.amazonaws.com/cat+and+kid.jpeg',
     'https://memedisplay.s3.us-west-2.amazonaws.com/cat+philosophy.jpeg',
@@ -71,18 +79,21 @@ export default function Cats() {
   return (
     <div
       className={`min-h-screen ${
-        theme === 'dark'
-          ? backgroundColorClasses.dark
-          : backgroundColorClasses.light
-      } text-white flex flex-col justify-center items-center px-4`}
+        theme === 'dark' ? backgroundColors.dark : backgroundColors.light
+      } flex flex-col justify-center items-center px-4`}
     >
+      <Head></Head>
       <Navbar />
       <main className="flex flex-col items-center justify-center flex-1 py-12 mt-10">
-        <div className="bg-black/40 bg-opacity-80 rounded-lg p-4 mb-6 max-w-2xl">
+        <div
+          className={`${
+            theme === 'dark' ? textBoxBackground.dark : textBoxBackground.light
+          } rounded-lg p-4 mb-6 max-w-2xl`}
+        >
           <h1
-            className={` ${
+            className={`${
               theme === 'dark' ? textColors.dark : textColors.light
-            }  text-2xl font-bold text-center mb-4`}
+            } font-bold text-xl leading-6 text-center max-w-full mb-4`}
           >
             Send Me Your Cat Memes!
           </h1>

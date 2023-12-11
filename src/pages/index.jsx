@@ -100,13 +100,15 @@ export default function Home() {
     }
   }, [handleFooterVisibility])
 
-  // Use the useTheme hook to get the theme
   const { theme } = useTheme()
 
-  // Define background colors for light and dark modes
   const backgroundColors = {
     light: 'bg-gradient-to-b from-blue-200 to-blue-400',
-    dark: 'bg-gradient-to-b from-gray-800 via-dark-blue to-black', // Dark mode gradient background
+    dark: 'bg-gradient-to-b from-gray-800 via-gray-900 to-gray-1000',
+  }
+  const mainBackgroundColors = {
+    light: 'bg-gradient-to-b from-blue-300 via-blue-350 to-blue-450', // Complementing light mode gradient
+    dark: 'bg-gradient-to-b from-gray-700 via-gray-800 to-gray-900', // Complementing dark mode gradient
   }
 
   const textColors = {
@@ -139,26 +141,31 @@ export default function Home() {
       </Script>
       <Navbar />
       <main
-        className={`flex flex-col md:flex-row items-center rounded-xl justify-center w-full px-4 mt-16 sm:px-8 py-8 text-center bg-black/40 bg-opacity-80 max-w-5xl transition-transform duration-700 ease-in-out ${
+        className={`flex flex-col items-center justify-center w-full mt-16 py-8 px-4 text-center transition-transform duration-700 ease-in-out ${
           isFlipped ? 'transform rotate-180' : ''
-        }`}
+        } ${
+          theme === 'dark'
+            ? mainBackgroundColors.dark
+            : mainBackgroundColors.light
+        } text-white mx-auto shadow-lg`}
+        style={{ maxWidth: '75%' }} // 75% of the viewport width for larger screens
       >
         <div
-          className={` ${
+          className={`w-full ${
             theme === 'dark' ? textColors.dark : textColors.light
-          }  pr-8`}
+          }`}
         >
           <p
-            className={` ${
+            className={`font-bold mb-4 text-2xl ${
               theme === 'dark' ? textColors.dark : textColors.light
-            } font-bold pr-8 mb-4 text-2xl`}
+            }`}
           >
             Hi, I&apos;m Jonathan Gallardo-Kerth
           </p>
           <div
-            className={` ${
+            className={`mb-4 text-xl ${
               theme === 'dark' ? textColors.dark : textColors.light
-            }  pr-8 mb-4 text-xl`}
+            }`}
           >
             As a Software Engineer, I specialize in javascript technologies to
             build cutting edge web experiences. Here, you&apos;ll find a
@@ -255,33 +262,22 @@ export default function Home() {
           </div>
         </div>
         <div
-          className={`relative md:w-1/3 mb-4 mt-4 md:mt-12 md:mb-2 md:mr-8 float-right transition-transform duration-700 ease-in-out z-10 ${
+          className={`relative w-full mb-4 mt-4 transition-transform duration-700 ease-in-out z-10 ${
             isZoomed ? 'transform scale-150' : ''
           }`}
           onClick={handleImageClick}
-          style={{ width: '300px', height: '300px' }} // increased to 300x300
         >
           <Image
             src={imageUrl}
             alt="Jonathan Kerth"
-            width={300} // increased to 300
-            height={300} // increased to 300
-            className="rounded-full cursor-pointer"
+            width={300}
+            height={300}
+            className="rounded-full cursor-pointer mx-auto"
+            priority
           />
         </div>
       </main>
-      <div className="flex mt-6 mb-12">
-        <button
-          onClick={handleFlipClick}
-          className={`text-lg px-4 py-2 rounded-full ${
-            isFlipped
-              ? 'bg-gray-200/80 text-black'
-              : 'bg-gray-200/80 text-black'
-          } hover:bg-gray-300/80 hover:text-white transition duration-300`}
-        >
-          {isFlipped ? 'Reset' : 'Rotate'}
-        </button>
-      </div>
+
       <Footer />
     </div>
   )

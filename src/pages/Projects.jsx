@@ -149,6 +149,15 @@ export default function Projects() {
   const closeModal = () => {
     setIsModalOpen(false)
   }
+  const backgroundColors = {
+    light: 'bg-gradient-to-b from-blue-200 to-blue-400',
+    dark: 'bg-gradient-to-b from-gray-800 via-gray-900 to-gray-900',
+  }
+
+  const textBoxBackground = {
+    light: 'bg-blue-300', // Simplified light background
+    dark: 'bg-gray-800', // Simplified dark background
+  }
 
   const textColors = {
     light: 'text-black',
@@ -158,10 +167,8 @@ export default function Projects() {
   return (
     <div
       className={`min-h-screen ${
-        theme === 'dark'
-          ? backgroundColorClasses.dark
-          : backgroundColorClasses.light
-      } text-white flex flex-col justify-center items-center px-4`}
+        theme === 'dark' ? backgroundColors.dark : backgroundColors.light
+      } flex flex-col justify-center items-center px-4`}
     >
       <Head>
         <title>Projects</title>
@@ -173,97 +180,100 @@ export default function Projects() {
       </Head>
       <Navbar />
 
-      <div className="min-h-[calc(100vh-64px)] flex flex-col justify-between">
-        <div className="container mt-28 mb-28 mx-auto px-4 md:px-8">
-          <div className="bg-black/40 bg-opacity-80 rounded-lg p-4 mb-6 max-w-sm mx-auto">
-            <h1
-              className={` ${
-                theme === 'dark' ? textColors.dark : textColors.light
-              }  text-2xl font-bold text-center`}
+      <main className="flex flex-col items-center justify-center flex-1 py-12 mt-10">
+        <div
+          className={`${
+            theme === 'dark' ? textBoxBackground.dark : textBoxBackground.light
+          } rounded-lg p-4 mb-6 max-w-2xl`}
+        >
+          <h1
+            className={`${
+              theme === 'dark' ? textColors.dark : textColors.light
+            } font-bold text-xl text-center max-w-full `}
+          >
+            A Few of My Projects
+          </h1>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-9">
+          {projects.map((project) => (
+            <div
+              key={project.id}
+              className="project-container transition-transform duration-300 hover:scale-105 bg-white rounded-lg shadow-md flex flex-col p-6"
             >
-              A Few of My Projects
-            </h1>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-9">
-            {projects.map((project) => (
-              <div
-                key={project.id}
-                className="project-container transition-transform duration-300 hover:scale-105 bg-white rounded-lg shadow-md flex flex-col p-6"
-              >
-                <h3 className="text-xl font-bold mb-2 flex-shrink-0">
+              <h3 className="text-xl font-bold mb-2 flex-shrink-0">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-400 underline flex items-center"
+                >
+                  {project.title}{' '}
+                </a>
+              </h3>
+              {project.title === 'Magic Wheel Component' ? (
+                <iframe
+                  src={project.iframe}
+                  className="object-top w-full h-full mb-4 flex-grow-0"
+                ></iframe>
+              ) : (
+                project.image && (
                   <a
-                    href={project.link}
+                    href={project.link2}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-600 hover:text-blue-400 underline flex items-center"
                   >
-                    {project.title}{' '}
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      className="object-top w-full h-full mb-4 flex-grow-0"
+                      width={500}
+                      height={500}
+                    />
                   </a>
-                </h3>
-                {project.title === 'Magic Wheel Component' ? (
-                  <iframe
-                    src={project.iframe}
-                    className="object-top w-full h-full mb-4 flex-grow-0"
-                  ></iframe>
-                ) : (
-                  project.image && (
-                    <a
-                      href={project.link2}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        className="object-top w-full h-full mb-4 flex-grow-0"
-                        width={500}
-                        height={500}
-                      />
-                    </a>
-                  )
+                )
+              )}
+              <p className="text-gray-700 mb-4 flex-grow">
+                {project.description}
+              </p>
+              <div className="flex-shrink-0">
+                {project.title === 'Nicolas Cage Movie Repository' ? (
+                  <button
+                    onClick={() => openModal(project)}
+                    className="inline-block px-4 py-2 mr-2 bg-yellow-500 text-white rounded hover:bg-yellow-600"
+                  >
+                    View Case Study
+                  </button>
+                ) : null}
+                {project.link2 && (
+                  <a
+                    href={project.link2}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-4 py-2 border-2 border-blue-500 bg-blue-500 text-white hover:bg-blue-600 hover:border-blue-600 hover:text-white rounded transition duration-300 ease-in-out"
+                  >
+                    Live Site
+                  </a>
                 )}
-                <p className="text-gray-700 mb-4 flex-grow">
-                  {project.description}
-                </p>
-                <div className="flex-shrink-0">
-                  {project.title === 'Nicolas Cage Movie Repository' ? (
-                    <button
-                      onClick={() => openModal(project)}
-                      className="inline-block px-4 py-2 mr-2 bg-yellow-500 text-white rounded hover:bg-yellow-600"
-                    >
-                      View Case Study
-                    </button>
-                  ) : null}
-                  {project.link2 && (
-                    <a
-                      href={project.link2}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block px-4 py-2 border-2 border-blue-500 bg-blue-500 text-white hover:bg-blue-600 hover:border-blue-600 hover:text-white rounded transition duration-300 ease-in-out"
-                    >
-                      Live Site
-                    </a>
-                  )}
-                  {project.link3 && (
-                    <a
-                      href={project.link3}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block px-4 py-2 border-2 border-blue-500 bg-blue-500 text-white hover:bg-blue-600 hover:border-blue-600 hover:text-white rounded transition duration-300 ease-in-out"
-                    >
-                      Codebase
-                    </a>
-                  )}
-                </div>
+                {project.link3 && (
+                  <a
+                    href={project.link3}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-4 py-2 border-2 border-blue-500 bg-blue-500 text-white hover:bg-blue-600 hover:border-blue-600 hover:text-white rounded transition duration-300 ease-in-out"
+                  >
+                    Codebase
+                  </a>
+                )}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
-        <Footer />
-        {isModalOpen && (
-          <ProjectModal project={currentProject} closeModal={closeModal} />
-        )}
-      </div>
+      </main>
+
+      <Footer />
+      {isModalOpen && (
+        <ProjectModal project={currentProject} closeModal={closeModal} />
+      )}
     </div>
   )
 }
