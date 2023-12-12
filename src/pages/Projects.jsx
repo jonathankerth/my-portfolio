@@ -156,7 +156,7 @@ export default function Projects() {
 
   const textBoxBackground = {
     light: 'bg-blue-300',
-    dark: 'bg-gray-800',
+    dark: 'bg-gray-700',
   }
 
   const textColors = {

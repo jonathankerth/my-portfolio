@@ -49,7 +49,7 @@ const Footer = () => {
 
   return (
     <footer
-      className={`fixed inset-x-0 bottom-0 flex items-center justify-between bg-gray-900/20 text-white p-4 z-50 ${
+      className={`fixed rounded-full inset-x-0 bottom-0 flex items-center justify-between bg-gray-900/20 text-white p-4 z-50 ${
         isFooterVisible || !isMobile ? 'visible' : 'invisible'
       }`}
     >
@@ -73,11 +73,6 @@ const Footer = () => {
 }
 
 export default function Home() {
-  const [isFlipped, setIsFlipped] = useState(false)
-  const handleFlipClick = () => {
-    setIsFlipped(!isFlipped)
-  }
-
   const [isZoomed, setIsZoomed] = useState(false)
   const imageUrl =
     'https://mypublicucket.s3.us-west-2.amazonaws.com/DALL%C2%B7E+2023-08-18+15.22.22.png'
@@ -140,13 +135,10 @@ export default function Home() {
       </Script>
       <Navbar />
       <main
-        className={`flex flex-col items-center justify-center w-full mt-16 py-8 px-4 text-center transition-transform duration-700 ease-in-out ${
-          isFlipped ? 'transform rotate-180' : ''
-        } ${
-          theme === 'dark'
-            ? mainBackgroundColors.dark
-            : mainBackgroundColors.light
-        } text-white mx-auto shadow-lg`}
+        className={`flex flex-col items-center justify-center w-full mt-16 py-8 px-4 text-center transition-transform duration-700 ease-in-out rounded-lg
+    ${
+      theme === 'dark' ? mainBackgroundColors.dark : mainBackgroundColors.light
+    } text-white mx-auto shadow-lg`}
         style={{ maxWidth: '75%' }}
       >
         <div
