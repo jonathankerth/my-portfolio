@@ -159,7 +159,7 @@ export default function Home() {
               theme === 'dark' ? textColors.dark : textColors.light
             }`}
           >
-            Hi, I&apos;m Jonathan Gallardo-Kerth
+            Welcome, I&apos;m Jonathan Gallardo-Kerth
           </p>
           <div
             className={`mb-4 text-xl ${
@@ -195,7 +195,7 @@ export default function Home() {
               priority
             />
           </div>
-          <div className="flex flex-wrap items-center mt-8 space-x-2 sm:space-x-4 justify-center">
+          <div className="flex flex-wrap items-center mt-8 space-x-2 sm:space-x-4 justify-center mb-12">
             <a
               href="mailto:jonathanpkerth@gmail.com"
               target="_blank"
