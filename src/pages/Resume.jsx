@@ -24,11 +24,11 @@ export default function Resume() {
       <Navbar />
 
       <main className="flex flex-col items-center justify-center w-full flex-1 text-center mt-20 mb-20">
-        <div className="rounded-lg shadow-md w-3/4 mx-auto">
+        <div className="rounded-lg shadow-md w-3/4 mx-auto max-w-4xl">
           <iframe
             src="https://jonathankerth.github.io/resume/"
             className="border rounded-lg border-black w-full"
-            style={{ aspectRatio: '11/16', height: 'calc(100vw * 11 / 16)' }}
+            style={{ aspectRatio: '11/16', height: 'auto' }}
             title="Jonathan Kerth Resume"
           ></iframe>
         </div>
