@@ -180,6 +180,21 @@ export default function Home() {
             Looking to collaborate or connect? Feel free to reach out through
             any of the sites below. Thank you for stopping by!
           </div>
+          <div
+            className={`relative w-full mb-4 mt-4 transition-transform duration-700 ease-in-out z-10 ${
+              isZoomed ? 'transform scale-150' : ''
+            }`}
+            onClick={handleImageClick}
+          >
+            <Image
+              src={imageUrl}
+              alt="Jonathan Kerth"
+              width={300}
+              height={300}
+              className="rounded-full cursor-pointer mx-auto"
+              priority
+            />
+          </div>
           <div className="flex flex-wrap items-center mt-8 space-x-2 sm:space-x-4 justify-center">
             <a
               href="mailto:jonathanpkerth@gmail.com"
@@ -259,21 +274,6 @@ export default function Home() {
               <FaMeta className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
             </a>
           </div>
-        </div>
-        <div
-          className={`relative w-full mb-4 mt-4 transition-transform duration-700 ease-in-out z-10 ${
-            isZoomed ? 'transform scale-150' : ''
-          }`}
-          onClick={handleImageClick}
-        >
-          <Image
-            src={imageUrl}
-            alt="Jonathan Kerth"
-            width={300}
-            height={300}
-            className="rounded-full cursor-pointer mx-auto"
-            priority
-          />
         </div>
       </main>
 
