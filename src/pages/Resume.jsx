@@ -28,7 +28,7 @@ export default function Resume() {
           <iframe
             src="https://jonathankerth.github.io/resume/"
             className="border rounded-lg border-black w-full"
-            style={{ aspectRatio: '11/16', height: 'auto' }}
+            style={{ aspectRatio: '11/16', height: '1000px' }}
             title="Jonathan Kerth Resume"
           ></iframe>
         </div>
