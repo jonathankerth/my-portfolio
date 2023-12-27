@@ -8,7 +8,6 @@ const ThemeToggle = () => {
     if (savedTheme) {
       setIsDarkMode(savedTheme === 'dark')
     } else {
-      // Detect user's preferred theme using `window.matchMedia`
       const prefersDarkMode = window.matchMedia(
         '(prefers-color-scheme: dark)'
       ).matches
