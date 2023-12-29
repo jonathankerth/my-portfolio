@@ -16,20 +16,19 @@ export default function Cats() {
   const { theme } = useTheme()
 
   const backgroundColors = {
-    light: 'bg-gradient-to-b from-blue-200 to-blue-400',
-    dark: 'bg-gradient-to-b from-gray-800 via-gray-900 to-gray-900',
+    light: 'bg-gradient-to-b from-[#D3E4CD] to-[#ADC2A9]',
+    dark: 'bg-gradient-to-b from-[#35524A] via-[#2E4057] to-[#163172]',
   }
 
   const textBoxBackground = {
-    light: 'bg-blue-300',
-    dark: 'bg-gray-700',
+    light: 'bg-gradient-to-b from-[#BEE1D2] via-[#A0C4B2] to-[#89A799]',
+    dark: 'bg-gradient-to-b from-[#2F4F4F] via-[#29465B] to-[#1B3A5B]',
   }
 
   const textColors = {
-    light: 'text-black',
-    dark: 'text-white',
+    light: 'text-[#3E4C5E]',
+    dark: 'text-[#C5D1C8]',
   }
-
   const favoriteMemes = [
     'https://memedisplay.s3.us-west-2.amazonaws.com/cat+and+kid.jpeg',
     'https://memedisplay.s3.us-west-2.amazonaws.com/cat+philosophy.jpeg',

@@ -6,9 +6,10 @@ import Footer from '../components/Footer'
 export default function Resume() {
   const { theme, setTheme } = useTheme()
   const backgroundColor = {
-    light: 'bg-gradient-to-b from-blue-200 to-blue-400',
-    dark: 'bg-gradient-to-b from-gray-800 via-gray-900 to-gray-900',
+    light: 'bg-gradient-to-b from-[#D3E4CD] to-[#ADC2A9]',
+    dark: 'bg-gradient-to-b from-[#35524A] via-[#2E4057] to-[#163172]',
   }
+
   return (
     <div
       className={`min-h-screen ${

@@ -4,7 +4,6 @@ import React, { useState, useEffect, useCallback } from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import Image from 'next/image'
-import { FaBars, FaTimes } from 'react-icons/fa'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useTheme } from 'next-themes'
@@ -72,20 +71,21 @@ const ImageCarousel = () => {
 }
 
 export default function About() {
-  const textColors = {
-    light: 'text-black',
-    dark: 'text-white',
-  }
   const { theme } = useTheme()
 
   const backgroundColors = {
-    light: 'bg-gradient-to-b from-blue-200 to-blue-400',
-    dark: 'bg-gradient-to-b from-gray-800 via-gray-900 to-gray-900',
+    light: 'bg-gradient-to-b from-[#D3E4CD] to-[#ADC2A9]',
+    dark: 'bg-gradient-to-b from-[#35524A] via-[#2E4057] to-[#163172]',
   }
 
   const textBoxBackground = {
-    light: 'bg-gradient-to-b from-blue-300 via-blue-350 to-blue-450',
-    dark: 'bg-gradient-to-b from-gray-700 via-gray-800 to-gray-900',
+    light: 'bg-gradient-to-b from-[#BEE1D2] via-[#A0C4B2] to-[#89A799]',
+    dark: 'bg-gradient-to-b from-[#2F4F4F] via-[#29465B] to-[#1B3A5B]',
+  }
+
+  const textColors = {
+    light: 'text-[#3E4C5E]',
+    dark: 'text-[#C5D1C8]',
   }
   const techStack = [
     { name: 'React', url: 'https://reactjs.org/' },
