@@ -26,6 +26,19 @@ const projects = [
     image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/nicCageHome.png',
   },
   {
+    id: 14,
+    title: 'Oregonized Design Co. Website',
+    description: `
+      Developed an immersive parallax single-page application (SPA) for Oregonized Design Co. The SPA showcases dynamic, smooth scrolling interactions, enhancing user engagement.
+      Engineered with Vue.js for reactive UI components, styled with Tailwind CSS for a responsive and modern aesthetic.
+      Built with Vue.js and Tailwind CSS. Deployed on Vercel.
+    `,
+    link: 'https://github.com/jonathankerth/freelance-site',
+    link2: 'https://freelance-site-kappa.vercel.app/',
+    image:
+      'https://mypublicucket.s3.us-west-2.amazonaws.com/freelance+site.png',
+  },
+  {
     id: 2,
     title: 'Climate Cue',
     description:
