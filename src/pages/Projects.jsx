@@ -17,17 +17,17 @@ const navLinks = [
 
 const projects = [
   {
-    id: 1,
-    title: 'Nicolas Cage Movie Repository',
+    id: 2,
+    title: 'Climate Cue',
     description:
-      'A comprehensive repository dedicated to Nicolas Cage movies, built using React and styled with Bootstrap. The project is integrated with a custom-built RESTful API, NicCage API, to fetch and display movie data. Hosted on Netlify for seamless user experience.',
-    link: 'https://github.com/jonathankerth/nicCage-client',
-    link2: 'https://niccagecllient.netlify.app/',
-    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/nicCageHome.png',
+      'A real-time weather application developed using Next.js and styled with Tailwind CSS. It fetches current weather data from the OpenWeather API and is deployed on Vercel for high availability.',
+    link: 'https://github.com/jonathankerth/weather-app',
+    link2: 'https://www.climatecue.com/',
+    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/weather-home.png',
   },
   {
     id: 14,
-    title: 'Oregonized Design Co. Website',
+    title: 'Oregonized Design Co.',
     description: `
       Developed an immersive parallax single-page application (SPA) for Oregonized Design Co. The SPA showcases dynamic, smooth scrolling interactions, enhancing user engagement.
       Engineered with Vue.js for reactive UI components, styled with Tailwind CSS for a responsive and modern aesthetic.
@@ -38,14 +38,16 @@ const projects = [
     image:
       'https://mypublicucket.s3.us-west-2.amazonaws.com/freelance+site.png',
   },
+
   {
-    id: 2,
-    title: 'Climate Cue',
+    id: 13,
+    title: 'Discord & Spotify Song Saver',
     description:
-      'A real-time weather application developed using Next.js and styled with Tailwind CSS. It fetches current weather data from the OpenWeather API and is deployed on Vercel for high availability.',
-    link: 'https://github.com/jonathankerth/weather-app',
-    link2: 'https://www.climatecue.com/',
-    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/weather-home.png',
+      'A Python bot developed to capture and compile Spotify song links from Discord into an ever-updating playlist. This project showcases my skills with Discord and Spotify APIs and Python, enhancing our music-sharing experience while broadening my technical expertise.',
+    link: 'https://github.com/jonathankerth/discord-spotify-song-saver',
+    link3: 'https://github.com/jonathankerth/discord-spotify-song-saver',
+    image:
+      'https://mypublicucket.s3.us-west-2.amazonaws.com/spotifybot+endpoints.png',
   },
   {
     id: 4,
@@ -57,15 +59,6 @@ const projects = [
     image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/todo-list.png',
   },
   {
-    id: 6,
-    title: 'Meet App',
-    description:
-      'A serverless Progressive Web App (PWA) built using React and Node.js. Developed with a Test-Driven Development (TDD) approach, the app fetches upcoming tech events from Google Calendar API and features OAuth2 authentication.',
-    link: 'https://github.com/jonathankerth/meet',
-    link2: 'https://jonathankerth.github.io/meet/',
-    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/meetHome.png',
-  },
-  {
     id: 3,
     title: 'KitchenGPT',
     description:
@@ -74,6 +67,25 @@ const projects = [
     link2: 'https://kitchen-gpt.vercel.app/',
     image:
       'https://mypublicucket.s3.us-west-2.amazonaws.com/kitchen-gpt-home.png',
+  },
+  {
+    id: 6,
+    title: 'Meet App',
+    description:
+      'A serverless Progressive Web App (PWA) built using React and Node.js. Developed with a Test-Driven Development (TDD) approach, the app fetches upcoming tech events from Google Calendar API and features OAuth2 authentication.',
+    link: 'https://github.com/jonathankerth/meet',
+    link2: 'https://jonathankerth.github.io/meet/',
+    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/meetHome.png',
+  },
+
+  {
+    id: 1,
+    title: 'Nicolas Cage Movie Repository',
+    description:
+      'A comprehensive repository dedicated to Nicolas Cage movies, built using React and styled with Bootstrap. The project is integrated with a custom-built RESTful API, NicCage API, to fetch and display movie data. Hosted on Netlify for seamless user experience.',
+    link: 'https://github.com/jonathankerth/nicCage-client',
+    link2: 'https://niccagecllient.netlify.app/',
+    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/nicCageHome.png',
   },
 
   {
@@ -95,15 +107,16 @@ const projects = [
     image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/nicCage-API.png',
   },
   {
-    id: 13,
-    title: 'Discord & Spotify Song Saver',
+    id: 5,
+    title: 'Filament Scraper Python App',
     description:
-      'A Python bot developed to capture and compile Spotify song links from Discord into an ever-updating playlist. This project showcases my skills with Discord and Spotify APIs and Python, enhancing our music-sharing experience while broadening my technical expertise.',
-    link: 'https://github.com/jonathankerth/discord-spotify-song-saver',
-    link3: 'https://github.com/jonathankerth/discord-spotify-song-saver',
+      "A Python app built using Flask to scrape filament data from eSUN's website. The scraped data is exposed via an API endpoint. This is the only Python app in the portfolio, showcasing skills in web scraping and API creation.",
+    link: 'https://github.com/jonathankerth/filament_scraper',
+    link2: 'https://filament-scraper.herokuapp.com/',
     image:
-      'https://mypublicucket.s3.us-west-2.amazonaws.com/spotifybot+endpoints.png',
+      'https://mypublicucket.s3.us-west-2.amazonaws.com/PythonScrapper.png',
   },
+
   {
     id: 12,
     title: 'React Native Chat App',
@@ -115,16 +128,6 @@ const projects = [
     link3: 'https://github.com/jonathankerth/chat-app',
   },
 
-  {
-    id: 5,
-    title: 'Filament Scraper Python App',
-    description:
-      "A Python app built using Flask to scrape filament data from eSUN's website. The scraped data is exposed via an API endpoint. This is the only Python app in the portfolio, showcasing skills in web scraping and API creation.",
-    link: 'https://github.com/jonathankerth/filament_scraper',
-    link2: 'https://filament-scraper.herokuapp.com/',
-    image:
-      'https://mypublicucket.s3.us-west-2.amazonaws.com/PythonScrapper.png',
-  },
   {
     id: 10,
     title: 'Pokedex',
