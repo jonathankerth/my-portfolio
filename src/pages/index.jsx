@@ -134,7 +134,7 @@ export default function Home() {
       </Script>
       <Navbar />
       <main
-        className={`flex flex-col items-center justify-center w-full mt-16 py-8 px-4 text-center transition-transform duration-700 ease-in-out rounded-lg
+        className={`flex flex-col items-center justify-center w-full mt-16 py-8 px-4  mb-12 text-center transition-transform duration-700 ease-in-out rounded-lg
     ${
       theme === 'dark' ? mainBackgroundColors.dark : mainBackgroundColors.light
     } text-white mx-auto shadow-lg`}

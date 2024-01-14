@@ -114,14 +114,15 @@ const Navbar = () => {
           <ul className="px-8 py-4">
             {navLinks.map(({ href, label }) => {
               const isActive = router.pathname === href
+              if (isActive) return null
               return (
                 <li key={href} className="py-2">
                   <Link
                     href={href}
                     className={`text-lg font-semibold ${
-                      isActive || theme === 'dark' ? 'text-white' : 'text-white'
+                      theme === 'dark' ? 'text-white' : 'text-white'
                     } border rounded-full border-transparent hover:border-current`}
-                    onClick={closeMobileMenu}
+                    onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {label}
                   </Link>
