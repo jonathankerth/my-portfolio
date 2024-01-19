@@ -17,7 +17,7 @@ const navLinks = [
 
 const projects = [
   {
-    id: 2,
+    id: 1,
     title: 'Climate Cue',
     description:
       'A real-time weather application developed using Next.js and styled with Tailwind CSS. It fetches current weather data from the OpenWeather API and is deployed on Vercel for high availability.',
@@ -26,7 +26,7 @@ const projects = [
     image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/weather-home.png',
   },
   {
-    id: 14,
+    id: 2,
     title: 'Oregonized Design Co.',
     description: `
       Developed an immersive parallax single-page application (SPA) for Oregonized Design Co. The SPA showcases dynamic, smooth scrolling interactions, enhancing user engagement.
@@ -40,7 +40,7 @@ const projects = [
   },
 
   {
-    id: 13,
+    id: 3,
     title: 'Discord & Spotify Song Saver',
     description:
       'A Python bot developed to capture and compile Spotify song links from Discord into an ever-updating playlist. This project showcases my skills with Discord and Spotify APIs and Python, enhancing our music-sharing experience while broadening my technical expertise.',
@@ -59,7 +59,7 @@ const projects = [
     image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/todo-list.png',
   },
   {
-    id: 3,
+    id: 5,
     title: 'KitchenGPT',
     description:
       'A cutting-edge kitchen assistant powered by GPT-3. The front-end is built with React, while the back-end utilizes Node.js and Express.js. The application is hosted on Heroku and Vercel for robust scalability.',
@@ -79,7 +79,7 @@ const projects = [
   },
 
   {
-    id: 1,
+    id: 7,
     title: 'Nicolas Cage Movie Repository',
     description:
       'A comprehensive repository dedicated to Nicolas Cage movies, built using React and styled with Bootstrap. The project is integrated with a custom-built RESTful API, NicCage API, to fetch and display movie data. Hosted on Netlify for seamless user experience.',
@@ -98,7 +98,7 @@ const projects = [
     iframe: 'https://magic-wheel-rosy.vercel.app/',
   },
   {
-    id: 7,
+    id: 9,
     title: 'NicCage API',
     description:
       'A custom-built RESTful API that serves as a comprehensive database for Nicolas Cage movies. Developed using Node.js, Express.js, and MongoDB, the API is hosted on Heroku for easy access and high availability.',
@@ -107,7 +107,7 @@ const projects = [
     image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/nicCage-API.png',
   },
   {
-    id: 5,
+    id: 10,
     title: 'Filament Scraper Python App',
     description:
       "A Python app built using Flask to scrape filament data from eSUN's website. The scraped data is exposed via an API endpoint. This is the only Python app in the portfolio, showcasing skills in web scraping and API creation.",
@@ -118,7 +118,7 @@ const projects = [
   },
 
   {
-    id: 12,
+    id: 11,
     title: 'React Native Chat App',
     description:
       'A mobile-friendly chat application built using React Native and Expo. The app features a real-time chat interface, image sharing, and location sharing capabilities, all backed by Firebase for data storage and user authentication.',
@@ -129,7 +129,7 @@ const projects = [
   },
 
   {
-    id: 10,
+    id: 12,
     title: 'Pokedex',
     description:
       'An interactive Pokedex application that displays detailed information about various Pokemon. Built using vanilla JavaScript and fetches data from PokeAPI.co for an authentic experience.',
@@ -139,7 +139,7 @@ const projects = [
   },
 
   {
-    id: 9,
+    id: 13,
     title: 'WebSocket Todo-List Backend',
     description:
       'The backend infrastructure for a Todo List application, built using Node.js and the WebSocket API to handle real-time task synchronization across multiple devices. Hosted on Heroku for high availability.',
