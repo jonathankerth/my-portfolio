@@ -55,11 +55,10 @@ const ImageCarousel = () => {
               <Image
                 src={image.src}
                 alt={image.alt}
-                layout="responsive"
-                objectFit="contain"
-                width={300}
-                height={225}
-                className="rounded-lg"
+                width={500}
+                height={375}
+                className="rounded-lg md:w-96 md:h-auto lg:w-[500px] lg:h-auto"
+                style={{ objectFit: 'contain' }}
                 priority={index === 0}
               />
             </div>
