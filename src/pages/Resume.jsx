@@ -6,8 +6,8 @@ import Footer from '../components/Footer'
 export default function Resume() {
   const { theme, setTheme } = useTheme()
   const backgroundColor = {
-    light: 'bg-gradient-to-b from-[#D3E4CD] to-[#ADC2A9]',
-    dark: 'bg-gradient-to-b from-[#35524A] via-[#2E4057] to-[#163172]',
+    light: 'bg-gradient-to-b from-[#D6EAF8] to-[#AED6F1]',
+    dark: 'bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C]',
   }
 
   return (

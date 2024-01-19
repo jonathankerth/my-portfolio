@@ -16,18 +16,18 @@ export default function Cats() {
   const { theme } = useTheme()
 
   const backgroundColors = {
-    light: 'bg-gradient-to-b from-[#D3E4CD] to-[#ADC2A9]',
-    dark: 'bg-gradient-to-b from-[#35524A] via-[#2E4057] to-[#163172]',
+    light: 'bg-gradient-to-b from-[#D6EAF8] to-[#AED6F1]',
+    dark: 'bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C]',
   }
 
   const textBoxBackground = {
-    light: 'bg-gradient-to-b from-[#BEE1D2] via-[#A0C4B2] to-[#89A799]',
-    dark: 'bg-gradient-to-b from-[#2F4F4F] via-[#29465B] to-[#1B3A5B]',
+    light: 'bg-gradient-to-br from-[#EBF5FB] via-[#D6EAF8] to-[#AED6F1]',
+    dark: 'bg-gradient-to-br from-[#2C3E50] via-[#34495E] to-[#212F3C]',
   }
 
   const textColors = {
-    light: 'text-[#3E4C5E]',
-    dark: 'text-[#C5D1C8]',
+    light: 'text-[#154360]',
+    dark: 'text-[#ECF0F1]',
   }
   const favoriteMemes = [
     'https://memedisplay.s3.us-west-2.amazonaws.com/cat+and+kid.jpeg',
