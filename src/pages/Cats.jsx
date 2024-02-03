@@ -78,114 +78,102 @@ export default function Cats() {
   return (
     <div
       className={`min-h-screen ${
-        theme === 'dark' ? backgroundColors.dark : backgroundColors.light
+        theme === 'dark'
+          ? 'bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C]'
+          : 'bg-gradient-to-b from-[#D6EAF8] to-[#AED6F1]'
       } flex flex-col justify-center items-center px-4`}
     >
-      <Head></Head>
+      <Head>
+        <title>Cat Memes</title>
+        <meta name="description" content="A fun page for sharing cat memes." />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Navbar />
       <main className="flex flex-col items-center justify-center flex-1 py-12 mt-10">
         <div
           className={`${
-            theme === 'dark' ? textBoxBackground.dark : textBoxBackground.light
-          } rounded-lg p-4 mb-6 max-w-2xl`}
+            theme === 'dark'
+              ? 'bg-gradient-to-br from-[#2C3E50] via-[#34495E] to-[#212F3C]'
+              : 'bg-gradient-to-br from-[#EBF5FB] via-[#D6EAF8] to-[#AED6F1]'
+          } rounded-lg p-8 mb-8 max-w-4xl mx-auto text-center shadow-lg`}
         >
           <h1
             className={`${
-              theme === 'dark' ? textColors.dark : textColors.light
-            } font-bold text-xl leading-6 text-center max-w-full mb-4`}
+              theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
+            } font-bold text-2xl mb-6`}
           >
             Send Me Your Cat Memes!
           </h1>
-          <h2
-            className={` ${
-              theme === 'dark' ? textColors.dark : textColors.light
-            } text-xl text-center mb-2`}
+          <p
+            className={`${
+              theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
+            } text-lg mb-4`}
           >
             This page was built because I love cats, memes, and cat memes. I
             also wanted to show my knowledge of AWS S3 buckets and IAM user
-            policies.{' '}
-          </h2>
-          <h2
-            className={` ${
-              theme === 'dark' ? textColors.dark : textColors.light
-            } text-xl text-center mb-2`}
+            policies.
+          </p>
+          <p
+            className={`${
+              theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
+            } text-lg mb-4`}
           >
-            Upload a cat meme to my S3 bucket and I&apos;ll display my
-            favorites!{' '}
-          </h2>
-          <form
-            id="imageForm"
-            onSubmit={handleSubmit}
-            className="flex flex-col items-center justify-center mb-6 space-y-4"
-          >
-            <label
-              htmlFor="imageInput"
-              className="flex items-center px-4 py-2 bg-white text-blue-600 rounded-lg shadow-sm cursor-pointer hover:bg-blue-100"
-            >
-              <span>{selectedFileName || 'Select Image'}</span>
-              <input
-                id="imageInput"
-                name="imageInput"
-                type="file"
-                accept="image/*"
-                className="hidden"
-                onChange={handleFileChange}
-              />
-            </label>
+            Upload a cat meme to my S3 bucket and I'll display my favorites!
+          </p>
+          <form onSubmit={handleSubmit} className="space-y-6 pt-4">
+            <div className="flex justify-center items-center gap-4">
+              <label
+                htmlFor="imageInput"
+                className="cursor-pointer bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg shadow"
+              >
+                <span>{selectedFileName || 'Select Image'}</span>
+                <input
+                  id="imageInput"
+                  type="file"
+                  accept="image/*"
+                  className="hidden"
+                  onChange={handleFileChange}
+                />
+              </label>
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="px-6 py-2 rounded-lg text-white font-semibold bg-blue-500 hover:bg-blue-700 disabled:bg-blue-300 shadow transition-colors duration-200 ease-in-out"
+              >
+                {isLoading ? 'Uploading...' : 'Upload'}
+              </button>
+            </div>
             {uploadMessage && (
-              <p className="text-md font-bold text-white text-center">
-                {uploadMessage}
-              </p>
+              <p className="text-md font-semibold mt-4">{uploadMessage}</p>
             )}
-            <button
-              type="submit"
-              className={`px-6 py-2 text-white rounded-lg shadow-md hover:bg-blue-600 focus:bg-blue-700 focus:outline-none transition duration-300 ease-in-out ${
-                isLoading ? 'bg-blue-400 cursor-not-allowed' : 'bg-blue-500'
-              }`}
-              disabled={isLoading}
-            >
-              {isLoading ? 'Uploading...' : 'Upload'}{' '}
-            </button>
           </form>
-
           {uploadedImageUrl && (
-            <div className="mb-6 text-center">
-              <p className="text-md font-bold text-white">
-                Last uploaded image
-              </p>
+            <div className="text-center mt-4">
               <Image
                 src={uploadedImageUrl}
-                alt="Uploaded preview"
-                width={128}
-                height={128}
-                className="inline-block"
+                alt="Uploaded Image"
+                width={200}
+                height={200}
+                className="mx-auto rounded-full"
               />
             </div>
           )}
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           {favoriteMemes.map((meme, index) => (
             <div
               key={index}
-              className="bg-black bg-opacity-40 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 overflow-hidden"
+              className="overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="relative aspect-w-1 aspect-h-1">
-                <Image
-                  src={meme}
-                  alt={`Cat meme ${index}`}
-                  width={300}
-                  height={200}
-                  className="object-cover hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-4 flex justify-center">
-                <button
-                  onClick={() => window.open(meme, '_blank')}
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                >
-                  Download
-                </button>
-              </div>
+              <Image
+                src={meme}
+                alt={`Cat meme ${index + 1}`}
+                width={300}
+                height={300}
+                layout="responsive"
+                objectFit="cover"
+              />
             </div>
           ))}
         </div>

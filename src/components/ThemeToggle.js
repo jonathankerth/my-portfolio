@@ -1,31 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useTheme } from 'next-themes'
 
 const ThemeToggle = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false)
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme')
-    if (savedTheme) {
-      setIsDarkMode(savedTheme === 'dark')
-    } else {
-      const prefersDarkMode = window.matchMedia(
-        '(prefers-color-scheme: dark)'
-      ).matches
-      setIsDarkMode(prefersDarkMode)
-      localStorage.setItem('theme', prefersDarkMode ? 'dark' : 'light')
-    }
-  }, [])
+  const { theme, setTheme } = useTheme()
 
   const toggleTheme = () => {
-    const newTheme = isDarkMode ? 'light' : 'dark'
-    setIsDarkMode(!isDarkMode)
-    localStorage.setItem('theme', newTheme)
-    document.documentElement.setAttribute('data-theme', newTheme)
+    setTheme(theme === 'dark' ? 'light' : 'dark')
   }
 
   return (
     <button onClick={toggleTheme}>
-      {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+      {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
     </button>
   )
 }

@@ -1,18 +1,13 @@
 import Head from 'next/head'
-import Link from 'next/link'
-import React, { useState, useEffect, useCallback } from 'react'
+import Image from 'next/image'
+import React from 'react'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
-import Image from 'next/image'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useTheme } from 'next-themes'
 
 const ImageCarousel = () => {
-  const aspectRatio = 4 / 3
-  const commonWidth = 200
-  const commonHeight = commonWidth / aspectRatio
-
   const images = [
     {
       src: 'https://mypublicucket.s3.us-west-2.amazonaws.com/IMG_6217.jpeg',
@@ -46,6 +41,7 @@ const ImageCarousel = () => {
     stopOnHover: false,
     transitionTime: 500,
   }
+
   return (
     <div className="flex justify-center items-center w-full h-full p-4 rounded-lg bg-white bg-opacity-40">
       <Carousel {...carouselProps}>
@@ -57,8 +53,8 @@ const ImageCarousel = () => {
                 alt={image.alt}
                 width={500}
                 height={375}
-                className="rounded-lg md:w-96 md:h-auto lg:w-[500px] lg:h-auto"
-                style={{ objectFit: 'contain' }}
+                className="rounded-lg"
+                objectFit="contain"
                 priority={index === 0}
               />
             </div>
@@ -71,21 +67,6 @@ const ImageCarousel = () => {
 
 export default function About() {
   const { theme } = useTheme()
-
-  const backgroundColors = {
-    light: 'bg-gradient-to-b from-[#D6EAF8] to-[#AED6F1]',
-    dark: 'bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C]',
-  }
-
-  const textBoxBackground = {
-    light: 'bg-gradient-to-br from-[#EBF5FB] via-[#D6EAF8] to-[#AED6F1]',
-    dark: 'bg-gradient-to-br from-[#2C3E50] via-[#34495E] to-[#212F3C]',
-  }
-
-  const textColors = {
-    light: 'text-[#154360]',
-    dark: 'text-[#ECF0F1]',
-  }
 
   const techStack = [
     { name: 'React', url: 'https://reactjs.org/' },
@@ -131,8 +112,10 @@ export default function About() {
   return (
     <div
       className={`min-h-screen ${
-        theme === 'dark' ? backgroundColors.dark : backgroundColors.light
-      } text-white flex flex-col justify-center items-center px-4`}
+        theme === 'dark'
+          ? 'bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C]'
+          : 'bg-gradient-to-b from-[#D6EAF8] to-[#AED6F1]'
+      } flex flex-col justify-center items-center px-4`}
     >
       <Head>
         <title>About Me</title>
@@ -146,61 +129,54 @@ export default function About() {
       <main className="flex flex-col items-center justify-center flex-1 py-12 mt-10">
         <div
           className={`${
-            theme === 'dark' ? textBoxBackground.dark : textBoxBackground.light
+            theme === 'dark'
+              ? 'bg-gradient-to-br from-[#2C3E50] via-[#34495E] to-[#212F3C]'
+              : 'bg-gradient-to-br from-[#EBF5FB] via-[#D6EAF8] to-[#AED6F1]'
           } rounded-lg p-4 mb-6 max-w-2xl`}
         >
           <h1
-            className={`${
-              theme === 'dark' ? textColors.dark : textColors.light
-            } font-bold text-xl leading-6 text-center max-w-full mb-4`}
+            className={`font-bold text-xl leading-6 text-center mb-4 ${
+              theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
+            }`}
           >
             About Me
           </h1>
           <p
-            className={` ${
-              theme === 'dark' ? textColors.dark : textColors.light
-            }  text-xl leading-6 text-center max-w-full mb-4`}
+            className={`text-xl leading-6 text-center mb-4 ${
+              theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
+            }`}
           >
             I&apos;m a dedicated and passionate software engineer specializing
-            in building scalable, and efficient web applications. I primarily
-            use cutting-edge technologies like React, Next.js, Node.js, Express,
-            Redux, Javascript, ChatGPT, and MongoDB, I love tackling new
-            challenges and continous learning.
+            in building scalable, and efficient web applications. Using
+            cutting-edge technologies, I love tackling new challenges and
+            continuous learning.
           </p>
           <p
-            className={` ${
-              theme === 'dark' ? textColors.dark : textColors.light
-            }  text-xl leading-6 text-center max-w-full`}
+            className={`text-xl leading-6 text-center ${
+              theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
+            }`}
           >
-            Outside the world of code, I&apos;m a food enthusiast, self
-            proclaimed nerd, home chef, pet parent, and I&apos;ve been to 5 out
-            of the 7 continents. Feel free to connect for any opportunities or
-            questions about my projects. Thanks for dropping by!
-          </p>
-          <p
-            className={` ${
-              theme === 'dark' ? textColors.dark : textColors.light
-            }  text-xl leading-6 text-center max-w-full mt-4`}
-          >
-            Below are a few technologies I am familiar working with:
+            Outside the world of code, I&apos;m a food enthusiast,
+            self-proclaimed nerd, home chef, pet parent, and I&apos;ve been to 5
+            out of the 7 continents. Feel free to connect for any opportunities
+            or questions about my projects. Thanks for dropping by!
           </p>
         </div>
-        <div className="flex flex-wrap items-center justify-center w-3/4 mx-auto mt-4">
+        <div className="flex flex-wrap items-center justify-center w-full">
           {techStack.map((tech, index) => (
             <a
               key={index}
               href={tech.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-800 m-1 shadow-md hover:bg-gray-500 transition-colors duration-300"
+              className="m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             >
               {tech.name}
             </a>
           ))}
         </div>
       </main>
-
-      <div className="max-w-xl mb-12">
+      <div className="w-full max-w-4xl mx-auto mb-12">
         <ImageCarousel />
       </div>
       <Footer />

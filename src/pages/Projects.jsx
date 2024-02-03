@@ -1,19 +1,10 @@
 import Head from 'next/head'
-import Link from 'next/link'
-import { useState, useEffect, useCallback } from 'react'
-import { FaBars, FaTimes } from 'react-icons/fa'
+import { useState } from 'react'
 import Image from 'next/image'
 import ProjectModal from '../components/ProjectModal.js'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useTheme } from 'next-themes'
-
-const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/About', label: 'About' },
-  { href: '/Resume', label: 'Resume' },
-  { href: '/Cats', label: 'Cat Memes' },
-]
 
 const projects = [
   {
@@ -151,12 +142,9 @@ const projects = [
 
 export default function Projects() {
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const [currentProject, setCurrentProject] = useState(null)
+  const [currentProject, setCurrentProject] = useState({})
   const { theme } = useTheme()
-  const backgroundColorClasses = {
-    light: 'bg-gradient-to-b from-blue-200 to-blue-400',
-    dark: 'bg-gradient-to-b from-gray-800 via-dark-blue to-black', // Dark mode gradient background
-  }
+
   const openModal = (project) => {
     setCurrentProject(project)
     setIsModalOpen(true)
@@ -165,121 +153,93 @@ export default function Projects() {
   const closeModal = () => {
     setIsModalOpen(false)
   }
-  const backgroundColors = {
-    light: 'bg-gradient-to-b from-[#D6EAF8] to-[#AED6F1]',
-    dark: 'bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C]',
-  }
-
-  const textBoxBackground = {
-    light: 'bg-gradient-to-br from-[#EBF5FB] via-[#D6EAF8] to-[#AED6F1]',
-    dark: 'bg-gradient-to-br from-[#2C3E50] via-[#34495E] to-[#212F3C]',
-  }
-
-  const textColors = {
-    light: 'text-[#154360]',
-    dark: 'text-[#ECF0F1]',
-  }
 
   return (
     <div
       className={`min-h-screen ${
-        theme === 'dark' ? backgroundColors.dark : backgroundColors.light
+        theme === 'dark'
+          ? 'bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C]'
+          : 'bg-gradient-to-b from-[#D6EAF8] to-[#AED6F1]'
       } flex flex-col justify-center items-center px-4`}
     >
       <Head>
         <title>Projects</title>
         <meta
-          name="Projects"
+          name="description"
           content="A showcase of my software engineering projects"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
 
-      <main className="flex flex-col items-center justify-center flex-1 py-12 mt-10">
-        <div
-          className={`${
-            theme === 'dark' ? textBoxBackground.dark : textBoxBackground.light
-          } rounded-lg p-4 mb-6 max-w-2xl`}
+      <main className="w-full flex flex-col items-center justify-center text-center mt-10 mb-20">
+        <h1
+          className={`text-3xl font-bold mb-8 mt-8 ${
+            theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
+          }`}
         >
-          <h1
-            className={`${
-              theme === 'dark' ? textColors.dark : textColors.light
-            } font-bold text-xl text-center max-w-full `}
-          >
-            A Few of My Projects
-          </h1>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-9 mb-8">
+          My Past Projects
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
           {projects.map((project) => (
             <div
               key={project.id}
-              className="project-container transition-transform duration-300 hover:scale-105 bg-white rounded-lg shadow-md flex flex-col p-6"
+              className="flex flex-col rounded-lg shadow-lg bg-white dark:bg-gray-800 h-full overflow-hidden"
             >
-              <h3 className="text-xl font-bold mb-2 flex-shrink-0">
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-400 underline flex items-center"
+              <div className="relative h-64 w-full">
+                {' '}
+                {/* Make sure this container has position:relative for layout="fill" to work */}
+                {project.title === 'Magic Wheel Component' ? (
+                  <iframe
+                    src={project.iframe || project.link2}
+                    style={{ width: '100%', height: '100%' }}
+                    title={project.title}
+                    allowFullScreen
+                  ></iframe>
+                ) : (
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    objectFit="cover"
+                    layout="fill" // Remove width and height when using layout="fill"
+                  />
+                )}
+              </div>
+              <div className="p-5 flex flex-col flex-grow">
+                <h3
+                  className={`text-xl font-bold mb-3 ${
+                    theme === 'dark' ? 'text-white' : 'text-gray-900'
+                  }`}
                 >
-                  {project.title}{' '}
-                </a>
-              </h3>
-              {project.title === 'Magic Wheel Component' ? (
-                <iframe
-                  src={project.iframe}
-                  className="object-top w-full h-full mb-4 flex-grow-0"
-                ></iframe>
-              ) : (
-                project.image && (
+                  {project.title}
+                </h3>
+                <p
+                  className={`flex-grow text-md ${
+                    theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
+                  } mb-4`}
+                >
+                  {project.description}
+                </p>
+                <div className="flex justify-center gap-2 mt-auto">
                   <a
-                    href={project.link2}
+                    href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors duration-200 ease-in-out"
                   >
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      className="object-top w-full h-full mb-4 flex-grow-0"
-                      width={500}
-                      height={500}
-                    />
+                    GitHub
                   </a>
-                )
-              )}
-              <p className="text-gray-700 mb-4 flex-grow">
-                {project.description}
-              </p>
-              <div className="flex-shrink-0">
-                {project.title === 'Nicolas Cage Movie Repository' ? (
-                  <button
-                    onClick={() => openModal(project)}
-                    className="inline-block px-4 py-2 mr-2 bg-yellow-500 text-white rounded hover:bg-yellow-600"
-                  >
-                    View Case Study
-                  </button>
-                ) : null}
-                {project.link2 && (
-                  <a
-                    href={project.link2}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block px-4 py-2 border-2 border-blue-500 bg-blue-500 text-white hover:bg-blue-600 hover:border-blue-600 hover:text-white rounded transition duration-300 ease-in-out"
-                  >
-                    Live Site
-                  </a>
-                )}
-                {project.link3 && (
-                  <a
-                    href={project.link3}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block px-4 py-2 border-2 border-blue-500 bg-blue-500 text-white hover:bg-blue-600 hover:border-blue-600 hover:text-white rounded transition duration-300 ease-in-out"
-                  >
-                    Codebase
-                  </a>
-                )}
+                  {project.link2 && (
+                    <a
+                      href={project.link2}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition-colors duration-200 ease-in-out"
+                    >
+                      Live Site
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           ))}
