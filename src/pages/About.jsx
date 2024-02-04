@@ -1,69 +1,10 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import React from 'react'
-import { Carousel } from 'react-responsive-carousel'
-import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useTheme } from 'next-themes'
-
-const ImageCarousel = () => {
-  const images = [
-    {
-      src: 'https://mypublicucket.s3.us-west-2.amazonaws.com/IMG_6217.jpeg',
-      alt: 'Image 1',
-    },
-    {
-      src: 'https://mypublicucket.s3.us-west-2.amazonaws.com/IMG_6050.jpeg',
-      alt: 'Image 2',
-    },
-    {
-      src: 'https://mypublicucket.s3.us-west-2.amazonaws.com/IMG_4902.jpeg',
-      alt: 'Image 3',
-    },
-    {
-      src: 'https://mypublicucket.s3.us-west-2.amazonaws.com/IMG_4068.jpeg',
-      alt: 'Image 4',
-    },
-    {
-      src: 'https://mypublicucket.s3.us-west-2.amazonaws.com/sid+and+J+selfie.jpeg',
-      alt: 'Image 5',
-    },
-  ]
-
-  const carouselProps = {
-    infiniteLoop: true,
-    showStatus: false,
-    showIndicators: true,
-    showThumbs: false,
-    autoPlay: true,
-    interval: 3000,
-    stopOnHover: false,
-    transitionTime: 500,
-  }
-
-  return (
-    <div className="flex justify-center items-center w-full h-full p-4 rounded-lg bg-white bg-opacity-40">
-      <Carousel {...carouselProps}>
-        {images.map((image, index) => (
-          <div key={index} className="flex justify-center items-center">
-            <div className="relative rounded-lg shadow-md max-h-full">
-              <Image
-                src={image.src}
-                alt={image.alt}
-                width={500}
-                height={375}
-                className="rounded-lg"
-                objectFit="contain"
-                priority={index === 0}
-              />
-            </div>
-          </div>
-        ))}
-      </Carousel>
-    </div>
-  )
-}
+import TechStack from '../components/TechStack'
+import ImageCarousel from '../components/ImageCarousel'
 
 export default function About() {
   const { theme } = useTheme()
@@ -109,6 +50,7 @@ export default function About() {
     { name: 'JSON', url: 'https://www.json.org/json-en.html' },
     { name: 'Heroku', url: 'https://www.heroku.com/' },
   ]
+
   return (
     <div
       className={`min-h-screen ${
@@ -146,8 +88,8 @@ export default function About() {
               theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
             }`}
           >
-            I&apos;m a dedicated and passionate software engineer specializing
-            in building scalable, and efficient web applications. Using
+            I'm a dedicated and passionate software engineer specializing in
+            building scalable, and efficient web applications. Using
             cutting-edge technologies, I love tackling new challenges and
             continuous learning.
           </p>
@@ -156,25 +98,13 @@ export default function About() {
               theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
             }`}
           >
-            Outside the world of code, I&apos;m a food enthusiast,
-            self-proclaimed nerd, home chef, pet parent, and I&apos;ve been to 5
-            out of the 7 continents. Feel free to connect for any opportunities
-            or questions about my projects. Thanks for dropping by!
+            Outside the world of code, I'm a food enthusiast, self-proclaimed
+            nerd, home chef, pet parent, and I've been to 5 out of the 7
+            continents. Feel free to connect for any opportunities or questions
+            about my projects. Thanks for dropping by!
           </p>
         </div>
-        <div className="flex flex-wrap items-center justify-center w-full">
-          {techStack.map((tech, index) => (
-            <a
-              key={index}
-              href={tech.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-            >
-              {tech.name}
-            </a>
-          ))}
-        </div>
+        <TechStack techStack={techStack} theme={theme} />
       </main>
       <div className="w-full max-w-4xl mx-auto mb-12">
         <ImageCarousel />
