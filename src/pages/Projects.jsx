@@ -83,10 +83,10 @@ const projects = [
     id: 8,
     title: 'Magic Wheel Component',
     description:
-      'An innovative wheel spinner component, created entirely with Tailwind CSS. Seamlessly integrated into a Next.js environment, this component showcases advanced CSS techniques, and animations. This is displayed in an Iframe while others are displayed from an AWS S3 bucket.',
+      'An innovative wheel spinner component, created entirely with Tailwind CSS. Seamlessly integrated into a Next.js environment, this component showcases advanced CSS techniques, and animations.',
     link: 'https://github.com/jonathankerth/magic-wheel',
     link2: 'https://magic-wheel-rosy.vercel.app/',
-    iframe: 'https://magic-wheel-rosy.vercel.app/',
+    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/magic-wheel.png',
   },
   {
     id: 9,
@@ -185,35 +185,36 @@ export default function Projects() {
               key={project.id}
               className="flex flex-col rounded-lg shadow-lg bg-white dark:bg-gray-800 h-full overflow-hidden"
             >
-              <div className="relative h-64 w-full overflow-hidden">
+              <h3
+                className={`text-xl font-bold ${
+                  theme === 'dark' ? 'text-black' : 'text-gray-900'
+                } my-4 mx-4 `}
+              >
+                {project.title}
+              </h3>
+              <div className="relative h-64 w-full overflow-hidden rounded ">
                 <Image
                   src={project.image}
                   alt={project.title}
                   layout="fill"
                   objectFit="cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
               <div className="py-4">
-                <h3
-                  className={`text-xl font-bold ${
-                    theme === 'dark' ? 'text-white' : 'text-gray-900'
-                  }`}
-                >
-                  {project.title}
-                </h3>
                 <p
                   className={`text-md ${
-                    theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
+                    theme === 'dark' ? 'text-black' : 'text-black'
                   }`}
                 >
                   {project.description}
                 </p>
-                <div className="mt-4 flex justify-center gap-4">
+                <div className="mt-4 flex justify-center gap-2">
                   <a
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 ml-2 rounded transition duration-300 ease-in-out whitespace-nowrap"
                   >
                     GitHub
                   </a>
@@ -222,10 +223,18 @@ export default function Projects() {
                       href={project.link2}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                      className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-2 rounded transition duration-300 ease-in-out whitespace-nowrap"
                     >
                       Live Site
                     </a>
+                  )}
+                  {project.title === 'Nicolas Cage Movie Repository' && (
+                    <button
+                      onClick={() => openModal(project)}
+                      className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4  mr-2 rounded transition duration-300 ease-in-out whitespace-nowrap"
+                    >
+                      View Case Study
+                    </button>
                   )}
                 </div>
               </div>
@@ -233,7 +242,6 @@ export default function Projects() {
           ))}
         </div>
       </main>
-
       <Footer />
       {isModalOpen && (
         <ProjectModal project={currentProject} closeModal={closeModal} />
