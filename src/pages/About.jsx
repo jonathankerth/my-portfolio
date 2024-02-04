@@ -106,7 +106,7 @@ export default function About() {
         </div>
         <TechStack techStack={techStack} theme={theme} />
       </main>
-      <div className="w-full max-w-4xl mx-auto mb-12">
+      <div className="w-full max-w-4xl mx-auto mb-16">
         <ImageCarousel />
       </div>
       <Footer />
