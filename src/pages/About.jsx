@@ -90,8 +90,9 @@ export default function About() {
           >
             I'm a dedicated and passionate software engineer specializing in
             building scalable, and efficient web applications. I love tackling
-            new challenges by using the best technology for the project and
-            never to never stop learning.
+            new challenges by using the best technology for the project. I also
+            belive in the importance of continuous learning in all aspects of
+            life but especially software developement.
           </p>
           <p
             className={`text-xl leading-6 text-center ${
