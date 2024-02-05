@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import React from 'react'
+import { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { useTheme } from 'next-themes'
@@ -8,6 +9,10 @@ import ImageCarousel from '../components/ImageCarousel'
 
 export default function About() {
   const { theme } = useTheme()
+
+  useEffect(() => {
+    console.log(`Current theme is: ${theme}`)
+  }, [theme])
 
   const techStack = [
     { name: 'React', url: 'https://reactjs.org/' },

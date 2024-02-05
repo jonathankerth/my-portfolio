@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -12,6 +12,10 @@ export default function Cats() {
   const [uploadMessage, setUploadMessage] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const { theme } = useTheme()
+
+  useEffect(() => {
+    console.log(`Current theme is: ${theme}`)
+  }, [theme])
 
   const backgroundColors = {
     light: 'bg-gradient-to-b from-[#D6EAF8] to-[#AED6F1]',

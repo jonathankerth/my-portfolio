@@ -36,7 +36,7 @@ const ImageCarousel = () => {
     stopOnHover: true,
     transitionTime: 500,
     swipeable: true,
-    dynamicHeight: true, // Adjust based on your needs
+    dynamicHeight: true,
   }
 
   return (

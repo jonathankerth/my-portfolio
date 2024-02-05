@@ -1,10 +1,14 @@
 import Head from 'next/head'
 import { useTheme } from 'next-themes'
+import { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
 export default function Resume() {
   const { theme } = useTheme()
+  useEffect(() => {
+    console.log(`Current theme is: ${theme}`)
+  }, [theme])
 
   return (
     <div

@@ -83,10 +83,10 @@ const projects = [
     id: 8,
     title: 'Magic Wheel Component',
     description:
-      'An innovative wheel spinner component, created entirely with Tailwind CSS. Seamlessly integrated into a Next.js environment, this component showcases advanced CSS techniques, and animations.',
+      'An innovative wheel spinner component, created entirely with Tailwind CSS. Seamlessly integrated into a Next.js environment, this component showcases advanced CSS techniques, and animations. This is displayed in an Iframe while others are displayed from an AWS S3 bucket.',
     link: 'https://github.com/jonathankerth/magic-wheel',
     link2: 'https://magic-wheel-rosy.vercel.app/',
-    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/magic-wheel.png',
+    iframe: 'https://magic-wheel-rosy.vercel.app/',
   },
   {
     id: 9,
@@ -171,9 +171,10 @@ export default function Projects() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
+
       <main className="w-full flex flex-col items-center justify-center text-center mt-10 mb-20">
         <h1
-          className={`text-3xl font-bold mb-8 mt-8 ${
+          className={`text-4xl font-bold mb-8 mt-8 ${
             theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
           }`}
         >
@@ -183,38 +184,55 @@ export default function Projects() {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="flex flex-col rounded-lg shadow-lg bg-white dark:bg-gray-800 h-full overflow-hidden"
+              className="flex flex-col rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 ease-in-out hover:shadow-xl"
+              style={{
+                backgroundColor: theme === 'dark' ? '#2D3748' : '#fff',
+                color: theme === 'dark' ? '#F0F4F8' : '#1A202C',
+              }}
             >
               <h3
-                className={`text-xl font-bold ${
-                  theme === 'dark' ? 'text-black' : 'text-gray-900'
-                } my-4 mx-4 `}
+                className={`text-xl font-bold mb-2 mt-4 px-5 ${
+                  theme === 'dark' ? 'text-white' : 'text-gray-900'
+                }`}
               >
                 {project.title}
               </h3>
-              <div className="relative h-64 w-full overflow-hidden rounded ">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  layout="fill"
-                  objectFit="cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
+              <div className="relative h-64 w-full overflow-hidden rounded-lg">
+                {project.title === 'Magic Wheel Component' ? (
+                  <iframe
+                    src={project.iframe || project.link2}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      borderRadius: '8px',
+                    }} // Apply borderRadius here if necessary
+                    title={project.title}
+                    allowFullScreen
+                  ></iframe>
+                ) : (
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    objectFit="cover"
+                    layout="fill"
+                    className="rounded-lg" // This applies rounded corners to the image
+                  />
+                )}
               </div>
-              <div className="py-4">
+              <div className="p-5 flex flex-col flex-grow">
                 <p
-                  className={`text-md ${
-                    theme === 'dark' ? 'text-black' : 'text-black'
+                  className={`flex-grow text-md mb-4 ${
+                    theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
                   }`}
                 >
                   {project.description}
                 </p>
-                <div className="mt-4 flex justify-center gap-2">
+                <div className="flex justify-center gap-2 mt-auto">
                   <a
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 ml-2 rounded transition duration-300 ease-in-out whitespace-nowrap"
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors duration-200 ease-in-out"
                   >
                     GitHub
                   </a>
@@ -223,7 +241,7 @@ export default function Projects() {
                       href={project.link2}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-2 rounded transition duration-300 ease-in-out whitespace-nowrap"
+                      className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition-colors duration-200 ease-in-out"
                     >
                       Live Site
                     </a>
@@ -231,7 +249,7 @@ export default function Projects() {
                   {project.title === 'Nicolas Cage Movie Repository' && (
                     <button
                       onClick={() => openModal(project)}
-                      className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4  mr-2 rounded transition duration-300 ease-in-out whitespace-nowrap"
+                      className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 mr-2 rounded transition duration-300 ease-in-out"
                     >
                       View Case Study
                     </button>
@@ -242,6 +260,7 @@ export default function Projects() {
           ))}
         </div>
       </main>
+
       <Footer />
       {isModalOpen && (
         <ProjectModal project={currentProject} closeModal={closeModal} />
