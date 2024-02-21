@@ -96,21 +96,17 @@ export default function Home() {
             the code.
           </div>
 
-          <div
-            className={`relative w-full mb-4 mt-4 transition-transform duration-700 ease-in-out z-10 ${
-              isZoomed ? 'transform scale-150' : ''
-            }`}
-            onClick={handleImageClick}
-          >
+          <div className="relative w-full mb-4 mt-4 z-10 overflow-hidden">
             <Image
               src={imageUrl}
               alt="Jonathan Kerth"
               width={300}
               height={300}
-              className="rounded-full cursor-pointer mx-auto"
+              className="rounded-full cursor-pointer mx-auto transition-transform duration-700 ease-in-out transform hover:scale-150"
               priority
             />
           </div>
+
           <div className="flex flex-wrap items-center mt-8 space-x-2 sm:space-x-4 justify-center mb-12">
             <a
               href="mailto:jonathanpkerth@gmail.com"
@@ -192,12 +188,20 @@ export default function Home() {
           </div>
 
           <div
-            className={` ${
+            className={`${
               theme === 'dark' ? textColors.dark : textColors.light
-            }  pr-8 mb-4 text-xl`}
+            } pr-8 mb-4 text-xl`}
           >
-            Looking to collaborate or connect? Feel free to reach out through
-            any of the sites below. Thank you for stopping by!
+            Looking to collaborate or connect? Please reach out through any of
+            the sites above or by email, which you can find on my {''}
+            <a
+              href="https://www.jonathankerth.com/Resume"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              resume
+            </a>
+            . Thank you for stopping by my portfolio!
           </div>
         </div>
       </main>
