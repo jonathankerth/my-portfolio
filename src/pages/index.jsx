@@ -14,64 +14,6 @@ import { FaMeta, FaSquareXTwitter } from 'react-icons/fa6'
 import Image from 'next/image'
 import Navbar from '../components/Navbar'
 
-const Footer = () => {
-  const [isFooterVisible, setIsFooterVisible] = useState(true)
-  const [isMobile, setIsMobile] = useState(false)
-
-  const checkIsMobile = () => {
-    setIsMobile(window.innerWidth <= 768)
-  }
-
-  const handleFooterVisibility = useCallback(() => {
-    const bottomReached =
-      window.innerHeight + window.scrollY >= document.body.scrollHeight
-    const notAtTop = window.pageYOffset > 0
-
-    setIsFooterVisible(bottomReached || notAtTop)
-  }, [])
-
-  useEffect(() => {
-    checkIsMobile()
-    window.addEventListener('resize', checkIsMobile)
-    return () => {
-      window.removeEventListener('resize', checkIsMobile)
-    }
-  }, [])
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleFooterVisibility)
-    return () => {
-      window.removeEventListener('scroll', handleFooterVisibility)
-    }
-  }, [handleFooterVisibility])
-
-  const { theme } = useTheme()
-
-  return (
-    <footer
-      className={`fixed inset-x-0 bottom-0 flex items-center justify-between bg-gray-900/20 text-white p-4 z-50 ${
-        isFooterVisible || !isMobile ? 'visible' : 'invisible'
-      }`}
-    >
-      <div className="flex items-center">
-        <Link
-          href="https://api.checklyhq.com/v1/badges/checks/319f6d4d-8c0d-4ae2-ae10-d0eaf4d8fbad?style=for-the-badge&theme=dark"
-          passHref
-          target="_blank"
-        >
-          <Image
-            src="https://api.checklyhq.com/v1/badges/checks/319f6d4d-8c0d-4ae2-ae10-d0eaf4d8fbad?style=for-the-badge&theme=dark"
-            alt="Checkly"
-            height={42}
-            width={180}
-            className="cursor-pointer"
-          />
-        </Link>
-      </div>
-    </footer>
-  )
-}
-
 export default function Home() {
   const [isZoomed, setIsZoomed] = useState(false)
   const imageUrl =
@@ -79,20 +21,6 @@ export default function Home() {
   const handleImageClick = () => {
     setIsZoomed(!isZoomed)
   }
-
-  const [isFooterVisible, setIsFooterVisible] = useState(true)
-  const handleFooterVisibility = useCallback(() => {
-    const bottomReached =
-      window.innerHeight + window.scrollY >= document.body.scrollHeight
-    setIsFooterVisible(bottomReached)
-  }, [])
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleFooterVisibility)
-    return () => {
-      window.removeEventListener('scroll', handleFooterVisibility)
-    }
-  }, [handleFooterVisibility])
 
   const { theme } = useTheme()
 
@@ -168,14 +96,6 @@ export default function Home() {
             the code.
           </div>
 
-          <div
-            className={` ${
-              theme === 'dark' ? textColors.dark : textColors.light
-            }  pr-8 mb-4 text-xl`}
-          >
-            Looking to collaborate or connect? Feel free to reach out through
-            any of the sites below. Thank you for stopping by!
-          </div>
           <div
             className={`relative w-full mb-4 mt-4 transition-transform duration-700 ease-in-out z-10 ${
               isZoomed ? 'transform scale-150' : ''
@@ -270,10 +190,17 @@ export default function Home() {
               <FaMeta className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
             </a>
           </div>
+
+          <div
+            className={` ${
+              theme === 'dark' ? textColors.dark : textColors.light
+            }  pr-8 mb-4 text-xl`}
+          >
+            Looking to collaborate or connect? Feel free to reach out through
+            any of the sites below. Thank you for stopping by!
+          </div>
         </div>
       </main>
-
-      <Footer />
     </div>
   )
 }
