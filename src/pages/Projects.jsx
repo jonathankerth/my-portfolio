@@ -178,7 +178,7 @@ export default function Projects() {
             theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
           }`}
         >
-          My Past Projects
+          A Few of the Projects I've Built
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
           {projects.map((project) => (
@@ -190,35 +190,43 @@ export default function Projects() {
                 color: theme === 'dark' ? '#F0F4F8' : '#1A202C',
               }}
             >
-              <h3
-                className={`text-xl font-bold mb-2 mt-4 px-5 ${
-                  theme === 'dark' ? 'text-white' : 'text-gray-900'
-                }`}
+              <a
+                href={project.link2 || project.link}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                {project.title}
-              </h3>
-              <div className="relative h-64 w-full overflow-hidden rounded-lg">
-                {project.title === 'Magic Wheel Component' ? (
-                  <iframe
-                    src={project.iframe || project.link2}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      borderRadius: '8px',
-                    }}
-                    title={project.title}
-                    allowFullScreen
-                  ></iframe>
-                ) : (
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    objectFit="cover"
-                    layout="fill"
-                    className="rounded-lg"
-                  />
-                )}
-              </div>
+                <h3
+                  className={`text-xl font-bold mb-2 mt-4 px-5 ${
+                    theme === 'dark' ? 'text-white' : 'text-gray-900'
+                  }`}
+                >
+                  {project.title}
+                </h3>
+                <div className="flex justify-center items-center h-64 w-full overflow-hidden rounded-lg">
+                  {project.title === 'Magic Wheel Component' ? (
+                    <iframe
+                      src={project.iframe || project.link2}
+                      style={{
+                        width: '80%',
+                        height: '100%',
+                        borderRadius: '8px',
+                      }}
+                      title={project.title}
+                      allowFullScreen
+                    ></iframe>
+                  ) : (
+                    <div className="relative h-full w-11/12">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        objectFit="cover"
+                        layout="fill"
+                        className="rounded-lg"
+                      />
+                    </div>
+                  )}
+                </div>
+              </a>
               <div className="p-5 flex flex-col flex-grow">
                 <p
                   className={`flex-grow text-md mb-4 ${
