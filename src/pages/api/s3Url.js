@@ -10,7 +10,7 @@ const uploadURLHandler = async (req, res) => {
       res.status(400).send({ error: error.message })
     }
   } else {
-    res.status(405).end() // Method Not Allowed
+    res.status(405).end()
   }
 }
 

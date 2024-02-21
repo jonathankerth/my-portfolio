@@ -205,7 +205,7 @@ export default function Projects() {
                       width: '100%',
                       height: '100%',
                       borderRadius: '8px',
-                    }} // Apply borderRadius here if necessary
+                    }}
                     title={project.title}
                     allowFullScreen
                   ></iframe>
@@ -215,7 +215,7 @@ export default function Projects() {
                     alt={project.title}
                     objectFit="cover"
                     layout="fill"
-                    className="rounded-lg" // This applies rounded corners to the image
+                    className="rounded-lg"
                   />
                 )}
               </div>

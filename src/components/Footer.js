@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const Footer = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
-  const [visible, setVisible] = useState(true) // set initial state to true
+  const [visible, setVisible] = useState(true)
 
   const handleScroll = useCallback(() => {
     const currentScrollPos = window.pageYOffset
