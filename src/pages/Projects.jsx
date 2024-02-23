@@ -3,7 +3,6 @@ import { useState } from 'react'
 import Image from 'next/image'
 import ProjectModal from '../components/ProjectModal.js'
 import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
 import { useTheme } from 'next-themes'
 
 const projects = [
@@ -268,8 +267,6 @@ export default function Projects() {
           ))}
         </div>
       </main>
-
-      <Footer />
       {isModalOpen && (
         <ProjectModal project={currentProject} closeModal={closeModal} />
       )}

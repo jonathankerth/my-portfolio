@@ -2,7 +2,6 @@ import Head from 'next/head'
 import React from 'react'
 import { useEffect } from 'react'
 import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
 import { useTheme } from 'next-themes'
 import TechStack from '../components/TechStack'
 import ImageCarousel from '../components/ImageCarousel'
@@ -115,7 +114,6 @@ export default function About() {
       <div className="w-full max-w-4xl mx-auto mb-16">
         <ImageCarousel />
       </div>
-      <Footer />
     </div>
   )
 }

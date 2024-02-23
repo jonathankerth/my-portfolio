@@ -2,7 +2,6 @@ import Head from 'next/head'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
 import { useTheme } from 'next-themes'
 
 export default function Cats() {
@@ -180,7 +179,6 @@ export default function Cats() {
           ))}
         </div>
       </main>
-      <Footer />
     </div>
   )
 }
