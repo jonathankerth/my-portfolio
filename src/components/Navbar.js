@@ -23,8 +23,8 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
   }
 
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false)
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark')
   }
 
   useEffect(() => {
@@ -32,106 +32,75 @@ const Navbar = () => {
       const currentScrollPosition = window.pageYOffset
 
       if (isMobileMenuOpen) {
-        closeMobileMenu()
+        setIsMobileMenuOpen(false)
       }
 
       setIsVisible(
         lastScrollPosition > currentScrollPosition || currentScrollPosition < 10
       )
-
       setLastScrollPosition(currentScrollPosition)
     }
 
     window.addEventListener('scroll', handleScroll)
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [lastScrollPosition, isMobileMenuOpen])
 
   return (
     <nav
-      className={`fixed top-0 left-0 z-50 w-full py-4 transition-all duration-200 ${
-        isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
-      } ${theme === 'dark' ? 'text-white' : 'text-black'}`}
+      className={`fixed top-0 left-0 z-50 w-full transition-all duration-200 ease-in-out ${
+        isVisible
+          ? 'bg-opacity-95 shadow-lg backdrop-filter backdrop-blur-sm'
+          : 'opacity-0 pointer-events-none'
+      } ${
+        theme === 'dark' ? 'bg-[#34495E]' : 'bg-[#D6EAF8]'
+      } px-4 py-2 md:px-8`}
     >
-      <div className="max-w-screen-xl mx-auto px-4 md:px-8 flex justify-between items-center">
-        <button
-          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-          type="button"
-          className={`${
-            theme === 'dark'
-              ? 'text-white hover:text-gray-300'
-              : 'text-black hover:text-gray-600'
-          }`}
-          aria-label="toggle theme"
-        >
-          {theme === 'dark' ? <FaSun /> : <FaMoon />}
-        </button>
-
-        <div className="md:hidden">
-          <button
-            onClick={toggleMobileMenu}
-            type="button"
-            className={`${
-              theme === 'dark'
-                ? 'text-white hover:text-gray-300'
-                : 'text-black hover:text-gray-600'
-            }`}
-            aria-label="toggle menu"
-          >
-            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+      <div className="flex justify-between items-center max-w-6xl mx-auto">
+        <div className="flex items-center space-x-4">
+          <button onClick={toggleTheme} className="p-1 rounded-full">
+            {theme === 'dark' ? (
+              <FaSun className="text-yellow-300" />
+            ) : (
+              <FaMoon className="text-gray-700" />
+            )}
           </button>
+
+          <div className="md:hidden">
+            <button onClick={toggleMobileMenu} className="p-1 rounded-md">
+              {isMobileMenuOpen ? (
+                <FaTimes className="text-xl" />
+              ) : (
+                <FaBars className="text-xl" />
+              )}
+            </button>
+          </div>
         </div>
 
-        <div
-          className={`hidden md:flex space-x-6 ${
+        <ul
+          className={`${
             isMobileMenuOpen ? 'flex' : 'hidden'
-          }`}
+          } md:flex items-center space-x-4 md:space-x-8`}
         >
           {navLinks.map(({ href, label }) => {
-            const isActive = router.pathname === href
-            return isActive ? null : (
-              <Link
-                key={href}
-                href={href}
-                className={`px-4 py-2 font-medium transition duration-300 ${
-                  theme === 'dark'
-                    ? 'text-white hover:text-gray-300'
-                    : 'text-black hover:text-gray-600'
-                } border rounded-full border-transparent hover:border-current`}
-                onClick={closeMobileMenu}
-              >
-                {label}
-              </Link>
-            )
-          })}
-        </div>
-      </div>
-
-      {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-12 right-0 w-full bg-gray-900/60">
-          <ul className="px-8 py-4">
-            {navLinks.map(({ href, label }) => {
-              const isActive = router.pathname === href
-              if (isActive) return null
-              return (
-                <li key={href} className="py-2">
-                  <Link
-                    href={href}
-                    className={`text-lg font-semibold ${
-                      theme === 'dark' ? 'text-white' : 'text-white'
-                    } border rounded-full border-transparent hover:border-current`}
-                    onClick={() => setIsMobileMenuOpen(false)}
+            if (router.pathname === href) return null // Skip rendering the link if it matches the current pathname
+            return (
+              <li key={href}>
+                <Link href={href}>
+                  <span
+                    className={`transition-colors duration-300 cursor-pointer ${
+                      theme === 'dark'
+                        ? 'text-white hover:text-gray-300'
+                        : 'text-gray-900 hover:text-gray-600'
+                    }`}
                   >
                     {label}
-                  </Link>
-                </li>
-              )
-            })}
-          </ul>
-        </div>
-      )}
+                  </span>
+                </Link>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
     </nav>
   )
 }
