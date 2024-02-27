@@ -24,7 +24,7 @@ export default function Resume() {
       </Head>
       <Navbar />
       <main className="flex flex-col items-center justify-center w-full flex-1 text-center mt-20 mb-20">
-        <div className="rounded-lg shadow-md w-3/4 mx-auto max-w-4xl">
+        <div className="rounded-lg shadow-md w-5/6 mx-auto">
           <iframe
             src="https://jonathankerth.github.io/resume/"
             className="border rounded-lg border-transparent w-full"
