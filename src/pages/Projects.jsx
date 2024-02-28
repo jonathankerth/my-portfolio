@@ -24,7 +24,7 @@ const projects = [
       Built with Vue.js and Tailwind CSS. Deployed on Vercel.
     `,
     link: 'https://github.com/jonathankerth/freelance-site',
-    link2: 'https://freelance-site-kappa.vercel.app/',
+    link2: 'https://oregonized-freelance-site.vercel.app/',
     image:
       'https://mypublicucket.s3.us-west-2.amazonaws.com/freelance+site.png',
   },
