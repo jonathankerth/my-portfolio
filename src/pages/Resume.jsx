@@ -5,9 +5,6 @@ import Navbar from '../components/Navbar'
 
 export default function Resume() {
   const { theme } = useTheme()
-  useEffect(() => {
-    console.log(`Current theme is: ${theme}`)
-  }, [theme])
 
   return (
     <div

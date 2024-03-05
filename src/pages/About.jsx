@@ -9,10 +9,6 @@ import ImageCarousel from '../components/ImageCarousel'
 export default function About() {
   const { theme } = useTheme()
 
-  useEffect(() => {
-    console.log(`Current theme is: ${theme}`)
-  }, [theme])
-
   const techStack = [
     { name: 'React', url: 'https://reactjs.org/' },
     { name: 'React Native', url: 'https://reactnative.dev/' },

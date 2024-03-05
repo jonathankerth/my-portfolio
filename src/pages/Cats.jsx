@@ -12,10 +12,6 @@ export default function Cats() {
   const [isLoading, setIsLoading] = useState(false)
   const { theme } = useTheme()
 
-  useEffect(() => {
-    console.log(`Current theme is: ${theme}`)
-  }, [theme])
-
   const backgroundColors = {
     light: 'bg-gradient-to-b from-[#D6EAF8] to-[#AED6F1]',
     dark: 'bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C]',
