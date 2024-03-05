@@ -1,7 +1,7 @@
 import { useTheme } from 'next-themes'
 
 const ThemeToggle = () => {
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme, systemTheme } = useTheme({ detectSystemTheme: true })
 
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark')
