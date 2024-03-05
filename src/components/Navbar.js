@@ -82,7 +82,7 @@ const Navbar = () => {
           } md:flex items-center space-x-4 md:space-x-8`}
         >
           {navLinks.map(({ href, label }) => {
-            if (router.pathname === href) return null // Skip rendering the link if it matches the current pathname
+            if (router.pathname === href) return null
             return (
               <li key={href}>
                 <Link href={href}>
