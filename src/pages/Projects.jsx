@@ -119,16 +119,6 @@ const projects = [
   },
 
   {
-    id: 12,
-    title: 'Pokedex',
-    description:
-      'An interactive Pokedex application that displays detailed information about various Pokemon. Built using vanilla JavaScript and fetches data from PokeAPI.co for an authentic experience.',
-    link: 'https://github.com/jonathankerth/pokemon-js',
-    link2: 'https://pokemon-js-omega.vercel.app/#',
-    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/pokemon.png',
-  },
-
-  {
     id: 13,
     title: 'WebSocket Todo-List Backend',
     description:
