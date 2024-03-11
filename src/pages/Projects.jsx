@@ -2,7 +2,8 @@ import Head from 'next/head'
 import { useState } from 'react'
 import Image from 'next/image'
 import ProjectModal from '../components/ProjectModal.js'
-import Navbar from '../components/Navbar'
+import Layout from '../components/Layout'
+
 import { useTheme } from 'next-themes'
 
 const projects = [
@@ -144,122 +145,123 @@ export default function Projects() {
   }
 
   return (
-    <div
-      className={`min-h-screen ${
-        theme === 'dark'
-          ? 'bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C]'
-          : 'bg-gradient-to-b from-[#D6EAF8] to-[#AED6F1]'
-      } flex flex-col justify-center items-center px-4`}
-    >
-      <Head>
-        <title>Projects</title>
-        <meta
-          name="description"
-          content="A showcase of my software engineering projects"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Navbar />
+    <Layout>
+      <div
+        className={`min-h-screen ${
+          theme === 'dark'
+            ? 'bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C]'
+            : 'bg-gradient-to-b from-[#D6EAF8] to-[#AED6F1]'
+        } flex flex-col justify-center items-center px-4`}
+      >
+        <Head>
+          <title>Projects</title>
+          <meta
+            name="description"
+            content="A showcase of my software engineering projects"
+          />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
 
-      <main className="w-full flex flex-col items-center justify-center text-center mt-10 mb-20">
-        <h1
-          className={`text-4xl font-bold mb-8 mt-8 ${
-            theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
-          }`}
-        >
-          A Few of My Projects
-        </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
-          {projects.map((project) => (
-            <div
-              key={project.id}
-              className="flex flex-col rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 ease-in-out hover:shadow-xl"
-              style={{
-                backgroundColor: theme === 'dark' ? '#2D3748' : '#fff',
-                color: theme === 'dark' ? '#F0F4F8' : '#1A202C',
-              }}
-            >
-              <a
-                href={project.link2 || project.link}
-                target="_blank"
-                rel="noopener noreferrer"
+        <main className="w-full flex flex-col items-center justify-center text-center mt-10 mb-20">
+          <h1
+            className={`text-4xl font-bold mb-8 mt-8 ${
+              theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
+            }`}
+          >
+            A Few of My Projects
+          </h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
+            {projects.map((project) => (
+              <div
+                key={project.id}
+                className="flex flex-col rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 ease-in-out hover:shadow-xl"
+                style={{
+                  backgroundColor: theme === 'dark' ? '#2D3748' : '#fff',
+                  color: theme === 'dark' ? '#F0F4F8' : '#1A202C',
+                }}
               >
-                <h3
-                  className={`text-xl font-bold mb-2 mt-4 px-5 ${
-                    theme === 'dark' ? 'text-white' : 'text-gray-900'
-                  }`}
+                <a
+                  href={project.link2 || project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  {project.title}
-                </h3>
-                <div className="flex justify-center items-center h-64 w-full overflow-hidden rounded-lg">
-                  {project.title === 'Magic Wheel Component' ? (
-                    <iframe
-                      src={project.iframe || project.link2}
-                      style={{
-                        width: '80%',
-                        height: '100%',
-                        borderRadius: '8px',
-                      }}
-                      title={project.title}
-                      allowFullScreen
-                    ></iframe>
-                  ) : (
-                    <div className="relative h-full w-11/12">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        objectFit="cover"
-                        layout="fill"
-                        className="rounded-lg"
-                      />
-                    </div>
-                  )}
-                </div>
-              </a>
-              <div className="p-5 flex flex-col flex-grow">
-                <p
-                  className={`flex-grow text-md mb-4 ${
-                    theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
-                  }`}
-                >
-                  {project.description}
-                </p>
-                <div className="flex justify-center gap-2 mt-auto">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors duration-200 ease-in-out"
+                  <h3
+                    className={`text-xl font-bold mb-2 mt-4 px-5 ${
+                      theme === 'dark' ? 'text-white' : 'text-gray-900'
+                    }`}
                   >
-                    GitHub
-                  </a>
-                  {project.link2 && (
+                    {project.title}
+                  </h3>
+                  <div className="flex justify-center items-center h-64 w-full overflow-hidden rounded-lg">
+                    {project.title === 'Magic Wheel Component' ? (
+                      <iframe
+                        src={project.iframe || project.link2}
+                        style={{
+                          width: '80%',
+                          height: '100%',
+                          borderRadius: '8px',
+                        }}
+                        title={project.title}
+                        allowFullScreen
+                      ></iframe>
+                    ) : (
+                      <div className="relative h-full w-11/12">
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          objectFit="cover"
+                          layout="fill"
+                          className="rounded-lg"
+                        />
+                      </div>
+                    )}
+                  </div>
+                </a>
+                <div className="p-5 flex flex-col flex-grow">
+                  <p
+                    className={`flex-grow text-md mb-4 ${
+                      theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
+                    }`}
+                  >
+                    {project.description}
+                  </p>
+                  <div className="flex justify-center gap-2 mt-auto">
                     <a
-                      href={project.link2}
+                      href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition-colors duration-200 ease-in-out"
+                      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors duration-200 ease-in-out"
                     >
-                      Live Site
+                      GitHub
                     </a>
-                  )}
-                  {project.title === 'Nicolas Cage Movie Repository' && (
-                    <button
-                      onClick={() => openModal(project)}
-                      className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 mr-2 rounded transition duration-300 ease-in-out"
-                    >
-                      View Case Study
-                    </button>
-                  )}
+                    {project.link2 && (
+                      <a
+                        href={project.link2}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition-colors duration-200 ease-in-out"
+                      >
+                        Live Site
+                      </a>
+                    )}
+                    {project.title === 'Nicolas Cage Movie Repository' && (
+                      <button
+                        onClick={() => openModal(project)}
+                        className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 mr-2 rounded transition duration-300 ease-in-out"
+                      >
+                        View Case Study
+                      </button>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </main>
-      {isModalOpen && (
-        <ProjectModal project={currentProject} closeModal={closeModal} />
-      )}
-    </div>
+            ))}
+          </div>
+        </main>
+        {isModalOpen && (
+          <ProjectModal project={currentProject} closeModal={closeModal} />
+        )}
+      </div>
+    </Layout>
   )
 }

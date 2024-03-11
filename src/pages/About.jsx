@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import React from 'react'
-import { useEffect } from 'react'
-import Navbar from '../components/Navbar'
+import Layout from '../components/Layout'
 import { useTheme } from 'next-themes'
 import TechStack from '../components/TechStack'
 import ImageCarousel from '../components/ImageCarousel'
@@ -47,70 +46,72 @@ export default function About() {
   ]
 
   return (
-    <div
-      className={`min-h-screen ${
-        theme === 'dark'
-          ? 'bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C]'
-          : 'bg-gradient-to-b from-[#D6EAF8] to-[#AED6F1]'
-      } flex flex-col justify-center items-center px-4`}
-    >
-      <Head>
-        <title>About Me</title>
-        <meta
-          name="description"
-          content="Discover more about my experience and the technologies I utilize"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Navbar />
-      <main className="flex flex-col items-center justify-center flex-1 py-12 mt-10">
-        <div
-          className={`${
-            theme === 'dark'
-              ? 'bg-gradient-to-br from-[#2C3E50] via-[#34495E] to-[#212F3C]'
-              : 'bg-gradient-to-br from-[#EBF5FB] via-[#D6EAF8] to-[#AED6F1]'
-          } rounded-lg p-4 mb-6 max-w-2xl`}
-        >
-          <h1
-            className={`font-bold text-xl leading-6 text-center mb-4 ${
-              theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
-            }`}
+    <Layout>
+      <div
+        className={`min-h-screen ${
+          theme === 'dark'
+            ? 'bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C]'
+            : 'bg-gradient-to-b from-[#D6EAF8] to-[#AED6F1]'
+        } flex flex-col justify-center items-center px-4`}
+      >
+        <Head>
+          <title>About Me</title>
+          <meta
+            name="description"
+            content="Discover more about my experience and the technologies I utilize"
+          />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+
+        <main className="flex flex-col items-center justify-center flex-1 py-12 mt-10">
+          <div
+            className={`${
+              theme === 'dark'
+                ? 'bg-gradient-to-br from-[#2C3E50] via-[#34495E] to-[#212F3C]'
+                : 'bg-gradient-to-br from-[#EBF5FB] via-[#D6EAF8] to-[#AED6F1]'
+            } rounded-lg p-4 mb-6 max-w-2xl`}
           >
-            About Me
-          </h1>
-          <p
-            className={`text-xl leading-6 text-center mb-4 ${
-              theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
-            }`}
-          >
-            I'm a passionate software engineer from Portland, Oregon, USA. I
-            specialize in building web applications primarily with Javascript
-            and Python technologies. I love building software that makes a
-            positive impact in the world and I'm always trying to learn new
-            things.
-          </p>
-          <p
-            className={`text-xl leading-6 text-center mb-4 ${
-              theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
-            }`}
-          >
-            Outside the world of code, I'm a food enthusiast, self-proclaimed
-            nerd, home cook, pet parent, 3D printer hobbyist and I've been to 5
-            out of the 7 continents.
-          </p>
-          <p
-            className={`text-xl leading-6 text-center mb-4 ${
-              theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
-            }`}
-          >
-            Thanks for dropping by my portofolio website!
-          </p>
+            <h1
+              className={`font-bold text-xl leading-6 text-center mb-4 ${
+                theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
+              }`}
+            >
+              About Me
+            </h1>
+            <p
+              className={`text-xl leading-6 text-center mb-4 ${
+                theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
+              }`}
+            >
+              I'm a passionate software engineer from Portland, Oregon, USA. I
+              specialize in building web applications primarily with Javascript
+              and Python technologies. I love building software that makes a
+              positive impact in the world and I'm always trying to learn new
+              things.
+            </p>
+            <p
+              className={`text-xl leading-6 text-center mb-4 ${
+                theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
+              }`}
+            >
+              Outside the world of code, I'm a food enthusiast, self-proclaimed
+              nerd, home cook, pet parent, 3D printer hobbyist and I've been to
+              5 out of the 7 continents.
+            </p>
+            <p
+              className={`text-xl leading-6 text-center mb-4 ${
+                theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
+              }`}
+            >
+              Thanks for dropping by my portofolio website!
+            </p>
+          </div>
+          <TechStack techStack={techStack} theme={theme} />
+        </main>
+        <div className="w-full max-w-4xl mx-auto mb-16">
+          <ImageCarousel />
         </div>
-        <TechStack techStack={techStack} theme={theme} />
-      </main>
-      <div className="w-full max-w-4xl mx-auto mb-16">
-        <ImageCarousel />
       </div>
-    </div>
+    </Layout>
   )
 }

@@ -81,24 +81,23 @@ const Navbar = () => {
             isMobileMenuOpen ? 'flex' : 'hidden'
           } md:flex items-center space-x-4 md:space-x-8`}
         >
-          {navLinks.map(({ href, label }) => {
-            if (router.pathname === href) return null
-            return (
-              <li key={href}>
-                <Link href={href}>
-                  <span
-                    className={`transition-colors duration-300 cursor-pointer ${
-                      theme === 'dark'
-                        ? 'text-white hover:text-gray-300'
-                        : 'text-gray-900 hover:text-gray-600'
-                    }`}
-                  >
-                    {label}
-                  </span>
-                </Link>
-              </li>
-            )
-          })}
+          {navLinks.map(({ href, label }) => (
+            <li key={href}>
+              <Link href={href}>
+                <span
+                  className={`transition-colors duration-300 cursor-pointer ${
+                    router.pathname === href ? 'font-bold' : ''
+                  } ${
+                    theme === 'dark'
+                      ? 'text-white hover:text-gray-300'
+                      : 'text-gray-900 hover:text-gray-600'
+                  }`}
+                >
+                  {label}
+                </span>
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>
