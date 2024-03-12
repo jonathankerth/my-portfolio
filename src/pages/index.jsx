@@ -61,10 +61,10 @@ export default function Home() {
                 theme === 'dark' ? textColors.dark : textColors.light
               }`}
             >
-              As a Software Engineer, I specialize in javascript technologies to
-              build cutting edge web experiences. Here, you&apos;ll find a
-              showcase of my recent work, and a glimpse of who I am both behind
-              the code.
+              After 4 years of experience as a recruiter, I am now a software
+              engineer with a passion for creating and building software that
+              improves the lives of others. I am a full-stack developer with a
+              focus on front-end technologies.
             </div>
 
             <ImageComponent imageUrl={imageUrl} />
