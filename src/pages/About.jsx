@@ -83,7 +83,7 @@ export default function About() {
                 theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
               }`}
             >
-              I'm a code-slinging coffee enthusiast living in Portland, Oregon.
+              I'm a code-slinging coffee drinker living in Portland, Oregon.
               Fueled by coffee and a relentless curiosity, I specialize in
               building beautiful and functional web applications using
               JavaScript and Python. I find joy in every step of the development
