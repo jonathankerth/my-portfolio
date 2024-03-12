@@ -89,7 +89,6 @@ export default function Cats() {
           />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-
         <main className="flex flex-col items-center justify-center flex-1 py-12 mt-10">
           <div
             className={`${
