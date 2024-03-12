@@ -64,6 +64,13 @@ export default function About() {
         </Head>
 
         <main className="flex flex-col items-center justify-center flex-1 py-12 mt-10">
+          <h1
+            className={`text-2xl font-bold mb-8 ${
+              theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
+            }`}
+          >
+            About Me
+          </h1>
           <div
             className={`${
               theme === 'dark'
@@ -71,13 +78,6 @@ export default function About() {
                 : 'bg-gradient-to-br from-[#EBF5FB] via-[#D6EAF8] to-[#AED6F1]'
             } rounded-lg p-4 mb-6 max-w-2xl`}
           >
-            <h1
-              className={`font-bold text-xl leading-6 text-center mb-4 ${
-                theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
-              }`}
-            >
-              About Me
-            </h1>
             <p
               className={`text-xl leading-6 text-center mb-4 ${
                 theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
@@ -89,8 +89,7 @@ export default function About() {
               JavaScript and Python. I find joy in every step of the development
               process, whether it's designing user-friendly interfaces, tackling
               intricate back-end challenges, or creating innovative scrolling
-              features like those for Oregonized Design Co. This constant
-              learning and growth fuels my passion as a developer.
+              features like those for Oregonized Design Co.
             </p>
             <p
               className={`text-xl leading-6 text-center mb-4 ${

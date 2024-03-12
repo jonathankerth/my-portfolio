@@ -40,8 +40,15 @@ export default function Home() {
           />
           <link rel="icon" href="/favicon.ico" />
         </Head>
+        <h1
+          className={`text-4xl font-bold mb-8 ${
+            theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
+          } mt-16`}
+        >
+          Welcome, I'm Jonathan Gallardo-Kerth
+        </h1>
         <main
-          className={`flex flex-col items-center justify-center w-full mt-16 py-8 px-4 mb-12 text-center transition-transform duration-700 ease-in-out rounded-lg ${
+          className={`flex flex-col items-center justify-center w-full py-8 px-4 mb-12 text-center transition-transform duration-700 ease-in-out rounded-lg ${
             theme === 'dark'
               ? 'bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C]'
               : 'bg-gradient-to-br from-[#EBF5FB] via-[#D6EAF8] to-[#AED6F1]'
@@ -49,22 +56,15 @@ export default function Home() {
           style={{ maxWidth: '75%' }}
         >
           <div className={`w-full ${textColors[theme]}`}>
-            <p
-              className={`font-bold mb-4 text-2xl ${
-                theme === 'dark' ? textColors.dark : textColors.light
-              }`}
-            >
-              Welcome, I&apos;m Jonathan Gallardo-Kerth
-            </p>
             <div
               className={`mb-4 text-xl ${
                 theme === 'dark' ? textColors.dark : textColors.light
               }`}
             >
               After 4 years of experience as a recruiter, I am now a software
-              engineer with a passion for creating and building software that
-              improves the lives of others. I am a full-stack developer with a
-              focus on front-end technologies.
+              engineer with a passion for building software that improves the
+              lives of others. I am a full-stack developer with a focus on
+              front-end technologies.
             </div>
 
             <ImageComponent imageUrl={imageUrl} />

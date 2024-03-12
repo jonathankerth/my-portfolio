@@ -164,7 +164,7 @@ export default function Projects() {
 
         <main className="w-full flex flex-col items-center justify-center text-center mt-10 mb-20">
           <h1
-            className={`text-4xl font-bold mb-8 mt-8 ${
+            className={`text-2xl font-bold mb-8 mt-8 ${
               theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
             }`}
           >

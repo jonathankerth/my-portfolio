@@ -90,6 +90,13 @@ export default function Cats() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <main className="flex flex-col items-center justify-center flex-1 py-12 mt-10">
+          <h1
+            className={`text-2xl font-bold mb-8 ${
+              theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
+            }`}
+          >
+            Send Me Your Cat Memes!
+          </h1>
           <div
             className={`${
               theme === 'dark'
@@ -97,13 +104,6 @@ export default function Cats() {
                 : 'bg-gradient-to-br from-[#EBF5FB] via-[#D6EAF8] to-[#AED6F1]'
             } rounded-lg p-8 mb-8 max-w-4xl mx-auto text-center shadow-lg`}
           >
-            <h1
-              className={`${
-                theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
-              } font-bold text-2xl mb-6`}
-            >
-              Send Me Your Cat Memes!
-            </h1>
             <p
               className={`${
                 theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
