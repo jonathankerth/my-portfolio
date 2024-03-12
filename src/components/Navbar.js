@@ -78,24 +78,23 @@ const Navbar = () => {
 
         <ul
           className={`${
-            isMobileMenuOpen ? 'flex' : 'hidden'
-          } md:flex items-center space-x-4 md:space-x-8`}
+            isMobileMenuOpen ? 'flex flex-col md:flex-row' : 'hidden md:flex'
+          } items-center space-y-2 md:space-y-0 md:space-x-4`}
         >
           {navLinks.map(({ href, label }) => (
             <li key={href}>
-              <Link href={href}>
-                <span
-                  className={`transition-colors duration-300 cursor-pointer ${
-                    router.pathname === href ? 'font-bold' : ''
-                  } ${
+              {router.pathname !== href ? (
+                <Link
+                  href={href}
+                  className={`transition-colors duration-300 hover:underline ${
                     theme === 'dark'
                       ? 'text-white hover:text-gray-300'
                       : 'text-gray-900 hover:text-gray-600'
                   }`}
                 >
                   {label}
-                </span>
-              </Link>
+                </Link>
+              ) : null}
             </li>
           ))}
         </ul>
