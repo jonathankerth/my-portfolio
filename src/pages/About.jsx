@@ -83,27 +83,22 @@ export default function About() {
                 theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
               }`}
             >
-              I'm a passionate software engineer from Portland, Oregon, USA. I
-              specialize in building web applications primarily with Javascript
-              and Python technologies. I love building software that makes a
-              positive impact in the world and I'm always trying to learn new
-              things.
+              I'm a code-slinging coffee enthusiast living in Portland, Oregon.
+              Fueled by coffee and a relentless curiosity, I specialize in
+              building beautiful and functional web applications using
+              JavaScript and Python. I find joy in every step of the development
+              process, whether it's designing user-friendly interfaces, tackling
+              intricate back-end challenges, or creating innovative scrolling
+              features like those for Oregonized Design Co. This constant
+              learning and growth fuels my passion as a developer.
             </p>
             <p
               className={`text-xl leading-6 text-center mb-4 ${
                 theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
               }`}
             >
-              Outside the world of code, I'm a food enthusiast, self-proclaimed
-              nerd, home cook, pet parent, 3D printer hobbyist and I've been to
-              5 out of the 7 continents.
-            </p>
-            <p
-              className={`text-xl leading-6 text-center mb-4 ${
-                theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
-              }`}
-            >
-              Thanks for dropping by my portofolio website!
+              Outside the world of code I'm a 3D printer hobbyist, general nerd,
+              home chef, pet parent, and traveler.
             </p>
           </div>
           <TechStack techStack={techStack} theme={theme} />
