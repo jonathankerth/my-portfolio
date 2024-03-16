@@ -83,21 +83,21 @@ export default function About() {
                 theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
               }`}
             >
-              I'm a code-slinging coffee drinker living in Portland, Oregon.
-              Fueled by coffee and a relentless curiosity, I specialize in
-              building beautiful and functional web applications using
-              JavaScript and Python. I find joy in every step of the development
-              process, whether it's designing user-friendly interfaces, tackling
-              intricate back-end challenges, or creating innovative scrolling
-              features like those for Oregonized Design Co.
+              I'm a code writing, tea drinker living in Portland, Oregon. Fueled
+              by tea and a relentless curiosity, I specialize in building
+              beautiful and functional web applications. I find joy in every
+              step of the development process, whether it's designing
+              user-friendly interfaces, tackling intricate back-end challenges,
+              or creating innovative scrolling features like those for
+              Oregonized Design Co.
             </p>
             <p
               className={`text-xl leading-6 text-center mb-4 ${
                 theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
               }`}
             >
-              Outside the world of code I'm a 3D printer hobbyist, general nerd,
-              home chef, pet parent, and traveler.
+              Outside the world of code I'm a 3D printer hobbyist, husband,
+              general nerd, home chef, pet parent, and traveler.
             </p>
           </div>
           <TechStack techStack={techStack} theme={theme} />
