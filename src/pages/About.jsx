@@ -16,6 +16,7 @@ export default function About() {
     { name: 'Angular', url: 'https://angular.io/' },
     { name: 'Express', url: 'https://expressjs.com/' },
     { name: 'MongoDB', url: 'https://www.mongodb.com/' },
+    { name: 'Material UI', url: 'https://mui.com/' },
     { name: 'Bootstrap', url: 'https://getbootstrap.com/' },
     { name: 'Tailwind CSS', url: 'https://tailwindcss.com/' },
     { name: 'Redux', url: 'https://redux.js.org/' },
@@ -83,13 +84,12 @@ export default function About() {
                 theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
               }`}
             >
-              I'm a code writing, tea drinker living in Portland, Oregon. Fueled
+              I'm Jonathan Gallardo-Kerth and live in Portland, Oregon. Fueled
               by tea and a relentless curiosity, I specialize in building
-              beautiful and functional web applications. I find joy in every
-              step of the development process, whether it's designing
-              user-friendly interfaces, tackling intricate back-end challenges,
-              or creating innovative scrolling features like those for
-              Oregonized Design Co.
+              impactful and functional web applications. I enjoy every step of
+              the development process, whether it's designing user-friendly
+              interfaces, tackling intricate back-end challenges, or creating
+              innovative scrolling features like those for Oregonized Design Co.
             </p>
             <p
               className={`text-xl leading-6 text-center mb-4 ${
