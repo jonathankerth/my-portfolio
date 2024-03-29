@@ -188,7 +188,7 @@ export default function Projects() {
                   <h3
                     className={`text-xl font-bold mb-2 mt-4 px-5 ${
                       theme === 'dark' ? 'text-white' : 'text-gray-900'
-                    }`}
+                    } hover:text-blue-500 transition-colors duration-300`}
                   >
                     {project.title}
                   </h3>
