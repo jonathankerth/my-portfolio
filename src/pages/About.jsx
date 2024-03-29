@@ -83,25 +83,23 @@ export default function About() {
                 theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
               }`}
             >
-              I'm Jonathan Gallardo-Kerth and live in Portland, Oregon. Fueled
-              by tea and a relentless curiosity, I specialize in building
-              impactful and functional web applications. I enjoy every step of
-              the development process, whether it's designing user-friendly
-              interfaces, tackling intricate back-end challenges, or creating
-              innovative scrolling features like those for Oregonized Design Co.
+              Tea and a relentless curiosity keep be running. I live in
+              portland, Oregon, USA. I specialize in building web applications
+              with Javascript and Python technologies. I love to learn and try
+              to challenge myself with an endless flow of personal projects.
             </p>
             <p
               className={`text-xl leading-6 text-center mb-4 ${
                 theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
               }`}
             >
-              Outside the world of code I'm a 3D printer hobbyist, husband,
-              general nerd, home chef, pet parent, and traveler.
+              Outside of work I'm a 3D printer hobbyist, husband, general nerd,
+              home chef, pet parent, and traveler.
             </p>
           </div>
           <TechStack techStack={techStack} theme={theme} />
         </main>
-        <div className="w-full max-w-4xl mx-auto mb-16">
+        <div className="w-full max-w-4xl max-h-1xl mx-auto mb-16">
           <ImageCarousel />
         </div>
       </div>
