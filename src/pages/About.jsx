@@ -34,14 +34,13 @@ export default function About() {
       url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
     },
     { name: 'TypeScript', url: 'https://www.typescriptlang.org/' },
-
+    { name: 'Figma', url: 'https://www.figma.com/' },
     {
       name: 'Google Analytics',
       url: 'https://developers.google.com/analytics',
     },
     { name: 'Firebase', url: 'https://firebase.google.com/' },
     { name: 'Python', url: 'https://www.python.org/' },
-
     { name: 'JSON', url: 'https://www.json.org/json-en.html' },
     { name: 'Heroku', url: 'https://www.heroku.com/' },
   ]
