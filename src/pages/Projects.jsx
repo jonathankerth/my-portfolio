@@ -17,6 +17,16 @@ const projects = [
     image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/weather-home.png',
   },
   {
+    id: 12,
+    title: 'ReX: AI Career Coach',
+    description: `
+      As a Software Developer at RadicalX, I am leveraging technologies such as OpenAI, Firebase, Node.js, React, Material UI, and Next.js to develop new components and improve existing features for ReX, an AI career coach. 
+    `,
+    link: 'https://github.com/radicalxdev',
+    link2: 'https://lab.radicalai.app/',
+    iframe: 'https://lab.radicalai.app/',
+  },
+  {
     id: 2,
     title: 'Oregonized Design Co.',
     description: `
@@ -186,18 +196,19 @@ export default function Projects() {
                   rel="noopener noreferrer"
                 >
                   <h3
-                    className={`text-xl font-bold mb-2 mt-4 px-5 ${
+                    className={`text-2xl font-bold mb-2 mt-4 px-5 ${
                       theme === 'dark' ? 'text-white' : 'text-gray-900'
                     } hover:text-blue-500 transition-colors duration-300`}
                   >
                     {project.title}
                   </h3>
                   <div className="flex justify-center items-center h-64 w-full overflow-hidden rounded-lg">
-                    {project.title === 'Magic Wheel Component' ? (
+                    {project.title === 'Magic Wheel Component' ||
+                    project.title === 'ReX: AI Career Coach' ? (
                       <iframe
                         src={project.iframe || project.link2}
                         style={{
-                          width: '80%',
+                          width: '100%',
                           height: '100%',
                           borderRadius: '8px',
                         }}
