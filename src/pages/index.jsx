@@ -61,8 +61,7 @@ export default function Home() {
                 theme === 'dark' ? textColors.dark : textColors.light
               }`}
             >
-              After a 4 year long career as a Tech Recruiter, I am now a
-              software engineer with a passion for building software that
+              I am a software engineer with a passion for building software that
               improves the lives of others. I am a full-stack developer with a
               focus on front-end technologies.
             </div>
