@@ -61,9 +61,9 @@ export default function Home() {
                 theme === 'dark' ? textColors.dark : textColors.light
               }`}
             >
-              I am a software engineer with a passion for building software that
-              improves the lives of others. I am a full-stack developer with a
-              focus on front-end technologies.
+              I live for the feeling of completing a hard problem and proving
+              myself wrong. <br></br> When I'm not exploring the world I'm in
+              Portland, Oregon, USA.
             </div>
 
             <ImageComponent imageUrl={imageUrl} />
@@ -146,23 +146,6 @@ export default function Home() {
               >
                 <FaMeta className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
               </a>
-            </div>
-
-            <div
-              className={`${
-                theme === 'dark' ? textColors.dark : textColors.light
-              } pr-8 mb-4 text-xl`}
-            >
-              Looking to collaborate or connect? Please reach out through any of
-              the sites above or by email, which you can find on my {''}
-              <a
-                href="https://www.jonathankerth.com/Resume"
-                rel="noopener noreferrer"
-                className="underline"
-              >
-                resume
-              </a>
-              . Thank you for stopping by my portfolio!
             </div>
           </div>
         </main>
