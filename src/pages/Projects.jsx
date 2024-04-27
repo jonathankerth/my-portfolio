@@ -178,7 +178,16 @@ export default function Projects() {
               theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
             }`}
           >
-            A Few of My Projects
+            <a
+              href="https://github.com/jonathankerth"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`text-2xl font-bold mb-8 mt-8 ${
+                theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
+              }`}
+            >
+              A Few of My Projects
+            </a>
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
             {projects.map((project) => (
