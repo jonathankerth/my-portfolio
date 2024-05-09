@@ -68,7 +68,7 @@ export default function Home() {
 
             <ImageComponent imageUrl={imageUrl} />
 
-            <div className="flex flex-wrap items-center mt-8 space-x-2 sm:space-x-4 justify-center mb-12">
+            <div className="flex flex-wrap items-center mt-8 space-x-2 sm:space-x-4 justify-center ">
               <a
                 href="mailto:jonathanpkerth@gmail.com"
                 target="_blank"
