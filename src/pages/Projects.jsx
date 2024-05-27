@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import ProjectModal from '../components/ProjectModal.js'
 import Layout from '../components/Layout'
+import { motion } from 'framer-motion'
 
 import { useTheme } from 'next-themes'
 
@@ -139,7 +140,6 @@ const projects = [
     image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/websocket.png',
   },
 ]
-
 export default function Projects() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [currentProject, setCurrentProject] = useState({})
@@ -156,7 +156,10 @@ export default function Projects() {
 
   return (
     <Layout>
-      <div
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
         className={`min-h-screen ${
           theme === 'dark'
             ? 'bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C]'
@@ -172,8 +175,16 @@ export default function Projects() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <main className="w-full flex flex-col items-center justify-center text-center mt-10 mb-20">
-          <h1
+        <motion.main
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="w-full flex flex-col items-center justify-center text-center mt-10 mb-20"
+        >
+          <motion.h1
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
             className={`text-2xl font-bold mb-8 mt-8 ${
               theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
             }`}
@@ -188,11 +199,14 @@ export default function Projects() {
             >
               A Few of My Projects
             </a>
-          </h1>
+          </motion.h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
             {projects.map((project) => (
-              <div
+              <motion.div
                 key={project.id}
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.8 }}
                 className="flex flex-col rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 ease-in-out hover:shadow-xl"
                 style={{
                   backgroundColor: theme === 'dark' ? '#2D3748' : '#fff',
@@ -274,14 +288,14 @@ export default function Projects() {
                     )}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </main>
+        </motion.main>
         {isModalOpen && (
           <ProjectModal project={currentProject} closeModal={closeModal} />
         )}
-      </div>
+      </motion.div>
     </Layout>
   )
 }

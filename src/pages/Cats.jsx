@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Layout from '../components/Layout'
 import { useTheme } from 'next-themes'
+import { motion } from 'framer-motion'
 
 export default function Cats() {
   const [uploadedImageUrl, setUploadedImageUrl] = useState(null)
@@ -26,6 +27,7 @@ export default function Cats() {
     light: 'text-[#154360]',
     dark: 'text-[#ECF0F1]',
   }
+
   const favoriteMemes = [
     'https://memedisplay.s3.us-west-2.amazonaws.com/cat+and+kid.jpeg',
     'https://memedisplay.s3.us-west-2.amazonaws.com/cat+philosophy.jpeg',
@@ -74,7 +76,10 @@ export default function Cats() {
 
   return (
     <Layout>
-      <div
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
         className={`min-h-screen ${
           theme === 'dark'
             ? 'bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C]'
@@ -89,15 +94,26 @@ export default function Cats() {
           />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <main className="flex flex-col items-center justify-center flex-1 py-12 mt-10">
-          <h1
+        <motion.main
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col items-center justify-center flex-1 py-12 mt-10"
+        >
+          <motion.h1
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
             className={`text-2xl font-bold mb-8 ${
               theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
             }`}
           >
             Send Me Your Cat Memes!
-          </h1>
-          <div
+          </motion.h1>
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.8 }}
             className={`${
               theme === 'dark'
                 ? 'bg-gradient-to-br from-[#2C3E50] via-[#34495E] to-[#212F3C]'
@@ -158,9 +174,13 @@ export default function Cats() {
                 />
               </div>
             )}
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          </motion.div>
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8"
+          >
             {favoriteMemes.map((meme, index) => (
               <div
                 key={index}
@@ -176,9 +196,9 @@ export default function Cats() {
                 />
               </div>
             ))}
-          </div>
-        </main>
-      </div>
+          </motion.div>
+        </motion.main>
+      </motion.div>
     </Layout>
   )
 }

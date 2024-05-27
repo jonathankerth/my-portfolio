@@ -4,6 +4,7 @@ import Layout from '../components/Layout'
 import { useTheme } from 'next-themes'
 import TechStack from '../components/TechStack'
 import ImageCarousel from '../components/ImageCarousel'
+import { motion } from 'framer-motion'
 
 export default function About() {
   const { theme } = useTheme()
@@ -47,7 +48,10 @@ export default function About() {
 
   return (
     <Layout>
-      <div
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
         className={`min-h-screen ${
           theme === 'dark'
             ? 'bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C]'
@@ -63,15 +67,26 @@ export default function About() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <main className="flex flex-col items-center justify-center flex-1 py-12 mt-10">
-          <h1
+        <motion.main
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col items-center justify-center flex-1 py-12 mt-10"
+        >
+          <motion.h1
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
             className={`text-2xl font-bold mb-8 ${
               theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
             }`}
           >
             About Me
-          </h1>
-          <div
+          </motion.h1>
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.8 }}
             className={`${
               theme === 'dark'
                 ? 'bg-gradient-to-br from-[#2C3E50] via-[#34495E] to-[#212F3C]'
@@ -83,9 +98,9 @@ export default function About() {
                 theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
               }`}
             >
-              Tea and a relentless curiosity keep be running. I live in
-              portland, Oregon, USA. I specialize in building web applications
-              with Javascript and Python technologies. I love to learn and try
+              Tea and a relentless curiosity keep me running. I live in
+              Portland, Oregon, USA. I specialize in building web applications
+              with JavaScript and Python technologies. I love to learn and try
               to challenge myself with an endless flow of personal projects.
             </p>
             <p
@@ -93,16 +108,21 @@ export default function About() {
                 theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
               }`}
             >
-              Outside of work I'm a 3D printer hobbyist, husband, general nerd,
+              Outside of work, I'm a 3D printer hobbyist, husband, general nerd,
               home chef, pet parent, and traveler.
             </p>
-          </div>
+          </motion.div>
           <TechStack techStack={techStack} theme={theme} />
-        </main>
-        <div className="w-full max-w-4xl max-h-1xl mx-auto mb-16">
+        </motion.main>
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          className="w-full max-w-4xl max-h-1xl mx-auto mb-16"
+        >
           <ImageCarousel />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </Layout>
   )
 }

@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Script from 'next/script'
 import { useTheme } from 'next-themes'
 import {
   FaLinkedin,
@@ -9,7 +8,7 @@ import {
   FaMedium,
 } from 'react-icons/fa'
 import { FaMeta, FaSquareXTwitter } from 'react-icons/fa6'
-
+import { motion } from 'framer-motion'
 import Layout from '../components/Layout'
 import ImageComponent from '../components/ImageComponent'
 
@@ -25,7 +24,10 @@ export default function Home() {
 
   return (
     <Layout>
-      <div
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
         className={`min-h-screen ${
           theme === 'dark'
             ? 'bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C]'
@@ -40,14 +42,20 @@ export default function Home() {
           />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <h1
+        <motion.h1
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
           className={`text-4xl font-bold mb-8 ${
             theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
           } mt-16`}
         >
           Welcome, I'm Jonathan Gallardo-Kerth
-        </h1>
-        <main
+        </motion.h1>
+        <motion.main
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.8 }}
           className={`flex flex-col items-center justify-center w-full py-8 px-4 mb-12 text-center transition-transform duration-700 ease-in-out rounded-lg ${
             theme === 'dark'
               ? 'bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C]'
@@ -148,8 +156,8 @@ export default function Home() {
               </a>
             </div>
           </div>
-        </main>
-      </div>
+        </motion.main>
+      </motion.div>
     </Layout>
   )
 }
