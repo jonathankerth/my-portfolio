@@ -61,9 +61,9 @@ export default function Home() {
                 theme === 'dark' ? textColors.dark : textColors.light
               }`}
             >
-              I live for the feeling of solving a really hard problem and
-              proving myself wrong. <br></br> When I'm not exploring the world
-              I'm in Portland, Oregon, USA.
+              I love to solve complex problems with software and proving myself
+              wrong. <br></br> When I'm not trying to see the world I'm in
+              Portland, Oregon, USA.
             </div>
 
             <ImageComponent imageUrl={imageUrl} />
