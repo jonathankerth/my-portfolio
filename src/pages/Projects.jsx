@@ -52,6 +52,16 @@ const projects = [
       'https://mypublicucket.s3.us-west-2.amazonaws.com/spotifybot+endpoints.png',
   },
   {
+    id: 14,
+    title: 'SnippetSyncBackend',
+    description: `
+      An ASP.NET Core web API for managing code snippets, providing RESTful endpoints for CRUD operations and tag management. 
+      Uses Entity Framework Core with a SQLite database and is containerized using Docker. Deployed on Google Cloud Platform using Google App Engine.
+    `,
+    link3: 'https://github.com/jonathankerth/SnippetSyncBackend',
+    image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/Snippet-UI.png',
+  },
+  {
     id: 4,
     title: 'Todo-List',
     description:
