@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa'
 import { useTheme } from 'next-themes'
 import { useRouter } from 'next/router'
+import ThemeToggle from './ThemeToggle'
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -14,17 +15,13 @@ const navLinks = [
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const { theme, setTheme } = useTheme()
+  const { theme } = useTheme()
   const router = useRouter()
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollPosition, setLastScrollPosition] = useState(0)
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
-  }
-
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark')
   }
 
   useEffect(() => {
@@ -57,13 +54,7 @@ const Navbar = () => {
     >
       <div className="flex justify-between items-center max-w-6xl mx-auto">
         <div className="flex items-center space-x-4">
-          <button onClick={toggleTheme} className="p-1 rounded-full">
-            {theme === 'dark' ? (
-              <FaSun className="text-yellow-300" />
-            ) : (
-              <FaMoon className="text-gray-700" />
-            )}
-          </button>
+          <ThemeToggle />
 
           <div className="md:hidden">
             <button onClick={toggleMobileMenu} className="p-1 rounded-md">
