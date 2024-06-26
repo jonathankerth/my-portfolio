@@ -5,8 +5,6 @@ import ProjectModal from '../components/ProjectModal.js'
 import Layout from '../components/Layout'
 import { motion } from 'framer-motion'
 
-import { useTheme } from 'next-themes'
-
 const projects = [
   {
     id: 1,
@@ -40,7 +38,6 @@ const projects = [
     image:
       'https://mypublicucket.s3.us-west-2.amazonaws.com/freelance+site.png',
   },
-
   {
     id: 3,
     title: 'Discord & Spotify Song Saver',
@@ -89,7 +86,6 @@ const projects = [
     link2: 'https://jonathankerth.github.io/meet/',
     image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/meetHome.png',
   },
-
   {
     id: 7,
     title: 'Nicolas Cage Movie Repository',
@@ -99,7 +95,6 @@ const projects = [
     link2: 'https://niccagecllient.netlify.app/',
     image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/nicCageHome.png',
   },
-
   {
     id: 8,
     title: 'Magic Wheel Component',
@@ -128,7 +123,6 @@ const projects = [
     image:
       'https://mypublicucket.s3.us-west-2.amazonaws.com/PythonScrapper.png',
   },
-
   {
     id: 11,
     title: 'React Native Chat App',
@@ -139,7 +133,6 @@ const projects = [
       'https://mypublicucket.s3.us-west-2.amazonaws.com/small+chat+example.png',
     link3: 'https://github.com/jonathankerth/chat-app',
   },
-
   {
     id: 13,
     title: 'WebSocket Todo-List Backend',
@@ -150,10 +143,10 @@ const projects = [
     image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/websocket.png',
   },
 ]
+
 export default function Projects() {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [currentProject, setCurrentProject] = useState({})
-  const { theme } = useTheme()
 
   const openModal = (project) => {
     setCurrentProject(project)
@@ -170,11 +163,7 @@ export default function Projects() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className={`min-h-screen ${
-          theme === 'dark'
-            ? 'bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C]'
-            : 'bg-gradient-to-b from-[#D6EAF8] to-[#AED6F1]'
-        } flex flex-col justify-center items-center px-4`}
+        className="min-h-screen bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C] flex flex-col justify-center items-center px-4"
       >
         <Head>
           <title>Projects</title>
@@ -195,17 +184,13 @@ export default function Projects() {
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className={`text-2xl font-bold mb-8 mt-8 ${
-              theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
-            }`}
+            className="text-2xl font-bold mb-8 mt-8 text-[#ECF0F1]"
           >
             <a
               href="https://github.com/jonathankerth"
               target="_blank"
               rel="noopener noreferrer"
-              className={`text-2xl font-bold mb-8 mt-8 ${
-                theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
-              }`}
+              className="text-2xl font-bold mb-8 mt-8 text-[#ECF0F1]"
             >
               A Few of My Projects
             </a>
@@ -219,8 +204,8 @@ export default function Projects() {
                 transition={{ duration: 0.8 }}
                 className="flex flex-col rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 ease-in-out hover:shadow-xl"
                 style={{
-                  backgroundColor: theme === 'dark' ? '#2D3748' : '#fff',
-                  color: theme === 'dark' ? '#F0F4F8' : '#1A202C',
+                  backgroundColor: '#2D3748',
+                  color: '#F0F4F8',
                 }}
               >
                 <a
@@ -228,11 +213,7 @@ export default function Projects() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <h3
-                    className={`text-2xl font-bold mb-2 mt-4 px-5 ${
-                      theme === 'dark' ? 'text-white' : 'text-gray-900'
-                    } hover:text-blue-500 transition-colors duration-300`}
-                  >
+                  <h3 className="text-2xl font-bold mb-2 mt-4 px-5 text-white hover:text-blue-500 transition-colors duration-300">
                     {project.title}
                   </h3>
                   <div className="flex justify-center items-center h-64 w-full overflow-hidden rounded-lg">
@@ -253,20 +234,22 @@ export default function Projects() {
                         <Image
                           src={project.image}
                           alt={project.title}
-                          objectFit="cover"
-                          layout="fill"
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                           className="rounded-lg"
+                          priority={
+                            project.image ===
+                              'https://mypublicucket.s3.us-west-2.amazonaws.com/weather-home.png' ||
+                            project.image ===
+                              'https://mypublicucket.s3.us-west-2.amazonaws.com/freelance+site.png'
+                          }
                         />
                       </div>
                     )}
                   </div>
                 </a>
                 <div className="p-5 flex flex-col flex-grow">
-                  <p
-                    className={`flex-grow text-md mb-4 ${
-                      theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
-                    }`}
-                  >
+                  <p className="flex-grow text-md mb-4 text-gray-300">
                     {project.description}
                   </p>
                   <div className="flex justify-center gap-2 mt-auto">

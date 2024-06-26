@@ -1,6 +1,5 @@
-import { PageTransition } from 'next-page-transitions'
 import { useRouter } from 'next/router'
-import Navbar from '../components/Navbar'
+import Navbar from './Navbar'
 
 const Layout = ({ children }) => {
   const router = useRouter()
@@ -8,18 +7,7 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Navbar />
-      <PageTransition
-        timeout={300}
-        classNames="page-transition"
-        loadingDelay={500}
-        loadingTimeout={{
-          enter: 400,
-          exit: 0,
-        }}
-        loadingClassNames="loading-indicator"
-      >
-        <div key={router.route}>{children}</div>
-      </PageTransition>
+      <div key={router.route}>{children}</div>
     </div>
   )
 }

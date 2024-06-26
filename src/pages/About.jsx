@@ -1,14 +1,11 @@
 import Head from 'next/head'
 import React from 'react'
 import Layout from '../components/Layout'
-import { useTheme } from 'next-themes'
 import TechStack from '../components/TechStack'
 import ImageCarousel from '../components/ImageCarousel'
 import { motion } from 'framer-motion'
 
 export default function About() {
-  const { theme } = useTheme()
-
   const techStack = [
     { name: 'React', url: 'https://reactjs.org/' },
     { name: 'React Native', url: 'https://reactnative.dev/' },
@@ -52,11 +49,7 @@ export default function About() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className={`min-h-screen ${
-          theme === 'dark'
-            ? 'bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C]'
-            : 'bg-gradient-to-b from-[#D6EAF8] to-[#AED6F1]'
-        } flex flex-col justify-center items-center px-4`}
+        className="min-h-screen bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C] flex flex-col justify-center items-center px-4"
       >
         <Head>
           <title>About Me</title>
@@ -77,9 +70,7 @@ export default function About() {
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className={`text-2xl font-bold mb-8 ${
-              theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
-            }`}
+            className="text-2xl font-bold mb-8 text-white"
           >
             About Me
           </motion.h1>
@@ -87,32 +78,20 @@ export default function About() {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className={`${
-              theme === 'dark'
-                ? 'bg-gradient-to-br from-[#2C3E50] via-[#34495E] to-[#212F3C]'
-                : 'bg-gradient-to-br from-[#EBF5FB] via-[#D6EAF8] to-[#AED6F1]'
-            } rounded-lg p-4 mb-6 max-w-2xl`}
+            className="rounded-lg p-4 mb-6 max-w-2xl bg-[#2C3E50] text-white"
           >
-            <p
-              className={`text-xl leading-6 text-center mb-4 ${
-                theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
-              }`}
-            >
+            <p className="text-xl leading-6 text-center mb-4">
               Tea and a relentless curiosity keep me running. I live in
               Portland, Oregon, USA. I specialize in building web applications
               with JavaScript and Python technologies. I love to learn and try
               to challenge myself with an endless flow of personal projects.
             </p>
-            <p
-              className={`text-xl leading-6 text-center mb-4 ${
-                theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
-              }`}
-            >
+            <p className="text-xl leading-6 text-center mb-4">
               Outside of work, I'm a 3D printer hobbyist, husband, general nerd,
               home chef, pet parent, and traveler.
             </p>
           </motion.div>
-          <TechStack techStack={techStack} theme={theme} />
+          <TechStack techStack={techStack} />
         </motion.main>
         <motion.div
           initial={{ y: 50, opacity: 0 }}

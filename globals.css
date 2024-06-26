@@ -1,8 +1,10 @@
 @tailwind base;
-
 @tailwind components;
-
 @tailwind utilities;
+
+body {
+  background-color: #2c3e50;
+}
 
 .page-transition-enter {
   opacity: 0;

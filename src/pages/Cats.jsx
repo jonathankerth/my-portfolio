@@ -2,7 +2,6 @@ import Head from 'next/head'
 import { useState } from 'react'
 import Image from 'next/image'
 import Layout from '../components/Layout'
-import { useTheme } from 'next-themes'
 import { motion } from 'framer-motion'
 
 export default function Cats() {
@@ -11,22 +10,6 @@ export default function Cats() {
   const [selectedFileName, setSelectedFileName] = useState(null)
   const [uploadMessage, setUploadMessage] = useState('')
   const [isLoading, setIsLoading] = useState(false)
-  const { theme } = useTheme()
-
-  const backgroundColors = {
-    light: 'bg-gradient-to-b from-[#D6EAF8] to-[#AED6F1]',
-    dark: 'bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C]',
-  }
-
-  const textBoxBackground = {
-    light: 'bg-gradient-to-br from-[#EBF5FB] via-[#D6EAF8] to-[#AED6F1]',
-    dark: 'bg-gradient-to-br from-[#2C3E50] via-[#34495E] to-[#212F3C]',
-  }
-
-  const textColors = {
-    light: 'text-[#154360]',
-    dark: 'text-[#ECF0F1]',
-  }
 
   const favoriteMemes = [
     'https://memedisplay.s3.us-west-2.amazonaws.com/cat+and+kid.jpeg',
@@ -80,11 +63,7 @@ export default function Cats() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className={`min-h-screen ${
-          theme === 'dark'
-            ? 'bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C]'
-            : 'bg-gradient-to-b from-[#D6EAF8] to-[#AED6F1]'
-        } flex flex-col justify-center items-center px-4`}
+        className="min-h-screen bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C] flex flex-col justify-center items-center px-4"
       >
         <Head>
           <title>Cat Memes</title>
@@ -104,9 +83,7 @@ export default function Cats() {
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className={`text-2xl font-bold mb-8 ${
-              theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
-            }`}
+            className="text-2xl font-bold mb-8 text-[#ECF0F1]"
           >
             Send Me Your Cat Memes!
           </motion.h1>
@@ -114,26 +91,14 @@ export default function Cats() {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className={`${
-              theme === 'dark'
-                ? 'bg-gradient-to-br from-[#2C3E50] via-[#34495E] to-[#212F3C]'
-                : 'bg-gradient-to-br from-[#EBF5FB] via-[#D6EAF8] to-[#AED6F1]'
-            } rounded-lg p-8 mb-8 max-w-4xl mx-auto text-center shadow-lg`}
+            className="bg-gradient-to-br from-[#2C3E50] via-[#34495E] to-[#212F3C] rounded-lg p-8 mb-8 max-w-4xl mx-auto text-center shadow-lg"
           >
-            <p
-              className={`${
-                theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
-              } text-lg mb-4`}
-            >
+            <p className="text-[#ECF0F1] text-lg mb-4">
               This page was built because I love cats, memes, and cat memes. I
               also wanted to show my knowledge of AWS S3 buckets and IAM user
               policies.
             </p>
-            <p
-              className={`${
-                theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
-              } text-lg mb-4`}
-            >
+            <p className="text-[#ECF0F1] text-lg mb-4">
               Upload a cat meme to my S3 bucket and I'll display my favorites!
             </p>
             <form onSubmit={handleSubmit} className="space-y-6 pt-4">
@@ -171,6 +136,7 @@ export default function Cats() {
                   width={200}
                   height={200}
                   className="mx-auto rounded-full"
+                  style={{ objectFit: 'cover', width: 'auto', height: 'auto' }}
                 />
               </div>
             )}
@@ -191,8 +157,9 @@ export default function Cats() {
                   alt={`Cat meme ${index + 1}`}
                   width={300}
                   height={300}
-                  layout="responsive"
-                  objectFit="cover"
+                  className="rounded-lg"
+                  style={{ objectFit: 'cover', width: 'auto', height: 'auto' }}
+                  priority
                 />
               </div>
             ))}

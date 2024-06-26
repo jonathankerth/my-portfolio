@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { useTheme } from 'next-themes'
 import {
   FaLinkedin,
   FaGithub,
@@ -15,12 +14,6 @@ import ImageComponent from '../components/ImageComponent'
 export default function Home() {
   const imageUrl =
     'https://mypublicucket.s3.us-west-2.amazonaws.com/DALL%C2%B7E+2023-08-18+15.22.22.png'
-  const { theme } = useTheme()
-
-  const textColors = {
-    light: 'text-[#154360]',
-    dark: 'text-[#ECF0F1]',
-  }
 
   return (
     <Layout>
@@ -28,11 +21,7 @@ export default function Home() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className={`min-h-screen ${
-          theme === 'dark'
-            ? 'bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C]'
-            : 'bg-gradient-to-b from-[#D6EAF8] to-[#AED6F1]'
-        } flex flex-col justify-center items-center px-4`}
+        className="min-h-screen bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C] flex flex-col justify-center items-center px-4"
       >
         <Head>
           <title>Jonathan Kerth&apos;s Portfolio</title>
@@ -46,9 +35,7 @@ export default function Home() {
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className={`text-4xl font-bold mb-8 ${
-            theme === 'dark' ? 'text-[#ECF0F1]' : 'text-[#154360]'
-          } mt-16`}
+          className="text-4xl font-bold mb-8 text-[#ECF0F1] mt-16"
         >
           Welcome, I'm Jonathan Gallardo-Kerth
         </motion.h1>
@@ -56,19 +43,11 @@ export default function Home() {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className={`flex flex-col items-center justify-center w-full py-8 px-4 mb-12 text-center transition-transform duration-700 ease-in-out rounded-lg ${
-            theme === 'dark'
-              ? 'bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C]'
-              : 'bg-gradient-to-br from-[#EBF5FB] via-[#D6EAF8] to-[#AED6F1]'
-          } text-white mx-auto shadow-lg`}
+          className="flex flex-col items-center justify-center w-full py-8 px-4 mb-12 text-center transition-transform duration-700 ease-in-out rounded-lg bg-gradient-to-br from-[#2C3E50] via-[#34495E] to-[#212F3C] text-white mx-auto shadow-lg"
           style={{ maxWidth: '75%' }}
         >
-          <div className={`w-full ${textColors[theme]}`}>
-            <div
-              className={`mb-4 text-xl ${
-                theme === 'dark' ? textColors.dark : textColors.light
-              }`}
-            >
+          <div className="w-full text-[#ECF0F1]">
+            <div className="mb-4 text-xl text-[#ECF0F1]">
               I love to solve complex problems with software and proving myself
               wrong. <br></br> When I'm not trying to see the world I'm in
               Portland, Oregon, USA.
@@ -82,9 +61,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Email"
-                className={` ${
-                  theme === 'dark' ? textColors.dark : textColors.light
-                }  group`}
+                className="text-[#ECF0F1] group"
               >
                 <FaEnvelope className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
               </a>
@@ -93,9 +70,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className={` ${
-                  theme === 'dark' ? textColors.dark : textColors.light
-                }  group`}
+                className="text-[#ECF0F1] group"
               >
                 <FaLinkedin className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
               </a>
@@ -104,9 +79,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className={` ${
-                  theme === 'dark' ? textColors.dark : textColors.light
-                }  group`}
+                className="text-[#ECF0F1] group"
               >
                 <FaGithub className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
               </a>
@@ -115,9 +88,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Stack Overflow"
-                className={` ${
-                  theme === 'dark' ? textColors.dark : textColors.light
-                }  group`}
+                className="text-[#ECF0F1] group"
               >
                 <FaStackOverflow className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
               </a>
@@ -126,9 +97,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Twitter"
-                className={` ${
-                  theme === 'dark' ? textColors.dark : textColors.light
-                }  group`}
+                className="text-[#ECF0F1] group"
               >
                 <FaSquareXTwitter className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
               </a>
@@ -137,9 +106,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Medium"
-                className={` ${
-                  theme === 'dark' ? textColors.dark : textColors.light
-                }  group`}
+                className="text-[#ECF0F1] group"
               >
                 <FaMedium className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
               </a>
@@ -148,9 +115,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Threads"
-                className={` ${
-                  theme === 'dark' ? textColors.dark : textColors.light
-                }  group`}
+                className="text-[#ECF0F1] group"
               >
                 <FaMeta className="text-4xl hover:text-5xl transition-all duration-300 transform group-hover:scale-125" />
               </a>

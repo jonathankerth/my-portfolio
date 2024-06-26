@@ -1,15 +1,22 @@
 import '../../globals.css'
 import { Analytics } from '@vercel/analytics/react'
-import { ThemeProvider } from 'next-themes'
-import { PageTransition } from 'next-page-transitions'
+import { AnimatePresence, motion } from 'framer-motion'
 
 export default function App({ Component, pageProps, router }) {
   return (
-    <PageTransition timeout={300} classNames="page-transition">
-      <ThemeProvider attribute="class" enableSystem={true} defaultTheme="light">
-        <Component {...pageProps} />
-        <Analytics />
-      </ThemeProvider>
-    </PageTransition>
+    <>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={router.route}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.3 }}
+        >
+          <Component {...pageProps} />
+        </motion.div>
+      </AnimatePresence>
+      <Analytics />
+    </>
   )
 }

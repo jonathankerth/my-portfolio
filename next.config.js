@@ -1,16 +1,27 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
+module.exports = {
   images: {
-    domains: [
-      'api.checklyhq.com',
-      'mypublicucket.s3.us-west-2.amazonaws.com',
-      'catmemes.s3.us-west-2.amazonaws.com',
-      'memedisplay.s3.us-west-2.amazonaws.com',
-      'https://mypublicucket.s3.us-west-2.amazonaws.com',
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'api.checklyhq.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'mypublicucket.s3.us-west-2.amazonaws.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'catmemes.s3.us-west-2.amazonaws.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'memedisplay.s3.us-west-2.amazonaws.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'mypublicucket.s3.us-west-2.amazonaws.com',
+      },
     ],
     dangerouslyAllowSVG: true,
   },
 }
-
-module.exports = nextConfig

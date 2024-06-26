@@ -1,22 +1,15 @@
 import Head from 'next/head'
-import { useTheme } from 'next-themes'
 import Layout from '../components/Layout'
 import { motion } from 'framer-motion'
 
 export default function Resume() {
-  const { theme } = useTheme()
-
   return (
     <Layout>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className={`min-h-screen ${
-          theme === 'dark'
-            ? 'bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C]'
-            : 'bg-gradient-to-b from-[#D6EAF8] to-[#AED6F1]'
-        } flex flex-col justify-center items-center px-4`}
+        className="min-h-screen bg-gradient-to-b from-[#2C3E50] via-[#34495E] to-[#212F3C] flex flex-col justify-center items-center px-4"
       >
         <Head>
           <title>My Resume</title>

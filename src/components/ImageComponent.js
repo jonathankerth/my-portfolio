@@ -18,6 +18,7 @@ const ImageComponent = ({ imageUrl }) => {
         className="rounded-full cursor-pointer mx-auto transition-transform duration-700 ease-in-out transform hover:scale-150"
         priority
         onClick={handleImageClick}
+        style={{ objectFit: 'cover' }}
       />
     </div>
   )
