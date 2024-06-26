@@ -62,12 +62,17 @@ const ImageCarousel = () => {
   }
 
   return (
-    <div className="flex justify-center items-center p-4 rounded-lg bg-white bg-opacity-40">
-      <Carousel {...carouselProps}>
+    <div className="flex justify-center items-center p-4 rounded-lg bg-white bg-opacity-40 w-full">
+      <Carousel {...carouselProps} className="w-full">
         {images.map((image, index) => (
-          <div key={index} className="flex justify-center items-center">
+          <div key={index} className="flex justify-center items-center w-full">
             <div
-              style={{ position: 'relative', width: '500px', height: '375px' }}
+              style={{
+                position: 'relative',
+                width: '100%',
+                height: '0',
+                paddingBottom: '75%',
+              }}
             >
               <Image
                 src={image.src}

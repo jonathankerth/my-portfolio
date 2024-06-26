@@ -64,7 +64,7 @@ export default function About() {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col items-center justify-center flex-1 py-12 mt-10"
+          className="flex flex-col items-center justify-center w-full flex-1 text-center mt-20 mb-20"
         >
           <motion.h1
             initial={{ y: -50, opacity: 0 }}
@@ -78,15 +78,15 @@ export default function About() {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="rounded-lg p-4 mb-6 max-w-2xl bg-[#2C3E50] text-white"
+            className="rounded-lg p-4 mb-6 max-w-2xl w-5/6 bg-[#2C3E50] text-white"
           >
-            <p className="text-xl leading-6 text-center mb-4">
+            <p className="text-lg md:text-xl leading-6 text-center mb-4">
               Tea and a relentless curiosity keep me running. I live in
               Portland, Oregon, USA. I specialize in building web applications
               with JavaScript and Python technologies. I love to learn and try
               to challenge myself with an endless flow of personal projects.
             </p>
-            <p className="text-xl leading-6 text-center mb-4">
+            <p className="text-lg md:text-xl leading-6 text-center mb-4">
               Outside of work, I'm a 3D printer hobbyist, husband, general nerd,
               home chef, pet parent, and traveler.
             </p>
@@ -97,7 +97,7 @@ export default function About() {
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="w-full max-w-4xl max-h-1xl mx-auto mb-16"
+          className="w-full max-w-4xl mx-auto mb-16 px-4"
         >
           <ImageCarousel />
         </motion.div>
