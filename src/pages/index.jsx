@@ -283,7 +283,7 @@ export default function Home() {
 
       {/* About Section */}
       <Section id="about">
-        <motion.div className="rounded-lg p-4 mb-6 max-w-2xl w-5/6 bg-[#2C3E50] text-white">
+        <motion.div className="rounded-lg p-4 mb-6 max-w-2xl w-5/6 bg-white/10 backdrop-blur-md text-white shadow-lg mx-auto">
           <p className="text-lg md:text-xl leading-6 text-center mb-4">
             Tea and a relentless curiosity keep me running. I live in Portland,
             Oregon, USA. I specialize in building web applications with
@@ -300,10 +300,13 @@ export default function Home() {
 
       {/* Projects Section */}
       <Section id="projects">
-        <AnimatedText
-          text="My Projects"
-          className="text-2xl font-bold mb-8 text-white"
-        />
+        <motion.div className="rounded-lg p-4 mb-6 max-w-2xl w-5/6 bg-white/10 backdrop-blur-md text-white shadow-lg mx-auto">
+          <p className="text-lg md:text-xl leading-6 text-center mb-4">
+            I love building things. I'm always working on something new and
+            looking to colaborate so if you want to fork any of these repos or
+            work on something together please reach out!
+          </p>
+        </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
@@ -313,23 +316,18 @@ export default function Home() {
 
       {/* Cats Section */}
       <Section id="cats">
-        <AnimatedText
-          text="Cat Memes"
-          className="text-2xl font-bold mb-8 text-white"
-        />
         <div className="flex flex-col items-center justify-center w-full py-12">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="bg-gradient-to-br from-[#2C3E50] via-[#34495E] to-[#212F3C] rounded-lg p-8 mb-8 max-w-4xl mx-auto text-center shadow-lg"
+            className="rounded-lg p-8 mb-8 max-w-4xl w-5/6 bg-white/10 backdrop-blur-md text-white shadow-lg mx-auto text-center"
           >
-            <p className="text-[#ECF0F1] text-lg mb-4">
-              This page was built because I love cats, memes, and cat memes. I
-              also wanted to show my knowledge of AWS S3 buckets and IAM user
-              policies.
+            <p className="text-lg md:text-xl leading-6 text-center mb-4">
+              I love cats, memes, and cat memes. I also wanted to show my
+              knowledge of AWS S3 buckets and IAM user policies.
             </p>
-            <p className="text-[#ECF0F1] text-lg mb-4">
+            <p className="text-lg md:text-xl leading-6 text-center mb-4">
               Upload a cat meme to my S3 bucket and I'll display my favorites!
             </p>
             <form onSubmit={handleSubmit} className="space-y-6 pt-4">
