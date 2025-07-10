@@ -3,16 +3,8 @@ import Image from 'next/image'
 
 const ProjectCard = ({ project }) => {
   return (
-    <motion.div
-      whileHover={{ scale: 1.03 }}
-      whileTap={{ scale: 0.97 }}
-      className="flex flex-col rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 ease-in-out hover:shadow-xl bg-[#2D3748] text-[#F0F4F8]"
-    >
-      <motion.div
-        whileHover={{ scale: 1.05 }}
-        transition={{ duration: 0.3 }}
-        className="relative h-64 w-full"
-      >
+    <div className="flex flex-col rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 ease-in-out hover:shadow-xl bg-[#2D3748] text-[#F0F4F8]">
+      <div className="relative h-64 w-full">
         {project.image && (
           <Image
             src={project.image}
@@ -29,7 +21,7 @@ const ProjectCard = ({ project }) => {
             className="w-full h-full rounded-t-lg"
           />
         )}
-      </motion.div>
+      </div>
       <div className="p-6 flex-1 flex flex-col">
         <h3 className="text-xl font-bold mb-2">{project.title}</h3>
         <p className="text-gray-300 mb-4 flex-grow">{project.description}</p>
@@ -58,7 +50,7 @@ const ProjectCard = ({ project }) => {
           )}
         </div>
       </div>
-    </motion.div>
+    </div>
   )
 }
 

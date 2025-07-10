@@ -42,7 +42,7 @@ export default function Home() {
       description:
         'A real-time weather application developed using Next.js and styled with Tailwind CSS. It fetches current weather data from the OpenWeather API and is deployed on Vercel for high availability.',
       link: 'https://github.com/jonathankerth/weather-app',
-      link2: 'https://www.climatecue.com/',
+      link2: 'https://weather-app-woad-two.vercel.app/',
       image:
         'https://mypublicucket.s3.us-west-2.amazonaws.com/weather-home.png',
     },
