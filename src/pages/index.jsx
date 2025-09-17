@@ -41,7 +41,7 @@ export default function Home() {
       id: 0,
       title: 'The Name Nursery',
       description:
-        'An AI-powered baby name discovery platform built with Next.js 15 and TypeScript. Features Firebase authentication, Google Cloud integration, automated blog generation every 3 days, and comprehensive SEO optimization with structured data markup. Includes a mobile-first wheel-based interface for exploring culturally diverse names with personalized recommendations based on origins, personality traits, and inspirational themes.',
+        'An AI-powered baby name discovery platform built with Next.js 15 and TypeScript. Features Firebase authentication, Google Cloud integration, openAI API, Google AdSense, and comprehensive SEO optimization with structured data markup. Includes a mobile-first wheel-based interface for exploring culturally diverse names with personalized recommendations based on origins, personality traits, and inspirational themes.',
       link: 'https://github.com/jonathankerth/the-name-nursery',
       link2: 'https://www.thenamenursery.com/',
       iframe: 'https://www.thenamenursery.com/',
