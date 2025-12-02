@@ -237,7 +237,7 @@ export default function Home() {
   return (
     <SPALayout>
       <Head>
-        <title>Jonathan Kerth's Portfolio</title>
+        <title>Jonathan Gallardo-Kerth's Portfolio</title>
         <meta
           name="description"
           content="A portfolio showcasing my skills and projects as a software engineer"
@@ -593,7 +593,7 @@ export default function Home() {
               src="https://jonathankerth.github.io/resume/"
               className="border-0 rounded-xl w-full shadow-lg"
               style={{ aspectRatio: '11/16', height: '1000px' }}
-              title="Jonathan Kerth Resume"
+              title="Jonathan Gallardo-Kerth's Resume"
             />
           </div>
         </motion.div>
