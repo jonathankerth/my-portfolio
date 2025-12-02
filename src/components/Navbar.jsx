@@ -84,7 +84,7 @@ const Navbar = () => {
         <div className="flex items-center space-x-3">
           <FaCat className="text-3xl text-white drop-shadow-lg animate-bounce" />
           <span className="text-xl font-extrabold text-white tracking-wide drop-shadow-lg hidden sm:inline">
-            Jonathan Kerth
+            Jonathan Gallardo-Kerth
           </span>
         </div>
         {/* Hamburger */}

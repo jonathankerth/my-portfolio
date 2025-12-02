@@ -3,7 +3,6 @@ import { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import SPALayout from '../components/SPALayout'
-import ImageComponent from '../components/ImageComponent'
 import ImageCarousel from '../components/ImageCarousel'
 import Section from '../components/Section'
 import SectionDivider from '../components/SectionDivider'
@@ -25,8 +24,7 @@ export default function Home() {
   const [uploadMessage, setUploadMessage] = useState('')
   const [isLoading, setIsLoading] = useState(false)
 
-  const imageUrl =
-    'https://mypublicucket.s3.us-west-2.amazonaws.com/DALL%C2%B7E+2023-08-18+15.22.22.png'
+  const catIconPath = '/favicon.svg'
 
   const favoriteMemes = [
     'https://memedisplay.s3.us-west-2.amazonaws.com/cat+and+kid.jpeg',
@@ -244,8 +242,8 @@ export default function Home() {
           name="description"
           content="A portfolio showcasing my skills and projects as a software engineer"
         />
-        <link rel="icon" href={imageUrl} />
-        <link rel="apple-touch-icon" href={imageUrl} />
+        <link rel="icon" href={catIconPath} />
+        <link rel="apple-touch-icon" href={catIconPath} />
         <meta name="theme-color" content="#2563eb" />
       </Head>
 
@@ -273,13 +271,6 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-          >
-            <ImageComponent imageUrl={imageUrl} />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
             className="flex flex-wrap items-center justify-center gap-6 mt-12"
           >
             <SocialLink
