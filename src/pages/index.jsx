@@ -14,6 +14,7 @@ import {
   FaStackOverflow,
   FaEnvelope,
   FaMedium,
+  FaDownload,
 } from 'react-icons/fa'
 import { FaMeta, FaSquareXTwitter } from 'react-icons/fa6'
 
@@ -585,14 +586,28 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="text-center space-y-8"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-            Resume
-          </h2>
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20 shadow-2xl">
+          <div className="mb-6 space-y-3">
+            <h2 className="text-4xl md:text-5xl font-bold text-white text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Resume
+            </h2>
+            <div className="flex justify-end">
+              <a
+                href="https://mypublicucket.s3.us-west-2.amazonaws.com/Jonathan+GK+Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-white/10 border border-white/20 text-sm text-white font-semibold transition-all duration-300 hover:bg-white/20 hover:border-white/40 backdrop-blur"
+                download
+              >
+                <FaDownload className="text-base text-blue-200 group-hover:text-white" />
+                <span>Download</span>
+              </a>
+            </div>
+          </div>
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20 shadow-2xl max-w-4xl mx-auto">
             <iframe
-              src="https://jonathankerth.github.io/resume/"
+              src="https://jonathankerth.github.io/resume_plain/"
               className="border-0 rounded-xl w-full shadow-lg"
-              style={{ aspectRatio: '11/16', height: '1000px' }}
+              style={{ aspectRatio: '8.5 / 11', width: '100%' }}
               title="Jonathan Gallardo-Kerth's Resume"
             />
           </div>
