@@ -590,7 +590,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold text-white text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
               Resume
             </h2>
-            <div className="flex justify-end">
+            <div className="flex justify-center">
               <a
                 href="https://mypublicucket.s3.us-west-2.amazonaws.com/Jonathan+GK+Resume.pdf"
                 target="_blank"
