@@ -163,8 +163,14 @@ export default function Home() {
         { name: 'Material UI', url: 'https://mui.com/' },
         { name: 'Tailwind CSS', url: 'https://tailwindcss.com/' },
         { name: 'Figma', url: 'https://www.figma.com/' },
-        { name: 'HTML', url: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
-        { name: 'CSS', url: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
+        {
+          name: 'HTML',
+          url: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
+        },
+        {
+          name: 'CSS',
+          url: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
+        },
         { name: 'SCSS', url: 'https://sass-lang.com/' },
         {
           name: 'Progressive Web Apps (PWAs)',
@@ -185,7 +191,10 @@ export default function Home() {
           name: 'Spotify API',
           url: 'https://developer.spotify.com/documentation/web-api',
         },
-        { name: 'Discord API', url: 'https://discord.com/developers/docs/intro' },
+        {
+          name: 'Discord API',
+          url: 'https://discord.com/developers/docs/intro',
+        },
         { name: 'Stripe', url: 'https://stripe.com/docs' },
       ],
     },
@@ -202,10 +211,16 @@ export default function Home() {
         { name: 'RDS', url: 'https://aws.amazon.com/rds/' },
         { name: 'IAM', url: 'https://aws.amazon.com/iam/' },
         { name: 'CloudWatch', url: 'https://aws.amazon.com/cloudwatch/' },
-        { name: 'CloudFormation', url: 'https://aws.amazon.com/cloudformation/' },
+        {
+          name: 'CloudFormation',
+          url: 'https://aws.amazon.com/cloudformation/',
+        },
         { name: 'Terraform', url: 'https://www.terraform.io/' },
         { name: 'Snowflake', url: 'https://www.snowflake.com/' },
-        { name: 'SQL', url: 'https://www.postgresql.org/docs/current/sql.html' },
+        {
+          name: 'SQL',
+          url: 'https://www.postgresql.org/docs/current/sql.html',
+        },
         { name: 'JSON', url: 'https://www.json.org/json-en.html' },
         { name: 'MongoDB', url: 'https://www.mongodb.com/' },
         { name: 'Docker', url: 'https://www.docker.com/' },
@@ -226,7 +241,10 @@ export default function Home() {
         { name: 'ESLint', url: 'https://eslint.org/' },
         { name: 'Prettier', url: 'https://prettier.io/' },
         { name: 'Jira', url: 'https://www.atlassian.com/software/jira' },
-        { name: 'Confluence', url: 'https://www.atlassian.com/software/confluence' },
+        {
+          name: 'Confluence',
+          url: 'https://www.atlassian.com/software/confluence',
+        },
         { name: 'Git', url: 'https://git-scm.com/' },
         { name: 'Jest', url: 'https://jestjs.io/' },
         { name: 'Cucumber', url: 'https://cucumber.io/' },
@@ -320,6 +338,14 @@ export default function Home() {
           >
             Full-Stack Developer
           </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.45 }}
+            className="text-sm md:text-base text-black/60 max-w-3xl mx-auto tracking-wide"
+          >
+            Portland, Oregon, USA
+          </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -396,8 +422,8 @@ export default function Home() {
               </div>
               <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-black/10">
                 <p className="text-lg text-black/70 leading-relaxed">
-                  Outside of work, I&apos;m a 3D printer hobbyist, husband, general
-                  nerd, home chef, pet parent, and traveler.
+                  Outside of work, I&apos;m a 3D printer hobbyist, husband,
+                  general nerd, home chef, pet parent, and traveler.
                 </p>
               </div>
             </motion.div>
@@ -428,9 +454,9 @@ export default function Home() {
             </h2>
             <div className="max-w-3xl mx-auto bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-black/10">
               <p className="text-lg text-black/70 leading-relaxed">
-                I love building things. I&apos;m always working on something new and
-                looking to collaborate so if you want to fork any of these repos
-                or work on something together please reach out!
+                I love building things. I&apos;m always working on something new
+                and looking to collaborate so if you want to fork any of these
+                repos or work on something together please reach out!
               </p>
             </div>
           </div>
@@ -505,7 +531,8 @@ export default function Home() {
               knowledge of AWS S3 buckets and IAM user policies.
             </p>
             <p className="text-lg text-black/70 leading-relaxed">
-              Upload a cat meme to my S3 bucket and I&apos;ll display my favorites!
+              Upload a cat meme to my S3 bucket and I&apos;ll display my
+              favorites!
             </p>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
@@ -669,7 +696,7 @@ export default function Home() {
               src="https://jonathankerth.github.io/resume_plain/"
               className="border-0 rounded-xl w-full shadow-lg"
               style={{ aspectRatio: '8.5 / 11', width: '100%' }}
-              title="Jonathan Gallardo-Kerth&apos;s Resume"
+              title="Jonathan Gallardo-Kerth's Resume"
             />
           </div>
         </motion.div>
