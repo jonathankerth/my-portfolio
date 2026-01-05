@@ -12,7 +12,7 @@ const Section = ({ children, id, className = '', variant = 'default' }) => {
       container:
         'min-h-screen flex flex-col justify-center items-center px-4 py-16',
       wrapper:
-        'w-full max-w-6xl bg-white/10 backdrop-blur-md rounded-2xl shadow-2xl p-8 border border-white/20',
+        'w-full max-w-6xl bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg p-8 border border-black/10',
     },
     hero: {
       container:
@@ -28,7 +28,7 @@ const Section = ({ children, id, className = '', variant = 'default' }) => {
       container:
         'min-h-[80vh] flex flex-col justify-center items-center px-4 py-12',
       wrapper:
-        'w-full max-w-5xl bg-white/10 backdrop-blur-md rounded-2xl shadow-2xl p-8 border border-white/20',
+        'w-full max-w-5xl bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg p-8 border border-black/10',
     },
   }
 

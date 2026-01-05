@@ -7,8 +7,8 @@ const Layout = ({ children }) => {
   return (
     <div className="relative min-h-screen animated-gradient overflow-hidden">
       {/* Blurred decorative shapes */}
-      <div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-purple-500 rounded-full blur-3xl opacity-30 z-0"></div>
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-400 rounded-full blur-2xl opacity-20 z-0"></div>
+      <div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-white/5 rounded-full blur-3xl opacity-60 z-0"></div>
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-white/5 rounded-full blur-2xl opacity-40 z-0"></div>
       <Navbar />
       <main className="relative z-10 flex flex-col items-center justify-center min-h-screen">
         <div

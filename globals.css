@@ -8,7 +8,8 @@ html {
 }
 
 body {
-  /* background-color: #2c3e50; */
+  background-color: #f4f1ea;
+  color: #111;
   overflow-x: hidden;
 }
 
@@ -50,16 +51,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #2c3e50;
+  background: #efe9df;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #34495e;
+  background: #c9c2b6;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #415b76;
+  background: #b4ad9f;
 }
 
 /* Navigation transitions */
@@ -75,7 +76,7 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #3498db;
+  background-color: rgba(255, 255, 255, 0.7);
   transition: width 0.3s ease;
 }
 
@@ -173,9 +174,17 @@ body {
 }
 
 .animated-gradient {
-  background: linear-gradient(270deg, #2563eb, #7c3aed, #1e293b, #0ea5e9);
-  background-size: 800% 800%;
-  animation: gradient-move 18s ease-in-out infinite;
+  background:
+    radial-gradient(circle at top, rgba(0, 0, 0, 0.06) 0%, transparent 55%),
+    radial-gradient(circle at bottom, rgba(0, 0, 0, 0.04) 0%, transparent 60%),
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.015),
+      rgba(0, 0, 0, 0.015) 1px,
+      transparent 1px,
+      transparent 6px
+    ),
+    #f4f1ea;
 }
 
 /* Enhanced glassmorphism effects */

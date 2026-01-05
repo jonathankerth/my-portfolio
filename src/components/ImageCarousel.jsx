@@ -43,7 +43,7 @@ const ImageCarousel = () => {
           type="button"
           onClick={onClickHandler}
           title={label}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full z-10"
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white/80 text-black p-2 rounded-full z-10 border border-black/10"
         >
           &lsaquo;
         </button>
@@ -54,7 +54,7 @@ const ImageCarousel = () => {
           type="button"
           onClick={onClickHandler}
           title={label}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full z-10"
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white/80 text-black p-2 rounded-full z-10 border border-black/10"
         >
           &rsaquo;
         </button>

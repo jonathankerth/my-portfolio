@@ -35,7 +35,7 @@ const ScrollToTop = () => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 p-4 bg-blue-500 text-white rounded-full shadow-lg z-50"
+          className="fixed bottom-8 right-8 p-4 bg-black text-white rounded-full shadow-lg z-50"
         >
           <FaArrowUp />
         </motion.button>

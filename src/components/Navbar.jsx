@@ -6,14 +6,13 @@ const navLinks = [
   { href: '#home', label: 'Home' },
   { href: '#about', label: 'About Me' },
   { href: '#projects', label: 'Projects' },
+  { href: '#tech-stack', label: 'Tech Stack' },
   { href: '#cats', label: 'Cat Memes' },
   { href: '#resume', label: 'Resume' },
 ]
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isVisible, setIsVisible] = useState(true)
-  const [lastScrollPosition, setLastScrollPosition] = useState(0)
   const [activeSection, setActiveSection] = useState('home')
 
   const toggleMobileMenu = () => {
@@ -22,16 +21,9 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollPosition = window.pageYOffset
-
       if (isMobileMenuOpen) {
         setIsMobileMenuOpen(false)
       }
-
-      setIsVisible(
-        lastScrollPosition > currentScrollPosition || currentScrollPosition < 10
-      )
-      setLastScrollPosition(currentScrollPosition)
 
       const sections = navLinks.map((link) => link.href.substring(1))
       for (const section of sections.reverse()) {
@@ -48,7 +40,7 @@ const Navbar = () => {
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [lastScrollPosition, isMobileMenuOpen])
+  }, [isMobileMenuOpen])
 
   const scrollToSection = (e, href) => {
     e.preventDefault()
@@ -69,21 +61,13 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 z-50 w-full transition-all duration-200 ease-in-out ${
-        isVisible
-          ? 'bg-opacity-80 shadow-xl backdrop-blur-lg'
-          : 'opacity-0 pointer-events-none'
-      } bg-gradient-to-r from-blue-700 via-purple-700 to-indigo-900 px-4 py-2 md:px-8`}
-      style={{
-        borderBottom: '1.5px solid rgba(255,255,255,0.08)',
-        boxShadow: '0 4px 32px 0 rgba(80,80,255,0.10)',
-      }}
+      className="fixed top-0 left-0 z-50 w-full bg-white/80 px-4 py-2 md:px-8 border-b border-black/10 shadow-xl backdrop-blur-lg transition-colors duration-200"
     >
       <div className="flex justify-between items-center max-w-6xl mx-auto">
         {/* Logo */}
         <div className="flex items-center space-x-3">
-          <FaCat className="text-3xl text-white drop-shadow-lg animate-bounce" />
-          <span className="text-xl font-extrabold text-white tracking-wide drop-shadow-lg hidden sm:inline">
+          <FaCat className="text-3xl text-black/90 drop-shadow-lg animate-bounce" />
+          <span className="text-xl font-extrabold text-black tracking-wide drop-shadow-lg hidden sm:inline">
             Jonathan Gallardo-Kerth
           </span>
         </div>
@@ -91,12 +75,12 @@ const Navbar = () => {
         <div className="md:hidden">
           <button
             onClick={toggleMobileMenu}
-            className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-black/20"
           >
             {isMobileMenuOpen ? (
-              <FaTimes className="text-2xl text-white" />
+              <FaTimes className="text-2xl text-black" />
             ) : (
-              <FaBars className="text-2xl text-white" />
+              <FaBars className="text-2xl text-black" />
             )}
           </button>
         </div>
@@ -107,11 +91,11 @@ const Navbar = () => {
               <a
                 href={href}
                 onClick={(e) => scrollToSection(e, href)}
-                className={`relative px-4 py-2 font-semibold text-white transition-all duration-300 rounded-lg group
+                className={`relative px-4 py-2 font-semibold text-black transition-all duration-300 rounded-lg group
                   ${
                     activeSection === href.substring(1)
-                      ? 'bg-white/20 shadow-md'
-                      : 'hover:bg-white/10'
+                      ? 'bg-black/5 shadow-sm'
+                      : 'hover:bg-black/5'
                   }
                 `}
               >
@@ -120,8 +104,8 @@ const Navbar = () => {
                   className={`absolute left-0 bottom-0 w-full h-1 rounded-b-lg transition-all duration-300
                     ${
                       activeSection === href.substring(1)
-                        ? 'bg-blue-400'
-                        : 'bg-transparent group-hover:bg-purple-400/60'
+                        ? 'bg-black/40'
+                        : 'bg-transparent group-hover:bg-black/20'
                     }
                   `}
                 ></span>
@@ -137,7 +121,7 @@ const Navbar = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.2 }}
-              className="flex flex-col absolute top-full left-0 right-0 bg-gradient-to-r from-blue-700 via-purple-700 to-indigo-900 mt-2 p-4 rounded-b-xl shadow-lg items-center space-y-2 md:hidden"
+              className="flex flex-col absolute top-full left-0 right-0 bg-white/90 mt-2 p-4 rounded-b-xl shadow-lg items-center space-y-2 md:hidden border border-black/10"
             >
               {navLinks.map(({ href, label }) => (
                 <motion.li
@@ -149,11 +133,11 @@ const Navbar = () => {
                   <a
                     href={href}
                     onClick={(e) => scrollToSection(e, href)}
-                    className={`relative px-4 py-2 font-semibold text-white transition-all duration-300 rounded-lg group
+                    className={`relative px-4 py-2 font-semibold text-black transition-all duration-300 rounded-lg group
                       ${
                         activeSection === href.substring(1)
-                          ? 'bg-white/20 shadow-md'
-                          : 'hover:bg-white/10'
+                          ? 'bg-black/5 shadow-sm'
+                          : 'hover:bg-black/5'
                       }
                     `}
                   >
@@ -162,8 +146,8 @@ const Navbar = () => {
                       className={`absolute left-0 bottom-0 w-full h-1 rounded-b-lg transition-all duration-300
                         ${
                           activeSection === href.substring(1)
-                            ? 'bg-blue-400'
-                            : 'bg-transparent group-hover:bg-purple-400/60'
+                            ? 'bg-black/40'
+                            : 'bg-transparent group-hover:bg-black/20'
                         }
                       `}
                     ></span>

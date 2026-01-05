@@ -145,41 +145,93 @@ export default function Home() {
     },
   ]
 
-  const techStack = [
-    { name: 'React', url: 'https://reactjs.org/' },
-    { name: 'React Native', url: 'https://reactnative.dev/' },
-    { name: 'Next.js', url: 'https://nextjs.org/' },
-    { name: 'Node.js', url: 'https://nodejs.org/' },
-    { name: 'Angular', url: 'https://angular.io/' },
-    { name: 'Express', url: 'https://expressjs.com/' },
-    { name: 'MongoDB', url: 'https://www.mongodb.com/' },
-    { name: 'Material UI', url: 'https://mui.com/' },
-    { name: 'Bootstrap', url: 'https://getbootstrap.com/' },
-    { name: 'Tailwind CSS', url: 'https://tailwindcss.com/' },
-    { name: 'Redux', url: 'https://redux.js.org/' },
-    { name: 'Jest', url: 'https://jestjs.io/' },
-    { name: 'Cucumber', url: 'https://cucumber.io/' },
+  const techStackSections = [
     {
-      name: 'Progressive Web Apps (PWAs)',
-      url: 'https://web.dev/progressive-web-apps/',
+      title: 'Frontend',
+      items: [
+        { name: 'React', url: 'https://react.dev/' },
+        { name: 'Next.js', url: 'https://nextjs.org/' },
+        { name: 'Angular', url: 'https://angular.io/' },
+        { name: 'React Native', url: 'https://reactnative.dev/' },
+        { name: 'Vite', url: 'https://vitejs.dev/' },
+        { name: 'TypeScript', url: 'https://www.typescriptlang.org/' },
+        {
+          name: 'JavaScript',
+          url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+        },
+        { name: 'Redux Toolkit', url: 'https://redux-toolkit.js.org/' },
+        { name: 'Material UI', url: 'https://mui.com/' },
+        { name: 'Tailwind CSS', url: 'https://tailwindcss.com/' },
+        { name: 'Figma', url: 'https://www.figma.com/' },
+        { name: 'HTML', url: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
+        { name: 'CSS', url: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
+        { name: 'SCSS', url: 'https://sass-lang.com/' },
+        {
+          name: 'Progressive Web Apps (PWAs)',
+          url: 'https://web.dev/progressive-web-apps/',
+        },
+      ],
     },
-    { name: 'HTML', url: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
-    { name: 'CSS', url: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
-    { name: 'SCSS', url: 'https://sass-lang.com/' },
     {
-      name: 'JavaScript',
-      url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+      title: 'Backend & APIs',
+      items: [
+        { name: 'Node.js', url: 'https://nodejs.org/' },
+        { name: 'Express', url: 'https://expressjs.com/' },
+        { name: 'Python', url: 'https://www.python.org/' },
+        { name: 'Flask', url: 'https://flask.palletsprojects.com/' },
+        { name: 'Firebase', url: 'https://firebase.google.com/' },
+        { name: 'OAuth', url: 'https://oauth.net/2/' },
+        {
+          name: 'Spotify API',
+          url: 'https://developer.spotify.com/documentation/web-api',
+        },
+        { name: 'Discord API', url: 'https://discord.com/developers/docs/intro' },
+        { name: 'Stripe', url: 'https://stripe.com/docs' },
+      ],
     },
-    { name: 'TypeScript', url: 'https://www.typescriptlang.org/' },
-    { name: 'Figma', url: 'https://www.figma.com/' },
     {
-      name: 'Google Analytics',
-      url: 'https://developers.google.com/analytics',
+      title: 'Cloud & Data',
+      items: [
+        { name: 'AWS', url: 'https://aws.amazon.com/' },
+        { name: 'AWS Amplify', url: 'https://aws.amazon.com/amplify/' },
+        { name: 'AWS Lambda', url: 'https://aws.amazon.com/lambda/' },
+        { name: 'API Gateway', url: 'https://aws.amazon.com/api-gateway/' },
+        { name: 'AWS Cognito', url: 'https://aws.amazon.com/cognito/' },
+        { name: 'S3', url: 'https://aws.amazon.com/s3/' },
+        { name: 'DynamoDB', url: 'https://aws.amazon.com/dynamodb/' },
+        { name: 'RDS', url: 'https://aws.amazon.com/rds/' },
+        { name: 'IAM', url: 'https://aws.amazon.com/iam/' },
+        { name: 'CloudWatch', url: 'https://aws.amazon.com/cloudwatch/' },
+        { name: 'CloudFormation', url: 'https://aws.amazon.com/cloudformation/' },
+        { name: 'Terraform', url: 'https://www.terraform.io/' },
+        { name: 'Snowflake', url: 'https://www.snowflake.com/' },
+        { name: 'SQL', url: 'https://www.postgresql.org/docs/current/sql.html' },
+        { name: 'JSON', url: 'https://www.json.org/json-en.html' },
+        { name: 'MongoDB', url: 'https://www.mongodb.com/' },
+        { name: 'Docker', url: 'https://www.docker.com/' },
+        { name: 'Kubernetes', url: 'https://kubernetes.io/' },
+        { name: 'GCP', url: 'https://cloud.google.com/' },
+      ],
     },
-    { name: 'Firebase', url: 'https://firebase.google.com/' },
-    { name: 'Python', url: 'https://www.python.org/' },
-    { name: 'JSON', url: 'https://www.json.org/json-en.html' },
-    { name: 'Heroku', url: 'https://www.heroku.com/' },
+    {
+      title: 'DevOps & Tooling',
+      items: [
+        { name: 'Jenkins', url: 'https://www.jenkins.io/' },
+        { name: 'Vercel', url: 'https://vercel.com/' },
+        { name: 'Heroku', url: 'https://www.heroku.com/' },
+        {
+          name: 'Google Analytics',
+          url: 'https://developers.google.com/analytics',
+        },
+        { name: 'ESLint', url: 'https://eslint.org/' },
+        { name: 'Prettier', url: 'https://prettier.io/' },
+        { name: 'Jira', url: 'https://www.atlassian.com/software/jira' },
+        { name: 'Confluence', url: 'https://www.atlassian.com/software/confluence' },
+        { name: 'Git', url: 'https://git-scm.com/' },
+        { name: 'Jest', url: 'https://jestjs.io/' },
+        { name: 'Cucumber', url: 'https://cucumber.io/' },
+      ],
+    },
   ]
 
   const handleFileChange = (e) => {
@@ -226,26 +278,26 @@ export default function Home() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="group relative p-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 hover:border-white/40 transition-all duration-300"
+      className="group relative p-3 rounded-full bg-white/70 backdrop-blur-sm border border-black/10 hover:border-black/20 transition-all duration-300"
       whileHover={{ scale: 1.1, y: -2 }}
       whileTap={{ scale: 0.95 }}
     >
-      <Icon className="text-2xl text-white group-hover:text-blue-300 transition-colors duration-300" />
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <Icon className="text-2xl text-black/80 group-hover:text-black transition-colors duration-300" />
+      <div className="absolute inset-0 bg-black/5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
     </motion.a>
   )
 
   return (
     <SPALayout>
       <Head>
-        <title>Jonathan Gallardo-Kerth's Portfolio</title>
+        <title>Jonathan Gallardo-Kerth&apos;s Portfolio</title>
         <meta
           name="description"
           content="A portfolio showcasing my skills and projects as a software engineer"
         />
         <link rel="icon" href={catIconPath} />
         <link rel="apple-touch-icon" href={catIconPath} />
-        <meta name="theme-color" content="#2563eb" />
+        <meta name="theme-color" content="#000000" />
       </Head>
 
       {/* Hero Section */}
@@ -258,13 +310,13 @@ export default function Home() {
         >
           <AnimatedText
             text="Welcome, I'm Jonathan Gallardo-Kerth"
-            className="text-5xl md:text-6xl font-bold mb-8 text-white bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
+            className="text-5xl md:text-6xl font-bold mb-8 text-black"
           />
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-black/70 max-w-3xl mx-auto leading-relaxed"
           >
             Full-Stack Developer
           </motion.p>
@@ -323,7 +375,7 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="text-center space-y-8"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-8">
             About Me
           </h2>
           <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -333,8 +385,8 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="space-y-6"
             >
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-                <p className="text-lg text-gray-300 leading-relaxed">
+              <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-black/10">
+                <p className="text-lg text-black/70 leading-relaxed">
                   Tea and a relentless curiosity keep me running. I live in
                   Portland, Oregon, USA. I specialize in building web
                   applications with JavaScript and Python technologies. I love
@@ -342,9 +394,9 @@ export default function Home() {
                   personal projects.
                 </p>
               </div>
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-                <p className="text-lg text-gray-300 leading-relaxed">
-                  Outside of work, I'm a 3D printer hobbyist, husband, general
+              <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-black/10">
+                <p className="text-lg text-black/70 leading-relaxed">
+                  Outside of work, I&apos;m a 3D printer hobbyist, husband, general
                   nerd, home chef, pet parent, and traveler.
                 </p>
               </div>
@@ -371,12 +423,12 @@ export default function Home() {
           className="text-center space-y-12"
         >
           <div className="space-y-6">
-            <h2 className="text-4xl md:text-5xl font-bold text-white bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold text-black">
               Featured Projects
             </h2>
-            <div className="max-w-3xl mx-auto bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-              <p className="text-lg text-gray-300 leading-relaxed">
-                I love building things. I'm always working on something new and
+            <div className="max-w-3xl mx-auto bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-black/10">
+              <p className="text-lg text-black/70 leading-relaxed">
+                I love building things. I&apos;m always working on something new and
                 looking to collaborate so if you want to fork any of these repos
                 or work on something together please reach out!
               </p>
@@ -400,26 +452,35 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="text-center space-y-8"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-8">
             Tech Stack
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {techStack.map((tech, index) => (
-              <motion.a
-                key={tech.name}
-                href={tech.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="group bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20 hover:border-white/40 transition-all duration-300 hover:bg-white/15"
-              >
-                <div className="text-white font-medium text-sm group-hover:text-blue-300 transition-colors duration-300">
-                  {tech.name}
+          <div className="space-y-8">
+            {techStackSections.map((section) => (
+              <div key={section.title} className="space-y-3">
+                <h3 className="text-sm font-semibold tracking-widest uppercase text-black/60 text-left">
+                  {section.title}
+                </h3>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                  {section.items.map((tech, index) => (
+                    <motion.a
+                      key={`${section.title}-${tech.name}`}
+                      href={tech.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      initial={{ opacity: 0, scale: 0.98 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.35, delay: index * 0.01 }}
+                      whileHover={{ scale: 1.03, y: -3 }}
+                      className="group bg-white/70 backdrop-blur-sm rounded-xl px-4 py-3 border border-black/10 hover:border-black/20 transition-all duration-300 hover:bg-white h-16 flex items-center justify-center"
+                    >
+                      <div className="text-black/80 font-medium text-sm group-hover:text-black transition-colors duration-300 text-center leading-snug">
+                        {tech.name}
+                      </div>
+                    </motion.a>
+                  ))}
                 </div>
-              </motion.a>
+              </div>
             ))}
           </div>
         </motion.div>
@@ -435,22 +496,22 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="text-center space-y-8"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 bg-gradient-to-r from-pink-400 to-orange-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-8">
             Cat Memes & AWS
           </h2>
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 space-y-6">
-            <p className="text-lg text-gray-300 leading-relaxed">
+          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 border border-black/10 space-y-6">
+            <p className="text-lg text-black/70 leading-relaxed">
               I love cats, memes, and cat memes. I also wanted to show my
               knowledge of AWS S3 buckets and IAM user policies.
             </p>
-            <p className="text-lg text-gray-300 leading-relaxed">
-              Upload a cat meme to my S3 bucket and I'll display my favorites!
+            <p className="text-lg text-black/70 leading-relaxed">
+              Upload a cat meme to my S3 bucket and I&apos;ll display my favorites!
             </p>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
                 <label
                   htmlFor="imageInput"
-                  className="cursor-pointer bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-blue-500/25 border border-blue-400/20"
+                  className="cursor-pointer bg-black text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-lg hover:bg-black/90 border border-black/10"
                 >
                   <span className="flex items-center gap-2">
                     <svg
@@ -480,7 +541,7 @@ export default function Home() {
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className="px-8 py-3 rounded-xl text-white font-semibold bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 disabled:from-gray-400 disabled:to-gray-500 shadow-lg hover:shadow-emerald-500/25 transition-all duration-300 border border-emerald-400/20"
+                    className="px-8 py-3 rounded-xl text-black font-semibold bg-white hover:bg-white/90 disabled:bg-white/60 shadow-lg transition-all duration-300 border border-black/10"
                   >
                     {isLoading ? (
                       <span className="flex items-center gap-2">
@@ -515,7 +576,7 @@ export default function Home() {
                 <motion.p
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="text-lg font-semibold text-green-400 bg-green-400/10 rounded-xl p-4 border border-green-400/20"
+                  className="text-lg font-semibold text-black bg-white rounded-xl p-4 border border-black/10"
                 >
                   {uploadMessage}
                 </motion.p>
@@ -528,7 +589,7 @@ export default function Home() {
                 transition={{ duration: 0.5 }}
                 className="mt-8"
               >
-                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20 inline-block">
+                <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-4 border border-black/10 inline-block">
                   <Image
                     src={uploadedImageUrl}
                     alt="Uploaded Image"
@@ -558,7 +619,7 @@ export default function Home() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
-                className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/10 backdrop-blur-md border border-white/20"
+                className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/70 backdrop-blur-sm border border-black/10"
               >
                 <Image
                   src={meme}
@@ -587,7 +648,7 @@ export default function Home() {
           className="text-center space-y-8"
         >
           <div className="mb-6 space-y-3">
-            <h2 className="text-4xl md:text-5xl font-bold text-white text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold text-black text-center">
               Resume
             </h2>
             <div className="flex justify-center">
@@ -595,20 +656,20 @@ export default function Home() {
                 href="https://mypublicucket.s3.us-west-2.amazonaws.com/Jonathan+GK+Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-white/10 border border-white/20 text-sm text-white font-semibold transition-all duration-300 hover:bg-white/20 hover:border-white/40 backdrop-blur"
+                className="group inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-white/70 border border-black/10 text-sm text-black font-semibold transition-all duration-300 hover:bg-white hover:border-black/20 backdrop-blur"
                 download
               >
-                <FaDownload className="text-base text-blue-200 group-hover:text-white" />
+                <FaDownload className="text-base text-black/70 group-hover:text-black" />
                 <span>Download</span>
               </a>
             </div>
           </div>
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20 shadow-2xl max-w-4xl mx-auto">
+          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-4 border border-black/10 shadow-lg max-w-4xl mx-auto">
             <iframe
               src="https://jonathankerth.github.io/resume_plain/"
               className="border-0 rounded-xl w-full shadow-lg"
               style={{ aspectRatio: '8.5 / 11', width: '100%' }}
-              title="Jonathan Gallardo-Kerth's Resume"
+              title="Jonathan Gallardo-Kerth&apos;s Resume"
             />
           </div>
         </motion.div>

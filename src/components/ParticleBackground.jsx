@@ -25,7 +25,8 @@ const ParticleBackground = () => {
     })
     renderer.setSize(window.innerWidth, window.innerHeight)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-    containerRef.current.appendChild(renderer.domElement)
+    const container = containerRef.current
+    container?.appendChild(renderer.domElement)
 
     // Custom particle geometry
     const particleCount = 2000
@@ -35,10 +36,10 @@ const ParticleBackground = () => {
     const randomness = new Float32Array(particleCount * 3)
 
     const colorChoices = [
-      new THREE.Color('#2196F3'), // Blue
-      new THREE.Color('#64B5F6'), // Light Blue
-      new THREE.Color('#1976D2'), // Dark Blue
-      new THREE.Color('#BBDEFB'), // Very Light Blue
+      new THREE.Color('#111111'),
+      new THREE.Color('#2a2a2a'),
+      new THREE.Color('#555555'),
+      new THREE.Color('#777777'),
     ]
 
     for (let i = 0; i < particleCount; i++) {
@@ -174,7 +175,7 @@ const ParticleBackground = () => {
     return () => {
       window.removeEventListener('mousemove', handleMouseMove)
       window.removeEventListener('resize', handleResize)
-      containerRef.current?.removeChild(renderer.domElement)
+      container?.removeChild(renderer.domElement)
       geometry.dispose()
       material.dispose()
     }
@@ -184,7 +185,7 @@ const ParticleBackground = () => {
     <div
       ref={containerRef}
       className="fixed top-0 left-0 w-full h-full z-0"
-      style={{ opacity: 0.6 }}
+      style={{ opacity: 0.22 }}
     />
   )
 }

@@ -8,10 +8,10 @@ const ProjectCard = ({ project, index }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
       whileHover={{ y: -8 }}
-      className="group relative flex flex-col rounded-2xl overflow-hidden transition-all duration-500 ease-out hover:shadow-2xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 hover:border-white/40"
+      className="group relative flex flex-col rounded-2xl overflow-hidden transition-all duration-500 ease-out hover:shadow-2xl bg-white/70 backdrop-blur-sm border border-black/10 hover:border-black/20"
     >
       {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br fromF-blue-500/10 via-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
       {/* Image container with enhanced styling */}
       <div className="relative h-64 w-full overflow-hidden">
@@ -35,7 +35,7 @@ const ProjectCard = ({ project, index }) => {
 
         {/* Floating badge */}
         <div className="absolute top-4 right-4 z-20">
-          <div className="bg-white/20 backdrop-blur-md rounded-full px-3 py-1 text-xs font-medium text-white border border-white/30">
+          <div className="bg-white/80 backdrop-blur-sm rounded-full px-3 py-1 text-xs font-medium text-black border border-black/10">
             Featured
           </div>
         </div>
@@ -43,10 +43,10 @@ const ProjectCard = ({ project, index }) => {
 
       {/* Content section */}
       <div className="relative z-10 p-6 flex-1 flex flex-col">
-        <h3 className="text-xl font-bold mb-3 text-white group-hover:text-blue-300 transition-colors duration-300">
+        <h3 className="text-xl font-bold mb-3 text-black group-hover:text-black/70 transition-colors duration-300">
           {project.title}
         </h3>
-        <p className="text-gray-300 mb-6 flex-grow leading-relaxed text-sm opacity-90">
+        <p className="text-black/70 mb-6 flex-grow leading-relaxed text-sm">
           {project.description}
         </p>
 
@@ -58,7 +58,7 @@ const ProjectCard = ({ project, index }) => {
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 text-center text-sm shadow-lg hover:shadow-blue-500/25 border border-blue-400/20"
+            className="flex-1 bg-black text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 text-center text-sm shadow-lg hover:bg-black/90 border border-black/10"
           >
             <span className="flex items-center justify-center gap-2">
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -78,7 +78,7 @@ const ProjectCard = ({ project, index }) => {
               href={project.link2}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 text-center text-sm shadow-lg hover:shadow-emerald-500/25 border border-emerald-400/20"
+              className="flex-1 bg-white text-black font-semibold py-3 px-4 rounded-xl transition-all duration-300 text-center text-sm shadow-lg hover:bg-white/90 border border-black/10"
             >
               <span className="flex items-center justify-center gap-2">
                 <svg
