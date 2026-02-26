@@ -4,16 +4,14 @@ const AnimatedText = ({ text, className = '' }) => {
   const words = text.split(' ')
 
   const container = {
-    hidden: { opacity: 0 },
+    hidden: {},
     visible: (i = 1) => ({
-      opacity: 1,
       transition: { staggerChildren: 0.12, delayChildren: 0.04 * i },
     }),
   }
 
   const child = {
     visible: {
-      opacity: 1,
       x: 0,
       transition: {
         type: 'spring',
@@ -22,7 +20,6 @@ const AnimatedText = ({ text, className = '' }) => {
       },
     },
     hidden: {
-      opacity: 0,
       x: 20,
       transition: {
         type: 'spring',
@@ -44,6 +41,7 @@ const AnimatedText = ({ text, className = '' }) => {
       initial="hidden"
       animate="visible"
       className={className}
+      aria-hidden="true"
     >
       {words.map((word, index) => (
         <motion.span

@@ -8,7 +8,7 @@ export default function App({ Component, pageProps, router }) {
       <AnimatePresence mode="wait">
         <motion.div
           key={router.route}
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.3 }}
@@ -16,7 +16,7 @@ export default function App({ Component, pageProps, router }) {
           <Component {...pageProps} />
         </motion.div>
       </AnimatePresence>
-      <Analytics />
+      {process.env.NEXT_PUBLIC_VERCEL_URL && <Analytics />}
     </>
   )
 }

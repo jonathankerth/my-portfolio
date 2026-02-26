@@ -37,7 +37,7 @@ const SectionDivider = ({ variant = 'wave' }) => {
   }
 
   return (
-    <div className="relative h-32 w-full flex items-center justify-center">
+    <div className="relative h-32 w-full flex items-center justify-center" aria-hidden="true" role="presentation">
       {variants[variant]}
     </div>
   )

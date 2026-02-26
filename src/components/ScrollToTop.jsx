@@ -7,7 +7,7 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
+      if (window.scrollY > 300) {
         setIsVisible(true)
       } else {
         setIsVisible(false)
@@ -36,8 +36,9 @@ const ScrollToTop = () => {
           whileTap={{ scale: 0.9 }}
           onClick={scrollToTop}
           className="fixed bottom-8 right-8 p-4 bg-black text-white rounded-full shadow-lg z-50"
+          aria-label="Scroll to top"
         >
-          <FaArrowUp />
+          <FaArrowUp aria-hidden="true" />
         </motion.button>
       )}
     </AnimatePresence>

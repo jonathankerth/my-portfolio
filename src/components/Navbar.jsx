@@ -60,11 +60,14 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="fixed top-0 left-0 z-50 w-full bg-white/80 px-4 py-2 md:px-8 border-b border-black/10 shadow-xl backdrop-blur-lg transition-colors duration-200">
+    <nav
+      className="fixed top-0 left-0 z-50 w-full bg-white/80 px-4 py-2 md:px-8 border-b border-black/10 shadow-xl backdrop-blur-lg transition-colors duration-200"
+      aria-label="Main navigation"
+    >
       <div className="flex justify-between items-center max-w-6xl mx-auto">
         {/* Logo */}
         <div className="flex items-center space-x-3">
-          <FaCat className="text-3xl text-black/90 drop-shadow-lg animate-bounce" />
+          <FaCat className="text-3xl text-black/90 drop-shadow-lg animate-bounce" aria-hidden="true" />
           <span className="text-xl font-extrabold text-black tracking-wide drop-shadow-lg hidden sm:inline">
             Jonathan Gallardo-Kerth
           </span>
@@ -74,11 +77,14 @@ const Navbar = () => {
           <button
             onClick={toggleMobileMenu}
             className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-black/20"
+            aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             {isMobileMenuOpen ? (
-              <FaTimes className="text-2xl text-black" />
+              <FaTimes className="text-2xl text-black" aria-hidden="true" />
             ) : (
-              <FaBars className="text-2xl text-black" />
+              <FaBars className="text-2xl text-black" aria-hidden="true" />
             )}
           </button>
         </div>
@@ -89,6 +95,7 @@ const Navbar = () => {
               <a
                 href={href}
                 onClick={(e) => scrollToSection(e, href)}
+                aria-current={activeSection === href.substring(1) ? 'page' : undefined}
                 className={`relative px-4 py-2 font-semibold text-black transition-all duration-300 rounded-lg group
                   ${
                     activeSection === href.substring(1)
@@ -115,6 +122,7 @@ const Navbar = () => {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.ul
+              id="mobile-menu"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
@@ -124,13 +132,14 @@ const Navbar = () => {
               {navLinks.map(({ href, label }) => (
                 <motion.li
                   key={href}
-                  whileHover={{ scale: 1.13, color: '#fff' }}
+                  whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.97 }}
                   className="w-full"
                 >
                   <a
                     href={href}
                     onClick={(e) => scrollToSection(e, href)}
+                    aria-current={activeSection === href.substring(1) ? 'page' : undefined}
                     className={`relative px-4 py-2 font-semibold text-black transition-all duration-300 rounded-lg group
                       ${
                         activeSection === href.substring(1)

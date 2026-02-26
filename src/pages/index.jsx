@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import SPALayout from '../components/SPALayout'
@@ -300,32 +300,81 @@ export default function Home() {
       whileHover={{ scale: 1.1, y: -2 }}
       whileTap={{ scale: 0.95 }}
     >
-      <Icon className="text-2xl text-black/80 group-hover:text-black transition-colors duration-300" />
-      <div className="absolute inset-0 bg-black/5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <Icon className="text-2xl text-black/80 group-hover:text-black transition-colors duration-300" aria-hidden="true" />
+      <div className="absolute inset-0 bg-black/5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" />
     </motion.a>
   )
 
   return (
     <SPALayout>
       <Head>
-        <title>Jonathan Gallardo-Kerth&apos;s Portfolio</title>
+        <title>Jonathan Gallardo-Kerth | Full-Stack Developer Portfolio</title>
         <meta
           name="description"
-          content="A portfolio showcasing my skills and projects as a software engineer"
+          content="Full-Stack Developer based in Portland, Oregon. Specializing in React, Next.js, Python, and AWS. View my projects, tech stack, and resume."
         />
         <link rel="icon" href={catIconPath} />
         <link rel="apple-touch-icon" href={catIconPath} />
         <meta name="theme-color" content="#000000" />
+
+        {/* SEO: Canonical URL */}
+        <link rel="canonical" href="https://jonathankerth.com" />
+
+        {/* SEO: Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Jonathan Gallardo-Kerth | Full-Stack Developer" />
+        <meta property="og:description" content="Full-Stack Developer based in Portland, Oregon. Specializing in React, Next.js, Python, and AWS." />
+        <meta property="og:url" content="https://jonathankerth.com" />
+        <meta property="og:site_name" content="Jonathan Gallardo-Kerth Portfolio" />
+        <meta property="og:locale" content="en_US" />
+
+        {/* SEO: Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Jonathan Gallardo-Kerth | Full-Stack Developer" />
+        <meta name="twitter:description" content="Full-Stack Developer based in Portland, Oregon. Specializing in React, Next.js, Python, and AWS." />
+        <meta name="twitter:creator" content="@jonathankerth" />
+
+        {/* SEO: Additional meta */}
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Jonathan Gallardo-Kerth" />
+
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Person',
+              name: 'Jonathan Gallardo-Kerth',
+              url: 'https://jonathankerth.com',
+              jobTitle: 'Full-Stack Developer',
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'Portland',
+                addressRegion: 'OR',
+                addressCountry: 'US',
+              },
+              sameAs: [
+                'https://www.linkedin.com/in/jonathankerth',
+                'https://github.com/jonathankerth',
+                'https://stackoverflow.com/users/21791075/jonathan-kerth',
+                'https://twitter.com/jonathankerth',
+                'https://medium.com/@jonathanpkerth',
+              ],
+            }),
+          }}
+        />
       </Head>
 
       {/* Hero Section */}
       <Section id="home" variant="hero">
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          initial={{ scale: 0.95 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.6 }}
           className="text-center space-y-8"
         >
+          <h1 className="sr-only">Jonathan Gallardo-Kerth - Full-Stack Developer Portfolio</h1>
           <AnimatedText
             text="Welcome, I'm Jonathan Gallardo-Kerth"
             className="text-5xl md:text-6xl font-bold mb-8 text-black"
@@ -534,7 +583,7 @@ export default function Home() {
               Upload a cat meme to my S3 bucket and I&apos;ll display my
               favorites!
             </p>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6" aria-label="Upload a cat meme">
               <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
                 <label
                   htmlFor="imageInput"
@@ -546,6 +595,7 @@ export default function Home() {
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
+                      aria-hidden="true"
                     >
                       <path
                         strokeLinecap="round"
@@ -571,11 +621,12 @@ export default function Home() {
                     className="px-8 py-3 rounded-xl text-black font-semibold bg-white hover:bg-white/90 disabled:bg-white/60 shadow-lg transition-all duration-300 border border-black/10"
                   >
                     {isLoading ? (
-                      <span className="flex items-center gap-2">
+                      <span className="flex items-center gap-2" role="status">
                         <svg
                           className="animate-spin w-5 h-5"
                           fill="none"
                           viewBox="0 0 24 24"
+                          aria-hidden="true"
                         >
                           <circle
                             className="opacity-25"
@@ -650,14 +701,14 @@ export default function Home() {
               >
                 <Image
                   src={meme}
-                  alt={`Cat meme ${index + 1}`}
+                  alt={`Funny cat meme number ${index + 1}`}
                   width={300}
                   height={300}
                   className="rounded-2xl transition-transform duration-300 group-hover:scale-110"
                   style={{ objectFit: 'cover', width: 'auto', height: 'auto' }}
-                  priority
+                  loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" />
               </motion.div>
             ))}
           </motion.div>
@@ -685,8 +736,9 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-white/70 border border-black/10 text-sm text-black font-semibold transition-all duration-300 hover:bg-white hover:border-black/20 backdrop-blur"
                 download
+                aria-label="Download Jonathan Gallardo-Kerth's resume as PDF"
               >
-                <FaDownload className="text-base text-black/70 group-hover:text-black" />
+                <FaDownload className="text-base text-black/70 group-hover:text-black" aria-hidden="true" />
                 <span>Download</span>
               </a>
             </div>
@@ -697,6 +749,8 @@ export default function Home() {
               className="border-0 rounded-xl w-full shadow-lg"
               style={{ aspectRatio: '8.5 / 11', width: '100%' }}
               title="Jonathan Gallardo-Kerth's Resume"
+              loading="lazy"
+              sandbox="allow-scripts allow-same-origin"
             />
           </div>
         </motion.div>

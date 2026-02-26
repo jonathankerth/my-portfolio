@@ -83,6 +83,7 @@ const ParticleBackground = () => {
       vertexShader: `
         attribute float aScale;
         attribute vec3 aRandomness;
+        attribute vec3 color;
         varying vec3 vColor;
         uniform float uTime;
         uniform float uMouseX;
@@ -186,6 +187,8 @@ const ParticleBackground = () => {
       ref={containerRef}
       className="fixed top-0 left-0 w-full h-full z-0"
       style={{ opacity: 0.22 }}
+      aria-hidden="true"
+      role="presentation"
     />
   )
 }
