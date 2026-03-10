@@ -1,9 +1,9 @@
 import Head from 'next/head'
-import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { useState, useRef, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import SPALayout from '../components/SPALayout'
-import ImageCarousel from '../components/ImageCarousel'
 import Section from '../components/Section'
 import SectionDivider from '../components/SectionDivider'
 import AnimatedText from '../components/AnimatedText'
@@ -18,12 +18,49 @@ import {
 } from 'react-icons/fa'
 import { FaMeta, FaSquareXTwitter } from 'react-icons/fa6'
 
+const ImageCarousel = dynamic(() => import('../components/ImageCarousel'), {
+  ssr: false,
+  loading: () => (
+    <div
+      className="w-full bg-white/40 rounded-lg border border-black/10"
+      style={{ aspectRatio: '4 / 3' }}
+      aria-label="Loading photo carousel"
+      role="status"
+    />
+  ),
+})
+
 export default function Home() {
   const [uploadedImageUrl, setUploadedImageUrl] = useState(null)
   const [selectedFile, setSelectedFile] = useState(null)
   const [selectedFileName, setSelectedFileName] = useState(null)
   const [uploadMessage, setUploadMessage] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const [subtitleIndex, setSubtitleIndex] = useState(0)
+
+  const projectsContainerRef = useRef(null)
+
+  const subtitles = [
+    'Full-Stack Developer',
+    'React & Next.js Engineer',
+    'Python Developer',
+  ]
+
+  useEffect(() => {
+    const interval = setInterval(
+      () => setSubtitleIndex((i) => (i + 1) % subtitles.length),
+      2800
+    )
+    return () => clearInterval(interval)
+  }, [subtitles.length])
+
+  const scrollProjects = (direction) => {
+    const container = projectsContainerRef.current
+    if (!container) return
+    const cardWidth = 380 + 32 // card width + gap
+    const newScroll = container.scrollLeft + direction * cardWidth
+    container.scrollTo({ left: newScroll, behavior: 'smooth' })
+  }
 
   const catIconPath = '/favicon.svg'
 
@@ -379,14 +416,20 @@ export default function Home() {
             text="Welcome, I'm Jonathan Gallardo-Kerth"
             className="text-5xl md:text-6xl font-bold mb-8 text-black"
           />
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-xl md:text-2xl text-black/70 max-w-3xl mx-auto leading-relaxed"
-          >
-            Full-Stack Developer
-          </motion.p>
+          <div className="h-9 overflow-hidden flex items-center justify-center">
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={subtitleIndex}
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -20, opacity: 0 }}
+                transition={{ duration: 0.35 }}
+                className="text-xl md:text-2xl text-black/70 max-w-3xl mx-auto leading-relaxed"
+              >
+                {subtitles[subtitleIndex]}
+              </motion.p>
+            </AnimatePresence>
+          </div>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -446,7 +489,8 @@ export default function Home() {
       <Section id="about">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.8 }}
           className="text-center space-y-8"
         >
@@ -456,7 +500,8 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="space-y-6"
             >
@@ -478,7 +523,8 @@ export default function Home() {
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <ImageCarousel />
@@ -493,11 +539,12 @@ export default function Home() {
       <Section id="projects" variant="fullWidth">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.8 }}
-          className="text-center space-y-12"
+          className="text-center space-y-10"
         >
-          <div className="space-y-6">
+          <div className="space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold text-black">
               Featured Projects
             </h2>
@@ -509,10 +556,47 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
-            {projects.map((project, index) => (
-              <ProjectCard key={project.id} project={project} index={index} />
-            ))}
+
+          {/* Horizontal scrollable track with arrow navigation */}
+          <div className="relative">
+            {/* Left arrow */}
+            <button
+              onClick={() => scrollProjects(-1)}
+              aria-label="Scroll projects left"
+              className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 backdrop-blur-sm border border-black/10 rounded-full w-10 h-10 items-center justify-center shadow-lg hover:bg-white hover:scale-110 transition-all duration-200"
+            >
+              <svg className="w-5 h-5 text-black/70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            {/* Right arrow */}
+            <button
+              onClick={() => scrollProjects(1)}
+              aria-label="Scroll projects right"
+              className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 backdrop-blur-sm border border-black/10 rounded-full w-10 h-10 items-center justify-center shadow-lg hover:bg-white hover:scale-110 transition-all duration-200"
+            >
+              <svg className="w-5 h-5 text-black/70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            {/* Scrollable container */}
+            <div
+              ref={projectsContainerRef}
+              className="overflow-x-auto scrollbar-hide scroll-smooth px-4 md:px-12"
+            >
+              <div
+                className="flex gap-8"
+                style={{ width: 'max-content' }}
+              >
+                {projects.map((project, index) => (
+                  <div key={project.id} className="w-[340px] md:w-[380px] flex-shrink-0">
+                    <ProjectCard project={project} index={index} />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </motion.div>
       </Section>
@@ -523,7 +607,8 @@ export default function Home() {
       <Section id="tech-stack" variant="compact">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.8 }}
           className="text-center space-y-8"
         >
@@ -531,31 +616,34 @@ export default function Home() {
             Tech Stack
           </h2>
           <div className="space-y-8">
-            {techStackSections.map((section) => (
-              <div key={section.title} className="space-y-3">
+            {techStackSections.map((section, sectionIndex) => (
+              <motion.div
+                key={section.title}
+                className="space-y-3"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.5, delay: sectionIndex * 0.1 }}
+              >
                 <h3 className="text-sm font-semibold tracking-widest uppercase text-black/60 text-left">
                   {section.title}
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                  {section.items.map((tech, index) => (
-                    <motion.a
+                  {section.items.map((tech) => (
+                    <a
                       key={`${section.title}-${tech.name}`}
                       href={tech.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      initial={{ opacity: 0, scale: 0.98 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.35, delay: index * 0.01 }}
-                      whileHover={{ scale: 1.03, y: -3 }}
-                      className="group bg-white/70 backdrop-blur-sm rounded-xl px-4 py-3 border border-black/10 hover:border-black/20 transition-all duration-300 hover:bg-white h-16 flex items-center justify-center"
+                      className="group bg-white/70 backdrop-blur-sm rounded-xl px-4 py-3 border border-black/10 hover:border-black/20 transition-all duration-300 hover:bg-white hover:scale-[1.03] hover:-translate-y-0.5 h-16 flex items-center justify-center"
                     >
                       <div className="text-black/80 font-medium text-sm group-hover:text-black transition-colors duration-300 text-center leading-snug">
                         {tech.name}
                       </div>
-                    </motion.a>
+                    </a>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>
@@ -567,7 +655,8 @@ export default function Home() {
       <Section id="cats" variant="compact">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.8 }}
           className="text-center space-y-8"
         >
@@ -685,19 +774,16 @@ export default function Home() {
             )}
           </div>
           <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.6 }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {favoriteMemes.map((meme, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
-                className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/70 backdrop-blur-sm border border-black/10"
+                className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] bg-white/70 backdrop-blur-sm border border-black/10"
               >
                 <Image
                   src={meme}
@@ -709,7 +795,7 @@ export default function Home() {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" />
-              </motion.div>
+              </div>
             ))}
           </motion.div>
         </motion.div>
@@ -721,7 +807,8 @@ export default function Home() {
       <Section id="resume" variant="fullWidth">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.8 }}
           className="text-center space-y-8"
         >

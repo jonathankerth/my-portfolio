@@ -1,17 +1,56 @@
-import { motion } from 'framer-motion'
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 
 const ProjectCard = ({ project, index }) => {
   const [iframeLoaded, setIframeLoaded] = useState(false)
+  const cardRef = useRef(null)
+
+  const rotateX = useMotionValue(0)
+  const rotateY = useMotionValue(0)
+
+  const springRotateX = useSpring(rotateX, { stiffness: 300, damping: 30 })
+  const springRotateY = useSpring(rotateY, { stiffness: 300, damping: 30 })
+
+  const boxShadow = useTransform(
+    [springRotateX, springRotateY],
+    ([rx, ry]) =>
+      `${-ry * 2}px ${rx * 2}px 30px rgba(0,0,0,0.15), 0 8px 32px rgba(0,0,0,0.08)`
+  )
+
+  const handleMouseMove = (e) => {
+    if (typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches) return
+    const card = cardRef.current
+    if (!card) return
+    const rect = card.getBoundingClientRect()
+    const offsetX = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2)
+    const offsetY = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2)
+    rotateY.set(offsetX * 8)
+    rotateX.set(-offsetY * 8)
+  }
+
+  const handleMouseLeave = () => {
+    rotateX.set(0)
+    rotateY.set(0)
+  }
 
   return (
     <motion.div
+      ref={cardRef}
       initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      whileHover={{ y: -8 }}
-      className="group relative flex flex-col rounded-2xl overflow-hidden transition-all duration-500 ease-out hover:shadow-2xl bg-white/70 backdrop-blur-sm border border-black/10 hover:border-black/20"
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-50px' }}
+      transition={{ duration: 0.6, delay: index * 0.08 }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        rotateX: springRotateX,
+        rotateY: springRotateY,
+        transformPerspective: 1000,
+        boxShadow,
+        willChange: 'transform',
+      }}
+      className="group relative flex flex-col rounded-2xl overflow-hidden transition-colors duration-500 bg-white/70 backdrop-blur-sm border border-black/10 hover:border-black/20"
     >
       {/* Animated background gradient */}
       <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" aria-hidden="true" />

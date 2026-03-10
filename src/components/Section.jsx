@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
 const Section = ({ children, id, className = '', variant = 'default' }) => {
+  const isHero = variant === 'hero'
   const [ref, inView] = useInView({
     threshold: 0.1,
     triggerOnce: true,
@@ -21,7 +22,7 @@ const Section = ({ children, id, className = '', variant = 'default' }) => {
     },
     fullWidth: {
       container:
-        'min-h-screen flex flex-col justify-center items-center px-4 py-16',
+        'flex flex-col justify-center items-center px-4 py-16',
       wrapper: 'w-full max-w-7xl',
     },
     compact: {
@@ -38,9 +39,9 @@ const Section = ({ children, id, className = '', variant = 'default' }) => {
     <motion.section
       id={id}
       ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.8, ease: 'easeOut' }}
+      initial={isHero ? false : { opacity: 0, y: 50 }}
+      animate={isHero ? { opacity: 1, y: 0 } : inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={isHero ? { duration: 0 } : { duration: 0.8, ease: 'easeOut' }}
       className={`${currentVariant.container} ${className}`}
     >
       <div className={currentVariant.wrapper}>{children}</div>
