@@ -62,7 +62,7 @@ export default function Home() {
     container.scrollTo({ left: newScroll, behavior: 'smooth' })
   }
 
-  const catIconPath = '/favicon.svg'
+  const catIconPath = '/white_cat_favicon.png'
 
   const favoriteMemes = [
     'https://memedisplay.s3.us-west-2.amazonaws.com/cat+and+kid.jpeg',
