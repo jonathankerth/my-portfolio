@@ -62,7 +62,7 @@ export default function Home() {
     container.scrollTo({ left: newScroll, behavior: 'smooth' })
   }
 
-  const catIconPath = '/white_cat_favicon.png'
+  const catIconPath = '/white_cat_favicon.png '
 
   const favoriteMemes = [
     'https://memedisplay.s3.us-west-2.amazonaws.com/cat+and+kid.jpeg',
@@ -535,6 +535,48 @@ export default function Home() {
 
       <SectionDivider variant="wave" />
 
+      {/* Resume Section */}
+      <Section id="resume" variant="fullWidth">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.8 }}
+          className="text-center space-y-8"
+        >
+          <div className="mb-6 space-y-3">
+            <h2 className="text-4xl md:text-5xl font-bold text-black text-center">
+              Resume
+            </h2>
+            <div className="flex justify-center">
+              <a
+                href="https://mypublicucket.s3.us-west-2.amazonaws.com/Jonathan+GK+Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-white/70 border border-black/10 text-sm text-black font-semibold transition-all duration-300 hover:bg-white hover:border-black/20 backdrop-blur"
+                download
+                aria-label="Download Jonathan Gallardo-Kerth's resume as PDF"
+              >
+                <FaDownload className="text-base text-black/70 group-hover:text-black" aria-hidden="true" />
+                <span>Download</span>
+              </a>
+            </div>
+          </div>
+          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-4 border border-black/10 shadow-lg max-w-4xl mx-auto">
+            <iframe
+              src="https://jonathankerth.github.io/resume_plain/"
+              className="border-0 rounded-xl w-full shadow-lg"
+              style={{ aspectRatio: '8.5 / 11', width: '100%' }}
+              title="Jonathan Gallardo-Kerth's Resume"
+              loading="lazy"
+              sandbox="allow-scripts allow-same-origin"
+            />
+          </div>
+        </motion.div>
+      </Section>
+
+      <SectionDivider variant="wave" />
+
       {/* Projects Section */}
       <Section id="projects" variant="fullWidth">
         <motion.div
@@ -801,47 +843,6 @@ export default function Home() {
         </motion.div>
       </Section>
 
-      <SectionDivider variant="wave" />
-
-      {/* Resume Section */}
-      <Section id="resume" variant="fullWidth">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.8 }}
-          className="text-center space-y-8"
-        >
-          <div className="mb-6 space-y-3">
-            <h2 className="text-4xl md:text-5xl font-bold text-black text-center">
-              Resume
-            </h2>
-            <div className="flex justify-center">
-              <a
-                href="https://mypublicucket.s3.us-west-2.amazonaws.com/Jonathan+GK+Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-white/70 border border-black/10 text-sm text-black font-semibold transition-all duration-300 hover:bg-white hover:border-black/20 backdrop-blur"
-                download
-                aria-label="Download Jonathan Gallardo-Kerth's resume as PDF"
-              >
-                <FaDownload className="text-base text-black/70 group-hover:text-black" aria-hidden="true" />
-                <span>Download</span>
-              </a>
-            </div>
-          </div>
-          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-4 border border-black/10 shadow-lg max-w-4xl mx-auto">
-            <iframe
-              src="https://jonathankerth.github.io/resume_plain/"
-              className="border-0 rounded-xl w-full shadow-lg"
-              style={{ aspectRatio: '8.5 / 11', width: '100%' }}
-              title="Jonathan Gallardo-Kerth's Resume"
-              loading="lazy"
-              sandbox="allow-scripts allow-same-origin"
-            />
-          </div>
-        </motion.div>
-      </Section>
     </SPALayout>
   )
 }

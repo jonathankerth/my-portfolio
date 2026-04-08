@@ -5,10 +5,10 @@ import { FaBars, FaTimes, FaCat } from 'react-icons/fa'
 const navLinks = [
   { href: '#home', label: 'Home' },
   { href: '#about', label: 'About' },
+  { href: '#resume', label: 'Resume' },
   { href: '#projects', label: 'Projects' },
   { href: '#tech-stack', label: 'Tech' },
   { href: '#cats', label: 'Cats' },
-  { href: '#resume', label: 'Resume' },
 ]
 
 const Navbar = () => {
