@@ -1,7 +1,6 @@
 import Head from 'next/head'
-import { useState, useRef, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import Image from 'next/image'
+import { useRef } from 'react'
+import { motion } from 'framer-motion'
 import dynamic from 'next/dynamic'
 import SPALayout from '../components/SPALayout'
 import Section from '../components/Section'
@@ -31,28 +30,7 @@ const ImageCarousel = dynamic(() => import('../components/ImageCarousel'), {
 })
 
 export default function Home() {
-  const [uploadedImageUrl, setUploadedImageUrl] = useState(null)
-  const [selectedFile, setSelectedFile] = useState(null)
-  const [selectedFileName, setSelectedFileName] = useState(null)
-  const [uploadMessage, setUploadMessage] = useState('')
-  const [isLoading, setIsLoading] = useState(false)
-  const [subtitleIndex, setSubtitleIndex] = useState(0)
-
   const projectsContainerRef = useRef(null)
-
-  const subtitles = [
-    'Full-Stack Developer',
-    'React & Next.js Engineer',
-    'Python Developer',
-  ]
-
-  useEffect(() => {
-    const interval = setInterval(
-      () => setSubtitleIndex((i) => (i + 1) % subtitles.length),
-      2800
-    )
-    return () => clearInterval(interval)
-  }, [subtitles.length])
 
   const scrollProjects = (direction) => {
     const container = projectsContainerRef.current
@@ -62,15 +40,7 @@ export default function Home() {
     container.scrollTo({ left: newScroll, behavior: 'smooth' })
   }
 
-  const catIconPath = '/white_cat_favicon.png '
-
-  const favoriteMemes = [
-    'https://memedisplay.s3.us-west-2.amazonaws.com/cat+and+kid.jpeg',
-    'https://memedisplay.s3.us-west-2.amazonaws.com/cat+philosophy.jpeg',
-    'https://memedisplay.s3.us-west-2.amazonaws.com/photogenic+cat.jpeg',
-    'https://memedisplay.s3.us-west-2.amazonaws.com/pizza+cat.jpeg',
-    'https://memedisplay.s3.us-west-2.amazonaws.com/code+cat.png',
-  ]
+  const catIconPath = '/white_cat_favicon.png'
 
   const projects = [
     {
@@ -289,44 +259,6 @@ export default function Home() {
     },
   ]
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0]
-    if (file) {
-      setSelectedFile(file)
-      setSelectedFileName(file.name)
-    }
-  }
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsLoading(true)
-
-    const file = selectedFile
-    if (!file) {
-      setIsLoading(false)
-      return
-    }
-
-    const { url } = await fetch(`/api/s3Url?fileType=${file.type}`).then(
-      (res) => res.json()
-    )
-
-    await fetch(url, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': file.type,
-      },
-      body: file,
-    })
-
-    const imageUrl = url.split('?')[0]
-    setUploadedImageUrl(imageUrl)
-    setUploadMessage(
-      'Your file has been uploaded, check back to see if your meme is posted!'
-    )
-    setIsLoading(false)
-  }
-
   const SocialLink = ({ href, icon: Icon, label }) => (
     <motion.a
       href={href}
@@ -416,20 +348,14 @@ export default function Home() {
             text="Welcome, I'm Jonathan Gallardo-Kerth"
             className="text-5xl md:text-6xl font-bold mb-8 text-black"
           />
-          <div className="h-9 overflow-hidden flex items-center justify-center">
-            <AnimatePresence mode="wait">
-              <motion.p
-                key={subtitleIndex}
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -20, opacity: 0 }}
-                transition={{ duration: 0.35 }}
-                className="text-xl md:text-2xl text-black/70 max-w-3xl mx-auto leading-relaxed"
-              >
-                {subtitles[subtitleIndex]}
-              </motion.p>
-            </AnimatePresence>
-          </div>
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-xl md:text-2xl text-black/70 max-w-3xl mx-auto leading-relaxed"
+          >
+            Full-Stack Builder
+          </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -688,158 +614,6 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-        </motion.div>
-      </Section>
-
-      <SectionDivider variant="wave" />
-
-      {/* Cats Section */}
-      <Section id="cats" variant="compact">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.8 }}
-          className="text-center space-y-8"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-8">
-            Cat Memes & AWS
-          </h2>
-          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 border border-black/10 space-y-6">
-            <p className="text-lg text-black/70 leading-relaxed">
-              I love cats, memes, and cat memes. I also wanted to show my
-              knowledge of AWS S3 buckets and IAM user policies.
-            </p>
-            <p className="text-lg text-black/70 leading-relaxed">
-              Upload a cat meme to my S3 bucket and I&apos;ll display my
-              favorites!
-            </p>
-            <form onSubmit={handleSubmit} className="space-y-6" aria-label="Upload a cat meme">
-              <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <label
-                  htmlFor="imageInput"
-                  className="cursor-pointer bg-black text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-lg hover:bg-black/90 border border-black/10"
-                >
-                  <span className="flex items-center gap-2">
-                    <svg
-                      className="w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                      />
-                    </svg>
-                    {selectedFileName || 'Select Image'}
-                  </span>
-                  <input
-                    id="imageInput"
-                    type="file"
-                    accept="image/*"
-                    className="hidden"
-                    onChange={handleFileChange}
-                  />
-                </label>
-                {selectedFile && (
-                  <button
-                    type="submit"
-                    disabled={isLoading}
-                    className="px-8 py-3 rounded-xl text-black font-semibold bg-white hover:bg-white/90 disabled:bg-white/60 shadow-lg transition-all duration-300 border border-black/10"
-                  >
-                    {isLoading ? (
-                      <span className="flex items-center gap-2" role="status">
-                        <svg
-                          className="animate-spin w-5 h-5"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          aria-hidden="true"
-                        >
-                          <circle
-                            className="opacity-25"
-                            cx="12"
-                            cy="12"
-                            r="10"
-                            stroke="currentColor"
-                            strokeWidth="4"
-                          ></circle>
-                          <path
-                            className="opacity-75"
-                            fill="currentColor"
-                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                          ></path>
-                        </svg>
-                        Uploading...
-                      </span>
-                    ) : (
-                      'Upload'
-                    )}
-                  </button>
-                )}
-              </div>
-              {uploadMessage && (
-                <motion.p
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="text-lg font-semibold text-black bg-white rounded-xl p-4 border border-black/10"
-                >
-                  {uploadMessage}
-                </motion.p>
-              )}
-            </form>
-            {uploadedImageUrl && (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-                className="mt-8"
-              >
-                <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-4 border border-black/10 inline-block">
-                  <Image
-                    src={uploadedImageUrl}
-                    alt="Uploaded Image"
-                    width={300}
-                    height={300}
-                    className="rounded-xl shadow-lg"
-                    style={{
-                      objectFit: 'cover',
-                      width: 'auto',
-                      height: 'auto',
-                    }}
-                  />
-                </div>
-              </motion.div>
-            )}
-          </div>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.6 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
-            {favoriteMemes.map((meme, index) => (
-              <div
-                key={index}
-                className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] bg-white/70 backdrop-blur-sm border border-black/10"
-              >
-                <Image
-                  src={meme}
-                  alt={`Funny cat meme number ${index + 1}`}
-                  width={300}
-                  height={300}
-                  className="rounded-2xl transition-transform duration-300 group-hover:scale-110"
-                  style={{ objectFit: 'cover', width: 'auto', height: 'auto' }}
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" />
-              </div>
-            ))}
-          </motion.div>
         </motion.div>
       </Section>
 
