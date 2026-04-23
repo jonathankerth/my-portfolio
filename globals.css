@@ -2,14 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-base: #f4f1ea;
+  --fg-base: #111111;
+  --rail-fade: #f4f1ea;
+}
+
+html.dark {
+  --bg-base: #0f0f10;
+  --fg-base: #ededed;
+  --rail-fade: #0f0f10;
+  color-scheme: dark;
+}
+
 html {
   scroll-padding-top: 80px;
 }
 
 body {
-  background-color: #f4f1ea;
-  color: #111;
+  background-color: var(--bg-base);
+  color: var(--fg-base);
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Hide scrollbar but keep scroll functionality */
@@ -35,6 +49,14 @@ body {
 
 .projects-rail-card {
   contain: layout paint;
+}
+
+.rail-fade-left {
+  background: linear-gradient(to right, var(--rail-fade), transparent);
+}
+
+.rail-fade-right {
+  background: linear-gradient(to left, var(--rail-fade), transparent);
 }
 
 /* Animations */
@@ -78,6 +100,18 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #b4ad9f;
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background: #161617;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #3a3a3c;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #555557;
 }
 
 /* Navigation transitions */
@@ -201,7 +235,22 @@ body {
       transparent 1px,
       transparent 6px
     ),
-    #f4f1ea;
+    var(--bg-base);
+  transition: background-color 0.3s ease;
+}
+
+html.dark .animated-gradient {
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.04) 0%, transparent 55%),
+    radial-gradient(circle at bottom, rgba(255, 255, 255, 0.03) 0%, transparent 60%),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.012),
+      rgba(255, 255, 255, 0.012) 1px,
+      transparent 1px,
+      transparent 6px
+    ),
+    var(--bg-base);
 }
 
 /* Enhanced glassmorphism effects */

@@ -291,12 +291,12 @@ export default function Home() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="group relative p-3 rounded-full bg-white/70 backdrop-blur-sm border border-black/10 hover:border-black/20 transition-all duration-300"
+      className="group relative p-3 rounded-full bg-white/70 dark:bg-white/[0.06] backdrop-blur-sm border border-black/10 dark:border-white/10 hover:border-black/20 dark:hover:border-white/20 transition-all duration-300"
       whileHover={{ scale: 1.1, y: -2 }}
       whileTap={{ scale: 0.95 }}
     >
-      <Icon className="text-2xl text-black/80 group-hover:text-black transition-colors duration-300" aria-hidden="true" />
-      <div className="absolute inset-0 bg-black/5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" />
+      <Icon className="text-2xl text-black/80 dark:text-white/80 group-hover:text-black dark:group-hover:text-white transition-colors duration-300" aria-hidden="true" />
+      <div className="absolute inset-0 bg-black/5 dark:bg-white/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" />
     </motion.a>
   )
 
@@ -372,13 +372,13 @@ export default function Home() {
           <h1 className="sr-only">Jonathan Gallardo-Kerth - Full-Stack Developer Portfolio</h1>
           <AnimatedText
             text="Welcome, I'm Jonathan Gallardo-Kerth"
-            className="text-5xl md:text-6xl font-bold mb-8 text-black"
+            className="text-5xl md:text-6xl font-bold mb-8 text-black dark:text-white"
           />
           <motion.p
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-xl md:text-2xl text-black/70 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-black/70 dark:text-white/70 max-w-3xl mx-auto leading-relaxed"
           >
             Full-Stack Builder
           </motion.p>
@@ -386,7 +386,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.45 }}
-            className="text-sm md:text-base text-black/60 max-w-3xl mx-auto tracking-wide"
+            className="text-sm md:text-base text-black/60 dark:text-white/60 max-w-3xl mx-auto tracking-wide"
           >
             Portland, Oregon, USA
           </motion.p>
@@ -446,7 +446,7 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="text-center space-y-8"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-8">
             About Me
           </h2>
           <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -457,8 +457,8 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="space-y-6"
             >
-              <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-black/10">
-                <p className="text-lg text-black/70 leading-relaxed">
+              <div className="bg-white/70 dark:bg-white/[0.04] backdrop-blur-sm rounded-2xl p-6 border border-black/10 dark:border-white/10">
+                <p className="text-lg text-black/70 dark:text-white/70 leading-relaxed">
                   Tea and a relentless curiosity keep me running. I live in
                   Portland, Oregon, USA. I specialize in building web
                   applications with JavaScript and Python technologies. I love
@@ -466,8 +466,8 @@ export default function Home() {
                   personal projects.
                 </p>
               </div>
-              <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-black/10">
-                <p className="text-lg text-black/70 leading-relaxed">
+              <div className="bg-white/70 dark:bg-white/[0.04] backdrop-blur-sm rounded-2xl p-6 border border-black/10 dark:border-white/10">
+                <p className="text-lg text-black/70 dark:text-white/70 leading-relaxed">
                   Outside of work, I&apos;m a 3D printer hobbyist, husband,
                   general nerd, home chef, pet parent, and traveler.
                 </p>
@@ -497,7 +497,7 @@ export default function Home() {
           className="text-center space-y-8"
         >
           <div className="mb-6 space-y-3">
-            <h2 className="text-4xl md:text-5xl font-bold text-black text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white text-center">
               Resume
             </h2>
             <div className="flex justify-center">
@@ -505,16 +505,16 @@ export default function Home() {
                 href="https://mypublicucket.s3.us-west-2.amazonaws.com/Jonathan+GK+Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-white/70 border border-black/10 text-sm text-black font-semibold transition-all duration-300 hover:bg-white hover:border-black/20 backdrop-blur"
+                className="group inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-white/70 dark:bg-white/[0.06] border border-black/10 dark:border-white/10 text-sm text-black dark:text-white font-semibold transition-all duration-300 hover:bg-white dark:hover:bg-white/[0.12] hover:border-black/20 dark:hover:border-white/20 backdrop-blur"
                 download
                 aria-label="Download Jonathan Gallardo-Kerth's resume as PDF"
               >
-                <FaDownload className="text-base text-black/70 group-hover:text-black" aria-hidden="true" />
+                <FaDownload className="text-base text-black/70 dark:text-white/70 group-hover:text-black dark:group-hover:text-white" aria-hidden="true" />
                 <span>Download</span>
               </a>
             </div>
           </div>
-          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-4 border border-black/10 shadow-lg max-w-4xl mx-auto">
+          <div className="bg-white/70 dark:bg-white/[0.04] backdrop-blur-sm rounded-2xl p-4 border border-black/10 dark:border-white/10 shadow-lg max-w-4xl mx-auto">
             <iframe
               src="https://jonathankerth.github.io/resume_plain/"
               className="border-0 rounded-xl w-full shadow-lg"
@@ -539,10 +539,10 @@ export default function Home() {
           className="space-y-10"
         >
           <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-4 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-black">
+            <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white">
               Featured Projects
             </h2>
-            <p className="text-lg text-black/60 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg text-black/60 dark:text-white/60 leading-relaxed max-w-2xl mx-auto">
               I love building things. I&apos;m always working on something new
               and looking to collaborate — fork any of these or reach out to
               build together.
@@ -563,20 +563,20 @@ export default function Home() {
               </div>
             </div>
             <div
-              className="pointer-events-none absolute inset-y-0 left-0 w-12 md:w-20 bg-gradient-to-r from-[#f4f1ea] to-transparent"
+              className="pointer-events-none absolute inset-y-0 left-0 w-12 md:w-20 rail-fade-left"
               aria-hidden="true"
             />
             <div
-              className="pointer-events-none absolute inset-y-0 right-0 w-12 md:w-20 bg-gradient-to-l from-[#f4f1ea] to-transparent"
+              className="pointer-events-none absolute inset-y-0 right-0 w-12 md:w-20 rail-fade-right"
               aria-hidden="true"
             />
           </div>
 
           <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center gap-4">
-            <div className="flex-1 h-px bg-black/10 rounded-full overflow-hidden">
+            <div className="flex-1 h-px bg-black/10 dark:bg-white/10 rounded-full overflow-hidden">
               <div
                 ref={railProgressRef}
-                className="h-full bg-black/50 rounded-full origin-left"
+                className="h-full bg-black/50 dark:bg-white/50 rounded-full origin-left"
                 style={{ transform: 'scaleX(0.08)' }}
                 aria-hidden="true"
               />
@@ -585,7 +585,7 @@ export default function Home() {
               <button
                 onClick={() => scrollProjects(-1)}
                 aria-label="Scroll projects left"
-                className="w-9 h-9 rounded-full flex items-center justify-center text-black/60 hover:text-black hover:bg-black/5 transition-colors"
+                className="w-9 h-9 rounded-full flex items-center justify-center text-black/60 hover:text-black hover:bg-black/5 dark:text-white/60 dark:hover:text-white dark:hover:bg-white/10 transition-colors"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -594,7 +594,7 @@ export default function Home() {
               <button
                 onClick={() => scrollProjects(1)}
                 aria-label="Scroll projects right"
-                className="w-9 h-9 rounded-full flex items-center justify-center text-black/60 hover:text-black hover:bg-black/5 transition-colors"
+                className="w-9 h-9 rounded-full flex items-center justify-center text-black/60 hover:text-black hover:bg-black/5 dark:text-white/60 dark:hover:text-white dark:hover:bg-white/10 transition-colors"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -616,7 +616,7 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="text-center space-y-8"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-8">
             Tech Stack
           </h2>
           <div className="space-y-8">
@@ -629,7 +629,7 @@ export default function Home() {
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.5, delay: sectionIndex * 0.1 }}
               >
-                <h3 className="text-sm font-semibold tracking-widest uppercase text-black/60 text-left">
+                <h3 className="text-sm font-semibold tracking-widest uppercase text-black/60 dark:text-white/60 text-left">
                   {section.title}
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -639,9 +639,9 @@ export default function Home() {
                       href={tech.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group bg-white/70 backdrop-blur-sm rounded-xl px-4 py-3 border border-black/10 hover:border-black/20 transition-all duration-300 hover:bg-white hover:scale-[1.03] hover:-translate-y-0.5 h-16 flex items-center justify-center"
+                      className="group bg-white/70 dark:bg-white/[0.04] backdrop-blur-sm rounded-xl px-4 py-3 border border-black/10 dark:border-white/10 hover:border-black/20 dark:hover:border-white/20 transition-all duration-300 hover:bg-white dark:hover:bg-white/[0.08] hover:scale-[1.03] hover:-translate-y-0.5 h-16 flex items-center justify-center"
                     >
-                      <div className="text-black/80 font-medium text-sm group-hover:text-black transition-colors duration-300 text-center leading-snug">
+                      <div className="text-black/80 dark:text-white/80 font-medium text-sm group-hover:text-black dark:group-hover:text-white transition-colors duration-300 text-center leading-snug">
                         {tech.name}
                       </div>
                     </a>

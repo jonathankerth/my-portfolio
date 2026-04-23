@@ -84,8 +84,8 @@ const SPALayout = ({ children }) => {
       {enableEnhancements && <CustomCursor />}
 
       {/* Blurred decorative shapes */}
-      <div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-black/5 rounded-full blur-3xl opacity-60 z-0" aria-hidden="true"></div>
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-black/5 rounded-full blur-2xl opacity-40 z-0" aria-hidden="true"></div>
+      <div className="absolute -top-32 -left-32 w-[500px] h-[500px] bg-black/5 dark:bg-white/[0.04] rounded-full blur-3xl opacity-60 z-0" aria-hidden="true"></div>
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-black/5 dark:bg-white/[0.04] rounded-full blur-2xl opacity-40 z-0" aria-hidden="true"></div>
       {enableEnhancements && <ParticleBackground />}
       <motion.div
         initial={{ y: -16, opacity: 0 }}
@@ -97,8 +97,8 @@ const SPALayout = ({ children }) => {
       </motion.div>
       <ScrollProgress />
       <main id="main-content" className="relative z-10">{children}</main>
-      <footer className="relative z-10 w-full border-t border-black/10 px-4 py-6">
-        <div className="max-w-6xl mx-auto text-center text-xs text-black/60 tracking-wide">
+      <footer className="relative z-10 w-full border-t border-black/10 dark:border-white/10 px-4 py-6">
+        <div className="max-w-6xl mx-auto text-center text-xs text-black/60 dark:text-white/60 tracking-wide">
           © {new Date().getFullYear()} Jonathan Gallardo-Kerth
         </div>
       </footer>

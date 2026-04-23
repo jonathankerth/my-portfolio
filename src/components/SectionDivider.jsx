@@ -5,7 +5,7 @@ const SectionDivider = ({ variant = 'wave' }) => {
     wave: (
       <div className="absolute inset-0 overflow-hidden">
         <svg
-          className="absolute bottom-0 w-full h-24 fill-current text-black/5"
+          className="absolute bottom-0 w-full h-24 fill-current text-black/5 dark:text-white/5"
           viewBox="0 0 1440 120"
           preserveAspectRatio="none"
         >

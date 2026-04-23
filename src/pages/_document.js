@@ -23,6 +23,13 @@ export default function Document() {
         {/* Security headers for Best Practices */}
         <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
         <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+        {/* Theme bootstrap — runs before paint to avoid light/dark flicker. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');var d=t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches);var c=document.documentElement.classList;d?c.add('dark'):c.remove('dark');}catch(e){}})();`,
+          }}
+        />
       </Head>
       <body>
         <Main />

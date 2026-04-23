@@ -35,12 +35,22 @@ const ParticleBackground = () => {
     const scales = new Float32Array(particleCount)
     const randomness = new Float32Array(particleCount * 3)
 
-    const colorChoices = [
-      new THREE.Color('#111111'),
-      new THREE.Color('#2a2a2a'),
-      new THREE.Color('#555555'),
-      new THREE.Color('#777777'),
-    ]
+    const isDark =
+      typeof document !== 'undefined' &&
+      document.documentElement.classList.contains('dark')
+    const colorChoices = isDark
+      ? [
+          new THREE.Color('#cccccc'),
+          new THREE.Color('#999999'),
+          new THREE.Color('#777777'),
+          new THREE.Color('#555555'),
+        ]
+      : [
+          new THREE.Color('#111111'),
+          new THREE.Color('#2a2a2a'),
+          new THREE.Color('#555555'),
+          new THREE.Color('#777777'),
+        ]
 
     for (let i = 0; i < particleCount; i++) {
       // Position

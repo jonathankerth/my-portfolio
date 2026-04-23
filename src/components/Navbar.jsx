@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaBars, FaTimes, FaCat } from 'react-icons/fa'
+import ThemeToggle from './ThemeToggle'
 
 const navLinks = [
   { href: '#home', label: 'Home' },
@@ -67,7 +68,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className="fixed top-0 left-0 z-50 w-full bg-white/80 px-4 py-2.5 md:px-8 border-b border-black/10 shadow-sm backdrop-blur-lg"
+      className="fixed top-0 left-0 z-50 w-full bg-white/80 dark:bg-black/60 px-4 py-2.5 md:px-8 border-b border-black/10 dark:border-white/10 shadow-sm backdrop-blur-lg"
       aria-label="Main navigation"
     >
       <div className="flex items-center justify-between max-w-6xl mx-auto">
@@ -77,49 +78,55 @@ const Navbar = () => {
           onClick={(e) => scrollToSection(e, '#home')}
           className="flex items-center gap-2 shrink-0"
         >
-          <FaCat className="text-xl text-black/80" aria-hidden="true" />
-          <span className="text-base font-bold text-black tracking-tight hidden sm:inline">
+          <FaCat className="text-xl text-black/80 dark:text-white/80" aria-hidden="true" />
+          <span className="text-base font-bold text-black dark:text-white tracking-tight hidden sm:inline">
             JGK
           </span>
         </a>
 
         {/* Desktop Links — right aligned, consistent sizing */}
-        <ul className="hidden md:flex items-center gap-1">
-          {navLinks.map(({ href, label }) => {
-            const isActive = activeSection === href.substring(1)
-            return (
-              <li key={href}>
-                <a
-                  href={href}
-                  onClick={(e) => scrollToSection(e, href)}
-                  aria-current={isActive ? 'page' : undefined}
-                  className={`block px-3 py-1.5 text-sm font-medium rounded-md transition-all duration-200
-                    ${isActive
-                      ? 'text-black bg-black/5'
-                      : 'text-black/60 hover:text-black hover:bg-black/5'
-                    }
-                  `}
-                >
-                  {label}
-                </a>
-              </li>
-            )
-          })}
-        </ul>
+        <div className="hidden md:flex items-center gap-1">
+          <ul className="flex items-center gap-1">
+            {navLinks.map(({ href, label }) => {
+              const isActive = activeSection === href.substring(1)
+              return (
+                <li key={href}>
+                  <a
+                    href={href}
+                    onClick={(e) => scrollToSection(e, href)}
+                    aria-current={isActive ? 'page' : undefined}
+                    className={`block px-3 py-1.5 text-sm font-medium rounded-md transition-all duration-200
+                      ${isActive
+                        ? 'text-black bg-black/5 dark:text-white dark:bg-white/10'
+                        : 'text-black/60 hover:text-black hover:bg-black/5 dark:text-white/60 dark:hover:text-white dark:hover:bg-white/10'
+                      }
+                    `}
+                  >
+                    {label}
+                  </a>
+                </li>
+              )
+            })}
+          </ul>
+          <div className="ml-1 pl-2 border-l border-black/10 dark:border-white/10">
+            <ThemeToggle />
+          </div>
+        </div>
 
-        {/* Hamburger — mobile only */}
-        <div className="md:hidden">
+        {/* Mobile controls */}
+        <div className="md:hidden flex items-center gap-1">
+          <ThemeToggle />
           <button
             onClick={toggleMobileMenu}
-            className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-black/20"
+            className="p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-black/20 dark:focus:ring-white/30"
             aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-menu"
           >
             {isMobileMenuOpen ? (
-              <FaTimes className="text-xl text-black" aria-hidden="true" />
+              <FaTimes className="text-xl text-black dark:text-white" aria-hidden="true" />
             ) : (
-              <FaBars className="text-xl text-black" aria-hidden="true" />
+              <FaBars className="text-xl text-black dark:text-white" aria-hidden="true" />
             )}
           </button>
         </div>
@@ -133,7 +140,7 @@ const Navbar = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.15 }}
-              className="absolute top-full left-0 right-0 bg-white/95 backdrop-blur-lg mt-0 py-3 px-4 shadow-lg border-b border-black/10 flex flex-col gap-1 md:hidden"
+              className="absolute top-full left-0 right-0 bg-white/95 dark:bg-black/80 backdrop-blur-lg mt-0 py-3 px-4 shadow-lg border-b border-black/10 dark:border-white/10 flex flex-col gap-1 md:hidden"
             >
               {navLinks.map(({ href, label }) => {
                 const isActive = activeSection === href.substring(1)
@@ -145,8 +152,8 @@ const Navbar = () => {
                       aria-current={isActive ? 'page' : undefined}
                       className={`block px-4 py-2.5 text-sm font-medium rounded-lg transition-all duration-200
                         ${isActive
-                          ? 'text-black bg-black/5'
-                          : 'text-black/60 hover:text-black hover:bg-black/5'
+                          ? 'text-black bg-black/5 dark:text-white dark:bg-white/10'
+                          : 'text-black/60 hover:text-black hover:bg-black/5 dark:text-white/60 dark:hover:text-white dark:hover:bg-white/10'
                         }
                       `}
                     >
