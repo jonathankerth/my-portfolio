@@ -19,26 +19,32 @@ const Navbar = () => {
   }
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (isMobileMenuOpen) {
-        setIsMobileMenuOpen(false)
-      }
+    let rafId = null
+    const sectionIds = navLinks.map((link) => link.href.substring(1))
 
-      const sections = navLinks.map((link) => link.href.substring(1))
-      for (const section of sections.reverse()) {
-        const element = document.getElementById(section)
-        if (element) {
-          const rect = element.getBoundingClientRect()
-          if (rect.top <= 150) {
-            setActiveSection(section)
-            break
-          }
+    const runCheck = () => {
+      rafId = null
+      if (isMobileMenuOpen) setIsMobileMenuOpen(false)
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const element = document.getElementById(sectionIds[i])
+        if (!element) continue
+        if (element.getBoundingClientRect().top <= 150) {
+          setActiveSection((prev) => (prev === sectionIds[i] ? prev : sectionIds[i]))
+          break
         }
       }
     }
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    const handleScroll = () => {
+      if (rafId !== null) return
+      rafId = window.requestAnimationFrame(runCheck)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      if (rafId !== null) window.cancelAnimationFrame(rafId)
+    }
   }, [isMobileMenuOpen])
 
   const scrollToSection = (e, href) => {

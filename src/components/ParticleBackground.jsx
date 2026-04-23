@@ -24,7 +24,7 @@ const ParticleBackground = () => {
       antialias: true,
     })
     renderer.setSize(window.innerWidth, window.innerHeight)
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5))
     const container = containerRef.current
     container?.appendChild(renderer.domElement)
 
@@ -144,8 +144,12 @@ const ParticleBackground = () => {
       })
     }
 
-    // Animation
+    // Animation — skip frames when the tab is hidden to save GPU/main thread
+    let rafId
     const animate = () => {
+      rafId = requestAnimationFrame(animate)
+      if (document.hidden) return
+
       const elapsedTime = clock.current.getElapsedTime()
 
       if (particlesMesh.current) {
@@ -159,7 +163,6 @@ const ParticleBackground = () => {
       }
 
       renderer.render(scene, camera)
-      requestAnimationFrame(animate)
     }
 
     // Handle window resize
@@ -174,11 +177,13 @@ const ParticleBackground = () => {
     animate()
 
     return () => {
+      if (rafId) cancelAnimationFrame(rafId)
       window.removeEventListener('mousemove', handleMouseMove)
       window.removeEventListener('resize', handleResize)
       container?.removeChild(renderer.domElement)
       geometry.dispose()
       material.dispose()
+      renderer.dispose()
     }
   }, [])
 

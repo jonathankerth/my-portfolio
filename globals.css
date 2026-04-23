@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: 80px;
 }
 
@@ -22,11 +21,20 @@ body {
   display: none;
 }
 
-/* Smooth scrolling for Safari */
-@supports (-webkit-overflow-scrolling: touch) {
-  body {
-    -webkit-overflow-scrolling: touch;
-  }
+/* Horizontal project rail — full-bleed, GPU-isolated for smooth trackpad scroll. */
+.projects-rail {
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  overscroll-behavior-y: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x pan-y;
+  will-change: scroll-position;
+  transform: translateZ(0);
+}
+
+.projects-rail-card {
+  contain: layout paint;
 }
 
 /* Animations */

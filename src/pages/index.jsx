@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import dynamic from 'next/dynamic'
 import SPALayout from '../components/SPALayout'
@@ -31,14 +31,40 @@ const ImageCarousel = dynamic(() => import('../components/ImageCarousel'), {
 
 export default function Home() {
   const projectsContainerRef = useRef(null)
+  const railProgressRef = useRef(null)
 
   const scrollProjects = (direction) => {
     const container = projectsContainerRef.current
     if (!container) return
-    const cardWidth = 380 + 32 // card width + gap
+    const cardWidth = 380 + 32
     const newScroll = container.scrollLeft + direction * cardWidth
     container.scrollTo({ left: newScroll, behavior: 'smooth' })
   }
+
+  useEffect(() => {
+    const container = projectsContainerRef.current
+    const bar = railProgressRef.current
+    if (!container || !bar) return
+    let rafId = null
+    const update = () => {
+      rafId = null
+      const max = container.scrollWidth - container.clientWidth
+      const ratio = max > 0 ? container.scrollLeft / max : 0
+      bar.style.transform = `scaleX(${Math.max(0.08, ratio)})`
+    }
+    const schedule = () => {
+      if (rafId != null) return
+      rafId = requestAnimationFrame(update)
+    }
+    update()
+    container.addEventListener('scroll', schedule, { passive: true })
+    window.addEventListener('resize', schedule)
+    return () => {
+      container.removeEventListener('scroll', schedule)
+      window.removeEventListener('resize', schedule)
+      if (rafId != null) cancelAnimationFrame(rafId)
+    }
+  }, [])
 
   const catIconPath = '/white_cat_favicon.png'
 
@@ -503,71 +529,81 @@ export default function Home() {
 
       <SectionDivider variant="wave" />
 
-      {/* Projects Section */}
-      <Section id="projects" variant="fullWidth">
+      {/* Projects Section — full-bleed rail */}
+      <section id="projects" className="py-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.8 }}
-          className="text-center space-y-10"
+          className="space-y-10"
         >
-          <div className="space-y-4">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-4 text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-black">
               Featured Projects
             </h2>
-            <div className="max-w-3xl mx-auto bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-black/10">
-              <p className="text-lg text-black/70 leading-relaxed">
-                I love building things. I&apos;m always working on something new
-                and looking to collaborate so if you want to fork any of these
-                repos or work on something together please reach out!
-              </p>
-            </div>
+            <p className="text-lg text-black/60 leading-relaxed max-w-2xl mx-auto">
+              I love building things. I&apos;m always working on something new
+              and looking to collaborate — fork any of these or reach out to
+              build together.
+            </p>
           </div>
 
-          {/* Horizontal scrollable track with arrow navigation */}
           <div className="relative">
-            {/* Left arrow */}
-            <button
-              onClick={() => scrollProjects(-1)}
-              aria-label="Scroll projects left"
-              className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 backdrop-blur-sm border border-black/10 rounded-full w-10 h-10 items-center justify-center shadow-lg hover:bg-white hover:scale-110 transition-all duration-200"
-            >
-              <svg className="w-5 h-5 text-black/70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-
-            {/* Right arrow */}
-            <button
-              onClick={() => scrollProjects(1)}
-              aria-label="Scroll projects right"
-              className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white/90 backdrop-blur-sm border border-black/10 rounded-full w-10 h-10 items-center justify-center shadow-lg hover:bg-white hover:scale-110 transition-all duration-200"
-            >
-              <svg className="w-5 h-5 text-black/70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-
-            {/* Scrollable container */}
             <div
               ref={projectsContainerRef}
-              className="overflow-x-auto scrollbar-hide scroll-smooth px-4 md:px-12"
+              className="projects-rail scrollbar-hide"
             >
-              <div
-                className="flex gap-8"
-                style={{ width: 'max-content' }}
-              >
+              <div className="projects-rail-row flex gap-6 md:gap-8 px-6 md:px-12 pb-2 pt-1" style={{ width: 'max-content' }}>
                 {projects.map((project, index) => (
-                  <div key={project.id} className="w-[340px] md:w-[380px] flex-shrink-0">
+                  <div key={project.id} className="w-[320px] md:w-[380px] flex-shrink-0">
                     <ProjectCard project={project} index={index} />
                   </div>
                 ))}
               </div>
             </div>
+            <div
+              className="pointer-events-none absolute inset-y-0 left-0 w-12 md:w-20 bg-gradient-to-r from-[#f4f1ea] to-transparent"
+              aria-hidden="true"
+            />
+            <div
+              className="pointer-events-none absolute inset-y-0 right-0 w-12 md:w-20 bg-gradient-to-l from-[#f4f1ea] to-transparent"
+              aria-hidden="true"
+            />
+          </div>
+
+          <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center gap-4">
+            <div className="flex-1 h-px bg-black/10 rounded-full overflow-hidden">
+              <div
+                ref={railProgressRef}
+                className="h-full bg-black/50 rounded-full origin-left"
+                style={{ transform: 'scaleX(0.08)' }}
+                aria-hidden="true"
+              />
+            </div>
+            <div className="hidden md:flex items-center gap-2">
+              <button
+                onClick={() => scrollProjects(-1)}
+                aria-label="Scroll projects left"
+                className="w-9 h-9 rounded-full flex items-center justify-center text-black/60 hover:text-black hover:bg-black/5 transition-colors"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button
+                onClick={() => scrollProjects(1)}
+                aria-label="Scroll projects right"
+                className="w-9 h-9 rounded-full flex items-center justify-center text-black/60 hover:text-black hover:bg-black/5 transition-colors"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
           </div>
         </motion.div>
-      </Section>
+      </section>
 
       <SectionDivider variant="wave" />
 
