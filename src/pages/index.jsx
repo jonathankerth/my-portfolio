@@ -70,6 +70,14 @@ export default function Home() {
 
   const projects = [
     {
+      id: 15,
+      title: 'Toffee Links',
+      description:
+        'An Everton F.C. transfer rumour tracker that ingests tweets from a curated reporter list, enriches each player with SportMonks v3 data (bio, season stats, preferred foot), and surfaces an admin approval queue before rumours go public. Built with Next.js 15 (App Router), TypeScript, Tailwind, Firebase/Firestore, and Stripe, with a Python scanner backend and Anthropic-powered enrichment fallbacks. Deployed on Vercel.',
+      link2: 'https://www.toffeelinks.app/',
+      iframe: 'https://www.toffeelinks.app/',
+    },
+    {
       id: 0,
       title: 'The Name Nursery',
       description:
@@ -120,61 +128,6 @@ export default function Home() {
       `,
       link3: 'https://github.com/jonathankerth/SnippetSyncBackend',
       image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/Snippet-UI.png',
-    },
-    {
-      id: 4,
-      title: 'Todo-List',
-      description:
-        'A real-time Todo List application developed using React and WebSockets. Authentication using Firebase. The application keeps tasks in sync across multiple devices. Styled using Bootstrap, the app offers a clean and intuitive user interface. The WebSocket server handles real-time updates, and the entire app is hosted on Vercel.',
-      link: 'https://github.com/jonathankerth/todo-list',
-      link2: 'https://todo-list-liard-seven.vercel.app/',
-      image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/todo-list.png',
-    },
-    {
-      id: 5,
-      title: 'KitchenGPT',
-      description:
-        'A cutting-edge kitchen assistant powered by GPT-3. The front-end is built with React, while the back-end utilizes Node.js and Express.js. The application is hosted on Heroku and Vercel for robust scalability.',
-      link: 'https://github.com/jonathankerth/KitchenGPT',
-      link2: 'https://kitchen-gpt.vercel.app/',
-      image:
-        'https://mypublicucket.s3.us-west-2.amazonaws.com/kitchen-gpt-home.png',
-    },
-    {
-      id: 6,
-      title: 'Meet App',
-      description:
-        'A serverless Progressive Web App (PWA) built using React and Node.js. Developed with a Test-Driven Development (TDD) approach, the app fetches upcoming tech events from Google Calendar API and features OAuth2 authentication.',
-      link: 'https://github.com/jonathankerth/meet',
-      link2: 'https://jonathankerth.github.io/meet/',
-      image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/meetHome.png',
-    },
-    {
-      id: 7,
-      title: 'Nicolas Cage Movie Repository',
-      description:
-        'A comprehensive repository dedicated to Nicolas Cage movies, built using React and styled with Bootstrap. The project is integrated with a custom-built RESTful API, NicCage API, to fetch and display movie data. Hosted on Netlify for seamless user experience.',
-      link: 'https://github.com/jonathankerth/nicCage-client',
-      link2: 'https://niccagecllient.netlify.app/',
-      image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/nicCageHome.png',
-    },
-    {
-      id: 8,
-      title: 'Magic Wheel Component',
-      description:
-        'An innovative wheel spinner component, created entirely with Tailwind CSS. Seamlessly integrated into a Next.js environment, this component showcases advanced CSS techniques, and animations.',
-      link: 'https://github.com/jonathankerth/magic-wheel',
-      link2: 'https://magic-wheel-rosy.vercel.app/',
-      iframe: 'https://magic-wheel-rosy.vercel.app/',
-    },
-    {
-      id: 9,
-      title: 'NicCage API',
-      description:
-        'A custom-built RESTful API that serves as a comprehensive database for Nicolas Cage movies. Developed using Node.js, Express.js, and MongoDB, the API is hosted on Heroku for easy access and high availability.',
-      link: 'https://github.com/jonathankerth/Nicolas-Cage-API',
-      link2: 'https://niccage.herokuapp.com/',
-      image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/nicCage-API.png',
     },
   ]
 
