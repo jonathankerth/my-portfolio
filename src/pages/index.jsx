@@ -10,9 +10,7 @@ import ProjectCard from '../components/ProjectCard'
 import {
   FaLinkedin,
   FaGithub,
-  FaStackOverflow,
   FaEnvelope,
-  FaMedium,
   FaDownload,
 } from 'react-icons/fa'
 import { FaMeta, FaSquareXTwitter } from 'react-icons/fa6'
@@ -305,9 +303,7 @@ export default function Home() {
               sameAs: [
                 'https://www.linkedin.com/in/jonathankerth',
                 'https://github.com/jonathankerth',
-                'https://stackoverflow.com/users/21791075/jonathan-kerth',
                 'https://twitter.com/jonathankerth',
-                'https://medium.com/@jonathanpkerth',
               ],
             }),
           }}
@@ -365,19 +361,9 @@ export default function Home() {
               label="GitHub"
             />
             <SocialLink
-              href="https://stackoverflow.com/users/21791075/jonathan-kerth"
-              icon={FaStackOverflow}
-              label="Stack Overflow"
-            />
-            <SocialLink
               href="https://twitter.com/jonathankerth"
               icon={FaSquareXTwitter}
               label="Twitter"
-            />
-            <SocialLink
-              href="https://medium.com/@jonathanpkerth"
-              icon={FaMedium}
-              label="Medium"
             />
             <SocialLink
               href="https://www.threads.net/@jonathankerth"
