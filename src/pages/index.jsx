@@ -133,33 +133,20 @@ export default function Home() {
     {
       title: 'Frontend',
       items: [
-        { name: 'React', url: 'https://react.dev/' },
-        { name: 'Next.js', url: 'https://nextjs.org/' },
-        { name: 'Angular', url: 'https://angular.io/' },
-        { name: 'React Native', url: 'https://reactnative.dev/' },
-        { name: 'Vite', url: 'https://vitejs.dev/' },
         { name: 'TypeScript', url: 'https://www.typescriptlang.org/' },
         {
           name: 'JavaScript',
           url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
         },
+        { name: 'React', url: 'https://react.dev/' },
+        { name: 'Next.js', url: 'https://nextjs.org/' },
+        { name: 'Angular', url: 'https://angular.io/' },
+        { name: 'React Native', url: 'https://reactnative.dev/' },
+        { name: 'Vite', url: 'https://vitejs.dev/' },
         { name: 'Redux Toolkit', url: 'https://redux-toolkit.js.org/' },
-        { name: 'Material UI', url: 'https://mui.com/' },
         { name: 'Tailwind CSS', url: 'https://tailwindcss.com/' },
+        { name: 'Material UI', url: 'https://mui.com/' },
         { name: 'Figma', url: 'https://www.figma.com/' },
-        {
-          name: 'HTML',
-          url: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
-        },
-        {
-          name: 'CSS',
-          url: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
-        },
-        { name: 'SCSS', url: 'https://sass-lang.com/' },
-        {
-          name: 'Progressive Web Apps (PWAs)',
-          url: 'https://web.dev/progressive-web-apps/',
-        },
       ],
     },
     {
@@ -171,6 +158,7 @@ export default function Home() {
         { name: 'Flask', url: 'https://flask.palletsprojects.com/' },
         { name: 'Firebase', url: 'https://firebase.google.com/' },
         { name: 'OAuth', url: 'https://oauth.net/2/' },
+        { name: 'Stripe', url: 'https://stripe.com/docs' },
         {
           name: 'Spotify API',
           url: 'https://developer.spotify.com/documentation/web-api',
@@ -179,59 +167,37 @@ export default function Home() {
           name: 'Discord API',
           url: 'https://discord.com/developers/docs/intro',
         },
-        { name: 'Stripe', url: 'https://stripe.com/docs' },
       ],
     },
     {
       title: 'Cloud & Data',
       items: [
         { name: 'AWS', url: 'https://aws.amazon.com/' },
-        { name: 'AWS Amplify', url: 'https://aws.amazon.com/amplify/' },
+        { name: 'GCP', url: 'https://cloud.google.com/' },
         { name: 'AWS Lambda', url: 'https://aws.amazon.com/lambda/' },
         { name: 'API Gateway', url: 'https://aws.amazon.com/api-gateway/' },
-        { name: 'AWS Cognito', url: 'https://aws.amazon.com/cognito/' },
         { name: 'S3', url: 'https://aws.amazon.com/s3/' },
         { name: 'DynamoDB', url: 'https://aws.amazon.com/dynamodb/' },
         { name: 'RDS', url: 'https://aws.amazon.com/rds/' },
-        { name: 'IAM', url: 'https://aws.amazon.com/iam/' },
-        { name: 'CloudWatch', url: 'https://aws.amazon.com/cloudwatch/' },
-        {
-          name: 'CloudFormation',
-          url: 'https://aws.amazon.com/cloudformation/',
-        },
-        { name: 'Terraform', url: 'https://www.terraform.io/' },
-        { name: 'Snowflake', url: 'https://www.snowflake.com/' },
         {
           name: 'SQL',
           url: 'https://www.postgresql.org/docs/current/sql.html',
         },
-        { name: 'JSON', url: 'https://www.json.org/json-en.html' },
         { name: 'MongoDB', url: 'https://www.mongodb.com/' },
+        { name: 'Snowflake', url: 'https://www.snowflake.com/' },
         { name: 'Docker', url: 'https://www.docker.com/' },
         { name: 'Kubernetes', url: 'https://kubernetes.io/' },
-        { name: 'GCP', url: 'https://cloud.google.com/' },
+        { name: 'Terraform', url: 'https://www.terraform.io/' },
       ],
     },
     {
       title: 'DevOps & Tooling',
       items: [
-        { name: 'Jenkins', url: 'https://www.jenkins.io/' },
         { name: 'Vercel', url: 'https://vercel.com/' },
-        { name: 'Heroku', url: 'https://www.heroku.com/' },
-        {
-          name: 'Google Analytics',
-          url: 'https://developers.google.com/analytics',
-        },
-        { name: 'ESLint', url: 'https://eslint.org/' },
-        { name: 'Prettier', url: 'https://prettier.io/' },
-        { name: 'Jira', url: 'https://www.atlassian.com/software/jira' },
-        {
-          name: 'Confluence',
-          url: 'https://www.atlassian.com/software/confluence',
-        },
-        { name: 'Git', url: 'https://git-scm.com/' },
+        { name: 'Jenkins', url: 'https://www.jenkins.io/' },
         { name: 'Jest', url: 'https://jestjs.io/' },
         { name: 'Cucumber', url: 'https://cucumber.io/' },
+        { name: 'Jira', url: 'https://www.atlassian.com/software/jira' },
       ],
     },
   ]
@@ -435,33 +401,57 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="text-center space-y-8"
         >
-          <div className="mb-6 space-y-3">
+          <div className="space-y-6">
             <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white text-center">
               Resume
             </h2>
-            <div className="flex justify-center">
+            <div className="flex flex-wrap items-center justify-center gap-3">
               <a
                 href="https://mypublicucket.s3.us-west-2.amazonaws.com/Jonathan+GK+Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-white/70 dark:bg-white/[0.06] border border-black/10 dark:border-white/10 text-sm text-black dark:text-white font-semibold transition-all duration-300 hover:bg-white dark:hover:bg-white/[0.12] hover:border-black/20 dark:hover:border-white/20 backdrop-blur"
+                className="group inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-black text-white dark:bg-white dark:text-black text-sm font-semibold tracking-wide transition-all duration-300 hover:bg-black/85 dark:hover:bg-white/90 hover:-translate-y-0.5 shadow-md hover:shadow-lg"
                 download
                 aria-label="Download Jonathan Gallardo-Kerth's resume as PDF"
               >
-                <FaDownload className="text-base text-black/70 dark:text-white/70 group-hover:text-black dark:group-hover:text-white" aria-hidden="true" />
-                <span>Download</span>
+                <FaDownload className="text-sm" aria-hidden="true" />
+                <span>Download (PDF)</span>
+              </a>
+              {/* Mobile-only inline view link — iframe is too cramped on phones */}
+              <a
+                href="https://mypublicucket.s3.us-west-2.amazonaws.com/Jonathan+GK+Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="md:hidden inline-flex items-center gap-1.5 px-5 py-3 rounded-full bg-white/70 dark:bg-white/[0.06] border border-black/10 dark:border-white/10 text-sm font-medium text-black dark:text-white transition-all duration-300 hover:bg-white dark:hover:bg-white/[0.12]"
+                aria-label="Open résumé in a new tab"
+              >
+                <span>View Resume</span>
+                <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>
-          <div className="bg-white/70 dark:bg-white/[0.04] backdrop-blur-sm rounded-2xl p-4 border border-black/10 dark:border-white/10 shadow-lg max-w-4xl mx-auto">
+          {/* Inline résumé — desktop/tablet only. Mobile gets the View Résumé link above. */}
+          <div className="hidden md:block bg-white/70 dark:bg-white/[0.04] backdrop-blur-sm rounded-2xl p-4 border border-black/10 dark:border-white/10 shadow-lg max-w-4xl mx-auto relative">
             <iframe
               src="https://jonathankerth.github.io/resume_plain/"
-              className="border-0 rounded-xl w-full shadow-lg"
+              className="border-0 rounded-xl w-full shadow-lg relative z-10"
               style={{ aspectRatio: '8.5 / 11', width: '100%' }}
               title="Jonathan Gallardo-Kerth's Resume"
               loading="lazy"
               sandbox="allow-scripts allow-same-origin"
             />
+            {/* Fallback: shown only when the iframe never paints over it. */}
+            <div
+              className="absolute inset-4 flex flex-col items-center justify-center text-center p-8 pointer-events-none"
+              aria-hidden="true"
+            >
+              <p className="text-sm text-black/50 dark:text-white/50 mb-3">
+                If the resume doesn&apos;t load,
+              </p>
+              <span className="text-sm font-semibold text-black dark:text-white">
+                use the Download Resume button above.
+              </span>
+            </div>
           </div>
         </motion.div>
       </Section>
