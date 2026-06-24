@@ -1,12 +1,11 @@
 import Head from 'next/head'
-import { useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import dynamic from 'next/dynamic'
 import SPALayout from '../components/SPALayout'
 import Section from '../components/Section'
 import SectionDivider from '../components/SectionDivider'
 import AnimatedText from '../components/AnimatedText'
-import ProjectCard from '../components/ProjectCard'
+import FeaturedProject from '../components/FeaturedProject'
 import {
   FaLinkedin,
   FaGithub,
@@ -28,106 +27,32 @@ const ImageCarousel = dynamic(() => import('../components/ImageCarousel'), {
 })
 
 export default function Home() {
-  const projectsContainerRef = useRef(null)
-  const railProgressRef = useRef(null)
-
-  const scrollProjects = (direction) => {
-    const container = projectsContainerRef.current
-    if (!container) return
-    const cardWidth = 380 + 32
-    const newScroll = container.scrollLeft + direction * cardWidth
-    container.scrollTo({ left: newScroll, behavior: 'smooth' })
-  }
-
-  useEffect(() => {
-    const container = projectsContainerRef.current
-    const bar = railProgressRef.current
-    if (!container || !bar) return
-    let rafId = null
-    const update = () => {
-      rafId = null
-      const max = container.scrollWidth - container.clientWidth
-      const ratio = max > 0 ? container.scrollLeft / max : 0
-      bar.style.transform = `scaleX(${Math.max(0.08, ratio)})`
-    }
-    const schedule = () => {
-      if (rafId != null) return
-      rafId = requestAnimationFrame(update)
-    }
-    update()
-    container.addEventListener('scroll', schedule, { passive: true })
-    window.addEventListener('resize', schedule)
-    return () => {
-      container.removeEventListener('scroll', schedule)
-      window.removeEventListener('resize', schedule)
-      if (rafId != null) cancelAnimationFrame(rafId)
-    }
-  }, [])
-
   const catIconPath = '/white_cat_favicon.png'
 
-  const projects = [
-    {
-      id: 15,
-      title: 'Toffee Links',
-      description:
-        'An Everton F.C. transfer rumour tracker that ingests tweets from a curated reporter list, enriches each player with SportMonks v3 data (bio, season stats, preferred foot), and surfaces an admin approval queue before rumours go public. Built with Next.js 15 (App Router), TypeScript, Tailwind, Firebase/Firestore, and Stripe, with a Python scanner backend and Anthropic-powered enrichment fallbacks. Deployed on Vercel.',
-      link2: 'https://www.toffeelinks.app/',
-      iframe: 'https://www.toffeelinks.app/',
-    },
-    {
-      id: 0,
-      title: 'The Name Nursery',
-      description:
-        'An AI-powered baby name discovery platform built with Next.js 15 and TypeScript. Features Firebase authentication, Google Cloud integration, openAI API, Google AdSense, and comprehensive SEO optimization with structured data markup. Includes a mobile-first wheel-based interface for exploring culturally diverse names with personalized recommendations based on origins, personality traits, and inspirational themes.',
-      link: 'https://github.com/jonathankerth/the-name-nursery',
-      link2: 'https://www.thenamenursery.com/',
-      iframe: 'https://www.thenamenursery.com/',
-    },
-    {
-      id: 1,
-      title: 'Climate Cue',
-      description:
-        'A real-time weather application developed using Next.js and styled with Tailwind CSS. It fetches current weather data from the OpenWeather API and is deployed on Vercel for high availability.',
-      link: 'https://github.com/jonathankerth/weather-app',
-      link2: 'https://weather-app-woad-two.vercel.app/',
-      image:
-        'https://mypublicucket.s3.us-west-2.amazonaws.com/weather-home.png',
-    },
-    {
-      id: 2,
-      title: 'Oregonized Design Co.',
-      description: `
-        Developed an immersive parallax single-page application (SPA) for Oregonized Design Co. The SPA showcases dynamic, smooth scrolling interactions, enhancing user engagement.
-        Engineered with Vue.js for reactive UI components, styled with Tailwind CSS for a responsive and modern aesthetic.
-        Built with Vue.js and Tailwind CSS. Deployed on Vercel.
-      `,
-      link: 'https://github.com/jonathankerth/freelance-site',
-      link2: 'https://oregonized-freelance-site.vercel.app/',
-      image:
-        'https://mypublicucket.s3.us-west-2.amazonaws.com/freelance+site.png',
-    },
-    {
-      id: 3,
-      title: 'Discord & Spotify Song Saver',
-      description:
-        'A Python bot developed to capture and compile Spotify song links from Discord into an ever-updating playlist. This project showcases my skills with Discord and Spotify APIs and Python, enhancing our music-sharing experience while broadening my technical expertise.',
-      link: 'https://github.com/jonathankerth/discord-spotify-song-saver',
-      link3: 'https://github.com/jonathankerth/discord-spotify-song-saver',
-      image:
-        'https://mypublicucket.s3.us-west-2.amazonaws.com/spotifybot+endpoints.png',
-    },
-    {
-      id: 14,
-      title: 'SnippetSyncBackend',
-      description: `
-        An ASP.NET Core web API for managing code snippets, providing RESTful endpoints for CRUD operations and tag management. 
-        Uses Entity Framework Core with a SQLite database and is containerized using Docker. Deployed on Google Cloud Platform using Google App Engine.
-      `,
-      link3: 'https://github.com/jonathankerth/SnippetSyncBackend',
-      image: 'https://mypublicucket.s3.us-west-2.amazonaws.com/Snippet-UI.png',
-    },
-  ]
+  const featuredProject = {
+    id: 15,
+    title: 'Toffee Links',
+    role: 'Co-owner & lead developer',
+    description:
+      'An Everton F.C. transfer-rumour tracker with a paid membership tier and real users. A Python scanner ingests tweets from a curated reporter list, enriches each player with SportMonks v3 data (bio, season stats, preferred foot) and Anthropic-powered fallbacks, then routes everything through an admin approval queue before it goes public. I designed and build the whole thing solo — a two-repo, full-stack architecture running in production.',
+    stack: [
+      'Next.js 15',
+      'TypeScript',
+      'Python',
+      'Firebase / Firestore',
+      'Stripe',
+      'SportMonks v3 API',
+      'Anthropic API',
+      'Vercel & GCP',
+    ],
+    highlights: [
+      'Paid membership tier, unlocked via Stripe checkout',
+      'Automated tweet-ingestion → enrichment → moderation pipeline',
+      'Isolated staging + production environments with nightly backups and point-in-time recovery',
+    ],
+    link2: 'https://www.toffeelinks.app/',
+    image: '/toffeelinks-preview.png',
+  }
 
   const techStackSections = [
     {
@@ -223,7 +148,7 @@ export default function Home() {
         <title>Jonathan Gallardo-Kerth | Full-Stack Developer Portfolio</title>
         <meta
           name="description"
-          content="Full-Stack Developer based in Portland, Oregon. Specializing in React, Next.js, Python, and AWS. View my projects, tech stack, and resume."
+          content="Full-Stack Developer based in Portland, Oregon, who builds and ships real products. Co-owner and lead developer of ToffeeLinks, a live web app with a paid membership tier. Specializing in React, Next.js, TypeScript, Python, and AWS."
         />
         <link rel="icon" href={catIconPath} />
         <link rel="apple-touch-icon" href={catIconPath} />
@@ -235,7 +160,7 @@ export default function Home() {
         {/* SEO: Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Jonathan Gallardo-Kerth | Full-Stack Developer" />
-        <meta property="og:description" content="Full-Stack Developer based in Portland, Oregon. Specializing in React, Next.js, Python, and AWS." />
+        <meta property="og:description" content="Full-Stack Developer in Portland, Oregon who builds and ships real products. Co-owner & lead developer of ToffeeLinks, a live web app built with Next.js, TypeScript, and Python." />
         <meta property="og:url" content="https://jonathankerth.com" />
         <meta property="og:site_name" content="Jonathan Gallardo-Kerth Portfolio" />
         <meta property="og:locale" content="en_US" />
@@ -243,7 +168,7 @@ export default function Home() {
         {/* SEO: Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Jonathan Gallardo-Kerth | Full-Stack Developer" />
-        <meta name="twitter:description" content="Full-Stack Developer based in Portland, Oregon. Specializing in React, Next.js, Python, and AWS." />
+        <meta name="twitter:description" content="Full-Stack Developer in Portland, Oregon who builds and ships real products. Co-owner & lead developer of ToffeeLinks, a live web app with a paid membership tier." />
         <meta name="twitter:creator" content="@jonathankerth" />
 
         {/* SEO: Additional meta */}
@@ -295,7 +220,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-xl md:text-2xl text-black/70 dark:text-white/70 max-w-3xl mx-auto leading-relaxed"
           >
-            Full-Stack Builder
+            Full-Stack Developer who builds and ships real products
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -365,10 +290,11 @@ export default function Home() {
               <div className="bg-white/70 dark:bg-white/[0.04] backdrop-blur-sm rounded-2xl p-6 border border-black/10 dark:border-white/10">
                 <p className="text-lg text-black/70 dark:text-white/70 leading-relaxed">
                   Tea and a relentless curiosity keep me running. I live in
-                  Portland, Oregon, USA. I specialize in building web
-                  applications with JavaScript and Python technologies. I love
-                  to learn and try to challenge myself with an endless flow of
-                  personal projects.
+                  Portland, Oregon, USA, and I specialize in building web
+                  applications with JavaScript and Python. I don&apos;t just
+                  write features — I design, ship, and operate real products
+                  end to end, like ToffeeLinks, a live web app I co-own and
+                  build myself.
                 </p>
               </div>
               <div className="bg-white/70 dark:bg-white/[0.04] backdrop-blur-sm rounded-2xl p-6 border border-black/10 dark:border-white/10">
@@ -458,79 +384,22 @@ export default function Home() {
 
       <SectionDivider variant="wave" />
 
-      {/* Projects Section — full-bleed rail */}
+      {/* Featured Work — single flagship product */}
       <section id="projects" className="py-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.8 }}
-          className="space-y-10"
+          className="max-w-6xl mx-auto px-6 md:px-12 space-y-10"
         >
-          <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-4 text-center">
+          <div className="text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white">
-              Featured Projects
+              Toffee Links
             </h2>
-            <p className="text-lg text-black/60 dark:text-white/60 leading-relaxed max-w-2xl mx-auto">
-              I love building things. I&apos;m always working on something new
-              and looking to collaborate — fork any of these or reach out to
-              build together.
-            </p>
           </div>
 
-          <div className="relative">
-            <div
-              ref={projectsContainerRef}
-              className="projects-rail scrollbar-hide"
-            >
-              <div className="projects-rail-row flex gap-6 md:gap-8 px-6 md:px-12 pb-2 pt-1" style={{ width: 'max-content' }}>
-                {projects.map((project, index) => (
-                  <div key={project.id} className="w-[320px] md:w-[380px] flex-shrink-0">
-                    <ProjectCard project={project} index={index} />
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div
-              className="pointer-events-none absolute inset-y-0 left-0 w-12 md:w-20 rail-fade-left"
-              aria-hidden="true"
-            />
-            <div
-              className="pointer-events-none absolute inset-y-0 right-0 w-12 md:w-20 rail-fade-right"
-              aria-hidden="true"
-            />
-          </div>
-
-          <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center gap-4">
-            <div className="flex-1 h-px bg-black/10 dark:bg-white/10 rounded-full overflow-hidden">
-              <div
-                ref={railProgressRef}
-                className="h-full bg-black/50 dark:bg-white/50 rounded-full origin-left"
-                style={{ transform: 'scaleX(0.08)' }}
-                aria-hidden="true"
-              />
-            </div>
-            <div className="hidden md:flex items-center gap-2">
-              <button
-                onClick={() => scrollProjects(-1)}
-                aria-label="Scroll projects left"
-                className="w-9 h-9 rounded-full flex items-center justify-center text-black/60 hover:text-black hover:bg-black/5 dark:text-white/60 dark:hover:text-white dark:hover:bg-white/10 transition-colors"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              <button
-                onClick={() => scrollProjects(1)}
-                aria-label="Scroll projects right"
-                className="w-9 h-9 rounded-full flex items-center justify-center text-black/60 hover:text-black hover:bg-black/5 dark:text-white/60 dark:hover:text-white dark:hover:bg-white/10 transition-colors"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            </div>
-          </div>
+          <FeaturedProject project={featuredProject} />
         </motion.div>
       </section>
 
