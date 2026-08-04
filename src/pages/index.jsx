@@ -95,15 +95,28 @@ export default function Home() {
       ],
     },
     {
+      title: 'AI & LLM',
+      items: [
+        { name: 'Anthropic API', url: 'https://docs.claude.com/' },
+        { name: 'Claude Code', url: 'https://claude.com/claude-code' },
+        { name: 'OpenAI API', url: 'https://platform.openai.com/docs' },
+        { name: 'MCP', url: 'https://modelcontextprotocol.io/' },
+        { name: 'Ollama', url: 'https://ollama.com/' },
+        { name: 'Kiro', url: 'https://kiro.dev/' },
+      ],
+    },
+    {
       title: 'Cloud & Data',
       items: [
         { name: 'AWS', url: 'https://aws.amazon.com/' },
         { name: 'GCP', url: 'https://cloud.google.com/' },
         { name: 'AWS Lambda', url: 'https://aws.amazon.com/lambda/' },
         { name: 'API Gateway', url: 'https://aws.amazon.com/api-gateway/' },
+        { name: 'Cognito', url: 'https://aws.amazon.com/cognito/' },
         { name: 'S3', url: 'https://aws.amazon.com/s3/' },
         { name: 'DynamoDB', url: 'https://aws.amazon.com/dynamodb/' },
         { name: 'RDS', url: 'https://aws.amazon.com/rds/' },
+        { name: 'Firestore', url: 'https://firebase.google.com/docs/firestore' },
         {
           name: 'SQL',
           url: 'https://www.postgresql.org/docs/current/sql.html',
@@ -120,7 +133,11 @@ export default function Home() {
       items: [
         { name: 'Vercel', url: 'https://vercel.com/' },
         { name: 'Jenkins', url: 'https://www.jenkins.io/' },
+        { name: 'GitHub Actions', url: 'https://github.com/features/actions' },
+        { name: 'Playwright', url: 'https://playwright.dev/' },
+        { name: 'Vitest', url: 'https://vitest.dev/' },
         { name: 'Jest', url: 'https://jestjs.io/' },
+        { name: 'Lighthouse CI', url: 'https://github.com/GoogleChrome/lighthouse-ci' },
         { name: 'Cucumber', url: 'https://cucumber.io/' },
         { name: 'Jira', url: 'https://www.atlassian.com/software/jira' },
       ],
@@ -148,7 +165,7 @@ export default function Home() {
         <title>Jonathan Gallardo-Kerth | Full-Stack Developer Portfolio</title>
         <meta
           name="description"
-          content="Full-Stack Developer based in Portland, Oregon, who builds and ships real products. Co-owner and lead developer of ToffeeLinks, a live web app with a paid membership tier. Specializing in React, Next.js, TypeScript, Python, and AWS."
+          content="Full-Stack Developer based in Portland, Oregon. Co-owner and lead developer of Toffee Links, a live web app with a paid membership tier. Specializing in React, Next.js, TypeScript, Python, and AWS."
         />
         <link rel="icon" href={catIconPath} />
         <link rel="apple-touch-icon" href={catIconPath} />
@@ -160,7 +177,7 @@ export default function Home() {
         {/* SEO: Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Jonathan Gallardo-Kerth | Full-Stack Developer" />
-        <meta property="og:description" content="Full-Stack Developer in Portland, Oregon who builds and ships real products. Co-owner & lead developer of ToffeeLinks, a live web app built with Next.js, TypeScript, and Python." />
+        <meta property="og:description" content="Full-Stack Developer in Portland, Oregon. Co-owner & lead developer of Toffee Links, a live web app built with Next.js, TypeScript, and Python." />
         <meta property="og:url" content="https://jonathankerth.com" />
         <meta property="og:site_name" content="Jonathan Gallardo-Kerth Portfolio" />
         <meta property="og:locale" content="en_US" />
@@ -168,7 +185,7 @@ export default function Home() {
         {/* SEO: Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Jonathan Gallardo-Kerth | Full-Stack Developer" />
-        <meta name="twitter:description" content="Full-Stack Developer in Portland, Oregon who builds and ships real products. Co-owner & lead developer of ToffeeLinks, a live web app with a paid membership tier." />
+        <meta name="twitter:description" content="Full-Stack Developer in Portland, Oregon. Co-owner & lead developer of Toffee Links, a live web app with a paid membership tier." />
         <meta name="twitter:creator" content="@jonathankerth" />
 
         {/* SEO: Additional meta */}
@@ -220,7 +237,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-xl md:text-2xl text-black/70 dark:text-white/70 max-w-3xl mx-auto leading-relaxed"
           >
-            Full-Stack Developer who builds and ships real products
+            Full-Stack Developer and co-owner of Toffee Links
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -289,17 +306,16 @@ export default function Home() {
             >
               <div className="bg-white/70 dark:bg-white/[0.04] backdrop-blur-sm rounded-2xl p-6 border border-black/10 dark:border-white/10">
                 <p className="text-lg text-black/70 dark:text-white/70 leading-relaxed">
-                  Tea and a relentless curiosity keep me running. I live in
-                  Portland, Oregon, USA, and I specialize in building web
-                  applications with JavaScript and Python. I don&apos;t just
-                  write features — I design, ship, and operate real products
-                  end to end, like ToffeeLinks, a live web app I co-own and
-                  build myself.
+                  I&apos;m a developer based in Portland, Oregon, working
+                  mostly in JavaScript and Python. These days most of my time
+                  goes into Toffee Links, an Everton transfer-rumours site I
+                  co-own — I designed and built it, and I keep it running in
+                  production.
                 </p>
               </div>
               <div className="bg-white/70 dark:bg-white/[0.04] backdrop-blur-sm rounded-2xl p-6 border border-black/10 dark:border-white/10">
                 <p className="text-lg text-black/70 dark:text-white/70 leading-relaxed">
-                  Outside of work, I&apos;m a 3D printer hobbyist, husband,
+                  Outside of work, I&apos;m a 3D printer hobbyist, runner,
                   general nerd, home chef, pet parent, and traveler.
                 </p>
               </div>

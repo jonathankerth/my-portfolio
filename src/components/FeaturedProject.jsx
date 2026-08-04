@@ -105,7 +105,7 @@ const FeaturedProject = ({ project }) => {
               aria-label={`Visit ${project.title}`}
               className="group inline-flex items-center gap-2 bg-black text-white dark:bg-white dark:text-black font-semibold py-2.5 px-5 rounded-full text-sm tracking-wide hover:bg-black/85 dark:hover:bg-white/90 transition-colors"
             >
-              <span>Visit ToffeeLinks</span>
+              <span>Visit {project.title}</span>
               <FaArrowRight className="text-xs transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
             </a>
           )}
