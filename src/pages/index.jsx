@@ -349,7 +349,7 @@ export default function Home() {
             </h2>
             <div className="flex flex-wrap items-center justify-center gap-3">
               <a
-                href="https://mypublicucket.s3.us-west-2.amazonaws.com/Jonathan+GK+Resume.pdf"
+                href="https://jonathankerth-resume.s3.us-west-2.amazonaws.com/Jonathan-Gallardo-Kerth-Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-black text-white dark:bg-white dark:text-black text-sm font-semibold tracking-wide transition-all duration-300 hover:bg-black/85 dark:hover:bg-white/90 hover:-translate-y-0.5 shadow-md hover:shadow-lg"
@@ -361,7 +361,7 @@ export default function Home() {
               </a>
               {/* Mobile-only inline view link — iframe is too cramped on phones */}
               <a
-                href="https://mypublicucket.s3.us-west-2.amazonaws.com/Jonathan+GK+Resume.pdf"
+                href="https://jonathankerth-resume.s3.us-west-2.amazonaws.com/Jonathan-Gallardo-Kerth-Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="md:hidden inline-flex items-center gap-1.5 px-5 py-3 rounded-full bg-white/70 dark:bg-white/[0.06] border border-black/10 dark:border-white/10 text-sm font-medium text-black dark:text-white transition-all duration-300 hover:bg-white dark:hover:bg-white/[0.12]"
